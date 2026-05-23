@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CVPR 2026 — Workshops &amp; Tutorials</title>
+  <link rel="icon" type="image/png" href="imgs/logo.png">
+  <link rel="apple-touch-icon" href="imgs/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div class="header-brand">
+      <h1>CVPR 2026 — Workshops &amp; Tutorials Radar</h1>
+      <p>Denver Convention Center · Denver, Colorado, USA &nbsp;·&nbsp; June 3–4, 2026</p>
+    </div>
+    <div class="header-meta">
+      <span class="meta-pill" id="pill-workshops">— workshops</span>
+      <span class="meta-pill" id="pill-tutorials">— tutorials</span>
+      <span class="meta-pill">MDT (UTC‑6)</span>
+      <button class="btn-settings" id="btn-settings">⚙ Settings</button>
+    </div>
+  </div>
+  <nav class="tab-nav">
+    <button class="tab-btn active" data-tab="browse">🔍 Browse Events</button>
+    <button class="tab-btn" data-tab="schedule">
+      🗓 My Schedule
+      <span class="tab-badge" id="sched-badge">0</span>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <!-- ── Browse Tab ──────────────────────────────────────── -->
+  <div id="tab-browse" class="tab-panel active">
+
+    <div class="filter-bar">
+      <button class="filter-toggle-btn" id="filter-toggle-btn">
+        <span>🔍 Filter Events</span>
+        <span class="filter-toggle-meta">
+          <span class="filter-active-badge" id="filter-active-badge"></span>
+          <span class="filter-toggle-arrow">▾</span>
+        </span>
+      </button>
+      <div class="filter-row" id="filter-row">
+        <div class="filter-group search">
+          <label for="f-search">Search</label>
+          <input type="search" id="f-search" placeholder="Title, organizers, topic…">
+        </div>
+        <div class="filter-group">
+          <label for="f-date">Date</label>
+          <select id="f-date">
+            <option value="">All dates</option>
+            <option value="6/3/2026">Wed, June 3</option>
+            <option value="6/4/2026">Thu, June 4</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="f-time">Time</label>
+          <select id="f-time">
+            <option value="">All times</option>
+            <option value="AM">Morning (AM)</option>
+            <option value="PM">Afternoon (PM)</option>
+            <option value="Full Day">Full Day</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="f-type">Type</label>
+          <select id="f-type">
+            <option value="">All types</option>
+            <option value="Workshop">Workshop</option>
+            <option value="Tutorial">Tutorial</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="f-track">Track</label>
+          <select id="f-track">
+            <option value="">All tracks</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="f-program">Program</label>
+          <select id="f-program">
+            <option value="">All</option>
+            <option value="yes">✅ Available</option>
+            <option value="no">❌ Not available</option>
+          </select>
+        </div>
+        <button class="btn btn-ghost" id="btn-clear-filters" style="align-self:flex-end;">✕ Clear</button>
+      </div>
+    </div>
+
+    <div class="results-info">
+      <p class="results-count" id="results-count">Loading…</p>
+      <div class="view-toggle">
+        <button class="view-btn browse-view-btn active" data-bview="grid">⊞ Grid</button>
+        <button class="view-btn browse-view-btn" data-bview="swipe">🃏 Swipe</button>
+      </div>
+    </div>
+
+    <div id="events-grid" class="events-grid">
+      <div class="empty-state" style="grid-column:1/-1">
+        <div class="spinner"></div>
+        <p>Loading events…</p>
+      </div>
+    </div>
+
+    <div id="swipe-container" style="display:none">
+      <div class="swipe-progress" id="swipe-progress"></div>
+      <div class="swipe-deck" id="swipe-deck"></div>
+      <div class="swipe-actions">
+        <button class="swipe-btn swipe-btn-undo" id="swipe-btn-undo" title="Undo last" disabled>↩</button>
+        <button class="swipe-btn swipe-btn-skip" id="swipe-btn-skip" title="Skip">✕</button>
+        <button class="swipe-btn swipe-btn-info" id="swipe-btn-info" title="View details">🔍</button>
+        <button class="swipe-btn swipe-btn-save" id="swipe-btn-save" title="Save to schedule">★</button>
+      </div>
+      <div class="swipe-hint">← Swipe left to skip &nbsp;·&nbsp; Swipe right or ★ to save &nbsp;·&nbsp; Tap card for details</div>
+    </div>
+
+  </div>
+
+  <!-- ── My Schedule Tab ─────────────────────────────────── -->
+  <div id="tab-schedule" class="tab-panel">
+
+    <div class="schedule-header">
+      <h2 id="sched-title">My Schedule</h2>
+      <div class="schedule-controls">
+        <div class="view-toggle">
+          <button class="view-btn active" data-view="list">☰ List</button>
+          <button class="view-btn" data-view="calendar">🗓 Calendar</button>
+        </div>
+        <button class="btn btn-danger" id="btn-clear-all" style="display:none">🗑 Clear All</button>
+      </div>
+    </div>
+
+    <div id="sched-list"></div>
+    <div id="sched-calendar" style="display:none"></div>
+
+  </div>
+</main>
+
+<!-- ── Event Details Modal ──────────────────────────────── -->
+<div id="event-modal" class="modal-backdrop" style="display:none" role="dialog" aria-modal="true" aria-labelledby="modal-title-text">
+  <button class="modal-nav-btn" id="modal-prev" aria-label="Previous event">&#8592;</button>
+  <div class="modal-container" id="modal-container">
+
+    <div class="modal-header">
+      <div class="modal-header-text">
+        <div id="modal-badges" class="badges-row" style="margin-bottom:6px;"></div>
+        <div class="modal-title" id="modal-title-text"></div>
+        <div class="modal-subtitle" id="modal-subtitle"></div>
+      </div>
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-meta-row" id="modal-meta"></div>
+
+      <div id="modal-track-wrap">
+        <div class="modal-section-label">Track</div>
+        <div id="modal-track" class="track-tag" style="font-size:.8rem;padding:4px 12px;max-width:none;white-space:normal;"></div>
+      </div>
+
+      <div id="modal-organizers-wrap">
+        <div class="modal-section-label">Organizers</div>
+        <div class="modal-section-text organizers-text" id="modal-organizers"></div>
+      </div>
+
+      <div id="modal-summary-wrap">
+        <div class="modal-section-label">About</div>
+        <div class="modal-section-text" id="modal-summary"></div>
+      </div>
+
+      <div>
+        <div class="modal-program-header">
+          <div class="modal-section-label" style="margin-bottom:0;">Program / Schedule</div>
+          <button class="btn btn-ghost program-compact-btn" id="program-compact-btn">⊟ Compact</button>
+        </div>
+        <div class="modal-program-wrap" id="modal-program-wrap">
+          <div class="modal-program-text" id="modal-program-text"></div>
+          <div class="modal-program-unavailable" id="modal-program-unavailable" style="display:none"></div>
+          <div class="modal-program-source" id="modal-program-source" style="display:none"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <div id="modal-footer-scraped" style="font-size:.72rem;color:var(--text-light);"></div>
+      <div style="display:flex;gap:8px;">
+        <a class="btn btn-ghost" id="modal-website-btn" href="#" target="_blank" rel="noopener" style="display:none;font-size:.82rem;">🔗 Website ↗</a>
+        <button class="btn btn-primary" id="modal-save-btn" style="font-size:.82rem;"></button>
+      </div>
+    </div>
+
+  </div>
+  <button class="modal-nav-btn" id="modal-next" aria-label="Next event">&#8594;</button>
+  <div class="modal-nav-counter" id="modal-nav-counter"></div>
+</div>
+
+<!-- ── Settings Modal ──────────────────────────────────── -->
+<div id="settings-modal" class="modal-backdrop" style="display:none" role="dialog" aria-modal="true" aria-labelledby="settings-modal-title">
+  <div class="modal-container" id="settings-modal-container">
+
+    <div class="modal-header">
+      <div class="modal-header-text">
+        <div class="modal-title" id="settings-modal-title">⚙ Settings</div>
+        <div class="modal-subtitle">Preferences are saved in your browser</div>
+      </div>
+      <button class="modal-close" id="settings-modal-close" aria-label="Close">✕</button>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <div class="settings-row-label">Refresh Data</div>
+          <div class="settings-row-desc">Re-fetch events from the JSON file</div>
+        </div>
+        <button class="btn btn-primary" id="settings-refresh-btn" style="display:inline-flex;align-items:center;gap:6px;">
+          <span class="btn-refresh-icon">↺ Fetch update</span>
+          <span class="btn-spinner"></span>
+        </button>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <div class="settings-row-label">Theme</div>
+          <div class="settings-row-desc">Follows system preference by default</div>
+        </div>
+        <div class="theme-selector" id="theme-selector" role="group" aria-label="Theme selection">
+          <button class="theme-btn" data-theme="light">☀ Light</button>
+          <button class="theme-btn" data-theme="system">Auto</button>
+          <button class="theme-btn" data-theme="dark">🌙 Dark</button>
+        </div>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <div class="settings-row-label">Show Organizers</div>
+          <div class="settings-row-desc">Display organizer names on event cards</div>
+        </div>
+        <label class="toggle-switch" aria-label="Toggle organizer display">
+          <input type="checkbox" id="settings-show-organizers">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <div class="settings-row-label">Show About Section</div>
+          <div class="settings-row-desc">Display event summaries on cards</div>
+        </div>
+        <label class="toggle-switch" aria-label="Toggle about section">
+          <input type="checkbox" id="settings-show-about">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── Floor Map Modal ─────────────────────────────────── -->
+<div id="map-modal" style="display:none" role="dialog" aria-modal="true" aria-label="Floor map">
+  <div id="map-modal-container">
+    <div id="map-modal-header">
+      <span id="map-modal-label" class="map-modal-label-text">Room</span>
+      <button id="map-modal-close" aria-label="Close map">✕</button>
+    </div>
+    <div id="map-modal-body">
+      <div id="map-modal-image-wrap">
+        <img id="map-modal-img" alt="Convention center floor plan" src="">
+        <canvas id="map-modal-canvas"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast-box"></div>
+
+<footer class="site-footer">
+  <p>⚠️ This website may contain errors or inaccuracies. We are not affiliated with or endorsed by CVPR, IEEE, or CVF in any way. Use at your own discretion.</p>
+  <p>Made with ❤️ by <a href="https://github.com/Gabrysse" target="_blank" rel="noopener noreferrer">Gabriele</a></p>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>

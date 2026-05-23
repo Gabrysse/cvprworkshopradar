@@ -1,0 +1,93 @@
+name: Workshop or Tutorial Correction
+description: Report a problem or suggest an update for a specific workshop or tutorial.
+title: "[Correction]: "
+labels:
+  - data
+  - correction
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve CVPR Workshop Radar.
+
+        Please include an official source whenever possible, such as the CVPR page, the workshop/tutorial website, or a public organizer announcement.
+
+  - type: dropdown
+    id: event_type
+    attributes:
+      label: Event type
+      description: Is this report about a workshop, a tutorial, or the website in general?
+      options:
+        - Workshop
+        - Tutorial
+        - General website issue
+    validations:
+      required: true
+
+  - type: input
+    id: event_title
+    attributes:
+      label: Workshop/tutorial title
+      description: Enter the exact title as shown in CVPR Workshop Radar, if applicable.
+      placeholder: "Example: 12th Workshop on Medical Computer Vision"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: issue_kind
+    attributes:
+      label: What needs to be changed?
+      description: Choose the main kind of problem or suggestion.
+      options:
+        - Title
+        - Organizers
+        - Date or time
+        - Room or location
+        - Track
+        - Summary
+        - Website link
+        - Program or schedule
+        - Missing event
+        - Duplicate event
+        - Website bug
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_information
+    attributes:
+      label: Current information
+      description: What does the website currently show?
+      placeholder: "Paste or describe the current incorrect/missing information."
+    validations:
+      required: false
+
+  - type: textarea
+    id: suggested_information
+    attributes:
+      label: Suggested correction or modification
+      description: What should be changed?
+      placeholder: "Describe the corrected information or the requested modification."
+    validations:
+      required: true
+
+  - type: textarea
+    id: source_links
+    attributes:
+      label: Official source or evidence
+      description: Add links that verify the correction. Official sources are preferred.
+      placeholder: |
+        - Official workshop/tutorial page:
+        - Official CVPR page:
+        - Other evidence:
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra_context
+    attributes:
+      label: Additional context
+      description: Add screenshots, browser details, or anything else that may help.
+    validations:
+      required: false
