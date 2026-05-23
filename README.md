@@ -1,7 +1,7 @@
 # CVPR Workshop Radar
 
 <p align="center">
-  <img src="imgs/logo.png" alt="CVPR Workshop Radar logo" width="160">
+  <img src="assets/images/logo.png" alt="CVPR Workshop Radar logo" width="160">
 </p>
 
 **CVPR Workshop Radar** is an independent, searchable companion for exploring **CVPR 2026 workshops and tutorials**.
@@ -54,12 +54,6 @@ CVPR Workshop Radar helps you move from “what is happening?” to “what shou
 
 - 🗺️ **Venue map support**  
   Open room maps for supported locations.
-
-- 🌗 **Theme options**  
-  Switch between light, dark, and system theme.
-
-- 🔄 **Refreshable data**  
-  Re-fetch the local JSON data from the settings panel when updates are available.
 
 ## 🧭 Why This Exists
 

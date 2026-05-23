@@ -3,20 +3,20 @@
 // so stale caches are evicted and all clients receive the updated files.
 // For JSON-only updates you push to the repo, no bump is needed — the
 // network-first strategy below handles those automatically.
-const CACHE_NAME = 'cvpr2026-v2';
+const CACHE_NAME = 'cvpr2026-v3';
 
 // Every file the app needs to run fully offline
 const PRECACHE_URLS = [
   './',
   './index.html',
-  './styles.css',
-  './app.js',
+  './assets/css/styles.css',
+  './assets/js/app.js',
   './room_coords.json',
   './cvpr2026_workshops_tutorials.json',
-  './imgs/logo.png',
-  './imgs/map_ballroom.png',
-  './imgs/map_meeting.png',
-  './imgs/map_exhibit.png',
+  './assets/images/logo.png',
+  './assets/images/map_ballroom.png',
+  './assets/images/map_meeting.png',
+  './assets/images/map_exhibit.png',
 ];
 
 // ── Install: pre-cache everything ─────────────────────────────────────────────

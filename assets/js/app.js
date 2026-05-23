@@ -818,7 +818,7 @@ function openMapModal(location) {
   const modal = document.getElementById('map-modal');
   const img   = document.getElementById('map-modal-img');
   document.getElementById('map-modal-label').textContent = `Room: ${location}`;
-  const mapFile = coord.page === 1 ? 'imgs/map_ballroom.png' : 'imgs/map_meeting.png';
+  const mapFile = coord.page === 1 ? 'assets/images/map_ballroom.png' : 'assets/images/map_meeting.png';
   const doDrawAndScroll = () => { drawMapHighlight(coord); scrollToHighlight(coord); };
   if (img.dataset.loadedSrc === mapFile) {
 modal.style.display = 'flex';
