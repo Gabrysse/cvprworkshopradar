@@ -30,8 +30,7 @@
     <div class="header-meta">
       <span class="meta-pill" id="pill-workshops">— workshops</span>
       <span class="meta-pill" id="pill-tutorials">— tutorials</span>
-      <span class="meta-pill">MDT (UTC‑6)</span>
-      <button class="btn-settings" id="btn-settings">⚙ Settings</button>
+      <a class="btn-report" href="https://github.com/Gabrysse/cvprworkshopradar/issues/new?template=event-correction.yml" target="_blank" rel="noopener noreferrer">🐛 Report Issue</a>
     </div>
   </div>
   <nav class="tab-nav">
@@ -40,6 +39,7 @@
       🗓 My Schedule
       <span class="tab-badge" id="sched-badge">0</span>
     </button>
+    <button class="tab-btn" data-tab="settings">⚙️ Settings</button>
   </nav>
 </header>
 
@@ -150,6 +150,82 @@
     <div id="sched-calendar" style="display:none"></div>
 
   </div>
+
+  <!-- ── Settings Tab ──────────────────────────────────── -->
+  <div id="tab-settings" class="tab-panel">
+    <div class="settings-card">
+      <div class="settings-card-header">
+        <div class="settings-card-title">⚙️ Settings</div>
+        <div class="settings-card-subtitle">Preferences are saved in your browser</div>
+      </div>
+      <div class="settings-card-body">
+
+        <div class="settings-row">
+          <div class="settings-row-info">
+            <div class="settings-row-label">Refresh Data</div>
+            <div class="settings-row-desc">Re-fetch events from the JSON file</div>
+          </div>
+          <button class="btn btn-primary" id="settings-refresh-btn" style="display:inline-flex;align-items:center;gap:6px;">
+            <span class="btn-refresh-icon">↺ Fetch update</span>
+            <span class="btn-spinner"></span>
+          </button>
+        </div>
+
+        <div class="settings-row">
+          <div class="settings-row-info">
+            <div class="settings-row-label">Theme</div>
+            <div class="settings-row-desc">Follows system preference by default</div>
+          </div>
+          <div class="theme-selector" id="theme-selector" role="group" aria-label="Theme selection">
+            <button class="theme-btn" data-theme="light">☀ Light</button>
+            <button class="theme-btn" data-theme="system">Auto</button>
+            <button class="theme-btn" data-theme="dark">🌙 Dark</button>
+          </div>
+        </div>
+
+        <div class="settings-row">
+          <div class="settings-row-info">
+            <div class="settings-row-label">Show Organizers</div>
+            <div class="settings-row-desc">Display organizer names on event cards</div>
+          </div>
+          <label class="toggle-switch" aria-label="Toggle organizer display">
+            <input type="checkbox" id="settings-show-organizers">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="settings-row">
+          <div class="settings-row-info">
+            <div class="settings-row-label">Show About Section</div>
+            <div class="settings-row-desc">Display event summaries on cards</div>
+          </div>
+          <label class="toggle-switch" aria-label="Toggle about section">
+            <input type="checkbox" id="settings-show-about">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="settings-row settings-row-share">
+          <div class="settings-row-info">
+            <div class="settings-row-label">Share Bookmarks</div>
+            <div class="settings-row-desc">Share your saved events across devices via QR code or link</div>
+          </div>
+          <button class="btn btn-primary share-action-btn" id="share-export-btn">&#8593; Share</button>
+        </div>
+
+        <div id="share-export-panel" class="share-panel" style="display:none">
+          <div id="share-qr" class="share-qr-wrap"></div>
+          <div class="share-url-row">
+            <input type="text" id="share-url-input" class="share-url-input" readonly aria-label="Share link">
+            <button class="btn btn-ghost" id="share-copy-btn">Copy link</button>
+          </div>
+          <p class="share-hint">Scan the QR code or copy the link on another device to import your bookmarks.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </main>
 
 <!-- ── Event Details Modal ──────────────────────────────── -->
@@ -210,87 +286,7 @@
   <div class="modal-nav-counter" id="modal-nav-counter"></div>
 </div>
 
-<!-- ── Settings Modal ──────────────────────────────────── -->
-<div id="settings-modal" class="modal-backdrop" style="display:none" role="dialog" aria-modal="true" aria-labelledby="settings-modal-title">
-  <div class="modal-container" id="settings-modal-container">
 
-    <div class="modal-header">
-      <div class="modal-header-text">
-        <div class="modal-title" id="settings-modal-title">⚙ Settings</div>
-        <div class="modal-subtitle">Preferences are saved in your browser</div>
-      </div>
-      <button class="modal-close" id="settings-modal-close" aria-label="Close">✕</button>
-    </div>
-
-    <div class="modal-body">
-
-      <div class="settings-row">
-        <div class="settings-row-info">
-          <div class="settings-row-label">Refresh Data</div>
-          <div class="settings-row-desc">Re-fetch events from the JSON file</div>
-        </div>
-        <button class="btn btn-primary" id="settings-refresh-btn" style="display:inline-flex;align-items:center;gap:6px;">
-          <span class="btn-refresh-icon">↺ Fetch update</span>
-          <span class="btn-spinner"></span>
-        </button>
-      </div>
-
-      <div class="settings-row">
-        <div class="settings-row-info">
-          <div class="settings-row-label">Theme</div>
-          <div class="settings-row-desc">Follows system preference by default</div>
-        </div>
-        <div class="theme-selector" id="theme-selector" role="group" aria-label="Theme selection">
-          <button class="theme-btn" data-theme="light">☀ Light</button>
-          <button class="theme-btn" data-theme="system">Auto</button>
-          <button class="theme-btn" data-theme="dark">🌙 Dark</button>
-        </div>
-      </div>
-
-      <div class="settings-row">
-        <div class="settings-row-info">
-          <div class="settings-row-label">Show Organizers</div>
-          <div class="settings-row-desc">Display organizer names on event cards</div>
-        </div>
-        <label class="toggle-switch" aria-label="Toggle organizer display">
-          <input type="checkbox" id="settings-show-organizers">
-          <span class="toggle-slider"></span>
-        </label>
-      </div>
-
-      <div class="settings-row">
-        <div class="settings-row-info">
-          <div class="settings-row-label">Show About Section</div>
-          <div class="settings-row-desc">Display event summaries on cards</div>
-        </div>
-        <label class="toggle-switch" aria-label="Toggle about section">
-          <input type="checkbox" id="settings-show-about">
-          <span class="toggle-slider"></span>
-        </label>
-      </div>
-
-      <!-- ── Share Bookmarks ──────────────────────────── -->
-      <div class="settings-row settings-row-share">
-        <div class="settings-row-info">
-          <div class="settings-row-label">Share Bookmarks</div>
-          <div class="settings-row-desc">Share your saved events across devices via QR code or link</div>
-        </div>
-        <button class="btn btn-primary share-action-btn" id="share-export-btn">&#8593; Share</button>
-      </div>
-
-      <!-- Export sub-panel -->
-      <div id="share-export-panel" class="share-panel" style="display:none">
-        <div id="share-qr" class="share-qr-wrap"></div>
-        <div class="share-url-row">
-          <input type="text" id="share-url-input" class="share-url-input" readonly aria-label="Share link">
-          <button class="btn btn-ghost" id="share-copy-btn">Copy link</button>
-        </div>
-        <p class="share-hint">Scan the QR code or copy the link on another device to import your bookmarks.</p>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 <!-- ── Import Confirm Modal ─────────────────────────────── -->
 <div id="import-confirm-modal" class="modal-backdrop" style="display:none" role="dialog" aria-modal="true" aria-labelledby="import-confirm-title">
@@ -331,7 +327,7 @@
 
 <footer class="site-footer">
   <p>⚠️ This website may contain errors or inaccuracies. We are not affiliated with or endorsed by CVPR, IEEE, or CVF in any way. Use at your own discretion.</p>
-  <p>Made with ❤️ by <a href="https://github.com/Gabrysse" target="_blank" rel="noopener noreferrer">Gabriele</a></p>
+  <p><a href="https://github.com/Gabrysse/cvprworkshopradar/" target="_blank" rel="noopener noreferrer">View source on GitHub</a></p>
 </footer>
 
 <script src="assets/js/qrcode.min.js"></script>

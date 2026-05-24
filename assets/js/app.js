@@ -553,6 +553,7 @@ document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'
 tab.classList.add('active');
 document.getElementById(`tab-${tab.dataset.tab}`).classList.add('active');
 if (tab.dataset.tab === 'schedule') renderSchedule();
+if (tab.dataset.tab === 'settings') { applySettings(); resetSharePanels(); }
 return;
   }
 
@@ -1004,31 +1005,6 @@ b.classList.toggle('active', b.dataset.theme === settings.theme)
 // Reapply when OS theme changes while in 'system' mode
 _sysDarkMQ.addEventListener('change', () => { if (settings.theme === 'system') applySettings(); });
 
-function openSettingsModal() {
-  const modal     = document.getElementById('settings-modal');
-  const container = document.getElementById('settings-modal-container');
-  modal.classList.remove('closing');
-  container.classList.remove('closing');
-  resetSharePanels();
-  applySettings();
-  modal.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-  document.getElementById('settings-modal-close').focus();
-}
-
-function closeSettingsModal() {
-  const modal     = document.getElementById('settings-modal');
-  const container = document.getElementById('settings-modal-container');
-  modal.classList.add('closing');
-  container.classList.add('closing');
-  setTimeout(() => {
-modal.style.display = 'none';
-modal.classList.remove('closing');
-container.classList.remove('closing');
-document.body.style.overflow = '';
-  }, 200);
-}
-
 // Filter toggle (mobile)
 document.getElementById('filter-toggle-btn').addEventListener('click', () => {
   const row   = document.getElementById('filter-row');
@@ -1042,12 +1018,6 @@ document.getElementById('program-compact-btn').addEventListener('click', functio
   const wrap    = document.getElementById('modal-program-wrap');
   const compact = wrap.classList.toggle('compact');
   this.textContent = compact ? '⊞ Normal' : '⊟ Compact';
-});
-
-document.getElementById('btn-settings').addEventListener('click', openSettingsModal);
-document.getElementById('settings-modal-close').addEventListener('click', closeSettingsModal);
-document.getElementById('settings-modal').addEventListener('click', e => {
-  if (e.target === document.getElementById('settings-modal')) closeSettingsModal();
 });
 
 document.getElementById('theme-selector').addEventListener('click', e => {
