@@ -8,6 +8,17 @@
   <link rel="apple-touch-icon" href="assets/images/logo.png">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WH7D74BLW4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WH7D74BLW4');
+</script>
+
 <body>
 
 <header>
@@ -258,6 +269,44 @@
         </label>
       </div>
 
+      <!-- ── Share Bookmarks ──────────────────────────── -->
+      <div class="settings-row settings-row-share">
+        <div class="settings-row-info">
+          <div class="settings-row-label">Share Bookmarks</div>
+          <div class="settings-row-desc">Share your saved events across devices via QR code or link</div>
+        </div>
+        <button class="btn btn-primary share-action-btn" id="share-export-btn">&#8593; Share</button>
+      </div>
+
+      <!-- Export sub-panel -->
+      <div id="share-export-panel" class="share-panel" style="display:none">
+        <div id="share-qr" class="share-qr-wrap"></div>
+        <div class="share-url-row">
+          <input type="text" id="share-url-input" class="share-url-input" readonly aria-label="Share link">
+          <button class="btn btn-ghost" id="share-copy-btn">Copy link</button>
+        </div>
+        <p class="share-hint">Scan the QR code or copy the link on another device to import your bookmarks.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── Import Confirm Modal ─────────────────────────────── -->
+<div id="import-confirm-modal" class="modal-backdrop" style="display:none" role="dialog" aria-modal="true" aria-labelledby="import-confirm-title">
+  <div class="modal-container import-confirm-container">
+    <div class="modal-header">
+      <div class="modal-header-text">
+        <div class="modal-title" id="import-confirm-title">📥 Import Bookmarks</div>
+      </div>
+      <button class="modal-close" id="import-confirm-close" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body" style="padding-bottom:0">
+      <p id="import-confirm-msg" style="margin:0;font-size:.9rem;line-height:1.5"></p>
+    </div>
+    <div class="modal-footer" style="justify-content:flex-end;gap:8px;padding-top:16px">
+      <button class="btn btn-ghost" id="import-confirm-cancel">Cancel</button>
+      <button class="btn btn-primary" id="import-confirm-proceed">Proceed</button>
     </div>
   </div>
 </div>
@@ -285,6 +334,10 @@
   <p>Made with ❤️ by <a href="https://github.com/Gabrysse" target="_blank" rel="noopener noreferrer">Gabriele</a></p>
 </footer>
 
+<script src="assets/js/qrcode.min.js"></script>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
 <script src="assets/js/app.js" defer></script>
 </body>
 </html>

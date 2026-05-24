@@ -890,6 +890,75 @@ if (e.key === 'ArrowLeft')  doSwipe('left');
   }
 });
 
+// ─── Bookmark Share ───────────────────────────────────────────────────────────
+function encodeBookmarks() {
+  return btoa(JSON.stringify([...saved]));
+}
+
+function decodeBookmarks(str) {
+  try {
+    const data = JSON.parse(atob(str));
+    if (!Array.isArray(data)) return null;
+    return data.filter(id => typeof id === 'string');
+  } catch { return null; }
+}
+
+function buildShareURL() {
+  return location.origin + location.pathname + '#import=' + encodeBookmarks();
+}
+
+function openSharePanel() {
+  const panel  = document.getElementById('share-export-panel');
+  const isOpen = panel.style.display !== 'none';
+  if (isOpen) { panel.style.display = 'none'; return; }
+
+  const url = buildShareURL();
+  document.getElementById('share-url-input').value = url;
+  panel.style.display = 'block';
+
+  const qrWrap = document.getElementById('share-qr');
+  qrWrap.innerHTML = '';
+  if (typeof QRCode !== 'undefined') {
+    new QRCode(qrWrap, { text: url, width: 180, height: 180, correctLevel: QRCode.CorrectLevel.M });
+  }
+}
+
+function resetSharePanels() {
+  document.getElementById('share-export-panel').style.display = 'none';
+}
+
+function showImportConfirm(ids) {
+  const modal = document.getElementById('import-confirm-modal');
+  const msg   = document.getElementById('import-confirm-msg');
+  msg.textContent = `Import ${ids.length} bookmark${ids.length !== 1 ? 's' : ''}? This will replace your current ${saved.size} bookmark${saved.size !== 1 ? 's' : ''}.`;
+  document.getElementById('import-confirm-proceed').dataset.pending = JSON.stringify(ids);
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeImportConfirm() {
+  document.getElementById('import-confirm-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function executeImport(ids) {
+  saved = new Set(ids);
+  storeSaved();
+  updateBadge();
+  renderBrowse();
+  renderSchedule();
+  toast(`Imported ${ids.length} bookmark${ids.length !== 1 ? 's' : ''} ✓`, 't-saved');
+}
+
+function checkURLImport() {
+  if (!location.hash.startsWith('#import=')) return;
+  const encoded = location.hash.slice('#import='.length);
+  history.replaceState(null, '', location.pathname);
+  const ids = decodeBookmarks(encoded);
+  if (!ids || ids.length === 0) { toast('Invalid or empty share link', ''); return; }
+  showImportConfirm(ids);
+}
+
 // ─── Settings ─────────────────────────────────────────────────────────────────
 const SETTINGS_STORE = 'cvpr2026_settings';
 let settings = { theme: 'system', showOrganizers: true, showAbout: true };
@@ -940,6 +1009,7 @@ function openSettingsModal() {
   const container = document.getElementById('settings-modal-container');
   modal.classList.remove('closing');
   container.classList.remove('closing');
+  resetSharePanels();
   applySettings();
   modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -1012,10 +1082,39 @@ btn.disabled = false;
   }
 });
 
+// ─── Share / Import listeners ─────────────────────────────────────────────────
+document.getElementById('share-export-btn').addEventListener('click', openSharePanel);
+
+document.getElementById('share-copy-btn').addEventListener('click', () => {
+  const url = document.getElementById('share-url-input').value;
+  const btn = document.getElementById('share-copy-btn');
+  navigator.clipboard.writeText(url).then(() => {
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = 'Copy link'; }, 2000);
+  }).catch(() => {
+    document.getElementById('share-url-input').select();
+    toast('Copy with Cmd/Ctrl+C', '');
+  });
+});
+
+document.getElementById('import-confirm-proceed').addEventListener('click', () => {
+  const pending = document.getElementById('import-confirm-proceed').dataset.pending;
+  if (!pending) return;
+  closeImportConfirm();
+  executeImport(JSON.parse(pending));
+});
+
+document.getElementById('import-confirm-cancel').addEventListener('click', closeImportConfirm);
+document.getElementById('import-confirm-close').addEventListener('click', closeImportConfirm);
+document.getElementById('import-confirm-modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('import-confirm-modal')) closeImportConfirm();
+});
+
 // ─── Boot ─────────────────────────────────────────────────────────────────
 loadSaved();
 loadSettings();
 updateBadge();
+checkURLImport();
 
 // Register service worker — enables offline support and ensures users always
 // receive the latest JSON data when you push updates to the repository.
