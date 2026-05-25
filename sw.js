@@ -3,7 +3,7 @@
 // so stale caches are evicted and all clients receive the updated files.
 // For JSON-only updates you push to the repo, no bump is needed — the
 // network-first strategy below handles those automatically.
-const CACHE_NAME = 'cvpr2026-v4';
+const CACHE_NAME = 'cvpr2026-v5';
 
 // Every file the app needs to run fully offline
 const PRECACHE_URLS = [
@@ -57,28 +57,31 @@ self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin) return;   // ignore third-party requests
 
-  // ── Network-first for the mutable data JSON ──────────────────────────────
-  if (url.pathname.includes('cvpr2026_workshops_tutorials.json')) {
+  // ── Network-first for all mutable/versioned files (JS, CSS, HTML, JSON) ──
+  // Always try the network so updated files are picked up immediately.
+  // Falls back to cache only when offline.
+  if (url.pathname.endsWith('.js') ||
+      url.pathname.endsWith('.css') ||
+      url.pathname.endsWith('.html') ||
+      url.pathname === '/' ||
+      url.pathname.includes('cvpr2026_workshops_tutorials.json')) {
     event.respondWith(
       fetch(event.request)
         .then(response => {
           if (response.ok) {
-            // Always cache under the canonical path so ?t=… cache-bust variants
-            // (used by the manual Refresh button) don't create duplicate entries.
             const canonical = new Request(url.pathname);
             caches.open(CACHE_NAME).then(cache => cache.put(canonical, response.clone()));
           }
           return response;
         })
         .catch(() =>
-          // Offline fallback: canonical path first, then exact request URL
           caches.match(url.pathname).then(r => r || caches.match(event.request))
         )
     );
     return;
   }
 
-  // ── Cache-first with background revalidation for static assets ───────────
+  // ── Cache-first for immutable assets (images, fonts, etc.) ───────────────
   event.respondWith(
     caches.match(event.request).then(cached => {
       const networkFetch = fetch(event.request)

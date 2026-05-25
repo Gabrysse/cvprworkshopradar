@@ -725,7 +725,7 @@ function renderTimeline(events) {
     html += `
     <div class="tl-row" data-id="${esc(ev.id)}">
       <div class="tl-label-cell">
-        <div class="tl-event-name">${esc(ev.title)}</div>
+        <div class="tl-event-name"><span class="tl-event-name-inner">${esc(ev.title)}\u2003\u2003\u2022\u2003\u2003${esc(ev.title)}\u2003\u2003\u2022\u2003\u2003</span></div>
         <div class="tl-event-meta">
           <button class="tl-room-pill room-pill-btn${hasMap ? '' : ' no-map'}" data-room="${esc(ev.location || '')}" title="${hasMap ? 'View on map' : ''}">📍 ${esc(ev.location || 'TBA')}</button>
           <button class="btn btn-ghost details-btn" data-id="${esc(ev.id)}" style="font-size:.67rem;padding:2px 8px;">Details</button>
