@@ -140,6 +140,7 @@
         <div class="view-toggle">
           <button class="view-btn active" data-view="list">☰ List</button>
           <button class="view-btn" data-view="calendar">🗓 Calendar</button>
+          <button class="view-btn" data-view="timeline">📺 Timeline</button>
         </div>
         <button class="btn btn-danger" id="btn-clear-all" style="display:none">🗑 Clear All</button>
       </div>
@@ -147,6 +148,7 @@
 
     <div id="sched-list"></div>
     <div id="sched-calendar" style="display:none"></div>
+    <div id="sched-timeline" style="display:none"></div>
 
   </div>
 
@@ -323,6 +325,7 @@
 </div>
 
 <div id="toast-box"></div>
+<div id="tl-tooltip" class="tl-tooltip" style="display:none"></div>
 
 <footer class="site-footer">
   <p>⚠️ This website may contain errors or inaccuracies. We are not affiliated with or endorsed by CVPR, IEEE, or CVF in any way. Use at your own discretion.</p>

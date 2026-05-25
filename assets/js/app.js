@@ -44,6 +44,8 @@ let saved         = new Set();
 let view          = 'list';
 let browseView   = 'grid';
 let calDay       = 0;
+let tlDay        = 0;
+let tlHiddenTypes = new Set();
 let swipeIdx     = 0;
 let swipeList    = [];
 let swipeHistory = [];
@@ -266,11 +268,13 @@ function buildSwipeCard(ev) {
   el.dataset.id = ev.id;
   const typeCls  = ev.type === 'Tutorial' ? 'badge-tutorial' : 'badge-workshop';
   const trackTxt = ev.track ? ev.track.replace(/^Track on\s*/i,'') : null;
+  const isInSchedule = saved.has(ev.id);
   el.innerHTML = `
 <div class="swipe-color-overlay"></div>
 <div class="badges-row">
   <span class="badge ${typeCls}">${esc(ev.type)}</span>
   ${slotBadge(ev._slot)}
+  ${isInSchedule ? '<span class="swipe-saved-indicator">★ In your schedule</span>' : ''}
 </div>
 <div class="swipe-card-title">${esc(ev.title)}</div>
 <div class="swipe-card-body">
@@ -387,6 +391,7 @@ function renderList(events) {
   const el = document.getElementById('sched-list');
   el.style.display = '';
   document.getElementById('sched-calendar').style.display = 'none';
+  document.getElementById('sched-timeline').style.display = 'none';
 
   if (!events.length) {
 el.innerHTML = `<div class="empty-state"><div class="empty-icon">📅</div><h3>Your schedule is empty</h3><p>Browse events and click <strong>+ Save</strong> to add them here.</p></div>`;
@@ -415,7 +420,8 @@ return `
 function renderCalendar(events) {
   const el = document.getElementById('sched-calendar');
   el.style.display = '';
-  document.getElementById('sched-list').style.display = 'none';
+  document.getElementById('sched-list').style.display    = 'none';
+  document.getElementById('sched-timeline').style.display = 'none';
 
   if (!events.length) {
 el.innerHTML = `<div class="empty-state"><div class="empty-icon">🗓</div><h3>Your schedule is empty</h3><p>Browse events and click <strong>+ Save</strong> to add them here.</p></div>`;
@@ -511,10 +517,235 @@ html += `<button class="cal-day-btn${calDay === i ? ' active' : ''}" data-calday
 }
 
 // ─── Schedule dispatcher ──────────────────────────────────────────────────────
+// ─── Timeline – Helpers ───────────────────────────────────────────────────────
+const TL_START = 8  * 60;   // 480  min (8:00 AM)
+const TL_END   = 19 * 60;   // 1140 min (7:00 PM)
+const TL_SPAN  = TL_END - TL_START; // 660 min
+
+function parseTimeStr(raw) {
+  if (!raw) return null;
+  raw = raw.trim();
+  if (!raw || /^[-\u2013\u2014\s]+$/.test(raw)) return null;
+  // Extract all time tokens: H:MM or HH:MM optionally followed by AM/PM
+  const re = /(\d{1,2}):(\d{2})\s*(AM|PM)?/gi;
+  const tokens = [];
+  let m;
+  while ((m = re.exec(raw)) !== null) {
+    tokens.push({ h: +m[1], min: +m[2], ampm: m[3] ? m[3].toUpperCase() : null });
+  }
+  if (!tokens.length) return null;
+  function toMin(t) {
+    let h = t.h;
+    if (t.ampm === 'PM' && h !== 12) h += 12;
+    if (t.ampm === 'AM' && h === 12) h = 0;
+    return h * 60 + t.min;
+  }
+  return { startMin: toMin(tokens[0]), endMin: tokens.length > 1 ? toMin(tokens[1]) : null };
+}
+
+function parseProgramRows(programText, fallbackSlot) {
+  const fallback = () => {
+    const ranges = { 'AM': [TL_START, 12*60], 'PM': [13*60, 18*60], 'Full Day': [TL_START, 18*60] };
+    const [s, e] = ranges[fallbackSlot] || [TL_START, TL_END];
+    return [{ startMin: s, endMin: e, title: 'Program not available', session: '', speaker: '-', noProgram: true }];
+  };
+  if (!programText) return fallback();
+
+  const raw = [];
+  for (const line of programText.split('\n')) {
+    const t = line.trim();
+    if (!t.startsWith('|')) continue;
+    if (/^\|[\s\-:|]+\|/.test(t)) continue;          // separator row
+    if (/^\|\s*Time\s*\|/i.test(t)) continue;        // header row
+    const cells = t.replace(/^\||\|$/g, '').split('|').map(c => c.trim());
+    if (cells.length < 2) continue;
+    const [timeCell, titleCell, sessionCell = '', speakerCell = ''] = cells;
+    const times = parseTimeStr(timeCell);
+    if (!times) continue;
+    raw.push({ ...times, title: titleCell, session: sessionCell, speaker: speakerCell });
+  }
+  if (!raw.length) return fallback();
+
+  // Fill missing end times from next row's start (last row gets +30 min)
+  for (let i = 0; i < raw.length; i++) {
+    if (raw[i].endMin === null) {
+      raw[i].endMin = i + 1 < raw.length ? raw[i + 1].startMin : raw[i].startMin + 30;
+    }
+  }
+
+  // Skip span-all entries (≥180 min — these mark the overall session window)
+  return raw
+    .filter(r => (r.endMin - r.startMin) < 180)
+    .map(r => ({ ...r, startMin: Math.max(r.startMin, TL_START), endMin: Math.min(r.endMin, TL_END) }))
+    .filter(r => r.startMin < r.endMin);
+}
+
+function sessionTypeClass(session, title) {
+  const t = (session + ' ' + title).toLowerCase();
+  if (/break|lunch|coffee|poster setup/.test(t))     return 'break';
+  if (/keynote|invited/.test(t))                      return 'keynote';
+  if (/oral|paper presentation|contributed/.test(t)) return 'oral';
+  if (/poster/.test(t))                               return 'poster';
+  if (/opening|closing|welcome|introduction/.test(t)) return 'housekeeping';
+  return 'default';
+}
+
+function showTlTooltip(e, block) {
+  const tooltip = document.getElementById('tl-tooltip');
+  const title   = block.dataset.title   || '';
+  const speaker = block.dataset.speaker || '';
+  const session = block.dataset.session || '';
+  const time    = block.dataset.time    || '';
+  const type    = block.dataset.type    || 'default';
+  const labels  = { keynote:'Keynote / Invited', oral:'Oral / Paper',
+    poster:'Poster', break:'Break', housekeeping:'Opening / Closing', default:'Session', none:'No Program' };
+  tooltip.innerHTML = `
+    <div class="tl-tooltip-type tl-tooltip-type--${esc(type)}">${labels[type] || esc(type)}</div>
+    <div class="tl-tooltip-time">${esc(time)}</div>
+    <div class="tl-tooltip-title">${esc(title)}</div>
+    ${speaker ? `<div class="tl-tooltip-speaker">👤 ${esc(speaker)}</div>` : ''}`;
+  tooltip.style.display = 'block';
+  // Position near cursor, keep within viewport
+  requestAnimationFrame(() => {
+    const tw = tooltip.offsetWidth, th = tooltip.offsetHeight;
+    const vw = window.innerWidth,   vh = window.innerHeight;
+    let x = e.clientX + 14, y = e.clientY + 14;
+    if (x + tw > vw - 8) x = e.clientX - tw - 14;
+    if (y + th > vh - 8) y = e.clientY - th - 14;
+    tooltip.style.left = x + 'px';
+    tooltip.style.top  = y + 'px';
+  });
+}
+
+function hideTlTooltip() {
+  const el = document.getElementById('tl-tooltip');
+  if (el) el.style.display = 'none';
+}
+
+// ─── Schedule – Timeline ──────────────────────────────────────────────────────
+function renderTimeline(events) {
+  const el = document.getElementById('sched-timeline');
+  el.style.display = '';
+  document.getElementById('sched-list').style.display     = 'none';
+  document.getElementById('sched-calendar').style.display = 'none';
+  hideTlTooltip();
+
+  if (!events.length) {
+    el.innerHTML = `<div class="empty-state"><div class="empty-icon">📺</div><h3>Your schedule is empty</h3><p>Browse events and click <strong>+ Save</strong> to add them here.</p></div>`;
+    return;
+  }
+
+  const DAYS    = ['6/3/2026', '6/4/2026'];
+  const DAY_LBL = { '6/3/2026': 'Wed, June 3', '6/4/2026': 'Thu, June 4' };
+  if (tlDay >= DAYS.length) tlDay = 0;
+
+  // Day switcher (reuse cal-day-btn styles)
+  let html = '<div class="cal-day-nav">';
+  DAYS.forEach((d, i) => {
+    html += `<button class="tl-day-btn cal-day-btn${tlDay === i ? ' active' : ''}" data-tlday="${i}">${DAY_LBL[d]}</button>`;
+  });
+  html += '</div>';
+
+  const dayEvents = events.filter(e => e.date === DAYS[tlDay]);
+  const slotOrder = { AM: 0, 'Full Day': 1, PM: 2 };
+  dayEvents.sort((a, b) => (slotOrder[a._slot] ?? 3) - (slotOrder[b._slot] ?? 3));
+
+  if (!dayEvents.length) {
+    html += `<div class="empty-state" style="margin-top:24px"><div class="empty-icon">📅</div><h3>No saved events on this day</h3></div>`;
+    el.innerHTML = html;
+    return;
+  }
+
+  // Filter bar
+  const FILTER_TYPES = [
+    { type: 'keynote',      label: 'Keynote / Invited' },
+    { type: 'oral',         label: 'Oral / Paper' },
+    { type: 'poster',       label: 'Poster' },
+    { type: 'break',        label: 'Break' },
+    { type: 'housekeeping', label: 'Opening / Closing' },
+    { type: 'default',      label: 'Other' },
+    { type: 'none',         label: 'No Program' },
+  ];
+  html += '<div class="tl-filter-bar"><span class="tl-filter-label">Show:</span>';
+  FILTER_TYPES.forEach(({ type, label }) => {
+    const off = tlHiddenTypes.has(type) ? ' tl-off' : '';
+    html += `<button class="tl-filter-btn tl-filter-btn--${type}${off}" data-tltype="${type}">${esc(label)}</button>`;
+  });
+  html += '</div>';
+
+  // Current time now-line
+  const _now = new Date();
+  const _nowMin = _now.getHours() * 60 + _now.getMinutes();
+  const _nowInRange = _nowMin > TL_START && _nowMin < TL_END;
+  const _nowPct = _nowInRange ? ((_nowMin - TL_START) / TL_SPAN * 100).toFixed(3) : null;
+  const nowLine = _nowPct ? `<div class="tl-now-line" style="left:${_nowPct}%"></div>` : '';
+
+  // Build time-header labels (8:00 → 19:00, every 30 min)
+  const NUM_SLOTS = 22;
+  const timeLabels = Array.from({ length: NUM_SLOTS + 1 }, (_, i) => {
+    const totalMin = TL_START + i * 30;
+    const h = Math.floor(totalMin / 60);
+    const m = totalMin % 60;
+    const pct = (i * 30 / TL_SPAN * 100).toFixed(3);
+    const major = m === 0 ? ' tl-major' : '';
+    return `<div class="tl-time-mark${major}" style="left:${pct}%">${h}:${m === 0 ? '00' : m}</div>`;
+  }).join('');
+
+  html += `<div class="timeline-wrap">
+  <div class="timeline-inner">
+    <div class="tl-header-row">
+      <div class="tl-label-cell tl-label-cell--head"></div>
+      <div class="tl-time-strip">${timeLabels}${nowLine}</div>
+    </div>`;
+
+  for (const ev of dayEvents) {
+    const rows   = parseProgramRows(ev.program_text, ev._slot);
+    const hasMap = !!roomCoords[ev.location];
+
+    const blocks = rows.map(r => {
+      const typeClass = r.noProgram ? 'none' : sessionTypeClass(r.session, r.title);
+      if (tlHiddenTypes.has(typeClass)) return null;
+      const leftPct  = ((r.startMin - TL_START) / TL_SPAN * 100).toFixed(3);
+      const widthPct = Math.max((r.endMin - r.startMin) / TL_SPAN * 100, 0.4).toFixed(3);
+      const speakerTxt = (r.speaker && r.speaker.trim() !== '-') ? r.speaker.trim() : '';
+      const fmtMin = n => { const h = Math.floor(n/60), m = n%60; return `${h}:${m===0?'00':m}`; };
+      const timeLabel = `${fmtMin(r.startMin)}\u2013${fmtMin(r.endMin)}`;
+      return `<div class="tl-block tl-block--${typeClass}"
+        style="left:${leftPct}%;width:${widthPct}%"
+        data-title="${esc(r.title)}"
+        data-speaker="${esc(speakerTxt)}"
+        data-session="${esc(r.session)}"
+        data-time="${esc(timeLabel)}"
+        data-type="${typeClass}">
+        ${speakerTxt ? `<span class="tl-block-speaker">${esc(speakerTxt)}</span>` : ''}
+        <span class="tl-block-title">${esc(r.title)}</span>
+      </div>`;
+    }).filter(Boolean).join('');
+
+    html += `
+    <div class="tl-row" data-id="${esc(ev.id)}">
+      <div class="tl-label-cell">
+        <div class="tl-event-name">${esc(ev.title)}</div>
+        <div class="tl-event-meta">
+          <button class="tl-room-pill room-pill-btn${hasMap ? '' : ' no-map'}" data-room="${esc(ev.location || '')}" title="${hasMap ? 'View on map' : ''}">📍 ${esc(ev.location || 'TBA')}</button>
+          <button class="btn btn-ghost details-btn" data-id="${esc(ev.id)}" style="font-size:.67rem;padding:2px 8px;">Details</button>
+        </div>
+      </div>
+      <div class="tl-track">${blocks}${nowLine}</div>
+    </div>`;
+  }
+
+  html += `\n  </div>\n</div>`;
+  el.innerHTML = html;
+}
+
+// ─── Schedule dispatcher ──────────────────────────────────────────────────────
 function renderSchedule() {
   updateBadge();
   const events = allEvents.filter(e => saved.has(e.id));
-  if (view === 'list') renderList(events); else renderCalendar(events);
+  if (view === 'list')           renderList(events);
+  else if (view === 'calendar')  renderCalendar(events);
+  else if (view === 'timeline')  renderTimeline(events);
 }
 
 // ─── Toggle save ──────────────────────────────────────────────────────────────
@@ -569,9 +800,36 @@ return;
   const calItem = e.target.closest('.cal-item');
   if (calItem && !e.target.closest('button,a')) { openModal(calItem.dataset.id); return; }
 
+  // Timeline day switcher (before cal-day-btn — uses data-tlday attribute)
+  const tlDayBtn = e.target.closest('.tl-day-btn');
+  if (tlDayBtn) { tlDay = +tlDayBtn.dataset.tlday; renderSchedule(); return; }
+
   // Calendar day switcher
-  const cdBtn = e.target.closest('.cal-day-btn');
+  const cdBtn = e.target.closest('.cal-day-btn:not(.tl-day-btn)');
   if (cdBtn) { calDay = +cdBtn.dataset.calday; renderSchedule(); return; }
+
+  // Timeline type filter toggle
+  const tlFilterBtn = e.target.closest('.tl-filter-btn');
+  if (tlFilterBtn) {
+    const type = tlFilterBtn.dataset.tltype;
+    if (tlHiddenTypes.has(type)) tlHiddenTypes.delete(type); else tlHiddenTypes.add(type);
+    renderSchedule();
+    return;
+  }
+
+  // Timeline block click → show tooltip
+  const tlBlock = e.target.closest('.tl-block');
+  if (tlBlock) { showTlTooltip(e, tlBlock); return; }
+
+  // Dismiss timeline tooltip on outside click
+  hideTlTooltip();
+
+  // Timeline row click on mobile → open modal (details-btn is hidden on mobile)
+  const tlRow = e.target.closest('.tl-row');
+  if (tlRow && tlRow.dataset.id && !e.target.closest('button,a,.tl-block') && window.innerWidth <= 600) {
+    openModal(tlRow.dataset.id);
+    return;
+  }
 
   // Browse view toggle (must come before generic .view-btn handler)
   const bviewBtn = e.target.closest('.browse-view-btn');
@@ -625,6 +883,10 @@ return;
   // Details button → open modal
   const detailsBtn = e.target.closest('.details-btn');
   if (detailsBtn) { openModal(detailsBtn.dataset.id); return; }
+
+  // Click on event card body (not a button/link) → open modal
+  const eventCard = e.target.closest('.event-card');
+  if (eventCard && !e.target.closest('button,a')) { openModal(eventCard.dataset.id); return; }
 
   // Modal nav arrows
   const navBtn = e.target.closest('#modal-prev, #modal-next');
