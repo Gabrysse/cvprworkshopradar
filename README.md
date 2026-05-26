@@ -17,15 +17,13 @@ The goal is simple:
 
 ## ✨ Preview
 
-Add screenshots here once the UI is ready to show off.
+**Main Features**
 
-| Browse Events | Event Details |
-| --- | --- |
-| ![Browse events screenshot](docs/screenshots/browse-events.png) | ![Event details screenshot](docs/screenshots/event-details.png) |
+<video src="docs/videos/main_functions.mp4" controls width="100%"></video>
 
-| My Schedule | Swipe Mode |
-| --- | --- |
-| ![My schedule screenshot](docs/screenshots/my-schedule.png) | ![Swipe mode screenshot](docs/screenshots/swipe-mode.png) |
+**Schedule & My Schedule**
+
+<video src="docs/videos/schedule.mp4" controls width="100%"></video>
 
 ## 🚀 What It Does
 
@@ -48,6 +46,9 @@ CVPR Workshop Radar helps you move from “what is happening?” to “what shou
 
 - 🗓️ **Schedule views**  
   Review saved events as a list or in a calendar-style view.
+
+- 📅 **Timeline view**  
+  Visualize your saved events on a day-by-day timeline to spot overlaps and plan your schedule at a glance.
 
 - 🃏 **Swipe mode**  
   Quickly triage sessions when you want to browse fast and decide later.
