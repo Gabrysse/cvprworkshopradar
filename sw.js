@@ -3,7 +3,7 @@
 // so stale caches are evicted and all clients receive the updated files.
 // For JSON-only updates you push to the repo, no bump is needed — the
 // network-first strategy below handles those automatically.
-const CACHE_NAME = 'cvpr2026-v5';
+const CACHE_NAME = 'cvpr2026-v6';
 
 // Every file the app needs to run fully offline
 const PRECACHE_URLS = [
@@ -21,12 +21,15 @@ const PRECACHE_URLS = [
 ];
 
 // ── Install: pre-cache everything ─────────────────────────────────────────────
-// After this completes the app is available offline on all subsequent visits.
+// Use cache:'reload' on precache requests so the SW always fetches fresh files
+// from the network during install, bypassing the browser's HTTP cache.
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(PRECACHE_URLS))
-      .then(() => self.skipWaiting())   // activate immediately, don't wait for old tabs to close
+      .then(cache => cache.addAll(
+        PRECACHE_URLS.map(u => new Request(u, { cache: 'reload' }))
+      ))
+      .then(() => self.skipWaiting())
   );
 });
 
@@ -64,9 +67,12 @@ self.addEventListener('fetch', event => {
       url.pathname.endsWith('.css') ||
       url.pathname.endsWith('.html') ||
       url.pathname === '/' ||
-      url.pathname.includes('cvpr2026_workshops_tutorials.json')) {
+      url.pathname.endsWith('.json')) {
+    // Use cache:'no-cache' to force revalidation with the server, bypassing
+    // the browser's own HTTP cache (which could serve stale files despite max-age).
+    const networkReq = new Request(event.request.url, { cache: 'no-cache' });
     event.respondWith(
-      fetch(event.request)
+      fetch(networkReq)
         .then(response => {
           if (response.ok) {
             const canonical = new Request(url.pathname);
