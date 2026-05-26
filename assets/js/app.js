@@ -203,7 +203,7 @@ function renderBrowse() {
   if (browseView === 'swipe') {
 const newIds = filtered.map(e => e.id).join(',');
 const oldIds = swipeList.map(e => e.id).join(',');
-if (newIds !== oldIds) { swipeList = filtered; swipeIdx = 0; swipeHistory = []; }
+if (newIds !== oldIds) { swipeList = [...filtered].sort((a,b) => (saved.has(a.id)?1:0) - (saved.has(b.id)?1:0)); swipeIdx = 0; swipeHistory = []; }
 renderSwipeDeck();
 return;
   }
@@ -222,7 +222,7 @@ function setBrowseView(v) {
   document.querySelectorAll('.browse-view-btn').forEach(b => b.classList.toggle('active', b.dataset.bview === v));
   document.getElementById('events-grid').style.display     = v === 'grid'  ? '' : 'none';
   document.getElementById('swipe-container').style.display = v === 'swipe' ? '' : 'none';
-  if (v === 'swipe') { swipeList = getFiltered(); swipeIdx = 0; swipeHistory = []; renderSwipeDeck(); }
+  if (v === 'swipe') { swipeList = [...getFiltered()].sort((a,b) => (saved.has(a.id)?1:0) - (saved.has(b.id)?1:0)); swipeIdx = 0; swipeHistory = []; renderSwipeDeck(); }
 }
 
 function renderSwipeDeck() {
@@ -648,7 +648,12 @@ function renderTimeline(events) {
 
   const dayEvents = events.filter(e => e.date === DAYS[tlDay]);
   const slotOrder = { AM: 0, 'Full Day': 1, PM: 2 };
-  dayEvents.sort((a, b) => (slotOrder[a._slot] ?? 3) - (slotOrder[b._slot] ?? 3));
+  dayEvents.sort((a, b) => {
+    const aNoP = a.program_found ? 0 : 1;
+    const bNoP = b.program_found ? 0 : 1;
+    if (aNoP !== bNoP) return aNoP - bNoP;
+    return (slotOrder[a._slot] ?? 3) - (slotOrder[b._slot] ?? 3);
+  });
 
   if (!dayEvents.length) {
     html += `<div class="empty-state" style="margin-top:24px"><div class="empty-icon">📅</div><h3>No saved events on this day</h3></div>`;
@@ -722,8 +727,9 @@ function renderTimeline(events) {
       </div>`;
     }).filter(Boolean).join('');
 
+    const noProgCls = ev.program_found ? '' : ' tl-row--no-prog';
     html += `
-    <div class="tl-row" data-id="${esc(ev.id)}">
+    <div class="tl-row${noProgCls}" data-id="${esc(ev.id)}">
       <div class="tl-label-cell">
         <div class="tl-event-name"><span class="tl-event-name-inner">${esc(ev.title)}\u2003\u2003\u2022\u2003\u2003${esc(ev.title)}\u2003\u2003\u2022\u2003\u2003</span></div>
         <div class="tl-event-meta">
@@ -826,7 +832,7 @@ return;
 
   // Timeline row click on mobile → open modal (details-btn is hidden on mobile)
   const tlRow = e.target.closest('.tl-row');
-  if (tlRow && tlRow.dataset.id && !e.target.closest('button,a,.tl-block') && window.innerWidth <= 600) {
+  if (tlRow && tlRow.dataset.id && e.target.closest('.tl-label-cell') && !e.target.closest('button,a') && window.innerWidth <= 600) {
     openModal(tlRow.dataset.id);
     return;
   }
