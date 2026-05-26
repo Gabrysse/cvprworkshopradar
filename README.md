@@ -19,11 +19,11 @@ The goal is simple:
 
 **Main Features**
 
-<video src="docs/videos/main_functions.mp4" controls width="100%"></video>
+![Main features demo](docs/videos/main_functions.gif)
 
 **Schedule & My Schedule**
 
-<video src="docs/videos/schedule.mp4" controls width="100%"></video>
+![Schedule demo](docs/videos/schedule.gif)
 
 ## 🚀 What It Does
 
