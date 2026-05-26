@@ -84,6 +84,12 @@ The template is designed for:
 
 Reports with official links are especially helpful, because the underlying information is generated automatically and corrections should be grounded in reliable sources.
 
+## ⚙️ Technical Details
+
+Details about the data pipeline and the website architecture are documented in [docs/TECHNICAL.md](docs/TECHNICAL.md).
+
+The pipeline goes from the official CVPR PDF program → static metadata extraction → LLM-powered schedule scraping with Playwright and a local Ollama model → a static single-page application served on Vercel.
+
 ## 💛 Contributions
 
 Corrections, suggestions, and source links are welcome. The most useful contributions are precise reports tied to a specific workshop or tutorial, especially when they include an official page that verifies the update.
