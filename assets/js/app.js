@@ -987,17 +987,9 @@ sumWrap.style.display = 'none';
 progText.innerHTML     = renderProgram(ev.program_text);
 progText.style.display = '';
 progUnavail.style.display = 'none';
-// Quality badge
-const QUALITY_LABELS = { clean:'✓ Clean', partial:'⚠ Partial', structured:'⏱ Structured', wrong:'✗ Wrong', llm:'🤖 LLM' };
-const QUALITY_COLORS = { clean:'#22c55e', partial:'#f59e0b', structured:'#60a5fa', wrong:'#ef4444', llm:'#8b5cf6' };
-const q = ev.program_quality;
-const qBadge = q ? ` <span style="font-size:0.75em;font-weight:600;padding:1px 6px;border-radius:4px;background:${QUALITY_COLORS[q]||'#888'};color:#fff;vertical-align:middle">${QUALITY_LABELS[q]||q}</span>` : '';
 if (ev.program_url) {
   progSource.innerHTML =
-    `🔎 Scraped from <a href="${esc(ev.program_url)}" target="_blank" rel="noopener" style="color:var(--accent)">${esc(ev.program_url)}</a>${qBadge}`;
-  progSource.style.display = '';
-} else if (q) {
-  progSource.innerHTML = qBadge;
+    `🔎 Scraped from <a href="${esc(ev.program_url)}" target="_blank" rel="noopener" style="color:var(--accent)">${esc(ev.program_url)}</a>`;
   progSource.style.display = '';
 } else {
   progSource.style.display = 'none';
