@@ -6,7 +6,7 @@ For each event that has a website:
   1. Renders the page with Playwright (full JS execution)
   2. Extracts plain text from the rendered HTML (+ probes schedule subpages)
   3. Asks a local Ollama model to extract the schedule / program
-  4. Writes program_text, program_found, program_quality back to the JSON
+  4. Writes program_text, program_found back to the JSON
 
 Usage:
     python3 ollama_extract.py                          # text + vision fallback, skip already-found
@@ -578,7 +578,6 @@ def _extract(
         print(f"    ERROR: {exc}")
         return {
             "program_found": False,
-            "program_quality": None,
             "program_scraped_at": datetime.now(timezone.utc).isoformat(),
         }
 
@@ -593,7 +592,6 @@ def _extract(
             "program_text": None,
             "program_found": False,
             "program_scraped_at": datetime.now(timezone.utc).isoformat(),
-            "program_quality": None,
         }
 
     if len(clean) > MAX_PROGRAM_CHARS:
@@ -604,7 +602,6 @@ def _extract(
         "program_text": clean,
         "program_found": True,
         "program_scraped_at": datetime.now(timezone.utc).isoformat(),
-        "program_quality": "llm",
     }
 
 
@@ -691,7 +688,6 @@ def main() -> None:
             no_fallback=args.no_fallback,
         )
         print("program_found:", result.get("program_found"))
-        print("program_quality:", result.get("program_quality"))
         print("\n--- program_text ---")
         print(result.get("program_text") or "(none)")
         return
@@ -761,10 +757,8 @@ def main() -> None:
                     "title": ev.get("title", ""),
                     "website": url,
                     "old_found": bool(ev.get("program_found")),
-                    "old_quality": ev.get("program_quality"),
                     "old_text": ev.get("program_text"),
                     "new_found": bool(updates.get("program_found")),
-                    "new_quality": updates.get("program_quality"),
                     "new_text": updates.get("program_text"),
                     "new_url": updates.get("program_url"),
                 }
