@@ -569,7 +569,11 @@ function parseProgramRows(programText, fallbackSlot) {
   // Fill missing end times from next row's start (last row gets +30 min)
   for (let i = 0; i < raw.length; i++) {
     if (raw[i].endMin === null) {
-      raw[i].endMin = i + 1 < raw.length ? raw[i + 1].startMin : raw[i].startMin + 30;
+      // Skip ahead past rows with the same start so they all share the same end time.
+      // Without this, row[i].endMin == row[i].startMin (zero-width, filtered out).
+      let j = i + 1;
+      while (j < raw.length && raw[j].startMin === raw[i].startMin) j++;
+      raw[i].endMin = j < raw.length ? raw[j].startMin : raw[i].startMin + 30;
     }
   }
 
@@ -707,7 +711,32 @@ function renderTimeline(events) {
     const rows   = parseProgramRows(ev.program_text, ev._slot);
     const hasMap = !!roomCoords[ev.location];
 
-    const blocks = rows.map(r => {
+    // Collapse rows that share the same exact time span into one block per session type.
+    // Some workshops list every individual paper at the same time window (e.g. a 3-hour
+    // poster session with 20 entries all at 14:00–17:00) — they'd all stack invisibly.
+    // In that case we emit a single block per type using the type label as the title.
+    const TL_TYPE_LABELS = { keynote:'Keynote / Invited', oral:'Oral / Paper',
+      poster:'Poster', break:'Break', housekeeping:'Opening / Closing',
+      default:'Session', none:'No Program' };
+    const slotMap = new Map();
+    for (const r of rows) {
+      const key = `${r.startMin}|${r.endMin}`;
+      if (!slotMap.has(key)) slotMap.set(key, []);
+      slotMap.get(key).push(r);
+    }
+    const collapsedRows = [];
+    for (const group of slotMap.values()) {
+      if (group.length <= 1) { collapsedRows.push(...group); continue; }
+      const seen = new Set();
+      for (const r of group) {
+        const tc = r.noProgram ? 'none' : sessionTypeClass(r.session, r.title);
+        if (seen.has(tc)) continue;
+        seen.add(tc);
+        collapsedRows.push({ ...r, title: TL_TYPE_LABELS[tc] || r.session || r.title, speaker: '' });
+      }
+    }
+
+    const blocks = collapsedRows.map(r => {
       const typeClass = r.noProgram ? 'none' : sessionTypeClass(r.session, r.title);
       if (tlHiddenTypes.has(typeClass)) return null;
       const leftPct  = ((r.startMin - TL_START) / TL_SPAN * 100).toFixed(3);
@@ -851,9 +880,9 @@ return;
   }
 
   // View toggle (schedule tab)
-  const vBtn = e.target.closest('.view-btn');
+  const vBtn = e.target.closest('.view-btn:not(.browse-view-btn)');
   if (vBtn) {
-document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+document.querySelectorAll('.view-btn:not(.browse-view-btn)').forEach(b => b.classList.remove('active'));
 vBtn.classList.add('active');
 view = vBtn.dataset.view;
 renderSchedule();
