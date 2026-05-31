@@ -119,7 +119,7 @@ if (fTrack   && e.track  !== fTrack) return false;
 if (fProgram === 'yes' && !e.program_found) return false;
 if (fProgram === 'no'  &&  e.program_found) return false;
 if (search) {
-  const hay = `${e.title} ${e.organizers||''} ${e.summary||''}`.toLowerCase();
+  const hay = `${e.title} ${e.organizers||''} ${e.summary||''} ${e.program_text||''}`.toLowerCase();
   if (!hay.includes(search)) return false;
 }
 return true;
@@ -601,13 +601,20 @@ function showTlTooltip(e, block) {
   const session = block.dataset.session || '';
   const time    = block.dataset.time    || '';
   const type    = block.dataset.type    || 'default';
+  const evid    = block.dataset.evid    || '';
+  const start   = block.dataset.start   || '';
+  const end     = block.dataset.end     || '';
   const labels  = { keynote:'Keynote / Invited', oral:'Oral / Paper',
     poster:'Poster', break:'Break', housekeeping:'Opening / Closing', default:'Session', none:'No Program' };
+  const showCalBtn = type !== 'none' && evid && start && end;
   tooltip.innerHTML = `
     <div class="tl-tooltip-type tl-tooltip-type--${esc(type)}">${labels[type] || esc(type)}</div>
     <div class="tl-tooltip-time">${esc(time)}</div>
     <div class="tl-tooltip-title">${esc(title)}</div>
-    ${speaker ? `<div class="tl-tooltip-speaker">👤 ${esc(speaker)}</div>` : ''}`;
+    ${speaker ? `<div class="tl-tooltip-speaker">👤 ${esc(speaker)}</div>` : ''}
+    ${showCalBtn ? `<button class="tl-tooltip-cal-btn"
+      data-evid="${esc(evid)}" data-start="${esc(start)}" data-end="${esc(end)}"
+      data-title="${esc(title)}" data-speaker="${esc(speaker)}">📅 Add to calendar</button>` : ''}`;
   tooltip.style.display = 'block';
   // Position near cursor, keep within viewport
   requestAnimationFrame(() => {
@@ -624,6 +631,111 @@ function showTlTooltip(e, block) {
 function hideTlTooltip() {
   const el = document.getElementById('tl-tooltip');
   if (el) el.style.display = 'none';
+}
+
+// ─── iCalendar (.ics) helpers ─────────────────────────────────────────────────
+function icsEscape(s) {
+  return String(s || '').replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');
+}
+function _icsDatePart(dateStr) {
+  // '6/3/2026' → '20260603'
+  const [m, d, y] = dateStr.split('/');
+  return `${y}${m.padStart(2,'0')}${d.padStart(2,'0')}`;
+}
+function _icsTimePart(totalMin) {
+  const h = Math.floor(totalMin / 60).toString().padStart(2,'0');
+  const m = (totalMin % 60).toString().padStart(2,'0');
+  return `${h}${m}00`;
+}
+function _makeVevent({ uid, stamp, dateStr, startMin, endMin, summary, location, description }) {
+  const d  = _icsDatePart(dateStr);
+  const ds = `${d}T${_icsTimePart(startMin)}`;
+  const de = `${d}T${_icsTimePart(endMin)}`;
+  return [
+    'BEGIN:VEVENT\r\n',
+    `UID:${uid}\r\n`,
+    `DTSTAMP:${stamp}\r\n`,
+    `DTSTART;TZID=America/Chicago:${ds}\r\n`,
+    `DTEND;TZID=America/Chicago:${de}\r\n`,
+    `SUMMARY:${icsEscape(summary)}\r\n`,
+    location    ? `LOCATION:${icsEscape(location)}\r\n`    : '',
+    description ? `DESCRIPTION:${icsEscape(description)}\r\n` : '',
+    'BEGIN:VALARM\r\nTRIGGER:-PT15M\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nEND:VALARM\r\n',
+    'END:VEVENT\r\n',
+  ].join('');
+}
+function _buildIcs(vevents) {
+  const tz = [
+    'BEGIN:VTIMEZONE\r\nTZID:America/Chicago\r\n',
+    'BEGIN:DAYLIGHT\r\nTZOFFSETFROM:-0600\r\nTZOFFSETTO:-0500\r\nTZNAME:CDT\r\n',
+    'DTSTART:19700308T020000\r\nRRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU\r\nEND:DAYLIGHT\r\n',
+    'BEGIN:STANDARD\r\nTZOFFSETFROM:-0500\r\nTZOFFSETTO:-0600\r\nTZNAME:CST\r\n',
+    'DTSTART:19701101T020000\r\nRRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU\r\nEND:STANDARD\r\n',
+    'END:VTIMEZONE\r\n',
+  ].join('');
+  return 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//CVPR 2026//Schedule//EN\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\n'
+    + tz + vevents.join('') + 'END:VCALENDAR';
+}
+function _downloadIcs(filename, content) {
+  const blob = new Blob([content], { type: 'text/calendar;charset=utf-8' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url; a.download = filename; a.click();
+  URL.revokeObjectURL(url);
+}
+
+// Build calendar event summary: "Speaker – Topic" (topic omitted if too long or absent)
+function _icsEventName(title, speaker) {
+  const spk = speaker && speaker.trim() !== '-' ? speaker.trim() : '';
+  const ttl = title  && title.trim()             ? title.trim()   : '';
+  if (spk && ttl && ttl.length <= 80) return `${spk} \u2013 ${ttl}`;
+  if (spk) return spk;
+  return ttl || 'CVPR 2026 Session';
+}
+
+// Add a single program block to calendar (called from tooltip button)
+function addBlockToCalendar(evId, startMin, endMin, title, speaker) {
+  const ev = allEvents.find(e => e.id === evId);
+  if (!ev) return;
+  const stamp = new Date().toISOString().replace(/[-:]/g,'').split('.')[0] + 'Z';
+  const desc  = [
+    `Workshop: ${ev.title}`,
+    speaker && speaker.trim() !== '-' ? `Speaker: ${speaker.trim()}` : null,
+    ev.location ? `Room: ${ev.location}` : null,
+  ].filter(Boolean).join('\n');
+  const ics = _buildIcs([_makeVevent({
+    uid: `cvpr2026-${evId}-${startMin}-${endMin}@cvpr2026schedule`,
+    stamp, dateStr: ev.date, startMin: +startMin, endMin: +endMin,
+    summary: _icsEventName(title, speaker),
+    location: ev.location || '',
+    description: desc,
+  })]);
+  _downloadIcs(`cvpr2026_${_icsEventName(title, speaker).replace(/[^a-z0-9]/gi,'_').slice(0,40)}.ics`, ics);
+  hideTlTooltip();
+}
+
+// Add all visible program rows for a workshop to calendar
+function addWorkshopToCalendar(evId) {
+  const ev = allEvents.find(e => e.id === evId);
+  if (!ev) return;
+  const rows = parseProgramRows(ev.program_text, ev._slot)
+    .filter(r => !r.noProgram && !tlHiddenTypes.has(sessionTypeClass(r.session, r.title)));
+  if (!rows.length) { alert('No visible program items to add to calendar.'); return; }
+  if (!confirm(`Add ${rows.length} program item${rows.length !== 1 ? 's' : ''} from\n"${ev.title}"\nto your calendar?\n\nEach event will include a 15-minute reminder.`)) return;
+  const stamp = new Date().toISOString().replace(/[-:]/g,'').split('.')[0] + 'Z';
+  const vevents = rows.map((r, i) => _makeVevent({
+    uid: `cvpr2026-${evId}-${r.startMin}-${r.endMin}-${i}@cvpr2026schedule`,
+    stamp, dateStr: ev.date, startMin: r.startMin, endMin: r.endMin,
+    summary: _icsEventName(r.title, r.speaker),
+    location: ev.location || '',
+    description: [
+      `Workshop: ${ev.title}`,
+      r.speaker && r.speaker.trim() !== '-' ? `Speaker: ${r.speaker.trim()}` : null,
+      ev.location ? `Room: ${ev.location}` : null,
+    ].filter(Boolean).join('\n'),
+  }));
+  const ics = _buildIcs(vevents);
+  _downloadIcs(`cvpr2026_${ev.title.replace(/[^a-z0-9]/gi,'_').slice(0,40)}.ics`, ics);
 }
 
 // ─── Schedule – Timeline ──────────────────────────────────────────────────────
@@ -746,6 +858,9 @@ function renderTimeline(events) {
       const timeLabel = `${fmtMin(r.startMin)}\u2013${fmtMin(r.endMin)}`;
       return `<div class="tl-block tl-block--${typeClass}"
         style="left:${leftPct}%;width:${widthPct}%"
+        data-evid="${esc(ev.id)}"
+        data-start="${r.startMin}"
+        data-end="${r.endMin}"
         data-title="${esc(r.title)}"
         data-speaker="${esc(speakerTxt)}"
         data-session="${esc(r.session)}"
@@ -764,6 +879,7 @@ function renderTimeline(events) {
         <div class="tl-event-meta">
           <button class="tl-room-pill room-pill-btn${hasMap ? '' : ' no-map'}" data-room="${esc(ev.location || '')}" title="${hasMap ? 'View on map' : ''}">📍 ${esc(ev.location || 'TBA')}</button>
           <button class="btn btn-ghost details-btn" data-id="${esc(ev.id)}" style="font-size:.67rem;padding:2px 8px;">Details</button>
+          ${ev.program_found ? `<button class="tl-row-cal-btn" data-evid="${esc(ev.id)}" title="Add all schedule items to calendar">📅</button>` : ''}
         </div>
       </div>
       <div class="tl-track">${blocks}${nowLine}</div>
@@ -855,6 +971,18 @@ return;
   // Timeline block click → show tooltip
   const tlBlock = e.target.closest('.tl-block');
   if (tlBlock) { showTlTooltip(e, tlBlock); return; }
+
+  // Tooltip "Add to calendar" button (single program block)
+  const tlTipCalBtn = e.target.closest('.tl-tooltip-cal-btn');
+  if (tlTipCalBtn) {
+    const { evid, start, end, title, speaker } = tlTipCalBtn.dataset;
+    addBlockToCalendar(evid, +start, +end, title, speaker);
+    return;
+  }
+
+  // Workshop row "Add all to calendar" button
+  const tlRowCalBtn = e.target.closest('.tl-row-cal-btn');
+  if (tlRowCalBtn) { addWorkshopToCalendar(tlRowCalBtn.dataset.evid); return; }
 
   // Dismiss timeline tooltip on outside click
   hideTlTooltip();
