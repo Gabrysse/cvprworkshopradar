@@ -38,6 +38,49 @@ if (lines[i].trim().startsWith('|')) {
   return out;
 }
 
+// ─── renderProgramFiltered ─────────────────────────────────────────────────────
+// Like renderProgram but skips table rows whose session type is in hiddenTypes.
+function renderProgramFiltered(src, hiddenTypes) {
+  if (!src || !hiddenTypes.size) return renderProgram(src);
+  if (!/^\s*\|/m.test(src)) return renderProgram(src); // plain text – nothing to filter
+  const e = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const fmt = s => e(s)
+    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .replace(/\d{1,2}:\d{2}(?:\s*[AP]M)?(?:\s*[-\u2013\u2014]\s*\d{1,2}:\d{2}(?:\s*[AP]M)?)?/gi,
+      m => `<span class="time-nowrap">${m.trim().replace(/\s*([-\u2013\u2014])\s*/g, '\u00a0$1\u00a0')}</span>`);
+  const lines = src.split('\n');
+  let out = '', i = 0;
+  while (i < lines.length) {
+    if (lines[i].trim().startsWith('|')) {
+      const rows = [];
+      while (i < lines.length && lines[i].trim().startsWith('|')) rows.push(lines[i++]);
+      out += '<table>';
+      let inHead = true;
+      for (const row of rows) {
+        if (/^\s*\|[\s\-:|]+\|/.test(row)) { inHead = false; continue; }
+        const cells = row.trim().replace(/^\||\|$/g,'').split('|').map(c=>c.trim());
+        if (inHead) {
+          out += '<thead><tr>' + cells.map(c=>`<th>${fmt(c)}</th>`).join('') + '</tr></thead>';
+          inHead = false;
+        } else {
+          const [timeCell, titleCell='', sessionCell=''] = cells;
+          if (parseTimeStr(timeCell)) {
+            const typeClass = sessionTypeClass(sessionCell, titleCell);
+            if (hiddenTypes.has(typeClass)) continue;
+          }
+          out += '<tr>' + cells.map(c=>`<td>${fmt(c)}</td>`).join('') + '</tr>';
+        }
+      }
+      out += '</table>';
+    } else {
+      const t = lines[i].trim();
+      if (t) out += `<p>${fmt(t)}</p>`;
+      i++;
+    }
+  }
+  return out;
+}
+
 // ─── State ────────────────────────────────────────────────────────────────────
 let allEvents     = [];
 let saved         = new Set();
@@ -52,11 +95,15 @@ let swipeHistory = [];
 let roomCoords    = {};
 let _modalEventId = null;
 let _modalList    = [];
-const STORE       = 'cvpr2026_saved';
+let _modalHiddenTypes = new Set();
+const STORE           = 'cvpr2026_saved';
+const TL_FILTER_STORE = 'cvpr2026_tl_filter';
 
 // ─── Persistence ──────────────────────────────────────────────────────────────
 function loadSaved()  { try { saved = new Set(JSON.parse(localStorage.getItem(STORE) || '[]')); } catch { saved = new Set(); } }
 function storeSaved() { localStorage.setItem(STORE, JSON.stringify([...saved])); }
+function loadTlFilter()  { try { tlHiddenTypes = new Set(JSON.parse(localStorage.getItem(TL_FILTER_STORE) || '[]')); } catch { tlHiddenTypes = new Set(); } }
+function storeTlFilter() { localStorage.setItem(TL_FILTER_STORE, JSON.stringify([...tlHiddenTypes])); }
 
 // ─── Normalise time slot ───────────────────────────────────────────────────────
 function slot(raw) {
@@ -960,10 +1007,11 @@ return;
   if (cdBtn) { calDay = +cdBtn.dataset.calday; renderSchedule(); return; }
 
   // Timeline type filter toggle
-  const tlFilterBtn = e.target.closest('.tl-filter-btn');
+  const tlFilterBtn = e.target.closest('.tl-filter-btn:not(.modal-filter-btn)');
   if (tlFilterBtn) {
     const type = tlFilterBtn.dataset.tltype;
     if (tlHiddenTypes.has(type)) tlHiddenTypes.delete(type); else tlHiddenTypes.add(type);
+    storeTlFilter();
     renderSchedule();
     return;
   }
@@ -983,6 +1031,19 @@ return;
   // Workshop row "Add all to calendar" button
   const tlRowCalBtn = e.target.closest('.tl-row-cal-btn');
   if (tlRowCalBtn) { addWorkshopToCalendar(tlRowCalBtn.dataset.evid); return; }
+
+  // Modal program filter toggle
+  const modalFilterBtn = e.target.closest('.modal-filter-btn');
+  if (modalFilterBtn) {
+    const type = modalFilterBtn.dataset.tltype;
+    if (_modalHiddenTypes.has(type)) _modalHiddenTypes.delete(type); else _modalHiddenTypes.add(type);
+    modalFilterBtn.classList.toggle('tl-off');
+    const _mev = allEvents.find(ev => ev.id === _modalEventId);
+    if (_mev && _mev.program_found && _mev.program_text) {
+      document.getElementById('modal-program-text').innerHTML = renderProgramFiltered(_mev.program_text, _modalHiddenTypes);
+    }
+    return;
+  }
 
   // Dismiss timeline tooltip on outside click
   hideTlTooltip();
@@ -1140,8 +1201,31 @@ sumWrap.style.display = 'none';
   const progText    = document.getElementById('modal-program-text');
   const progUnavail = document.getElementById('modal-program-unavailable');
   const progSource  = document.getElementById('modal-program-source');
+  const filterBar   = document.getElementById('modal-filter-bar');
+  const MODAL_FILTER_TYPES = [
+    { type: 'keynote',      label: 'Keynote / Invited' },
+    { type: 'oral',         label: 'Oral / Paper' },
+    { type: 'poster',       label: 'Poster' },
+    { type: 'break',        label: 'Break' },
+    { type: 'housekeeping', label: 'Opening / Closing' },
+    { type: 'default',      label: 'Other' },
+  ];
   if (ev.program_found && ev.program_text) {
-progText.innerHTML     = renderProgram(ev.program_text);
+    // Determine which session types are present in this program
+    const _pRows = parseProgramRows(ev.program_text, ev._slot);
+    const _presentTypes = new Set(_pRows.filter(r => !r.noProgram).map(r => sessionTypeClass(r.session, r.title)));
+    const _filterTypes = MODAL_FILTER_TYPES.filter(f => _presentTypes.has(f.type));
+    if (_filterTypes.length > 1) {
+      filterBar.innerHTML = '<span class="tl-filter-label">Show:</span>' +
+        _filterTypes.map(({ type, label }) => {
+          const off = _modalHiddenTypes.has(type) ? ' tl-off' : '';
+          return `<button class="tl-filter-btn tl-filter-btn--${type} modal-filter-btn${off}" data-tltype="${type}">${esc(label)}</button>`;
+        }).join('');
+      filterBar.style.display = '';
+    } else {
+      filterBar.style.display = 'none';
+    }
+progText.innerHTML     = renderProgramFiltered(ev.program_text, _modalHiddenTypes);
 progText.style.display = '';
 progUnavail.style.display = 'none';
 if (ev.program_url) {
@@ -1152,6 +1236,7 @@ if (ev.program_url) {
   progSource.style.display = 'none';
 }
   } else {
+    filterBar.style.display = 'none';
 progText.style.display   = 'none';
 progSource.style.display = 'none';
 if (ev.website) {
@@ -1499,6 +1584,7 @@ document.getElementById('import-confirm-modal').addEventListener('click', e => {
 
 // ─── Boot ─────────────────────────────────────────────────────────────────
 loadSaved();
+loadTlFilter();
 loadSettings();
 updateBadge();
 checkURLImport();
