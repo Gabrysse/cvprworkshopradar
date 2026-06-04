@@ -96,14 +96,31 @@ let roomCoords    = {};
 let _modalEventId = null;
 let _modalList    = [];
 let _modalHiddenTypes = new Set();
+let tlDayAutoInit = false;
 const STORE           = 'cvpr2026_saved';
 const TL_FILTER_STORE = 'cvpr2026_tl_filter';
+const TAB_STORE       = 'cvpr2026_tab';
+const VIEW_STORE      = 'cvpr2026_view';
 
 // ─── Persistence ──────────────────────────────────────────────────────────────
 function loadSaved()  { try { saved = new Set(JSON.parse(localStorage.getItem(STORE) || '[]')); } catch { saved = new Set(); } }
 function storeSaved() { localStorage.setItem(STORE, JSON.stringify([...saved])); }
 function loadTlFilter()  { try { tlHiddenTypes = new Set(JSON.parse(localStorage.getItem(TL_FILTER_STORE) || '[]')); } catch { tlHiddenTypes = new Set(); } }
 function storeTlFilter() { localStorage.setItem(TL_FILTER_STORE, JSON.stringify([...tlHiddenTypes])); }
+function storeTab(t)  { localStorage.setItem(TAB_STORE, t); }
+function storeView(v) { localStorage.setItem(VIEW_STORE, v); }
+
+// ─── Current-time red line updater ────────────────────────────────────────────
+function updateNowLine() {
+  const now    = new Date();
+  const nowMin = now.getHours() * 60 + now.getMinutes();
+  const inRange = nowMin > TL_START && nowMin < TL_END;
+  const pct    = inRange ? ((nowMin - TL_START) / TL_SPAN * 100).toFixed(3) + '%' : null;
+  document.querySelectorAll('.tl-now-line').forEach(el => {
+    if (pct) { el.style.left = pct; el.style.display = ''; }
+    else { el.style.display = 'none'; }
+  });
+}
 
 // ─── Normalise time slot ───────────────────────────────────────────────────────
 function slot(raw) {
@@ -800,6 +817,16 @@ function renderTimeline(events) {
 
   const DAYS    = ['6/3/2026', '6/4/2026'];
   const DAY_LBL = { '6/3/2026': 'Wed, June 3', '6/4/2026': 'Thu, June 4' };
+
+  // Auto-select today's day on first render if it's a conference day
+  if (!tlDayAutoInit) {
+    tlDayAutoInit = true;
+    const n = new Date();
+    const todayStr = `${n.getMonth()+1}/${n.getDate()}/${n.getFullYear()}`;
+    const todayIdx = DAYS.indexOf(todayStr);
+    if (todayIdx >= 0) tlDay = todayIdx;
+  }
+
   if (tlDay >= DAYS.length) tlDay = 0;
 
   // Day switcher (reuse cal-day-btn styles)
@@ -981,6 +1008,7 @@ document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'))
 document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
 tab.classList.add('active');
 document.getElementById(`tab-${tab.dataset.tab}`).classList.add('active');
+storeTab(tab.dataset.tab);
 if (tab.dataset.tab === 'schedule') renderSchedule();
 if (tab.dataset.tab === 'settings') { applySettings(); resetSharePanels(); }
 return;
@@ -1074,6 +1102,7 @@ return;
 document.querySelectorAll('.view-btn:not(.browse-view-btn)').forEach(b => b.classList.remove('active'));
 vBtn.classList.add('active');
 view = vBtn.dataset.view;
+storeView(view);
 renderSchedule();
 return;
   }
@@ -1589,17 +1618,46 @@ loadSettings();
 updateBadge();
 checkURLImport();
 
+// Compact header on scroll
+const _siteHeader = document.querySelector('header');
+window.addEventListener('scroll', () => {
+  _siteHeader.classList.toggle('compact', window.scrollY > 40);
+}, { passive: true });
+
+// Auto-update the current-time red line every minute
+setInterval(() => {
+  if (view === 'timeline' && document.getElementById('tab-schedule').classList.contains('active')) {
+    updateNowLine();
+  }
+}, 60 * 1000);
+
 // Register service worker — enables offline support and ensures users always
 // receive the latest JSON data when you push updates to the repository.
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js').catch(() => {});
 }
 
-init().catch(() => {
+init()
+  .then(() => {
+    // Restore persisted view (list / calendar / timeline)
+    const savedView = localStorage.getItem(VIEW_STORE);
+    if (savedView && ['list', 'calendar', 'timeline'].includes(savedView)) {
+      view = savedView;
+      document.querySelectorAll('.view-btn:not(.browse-view-btn)').forEach(b =>
+        b.classList.toggle('active', b.dataset.view === savedView));
+    }
+    // Restore persisted tab
+    const savedTab = localStorage.getItem(TAB_STORE);
+    if (savedTab && savedTab !== 'browse') {
+      const tabBtn = document.querySelector(`.tab-btn[data-tab="${savedTab}"]`);
+      if (tabBtn) tabBtn.click();
+    }
+  })
+  .catch(() => {
   document.getElementById('events-grid').innerHTML = `
 <div class="empty-state" style="grid-column:1/-1">
   <div class="empty-icon">⚠️</div>
   <h3>Could not load event data</h3>
   <p>Unable to fetch event data. If you're offline, visit once while connected to enable offline access.</p>
 </div>`;
-});
+  });
