@@ -34,12 +34,13 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Optional
 
 import requests
 from bs4 import BeautifulSoup
 from PIL import Image
 
-JSON_PATH = Path(__file__).parent / "cvpr2026_workshops_tutorials.json"
+JSON_PATH = Path(__file__).parent / "conferences" / "cvpr2026" / "data" / "workshops_tutorials.json"
 DEBUG_PATH = Path(__file__).parent / "debug_extract.json"
 OLLAMA_URL = "http://localhost:11434/api/generate"
 
@@ -114,6 +115,22 @@ Use "-" only if there is truly nothing to summarise.
 
 Schedule:"""
 
+_METADATA_PROMPT = """\
+Extract only the workshop or tutorial metadata from the page content below.
+
+Return one valid JSON object and nothing else:
+{"organizers": "Name One, Name Two", "summary": "..."}
+
+Rules:
+- **organizers**: include every explicitly listed organizer, chair, or co-organizer. Preserve their names; return null only when none are stated. Do not return speakers, programme committee members, or sponsors.
+- **summary**: use the event's explicit abstract, overview, or description. Preserve its substance in one readable paragraph; do not invent details and do not use calls for papers, schedules, submission instructions, or organizer bios as the summary. Return null if there is no event description.
+- Do not use Markdown or add commentary.
+
+Page content:
+{text}
+
+JSON:"""
+
 
 # ─── Playwright helpers ───────────────────────────────────────────────────────
 
@@ -129,7 +146,7 @@ _SCHEDULE_LINK_KW = {
 }
 
 
-def _resize_for_vlm(data: bytes) -> bytes | None:
+def _resize_for_vlm(data: bytes) -> Optional[bytes]:
     """Resize image bytes to at most _VLM_MAX_DIM on the longest side,
     returning JPEG bytes.  Returns None if the data cannot be opened."""
     try:
@@ -147,25 +164,40 @@ def _resize_for_vlm(data: bytes) -> bytes | None:
 
 
 def _schedule_subpages(soup: BeautifulSoup, current_url: str) -> list[str]:
-    """Return same-domain links whose text or path matches schedule keywords."""
+    """Return same-domain links whose text or path matches schedule keywords.
+
+    Also includes same-page anchor links (e.g. #program) whose fragment
+    matches a schedule keyword — navigating to those anchors can trigger
+    JS lazy-loading of sections below the fold.
+    """
     from urllib.parse import urljoin, urlparse
 
     base_netloc = urlparse(current_url).netloc
+    current_no_frag = current_url.split("#")[0].rstrip("/")
     seen: set[str] = set()
     result: list[str] = []
 
     for a in soup.find_all("a", href=True):
         href = (a["href"] or "").strip()
-        if not href or href.startswith(("#", "mailto:", "javascript:")):
+        if not href or href.startswith(("mailto:", "javascript:")):
             continue
-        full = urljoin(current_url, href).split("#")[0]
+        full_raw = urljoin(current_url, href)
+        fragment = urlparse(full_raw).fragment.lower()
+        full = full_raw.split("#")[0]  # URL without fragment
         parsed = urlparse(full)
         if parsed.netloc != base_netloc:
             continue
-        if full.rstrip("/") == current_url.rstrip("/"):
-            continue
         link_text = a.get_text(strip=True).lower()
         path_lower = parsed.path.lower()
+        is_same_page = full.rstrip("/") == current_no_frag
+        if is_same_page:
+            # Include same-page anchors only when the fragment is schedule-related
+            # (e.g. #program, #schedule) — navigating there triggers scroll/lazy-load
+            if fragment and any(kw in fragment for kw in _SCHEDULE_LINK_KW):
+                if full_raw not in seen:
+                    seen.add(full_raw)
+                    result.append(full_raw)
+            continue
         if any(kw in link_text or kw in path_lower for kw in _SCHEDULE_LINK_KW):
             if full not in seen:
                 seen.add(full)
@@ -213,6 +245,16 @@ def _get_page_text(url: str, timeout_s: int = 30) -> tuple[str, str, list[str]]:
                     page.wait_for_timeout(4_000)
                     html = page.content()
                     final_url = page.url
+            except Exception:
+                pass
+
+            # Scroll to the bottom to trigger intersection-observer / lazy-loaded
+            # sections (e.g. programs rendered below the fold on SPA sites).
+            try:
+                page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                page.wait_for_timeout(1500)
+                html = page.content()
+                final_url = page.url
             except Exception:
                 pass
 
@@ -290,6 +332,21 @@ def _get_page_text(url: str, timeout_s: int = 30) -> tuple[str, str, list[str]]:
     text = body.get_text(separator="\n", strip=True)
     text = re.sub(r"\n{3,}", "\n\n", text)
     text = re.sub(r"[ \t]{2,}", " ", text)
+
+    # If the URL targets a specific anchor (e.g. #program), focus the extracted
+    # text on just that element's subtree.  This avoids sending the full page to
+    # the LLM when only one section is relevant AND sidesteps MAX_CONTEXT_CHARS
+    # truncation that would otherwise cut off a program section deep in the page.
+    from urllib.parse import urlparse as _up
+    _frag = _up(url).fragment
+    if _frag:
+        _anchor_el = soup.find(id=_frag)
+        if _anchor_el:
+            _sec = _anchor_el.get_text(separator="\n", strip=True)
+            _sec = re.sub(r"\n{3,}", "\n\n", _sec)
+            _sec = re.sub(r"[ \t]{2,}", " ", _sec)
+            if len(_sec) > 100:
+                text = _sec.strip()
 
     if extra_texts:
         text = "\n\n".join(extra_texts) + "\n\n" + text.strip()
@@ -408,7 +465,7 @@ def _get_page_images(url: str, timeout_s: int = 30) -> tuple[str, list[bytes]]:
 # ─── Ollama helper ────────────────────────────────────────────────────────────
 
 
-def _call_ollama(model: str, prompt: str, images: list[str] | None = None) -> str:
+def _call_ollama(model: str, prompt: str, images: Optional[list[str]] = None) -> str:
     payload: dict = {
         "model": model,
         "prompt": prompt,
@@ -518,6 +575,45 @@ def _print_comparison(debug_path: Path) -> None:
 # ─── Per-event extraction ─────────────────────────────────────────────────────
 
 
+def _metadata_updates(page_text: str, model: str, ev: dict) -> dict:
+    """Extract only missing/official-listing metadata without clobbering edits."""
+    if not page_text:
+        return {}
+    try:
+        response = _call_ollama(model, _METADATA_PROMPT.format(text=page_text))
+        cleaned = re.sub(r"<think>.*?</think>", "", response, flags=re.DOTALL).strip()
+        cleaned = re.sub(r"^```(?:json)?\s*|\s*```$", "", cleaned, flags=re.I).strip()
+        match = re.search(r"\{.*\}", cleaned, flags=re.DOTALL)
+        parsed = json.loads(match.group(0) if match else cleaned)
+    except Exception as exc:
+        print(f"    metadata: skipped ({exc})")
+        return {}
+
+    updates = {"metadata_scraped_at": datetime.now(timezone.utc).isoformat()}
+    summary = parsed.get("summary")
+    if isinstance(summary, str) and summary.strip() and not ev.get("summary"):
+        updates["summary"] = summary.strip()
+
+    organizers = parsed.get("organizers")
+    if isinstance(organizers, list):
+        organizers = ", ".join(str(name).strip() for name in organizers if str(name).strip())
+    if (
+        isinstance(organizers, str)
+        and organizers.strip()
+        and (
+            not ev.get("organizers")
+            or ev.get("organizers_source") == "official_listing"
+            # Older web-listing JSON predates organizers_source. A missing
+            # summary identifies it as an uncurated initial extraction, not
+            # the richer CVPR archive data.
+            or (not ev.get("summary") and not ev.get("metadata_scraped_at"))
+        )
+    ):
+        updates["organizers"] = organizers.strip()
+        updates["organizers_source"] = "event_website"
+    return updates
+
+
 def _extract(
     ev: dict,
     text_model: str,
@@ -533,15 +629,15 @@ def _extract(
         cleaned = re.sub(r"<think>.*?</think>", "", response, flags=re.DOTALL).strip()
         return not cleaned or cleaned.upper().startswith("NO_SCHEDULE")
 
-    def _text_pass(target_url: str) -> tuple[str, str, list[str]]:
+    def _text_pass(target_url: str) -> tuple[str, str, list[str], str]:
         final_url, text, subpages = _get_page_text(target_url)
         if len(text) > MAX_CONTEXT_CHARS:
             text = text[:MAX_CONTEXT_CHARS] + "\n…[truncated]"
         response = _call_ollama(text_model, _TEXT_PROMPT.format(text=text))
-        return final_url, response, subpages
+        return final_url, response, subpages, text
 
-    def _vision_pass() -> tuple[str, str]:
-        final_url, image_list = _get_page_images(url)
+    def _vision_pass(target_url: str = url) -> tuple[str, str]:
+        final_url, image_list = _get_page_images(target_url)
         if not image_list:
             return final_url, "NO_SCHEDULE"
         imgs_b64 = [base64.b64encode(img).decode() for img in image_list]
@@ -549,11 +645,12 @@ def _extract(
         return final_url, _call_ollama(vision_model, _VISION_PROMPT, images=imgs_b64)
 
     try:
+        metadata_text = ""
         if vision_only:
             final_url, response = _vision_pass()
         else:
             # 1. Homepage text pass
-            final_url, response, subpages = _text_pass(url)
+            final_url, response, subpages, metadata_text = _text_pass(url)
 
             # 2. Schedule subpages (up to 5) when homepage has no schedule.
             # Sort same-base-URL entries first (e.g. ?tab=program beats
@@ -565,15 +662,23 @@ def _extract(
                 )
                 for sub_url in subpages[:5]:
                     print(f"    subpage: {sub_url}")
-                    sub_final, sub_resp, _ = _text_pass(sub_url)
+                    sub_final, sub_resp, _, _ = _text_pass(sub_url)
                     if not _is_empty(sub_resp):
                         final_url, response = sub_final, sub_resp
                         break
 
-            # 3. Vision fallback
+            # 3. Vision fallback — try the main URL first, then any schedule
+            # subpages (e.g. a /schedule page whose content is an image).
             if _is_empty(response) and not no_fallback:
                 print("    text→NO_SCHEDULE, retrying with vision…")
-                final_url, response = _vision_pass()
+                _vf, _vr = url, "NO_SCHEDULE"
+                for _vt in [url] + subpages[:5]:
+                    if _vt != url:
+                        print(f"    vision subpage: {_vt}")
+                    _vf, _vr = _vision_pass(_vt)
+                    if not _is_empty(_vr):
+                        break
+                final_url, response = _vf, _vr
     except Exception as exc:
         print(f"    ERROR: {exc}")
         return {
@@ -581,28 +686,40 @@ def _extract(
             "program_scraped_at": datetime.now(timezone.utc).isoformat(),
         }
 
-    # Normalise the model response
+    if not metadata_text:
+        try:
+            _, metadata_text, _ = _get_page_text(url)
+            metadata_text = metadata_text[:MAX_CONTEXT_CHARS]
+        except Exception:
+            metadata_text = ""
+    metadata = _metadata_updates(metadata_text, text_model, ev)
+
+    # Normalise the schedule response
     clean = response.strip()
     # Strip any thinking block that qwen3 might still emit (<think>…</think>)
     clean = re.sub(r"<think>.*?</think>", "", clean, flags=re.DOTALL).strip()
 
     if not clean or clean.upper().startswith("NO_SCHEDULE"):
-        return {
+        updates = {
             "program_url": final_url,
             "program_text": None,
             "program_found": False,
             "program_scraped_at": datetime.now(timezone.utc).isoformat(),
         }
+        updates.update(metadata)
+        return updates
 
     if len(clean) > MAX_PROGRAM_CHARS:
         clean = clean[:MAX_PROGRAM_CHARS].rsplit("\n", 1)[0] + "\n…"
 
-    return {
+    updates = {
         "program_url": final_url,
         "program_text": clean,
         "program_found": True,
         "program_scraped_at": datetime.now(timezone.utc).isoformat(),
     }
+    updates.update(metadata)
+    return updates
 
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
@@ -656,6 +773,18 @@ def main() -> None:
         default=None,
         help="Extract from a single URL and print result (no JSON write)",
     )
+    parser.add_argument(
+        "--input",
+        type=Path,
+        default=JSON_PATH,
+        help="Conference JSON to update (default: conferences/cvpr2026/data/workshops_tutorials.json)",
+    )
+    parser.add_argument(
+        "--day",
+        type=int,
+        default=None,
+        help="Only process events on this day of the month (e.g. 3 for June 3)",
+    )
     args = parser.parse_args()
 
     text_model = args.model or DEFAULT_TEXT_MODEL
@@ -693,7 +822,8 @@ def main() -> None:
         return
 
     # ── Batch mode ────────────────────────────────────────────────────────────
-    data = json.loads(JSON_PATH.read_text())
+    json_path = args.input
+    data = json.loads(json_path.read_text())
     all_events = data["workshops"] + data["tutorials"]
 
     # In debug mode always process all events that have a website so the
@@ -704,14 +834,28 @@ def main() -> None:
             continue
         if ev.get("manually_adjusted"):
             continue  # always preserve manually adjusted entries
+        needs_metadata = not ev.get("summary") or ev.get("organizers_source") == "official_listing"
         if args.debug or args.force:
             queue.append(ev)
         elif args.only_failed:
             if not ev.get("program_found"):
                 queue.append(ev)
         else:
-            if not ev.get("program_found"):
+            if not ev.get("program_found") or needs_metadata:
                 queue.append(ev)
+
+    if args.day is not None:
+        def _event_day(ev: dict) -> str:
+            value = ev.get("date") or ""
+            parts = re.split(r"[/\-]", value)
+            if len(parts) != 3:
+                return ""
+            return parts[1] if "/" in value else parts[2]
+
+        queue = [
+            ev for ev in queue
+            if str(args.day) == _event_day(ev)
+        ]
 
     if args.max:
         queue = queue[: args.max]
@@ -780,9 +924,9 @@ def main() -> None:
                 print(f"  [debug saved at {i}]\n")
         else:
             ev.update(updates)
-            # Incremental save of main JSON every 5 events
+            # Incremental save of the selected conference JSON every 5 events
             if i % 5 == 0:
-                JSON_PATH.write_text(json.dumps(data, indent=2, ensure_ascii=False))
+                json_path.write_text(json.dumps(data, indent=2, ensure_ascii=False))
                 print(f"  [saved at {i}]\n")
 
     if args.debug:
@@ -801,9 +945,9 @@ def main() -> None:
         print(f"Debug results saved → {DEBUG_PATH}")
         _print_comparison(DEBUG_PATH)
     else:
-        JSON_PATH.write_text(json.dumps(data, indent=2, ensure_ascii=False))
+        json_path.write_text(json.dumps(data, indent=2, ensure_ascii=False))
         print(f"Done. Found: {found}/{len(queue)}")
-        print(f"Saved → {JSON_PATH}")
+        print(f"Saved → {json_path}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,41 @@
+{
+  "active_conference": "eccv2026",
+  "conferences": [
+    {
+      "id": "eccv2026",
+      "name": "ECCV 2026",
+      "short_name": "ECCV 2026",
+      "status": "live",
+      "theme": "eccv",
+      "venue": "Malmö, Sweden",
+      "dates_label": "September 8–9, 2026",
+      "timezone": "Europe/Stockholm",
+      "data_file": "conferences/eccv2026/data/workshops_tutorials.json",
+      "workshop_sources": {
+        "workshops": "https://eccv.ecva.net/Conferences/2026/Workshops",
+        "tutorials": "https://eccv.ecva.net/Conferences/2026/Tutorials"
+      }
+    },
+    {
+      "id": "cvpr2026",
+      "name": "CVPR 2026",
+      "short_name": "CVPR 2026",
+      "status": "archived",
+      "theme": "cvpr",
+      "venue": "Denver Convention Center · Denver, Colorado, USA",
+      "dates_label": "June 3–4, 2026",
+      "timezone": "America/Denver",
+      "data_file": "conferences/cvpr2026/data/workshops_tutorials.json",
+      "room_coords_file": "conferences/cvpr2026/maps/room_coords.json",
+      "map_images": {
+        "1": "conferences/cvpr2026/maps/images/map_ballroom.png",
+        "2": "conferences/cvpr2026/maps/images/map_meeting.png",
+        "3": "conferences/cvpr2026/maps/images/map_exhibit.png"
+      },
+      "workshop_sources": {
+        "workshops": "https://cvpr.thecvf.com/Conferences/2026/Workshops",
+        "tutorials": "https://cvpr.thecvf.com/Conferences/2026/Tutorials"
+      }
+    }
+  ]
+}

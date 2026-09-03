@@ -97,10 +97,42 @@ let _modalEventId = null;
 let _modalList    = [];
 let _modalHiddenTypes = new Set();
 let tlDayAutoInit = false;
-const STORE           = 'cvpr2026_saved';
-const TL_FILTER_STORE = 'cvpr2026_tl_filter';
-const TAB_STORE       = 'cvpr2026_tab';
-const VIEW_STORE      = 'cvpr2026_view';
+let STORE           = 'workshopradar_saved';
+let TL_FILTER_STORE = 'workshopradar_tl_filter';
+let TAB_STORE       = 'workshopradar_tab';
+let VIEW_STORE      = 'workshopradar_view';
+let SETTINGS_STORE  = 'workshopradar_settings';
+let LIVE_SCOPE_STORE = 'workshopradar_live_scope';
+let conferenceConfig = null;
+let conferenceData = null;
+let livePreviewTime = null;
+let liveScope = 'saved';
+const isArchive = Boolean(window.WORKSHOP_RADAR_ARCHIVE);
+const requestedConference = window.WORKSHOP_RADAR_CONFERENCE || null;
+
+function configureConference(conf) {
+  conferenceConfig = conf;
+  const prefix = `workshopradar_${conf.id}`;
+  STORE = `${prefix}_saved`;
+  TL_FILTER_STORE = `${prefix}_tl_filter`;
+  TAB_STORE = `${prefix}_tab`;
+  VIEW_STORE = `${prefix}_view`;
+  SETTINGS_STORE = `${prefix}_settings`;
+  LIVE_SCOPE_STORE = `${prefix}_live_scope`;
+  document.body.dataset.conference = conf.id;
+  document.body.dataset.conferenceTheme = conf.theme || 'default';
+  document.body.classList.toggle('conference-upcoming', conf.status === 'upcoming');
+  document.body.classList.toggle('archive-mode', isArchive);
+  document.title = isArchive ? `${conf.name} Archive — Workshop Radar` : `Workshop Radar — ${conf.name}`;
+  const brand = document.getElementById('brand-name');
+  const subtitle = document.getElementById('conference-subtitle');
+  const pill = document.getElementById('pill-conference');
+  if (brand) brand.textContent = isArchive ? `${conf.name} Archive` : 'Workshop Radar';
+  if (subtitle) subtitle.textContent = isArchive
+    ? `${conf.venue || ''} · ${conf.dates_label || ''}`.replace(/^\s*·\s*|\s*·\s*$/g, '')
+    : `${conf.short_name || conf.name} · ${conf.venue || ''} · ${conf.dates_label || ''}`.replace(/\s·\s·/g, ' · ');
+  if (pill) pill.textContent = isArchive ? 'Past conference' : (conf.short_name || conf.name);
+}
 
 // ─── Persistence ──────────────────────────────────────────────────────────────
 function loadSaved()  { try { saved = new Set(JSON.parse(localStorage.getItem(STORE) || '[]')); } catch { saved = new Set(); } }
@@ -109,6 +141,8 @@ function loadTlFilter()  { try { tlHiddenTypes = new Set(JSON.parse(localStorage
 function storeTlFilter() { localStorage.setItem(TL_FILTER_STORE, JSON.stringify([...tlHiddenTypes])); }
 function storeTab(t)  { localStorage.setItem(TAB_STORE, t); }
 function storeView(v) { localStorage.setItem(VIEW_STORE, v); }
+function loadLiveScope() { const stored = localStorage.getItem(LIVE_SCOPE_STORE); liveScope = stored === 'all' ? 'all' : 'saved'; }
+function storeLiveScope() { localStorage.setItem(LIVE_SCOPE_STORE, liveScope); }
 
 // ─── Current-time red line updater ────────────────────────────────────────────
 function updateNowLine() {
@@ -120,6 +154,8 @@ function updateNowLine() {
     if (pct) { el.style.left = pct; el.style.display = ''; }
     else { el.style.display = 'none'; }
   });
+
+  if (document.getElementById('tab-live')?.classList.contains('active')) renderLive();
 }
 
 // ─── Normalise time slot ───────────────────────────────────────────────────────
@@ -132,16 +168,88 @@ function slot(raw) {
   return raw;
 }
 
+function eventDays(events = allEvents) {
+  return [...new Set(events.map(e => e.date).filter(Boolean))]
+    .sort((a, b) => dateSortValue(a) - dateSortValue(b));
+}
+
+function dateSortValue(value) {
+  const d = new Date(value);
+  if (!Number.isNaN(d.getTime())) return d.getTime();
+  const bits = String(value || '').split('/').map(Number);
+  return bits.length === 3 ? new Date(bits[2], bits[0] - 1, bits[1]).getTime() : 0;
+}
+
+function dateStr(value, long = false) {
+  if (!value) return '';
+  const iso = /^\d{4}-\d{2}-\d{2}$/.test(value);
+  const parsed = iso ? new Date(`${value}T12:00:00`) : (() => {
+    const [m, d, y] = String(value).split('/').map(Number);
+    return new Date(y, m - 1, d, 12);
+  })();
+  if (Number.isNaN(parsed.getTime())) return value;
+  return new Intl.DateTimeFormat('en-US', {
+    weekday: long ? 'long' : 'short', month: 'short', day: 'numeric',
+    ...(long ? { year: 'numeric' } : {}),
+  }).format(parsed);
+}
+
+function showUpcoming(conf) {
+  const browse = document.getElementById('tab-browse');
+  const liveTab = document.querySelector('.tab-btn[data-tab="live"]');
+  const scheduleTab = document.querySelector('.tab-btn[data-tab="schedule"]');
+  const filter = document.querySelector('.filter-bar');
+  const results = document.querySelector('.results-info');
+  const report = document.querySelector('.btn-report');
+  if (liveTab) liveTab.hidden = true;
+  if (scheduleTab) scheduleTab.style.display = 'none';
+  if (filter) filter.style.display = 'none';
+  if (results) results.style.display = 'none';
+  if (report) report.style.display = 'none';
+  document.getElementById('pill-workshops').style.display = 'none';
+  document.getElementById('pill-tutorials').style.display = 'none';
+  browse.innerHTML = `
+    <section class="upcoming-panel" aria-labelledby="upcoming-title">
+      <div class="upcoming-signal" aria-hidden="true"><span></span><span></span><span></span></div>
+      <p class="upcoming-kicker">${esc(conf.short_name || conf.name)} · ${esc(conf.dates_label || 'Coming soon')}</p>
+      <h2 id="upcoming-title">Stay tuned.</h2>
+      <p>Workshop and tutorial details will appear here once they are ready to explore. We’re preparing a single, practical view of the programme.</p>
+      <div class="upcoming-links">
+        ${conf.workshop_sources?.workshops ? `<a href="${esc(conf.workshop_sources.workshops)}" target="_blank" rel="noopener">Official workshops ↗</a>` : ''}
+        ${conf.workshop_sources?.tutorials ? `<a href="${esc(conf.workshop_sources.tutorials)}" target="_blank" rel="noopener">Official tutorials ↗</a>` : ''}
+      </div>
+    </section>`;
+}
+
 // ─── Load JSON ────────────────────────────────────────────────────────────────
 async function init(bustCache = false) {
-  const url  = bustCache
-? `cvpr2026_workshops_tutorials.json?t=${Date.now()}`
-: 'cvpr2026_workshops_tutorials.json';
+  const cacheOpts = bustCache ? { cache: 'no-store' } : { cache: 'no-cache' };
+  const registryRes = await fetch(`conferences.json${bustCache ? `?t=${Date.now()}` : ''}`, cacheOpts);
+  if (!registryRes.ok) throw new Error('Could not load conference registry');
+  const registry = await registryRes.json();
+  const selectedId = requestedConference || registry.active_conference;
+  const conf = (registry.conferences || []).find(c => c.id === selectedId);
+  if (!conf) throw new Error(`Unknown conference: ${selectedId}`);
+  configureConference(conf);
+  loadSaved();
+  loadTlFilter();
+  loadLiveScope();
+  loadSettings();
+  updateBadge();
+  checkURLImport();
+  if (conf.status === 'upcoming' && !isArchive) {
+    showUpcoming(conf);
+    return;
+  }
+  if (!conf.data_file) throw new Error(`No event data is available for ${conf.name}`);
+  const url = bustCache ? `${conf.data_file}?t=${Date.now()}` : conf.data_file;
   const [res, coordsRes] = await Promise.all([
-fetch(url, bustCache ? { cache: 'no-store' } : { cache: 'no-cache' }),
-fetch('room_coords.json').catch(() => null),
+    fetch(url, cacheOpts),
+    conf.room_coords_file ? fetch(conf.room_coords_file).catch(() => null) : Promise.resolve(null),
   ]);
+  if (!res.ok) throw new Error('Could not load conference data');
   const data = await res.json();
+  conferenceData = data;
   if (coordsRes && coordsRes.ok) {
 try { roomCoords = await coordsRes.json(); } catch { /* ignore */ }
   }
@@ -155,6 +263,16 @@ try { roomCoords = await coordsRes.json(); } catch { /* ignore */ }
 
   // Populate track dropdown
   const tracks = [...new Set(allEvents.map(e => e.track).filter(Boolean))].sort();
+  const dateSelect = document.getElementById('f-date');
+  if (dateSelect) {
+    dateSelect.innerHTML = '<option value="">All dates</option>';
+    eventDays().forEach(d => {
+      const option = document.createElement('option');
+      option.value = d;
+      option.textContent = dateStr(d);
+      dateSelect.appendChild(option);
+    });
+  }
   const sel = document.getElementById('f-track');
   tracks.forEach(t => {
 const o = document.createElement('option');
@@ -164,6 +282,8 @@ sel.appendChild(o);
   });
 
   renderBrowse();
+  updateLiveAvailability();
+  if (document.getElementById('tab-live').classList.contains('active')) renderLive();
 }
 
 // ─── Filters ──────────────────────────────────────────────────────────────────
@@ -199,12 +319,6 @@ function slotBadge(s) {
   if (s === 'PM')       return '<span class="badge badge-pm">🌇 Afternoon</span>';
   if (s === 'Full Day') return '<span class="badge badge-fd">☀️ Full Day</span>';
   return '';
-}
-
-function dateStr(d) {
-  if (d === '6/3/2026') return 'Wed, June 3';
-  if (d === '6/4/2026') return 'Thu, June 4';
-  return d || '';
 }
 
 // ─── Render card ──────────────────────────────────────────────────────────────
@@ -464,7 +578,6 @@ return;
 
   const byDate = {};
   events.forEach(e => { (byDate[e.date] ||= []).push(e); });
-  const dayName = { '6/3/2026':'Wednesday, June 3, 2026', '6/4/2026':'Thursday, June 4, 2026' };
   const slotOrder = { AM:0, 'Full Day':1, PM:2 };
 
   el.innerHTML = Object.keys(byDate).sort().map(d => {
@@ -472,7 +585,7 @@ const evts = byDate[d].slice().sort((a,b) => (slotOrder[a._slot]??3)-(slotOrder[
 return `
 <div class="schedule-day">
   <div class="day-header">
-<span class="day-label">📅 ${esc(dayName[d]||d)}</span>
+<span class="day-label">📅 ${esc(dateStr(d, true))}</span>
 <span class="day-count">${evts.length} event${evts.length!==1?'s':''}</span>
   </div>
   <div class="list-grid">${evts.map(card).join('')}</div>
@@ -492,8 +605,7 @@ el.innerHTML = `<div class="empty-state"><div class="empty-icon">🗓</div><h3>Y
 return;
   }
 
-  const DAYS    = ['6/3/2026','6/4/2026'];
-  const DAY_LBL = { '6/3/2026':'Wed, June 3', '6/4/2026':'Thu, June 4' };
+  const DAYS = eventDays();
 
   // Clamp calDay to valid range
   if (calDay >= DAYS.length) calDay = 0;
@@ -558,7 +670,7 @@ return;
   // Day switcher
   let html = '<div class="cal-day-nav">';
   DAYS.forEach((d, i) => {
-html += `<button class="cal-day-btn${calDay === i ? ' active' : ''}" data-calday="${i}">${DAY_LBL[d]}</button>`;
+html += `<button class="cal-day-btn${calDay === i ? ' active' : ''}" data-calday="${i}">${esc(dateStr(d))}</button>`;
   });
   html += '</div>';
 
@@ -585,6 +697,62 @@ html += `<button class="cal-day-btn${calDay === i ? ' active' : ''}" data-calday
 const TL_START = 8  * 60;   // 480  min (8:00 AM)
 const TL_END   = 19 * 60;   // 1140 min (7:00 PM)
 const TL_SPAN  = TL_END - TL_START; // 660 min
+const PROGRAM_FILTER_TYPES = [
+  { type: 'keynote',      label: 'Keynote / Invited' },
+  { type: 'oral',         label: 'Oral / Paper' },
+  { type: 'poster',       label: 'Poster' },
+  { type: 'break',        label: 'Break' },
+  { type: 'housekeeping', label: 'Opening / Closing' },
+  { type: 'default',      label: 'Other' },
+  { type: 'none',         label: 'No Program' },
+];
+const PROGRAM_TYPE_LABELS = {
+  keynote: 'Keynote / Invited', oral: 'Oral / Paper', poster: 'Poster',
+  break: 'Break', housekeeping: 'Opening / Closing', default: 'Session', none: 'No Program',
+};
+
+function conferenceNow() {
+  if (livePreviewTime) return { ...livePreviewTime, preview: true };
+  const now = new Date();
+  const timeZone = conferenceConfig?.timezone;
+  try {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone, year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', hourCycle: 'h23',
+    }).formatToParts(now);
+    const value = type => parts.find(part => part.type === type)?.value;
+    const year = value('year');
+    const month = value('month');
+    const day = value('day');
+    const hour = +value('hour');
+    const minute = +value('minute');
+    return {
+      date: `${year}-${month}-${day}`,
+      minutes: hour * 60 + minute,
+      label: new Intl.DateTimeFormat('en-GB', {
+        timeZone, weekday: 'short', day: 'numeric', month: 'short',
+        hour: '2-digit', minute: '2-digit', hourCycle: 'h23',
+      }).format(now),
+    };
+  } catch {
+    return {
+      date: `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`,
+      minutes: now.getHours() * 60 + now.getMinutes(),
+      label: now.toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }),
+    };
+  }
+}
+
+function isoDateKey(value) {
+  if (/^\d{4}-\d{2}-\d{2}$/.test(value || '')) return value;
+  const [month, day, year] = String(value || '').split('/').map(Number);
+  if (!year || !month || !day) return '';
+  return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+}
+
+function formatProgrammeTime(minutes) {
+  return `${String(Math.floor(minutes / 60)).padStart(2, '0')}:${String(minutes % 60).padStart(2, '0')}`;
+}
 
 function parseTimeStr(raw) {
   if (!raw) return null;
@@ -658,6 +826,191 @@ function sessionTypeClass(session, title) {
   return 'default';
 }
 
+function liveProgrammeBlocks(date, events = allEvents) {
+  const blocks = [];
+  events
+    .filter(ev => ev.program_found && isoDateKey(ev.date) === date)
+    .forEach(ev => {
+      const grouped = new Map();
+      parseProgramRows(ev.program_text, ev._slot)
+        .filter(row => !row.noProgram)
+        .forEach(row => {
+          const type = sessionTypeClass(row.session, row.title);
+          const key = `${row.startMin}|${row.endMin}|${type}`;
+          const existing = grouped.get(key);
+          if (existing) {
+            existing.count += 1;
+            return;
+          }
+          grouped.set(key, { ...row, ev, type, count: 1 });
+        });
+
+      grouped.forEach(block => {
+        if (block.count > 1) {
+          block.title = PROGRAM_TYPE_LABELS[block.type] || block.session || block.title;
+          block.speaker = '';
+        }
+        blocks.push(block);
+      });
+    });
+  return blocks.sort((a, b) => a.startMin - b.startMin || a.ev.title.localeCompare(b.ev.title));
+}
+
+function isConferenceDay(date) {
+  return allEvents.some(event => isoDateKey(event.date) === date);
+}
+
+function hasLiveSavedProgramme(now = conferenceNow()) {
+  return liveProgrammeBlocks(now.date, allEvents.filter(event => saved.has(event.id)))
+    .some(block => block.startMin <= now.minutes && now.minutes < block.endMin);
+}
+
+function updateLiveAvailability() {
+  const liveTab = document.querySelector('.tab-btn[data-tab="live"]');
+  if (!liveTab) return;
+  const now = conferenceNow();
+  const isAvailable = Boolean(livePreviewTime) || isConferenceDay(now.date);
+  const hasPersonalLiveItem = isAvailable && hasLiveSavedProgramme(now);
+  liveTab.hidden = !isAvailable;
+  liveTab.querySelector('.live-tab-dot').hidden = !hasPersonalLiveItem;
+
+  // Do not leave the user on a tab that is unavailable outside the conference window.
+  if (!isAvailable && liveTab.classList.contains('active')) {
+    document.querySelector('.tab-btn[data-tab="browse"]')?.click();
+  }
+  return { isAvailable, hasPersonalLiveItem };
+}
+
+function liveFilterMarkup() {
+  return `<div class="tl-filter-bar live-filter-bar"><span class="tl-filter-label">Show:</span>${PROGRAM_FILTER_TYPES
+    .filter(({ type }) => type !== 'none')
+    .map(({ type, label }) => `<button class="tl-filter-btn tl-filter-btn--${type}${tlHiddenTypes.has(type) ? ' tl-off' : ''}" data-tltype="${type}">${esc(label)}</button>`)
+    .join('')}</div>`;
+}
+
+function liveCard(block, state, nowMinutes) {
+  const { ev, type, startMin, endMin, title, speaker } = block;
+  const minutesUntil = startMin - nowMinutes;
+  const stateLabel = state === 'now' ? 'Live now' : `Starts in ${minutesUntil} min`;
+  const speakerText = speaker && speaker.trim() !== '-' ? speaker.trim() : '';
+  const savedLabel = saved.has(ev.id) ? '★ In my schedule' : '+ Save workshop';
+  const timeLabel = `${formatProgrammeTime(startMin)}–${formatProgrammeTime(endMin)}`;
+  return `<article class="live-card live-card--${state} tl-block--${type}">
+    <button class="live-block" data-evid="${esc(ev.id)}" data-start="${startMin}" data-end="${endMin}"
+      data-title="${esc(title)}" data-speaker="${esc(speakerText)}" data-session="${esc(block.session)}"
+      data-time="${timeLabel}" data-type="${type}" aria-label="${esc(`${title}, ${timeLabel}. Open programme details`)}">
+      <span class="live-card-top"><span class="live-state">${esc(stateLabel)}</span><span class="live-time">${timeLabel}</span></span>
+      <span class="live-title">${esc(title)}</span>
+      ${speakerText ? `<span class="live-speaker">👤 ${esc(speakerText)}</span>` : ''}
+      <span class="live-event">${esc(ev.title)}</span>
+      <span class="live-meta">📍 ${esc(ev.location || 'TBA')} · ${esc(PROGRAM_TYPE_LABELS[type] || 'Session')}</span>
+    </button>
+    <button class="live-save-btn${saved.has(ev.id) ? ' saved' : ''}" data-id="${esc(ev.id)}">${savedLabel}</button>
+  </article>`;
+}
+
+function liveLane(title, subtitle, blocks, state, nowMinutes) {
+  return `<section class="live-lane live-lane--${state}">
+    <div class="live-lane-head"><div><p>${esc(subtitle)}</p><h2>${esc(title)}</h2></div><span>${blocks.length}</span></div>
+    ${blocks.length ? `<div class="live-card-list">${blocks.map(block => liveCard(block, state, nowMinutes)).join('')}</div>` : '<p class="live-lane-empty">Nothing in this window.</p>'}
+  </section>`;
+}
+
+function renderLive() {
+  const el = document.getElementById('tab-live');
+  if (!el) return;
+  const now = conferenceNow();
+  const sourceEvents = liveScope === 'saved' ? allEvents.filter(ev => saved.has(ev.id)) : allEvents;
+  const hasPersonalLiveItem = hasLiveSavedProgramme(now);
+  const visible = liveProgrammeBlocks(now.date, sourceEvents).filter(block => !tlHiddenTypes.has(block.type));
+  const current = visible.filter(block => block.startMin <= now.minutes && now.minutes < block.endMin);
+  const next30 = visible.filter(block => {
+    const delta = block.startMin - now.minutes;
+    return delta > 0 && delta <= 30;
+  });
+  const next60 = visible.filter(block => {
+    const delta = block.startMin - now.minutes;
+    return delta > 30 && delta <= 60;
+  });
+  const total = current.length + next30.length + next60.length;
+  const place = now.preview
+    ? 'Preview time — console controlled'
+    : (conferenceConfig?.venue ? `${conferenceConfig.venue} · local time` : 'Conference time');
+  const scopeEmptyMessage = liveScope === 'saved'
+    ? 'Save events in Browse or switch to All programme to see every live session.'
+    : `Come back during ${conferenceConfig?.short_name || 'the conference'} to see sessions as they begin.`;
+
+  el.innerHTML = `<section class="live-header">
+    <div><p class="live-eyebrow">${hasPersonalLiveItem ? '<span class="live-status-dot" aria-hidden="true"></span>' : ''}Programme radar</p><h1>Live now</h1><p>Sessions happening now and beginning over the next hour.</p></div>
+    <div class="live-clock"><span>${esc(now.label)}</span><small>${esc(place)}</small></div>
+  </section>
+  <div class="live-controls">
+    <div class="live-scope-toggle" role="group" aria-label="Live programme source">
+      <span>Show</span>
+      <button class="live-scope-btn${liveScope === 'saved' ? ' active' : ''}" data-live-scope="saved">★ My schedule</button>
+      <button class="live-scope-btn${liveScope === 'all' ? ' active' : ''}" data-live-scope="all">All programme</button>
+    </div>
+    ${liveFilterMarkup()}
+  </div>
+  ${total ? `<div class="live-layout">
+    ${liveLane('Happening now', 'On stage', current, 'now', now.minutes)}
+    <div class="live-upcoming-grid">
+      ${liveLane('Next 30 minutes', 'Starting soon', next30, 'soon', now.minutes)}
+      ${liveLane('31–60 minutes', 'On deck', next60, 'later', now.minutes)}
+    </div>
+  </div>` : `<div class="empty-state live-empty"><div class="empty-icon">◌</div><h3>No programme blocks are live right now</h3><p>${esc(scopeEmptyMessage)}</p></div>`}`;
+}
+
+// TEMP: browser-console controls for validating the Live tab. Remove before release.
+function setLivePreview(date, time = '') {
+  const raw = `${date || ''}${time ? ` ${time}` : ''}`.trim();
+  const match = raw.match(/^(\d{4}-\d{2}-\d{2})[T\s]+(\d{1,2}):(\d{2})$/);
+  if (!match) throw new Error('Use YYYY-MM-DD HH:MM, for example: 2026-09-08 09:15');
+  const [, day, hourRaw, minuteRaw] = match;
+  const hour = +hourRaw;
+  const minute = +minuteRaw;
+  const parsed = new Date(`${day}T12:00:00Z`);
+  if (hour > 23 || minute > 59 || Number.isNaN(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== day) {
+    throw new Error('Enter a valid conference-local date and time.');
+  }
+  const dayLabel = new Intl.DateTimeFormat('en-GB', {
+    weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC',
+  }).format(parsed);
+  livePreviewTime = {
+    date: day,
+    minutes: hour * 60 + minute,
+    label: `Preview · ${dayLabel}, ${formatProgrammeTime(hour * 60 + minute)}`,
+  };
+  updateLiveAvailability();
+  renderLive();
+  return livePreviewTime;
+}
+
+function openLiveTab() {
+  const liveButton = document.querySelector('.tab-btn[data-tab="live"]');
+  if (!liveButton) return;
+  if (liveButton.classList.contains('active')) renderLive();
+  else liveButton.click();
+}
+
+window.WorkshopRadarDebug = {
+  previewLive(date, time) {
+    const preview = setLivePreview(date, time);
+    openLiveTab();
+    return preview;
+  },
+  useRealTime() {
+    livePreviewTime = null;
+    updateLiveAvailability();
+    if (document.getElementById('tab-live').classList.contains('active')) renderLive();
+    return 'Live tab returned to conference-local real time.';
+  },
+  openLive: openLiveTab,
+  help() {
+    console.info("WorkshopRadarDebug.previewLive('2026-09-08', '09:15')\nWorkshopRadarDebug.useRealTime()\nWorkshopRadarDebug.openLive()");
+  },
+};
+
 function showTlTooltip(e, block) {
   const tooltip = document.getElementById('tl-tooltip');
   const title   = block.dataset.title   || '';
@@ -702,9 +1055,9 @@ function icsEscape(s) {
   return String(s || '').replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');
 }
 function _icsDatePart(dateStr) {
-  // '6/3/2026' → '20260603'
-  const [m, d, y] = dateStr.split('/');
-  return `${y}${m.padStart(2,'0')}${d.padStart(2,'0')}`;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr || '')) return dateStr.replaceAll('-', '');
+  const [m, d, y] = String(dateStr || '').split('/');
+  return `${y}${String(m).padStart(2,'0')}${String(d).padStart(2,'0')}`;
 }
 function _icsTimePart(totalMin) {
   const h = Math.floor(totalMin / 60).toString().padStart(2,'0');
@@ -719,8 +1072,8 @@ function _makeVevent({ uid, stamp, dateStr, startMin, endMin, summary, location,
     'BEGIN:VEVENT\r\n',
     `UID:${uid}\r\n`,
     `DTSTAMP:${stamp}\r\n`,
-    `DTSTART;TZID=America/Chicago:${ds}\r\n`,
-    `DTEND;TZID=America/Chicago:${de}\r\n`,
+    `DTSTART;TZID=${conferenceConfig?.timezone || 'UTC'}:${ds}\r\n`,
+    `DTEND;TZID=${conferenceConfig?.timezone || 'UTC'}:${de}\r\n`,
     `SUMMARY:${icsEscape(summary)}\r\n`,
     location    ? `LOCATION:${icsEscape(location)}\r\n`    : '',
     description ? `DESCRIPTION:${icsEscape(description)}\r\n` : '',
@@ -729,16 +1082,9 @@ function _makeVevent({ uid, stamp, dateStr, startMin, endMin, summary, location,
   ].join('');
 }
 function _buildIcs(vevents) {
-  const tz = [
-    'BEGIN:VTIMEZONE\r\nTZID:America/Chicago\r\n',
-    'BEGIN:DAYLIGHT\r\nTZOFFSETFROM:-0600\r\nTZOFFSETTO:-0500\r\nTZNAME:CDT\r\n',
-    'DTSTART:19700308T020000\r\nRRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU\r\nEND:DAYLIGHT\r\n',
-    'BEGIN:STANDARD\r\nTZOFFSETFROM:-0500\r\nTZOFFSETTO:-0600\r\nTZNAME:CST\r\n',
-    'DTSTART:19701101T020000\r\nRRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU\r\nEND:STANDARD\r\n',
-    'END:VTIMEZONE\r\n',
-  ].join('');
-  return 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//CVPR 2026//Schedule//EN\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\n'
-    + tz + vevents.join('') + 'END:VCALENDAR';
+  const product = conferenceConfig?.name || 'Workshop Radar';
+  return `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Workshop Radar//${icsEscape(product)}//EN\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\n`
+    + vevents.join('') + 'END:VCALENDAR';
 }
 function _downloadIcs(filename, content) {
   const blob = new Blob([content], { type: 'text/calendar;charset=utf-8' });
@@ -754,7 +1100,7 @@ function _icsEventName(title, speaker) {
   const ttl = title  && title.trim()             ? title.trim()   : '';
   if (spk && ttl && ttl.length <= 80) return `${spk} \u2013 ${ttl}`;
   if (spk) return spk;
-  return ttl || 'CVPR 2026 Session';
+  return ttl || `${conferenceConfig?.name || 'Workshop Radar'} Session`;
 }
 
 // Add a single program block to calendar (called from tooltip button)
@@ -768,13 +1114,13 @@ function addBlockToCalendar(evId, startMin, endMin, title, speaker) {
     ev.location ? `Room: ${ev.location}` : null,
   ].filter(Boolean).join('\n');
   const ics = _buildIcs([_makeVevent({
-    uid: `cvpr2026-${evId}-${startMin}-${endMin}@cvpr2026schedule`,
+    uid: `${conferenceConfig?.id || 'workshopradar'}-${evId}-${startMin}-${endMin}@workshopradar`,
     stamp, dateStr: ev.date, startMin: +startMin, endMin: +endMin,
     summary: _icsEventName(title, speaker),
     location: ev.location || '',
     description: desc,
   })]);
-  _downloadIcs(`cvpr2026_${_icsEventName(title, speaker).replace(/[^a-z0-9]/gi,'_').slice(0,40)}.ics`, ics);
+  _downloadIcs(`${conferenceConfig?.id || 'workshopradar'}_${_icsEventName(title, speaker).replace(/[^a-z0-9]/gi,'_').slice(0,40)}.ics`, ics);
   hideTlTooltip();
 }
 
@@ -788,7 +1134,7 @@ function addWorkshopToCalendar(evId) {
   if (!confirm(`Add ${rows.length} program item${rows.length !== 1 ? 's' : ''} from\n"${ev.title}"\nto your calendar?\n\nEach event will include a 15-minute reminder.`)) return;
   const stamp = new Date().toISOString().replace(/[-:]/g,'').split('.')[0] + 'Z';
   const vevents = rows.map((r, i) => _makeVevent({
-    uid: `cvpr2026-${evId}-${r.startMin}-${r.endMin}-${i}@cvpr2026schedule`,
+    uid: `${conferenceConfig?.id || 'workshopradar'}-${evId}-${r.startMin}-${r.endMin}-${i}@workshopradar`,
     stamp, dateStr: ev.date, startMin: r.startMin, endMin: r.endMin,
     summary: _icsEventName(r.title, r.speaker),
     location: ev.location || '',
@@ -799,7 +1145,7 @@ function addWorkshopToCalendar(evId) {
     ].filter(Boolean).join('\n'),
   }));
   const ics = _buildIcs(vevents);
-  _downloadIcs(`cvpr2026_${ev.title.replace(/[^a-z0-9]/gi,'_').slice(0,40)}.ics`, ics);
+  _downloadIcs(`${conferenceConfig?.id || 'workshopradar'}_${ev.title.replace(/[^a-z0-9]/gi,'_').slice(0,40)}.ics`, ics);
 }
 
 // ─── Schedule – Timeline ──────────────────────────────────────────────────────
@@ -815,15 +1161,14 @@ function renderTimeline(events) {
     return;
   }
 
-  const DAYS    = ['6/3/2026', '6/4/2026'];
-  const DAY_LBL = { '6/3/2026': 'Wed, June 3', '6/4/2026': 'Thu, June 4' };
+  const DAYS = eventDays();
 
   // Auto-select today's day on first render if it's a conference day
   if (!tlDayAutoInit) {
     tlDayAutoInit = true;
     const n = new Date();
-    const todayStr = `${n.getMonth()+1}/${n.getDate()}/${n.getFullYear()}`;
-    const todayIdx = DAYS.indexOf(todayStr);
+    const todayStr = `${n.getFullYear()}-${String(n.getMonth()+1).padStart(2, '0')}-${String(n.getDate()).padStart(2, '0')}`;
+    const todayIdx = DAYS.findIndex(d => dateSortValue(d) === dateSortValue(todayStr));
     if (todayIdx >= 0) tlDay = todayIdx;
   }
 
@@ -832,7 +1177,7 @@ function renderTimeline(events) {
   // Day switcher (reuse cal-day-btn styles)
   let html = '<div class="cal-day-nav">';
   DAYS.forEach((d, i) => {
-    html += `<button class="tl-day-btn cal-day-btn${tlDay === i ? ' active' : ''}" data-tlday="${i}">${DAY_LBL[d]}</button>`;
+    html += `<button class="tl-day-btn cal-day-btn${tlDay === i ? ' active' : ''}" data-tlday="${i}">${esc(dateStr(d))}</button>`;
   });
   html += '</div>';
 
@@ -852,17 +1197,8 @@ function renderTimeline(events) {
   }
 
   // Filter bar
-  const FILTER_TYPES = [
-    { type: 'keynote',      label: 'Keynote / Invited' },
-    { type: 'oral',         label: 'Oral / Paper' },
-    { type: 'poster',       label: 'Poster' },
-    { type: 'break',        label: 'Break' },
-    { type: 'housekeeping', label: 'Opening / Closing' },
-    { type: 'default',      label: 'Other' },
-    { type: 'none',         label: 'No Program' },
-  ];
   html += '<div class="tl-filter-bar"><span class="tl-filter-label">Show:</span>';
-  FILTER_TYPES.forEach(({ type, label }) => {
+  PROGRAM_FILTER_TYPES.forEach(({ type, label }) => {
     const off = tlHiddenTypes.has(type) ? ' tl-off' : '';
     html += `<button class="tl-filter-btn tl-filter-btn--${type}${off}" data-tltype="${type}">${esc(label)}</button>`;
   });
@@ -901,9 +1237,6 @@ function renderTimeline(events) {
     // Some workshops list every individual paper at the same time window (e.g. a 3-hour
     // poster session with 20 entries all at 14:00–17:00) — they'd all stack invisibly.
     // In that case we emit a single block per type using the type label as the title.
-    const TL_TYPE_LABELS = { keynote:'Keynote / Invited', oral:'Oral / Paper',
-      poster:'Poster', break:'Break', housekeeping:'Opening / Closing',
-      default:'Session', none:'No Program' };
     const slotMap = new Map();
     for (const r of rows) {
       const key = `${r.startMin}|${r.endMin}`;
@@ -918,7 +1251,7 @@ function renderTimeline(events) {
         const tc = r.noProgram ? 'none' : sessionTypeClass(r.session, r.title);
         if (seen.has(tc)) continue;
         seen.add(tc);
-        collapsedRows.push({ ...r, title: TL_TYPE_LABELS[tc] || r.session || r.title, speaker: '' });
+        collapsedRows.push({ ...r, title: PROGRAM_TYPE_LABELS[tc] || r.session || r.title, speaker: '' });
       }
     }
 
@@ -984,8 +1317,10 @@ toast('Added to schedule ★', 't-saved');
   }
   storeSaved();
   renderBrowse();
+  updateLiveAvailability();
   if (document.getElementById('tab-schedule').classList.contains('active')) renderSchedule();
   else updateBadge();
+  if (document.getElementById('tab-live').classList.contains('active')) renderLive();
   if (_modalEventId === id) _updateModalSaveBtn(id);
 }
 
@@ -1010,12 +1345,22 @@ tab.classList.add('active');
 document.getElementById(`tab-${tab.dataset.tab}`).classList.add('active');
 storeTab(tab.dataset.tab);
 if (tab.dataset.tab === 'schedule') renderSchedule();
+if (tab.dataset.tab === 'live') renderLive();
 if (tab.dataset.tab === 'settings') { applySettings(); resetSharePanels(); }
 return;
   }
 
+  // Live source toggle: saved schedule by default, full programme on demand.
+  const liveScopeBtn = e.target.closest('.live-scope-btn');
+  if (liveScopeBtn) {
+    liveScope = liveScopeBtn.dataset.liveScope === 'all' ? 'all' : 'saved';
+    storeLiveScope();
+    renderLive();
+    return;
+  }
+
   // Save buttons (icon or footer button in cards)
-  const saveBtn = e.target.closest('.save-icon-btn, .save-action-btn');
+  const saveBtn = e.target.closest('.save-icon-btn, .save-action-btn, .live-save-btn');
   if (saveBtn) { toggleSave(saveBtn.dataset.id); return; }
 
   // Unsave from calendar
@@ -1040,13 +1385,18 @@ return;
     const type = tlFilterBtn.dataset.tltype;
     if (tlHiddenTypes.has(type)) tlHiddenTypes.delete(type); else tlHiddenTypes.add(type);
     storeTlFilter();
-    renderSchedule();
+    if (document.getElementById('tab-live').classList.contains('active')) renderLive();
+    else renderSchedule();
     return;
   }
 
   // Timeline block click → show tooltip
   const tlBlock = e.target.closest('.tl-block');
   if (tlBlock) { showTlTooltip(e, tlBlock); return; }
+
+  // Live programme block click → show the same details / calendar tooltip as the timeline.
+  const liveBlock = e.target.closest('.live-block');
+  if (liveBlock) { showTlTooltip(e, liveBlock); return; }
 
   // Tooltip "Add to calendar" button (single program block)
   const tlTipCalBtn = e.target.closest('.tl-tooltip-cal-btn');
@@ -1350,7 +1700,8 @@ function openMapModal(location) {
   const modal = document.getElementById('map-modal');
   const img   = document.getElementById('map-modal-img');
   document.getElementById('map-modal-label').textContent = `Room: ${location}`;
-  const mapFile = coord.page === 1 ? 'assets/images/map_ballroom.png' : 'assets/images/map_meeting.png';
+  const mapFile = conferenceConfig?.map_images?.[String(coord.page)];
+  if (!mapFile) return;
   const doDrawAndScroll = () => { drawMapHighlight(coord); scrollToHighlight(coord); };
   if (img.dataset.loadedSrc === mapFile) {
 modal.style.display = 'flex';
@@ -1492,7 +1843,6 @@ function checkURLImport() {
 }
 
 // ─── Settings ─────────────────────────────────────────────────────────────────
-const SETTINGS_STORE = 'cvpr2026_settings';
 let settings = { theme: 'system', showOrganizers: true, showAbout: true };
 
 const _sysDarkMQ = window.matchMedia('(prefers-color-scheme: dark)');
@@ -1612,12 +1962,6 @@ document.getElementById('import-confirm-modal').addEventListener('click', e => {
 });
 
 // ─── Boot ─────────────────────────────────────────────────────────────────
-loadSaved();
-loadTlFilter();
-loadSettings();
-updateBadge();
-checkURLImport();
-
 // Compact header on scroll
 const _siteHeader = document.querySelector('header');
 window.addEventListener('scroll', () => {
@@ -1626,9 +1970,11 @@ window.addEventListener('scroll', () => {
 
 // Auto-update the current-time red line every minute
 setInterval(() => {
+  updateLiveAvailability();
   if (view === 'timeline' && document.getElementById('tab-schedule').classList.contains('active')) {
     updateNowLine();
   }
+  if (document.getElementById('tab-live').classList.contains('active')) renderLive();
 }, 60 * 1000);
 
 // Register service worker — enables offline support and ensures users always
@@ -1650,7 +1996,7 @@ init()
     const savedTab = localStorage.getItem(TAB_STORE);
     if (savedTab && savedTab !== 'browse') {
       const tabBtn = document.querySelector(`.tab-btn[data-tab="${savedTab}"]`);
-      if (tabBtn) tabBtn.click();
+      if (tabBtn && !tabBtn.hidden) tabBtn.click();
     }
   })
   .catch(() => {

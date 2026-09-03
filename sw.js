@@ -1,23 +1,27 @@
-// ─── Service Worker — CVPR 2026 Workshops & Tutorials ─────────────────────────
+// ─── Service Worker — Workshop Radar ───────────────────────────────────────────
 // Bump CACHE_NAME whenever you deploy new static assets (HTML, CSS, JS, images)
 // so stale caches are evicted and all clients receive the updated files.
 // For JSON-only updates you push to the repo, no bump is needed — the
 // network-first strategy below handles those automatically.
-const CACHE_NAME = 'cvpr2026-v6';
+const CACHE_NAME = 'workshopradar-v2';
 
 // Every file the app needs to run fully offline
 const PRECACHE_URLS = [
   './',
   './index.html',
+  './archive.html',
   './assets/css/styles.css',
   './assets/js/app.js',
+  './assets/js/archive.js',
   './assets/js/qrcode.min.js',
-  './room_coords.json',
-  './cvpr2026_workshops_tutorials.json',
+  './conferences/cvpr2026/maps/room_coords.json',
+  './conferences.json',
+  './conferences/cvpr2026/data/workshops_tutorials.json',
   './assets/images/logo.png',
-  './assets/images/map_ballroom.png',
-  './assets/images/map_meeting.png',
-  './assets/images/map_exhibit.png',
+  './conferences/cvpr2026/maps/images/map_ballroom.png',
+  './conferences/cvpr2026/maps/images/map_meeting.png',
+  './conferences/cvpr2026/maps/images/map_exhibit.png',
+  './conferences/eccv2026/data/workshops_tutorials.json',
 ];
 
 // ── Install: pre-cache everything ─────────────────────────────────────────────
@@ -46,12 +50,12 @@ self.addEventListener('activate', event => {
 
 // ── Fetch strategy ─────────────────────────────────────────────────────────────
 //
-//  cvpr2026_workshops_tutorials.json  →  NETWORK-FIRST
+//  Conference JSON and registry  →  NETWORK-FIRST
 //    Always tries the network first so users automatically receive updates
 //    whenever you push a new JSON to the repo.
 //    Falls back to the cached version when offline.
 //
-//  Everything else (HTML, CSS, JS, images, room_coords.json)  →  CACHE-FIRST
+//  Everything else (HTML, CSS, images, room coordinates)  →  CACHE-FIRST
 //    Served instantly from cache; stale copies are refreshed in the background.
 //
 self.addEventListener('fetch', event => {
@@ -59,6 +63,7 @@ self.addEventListener('fetch', event => {
 
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin) return;   // ignore third-party requests
+  if (url.pathname.startsWith('/_vercel/')) return;  // Vercel serves these analytics assets directly
 
   // ── Network-first for all mutable/versioned files (JS, CSS, HTML, JSON) ──
   // Always try the network so updated files are picked up immediately.
@@ -76,13 +81,22 @@ self.addEventListener('fetch', event => {
         .then(response => {
           if (response.ok) {
             const canonical = new Request(url.pathname);
-            caches.open(CACHE_NAME).then(cache => cache.put(canonical, response.clone()));
+            // Clone before returning the response: once the browser starts reading it,
+            // cloning in a later cache promise throws "Response body is already used".
+            const cacheCopy = response.clone();
+            caches.open(CACHE_NAME)
+              .then(cache => cache.put(canonical, cacheCopy))
+              .catch(() => {});
           }
           return response;
         })
-        .catch(() =>
-          caches.match(url.pathname).then(r => r || caches.match(event.request))
-        )
+        .catch(async () => {
+          const cached = await caches.match(url.pathname) || await caches.match(event.request);
+          return cached || new Response('Offline and not cached', {
+            status: 503,
+            headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+          });
+        })
     );
     return;
   }
@@ -93,11 +107,17 @@ self.addEventListener('fetch', event => {
       const networkFetch = fetch(event.request)
         .then(response => {
           if (response.ok) {
-            caches.open(CACHE_NAME).then(cache => cache.put(event.request, response.clone()));
+            const cacheCopy = response.clone();
+            caches.open(CACHE_NAME)
+              .then(cache => cache.put(event.request, cacheCopy))
+              .catch(() => {});
           }
           return response;
         })
-        .catch(() => cached);
+        .catch(() => cached || new Response('Offline and not cached', {
+          status: 503,
+          headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+        }));
       return cached || networkFetch;
     })
   );

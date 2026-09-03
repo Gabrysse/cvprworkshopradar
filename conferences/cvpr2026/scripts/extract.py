@@ -4,6 +4,7 @@ CVPR 2026 Workshop & Tutorial extractor (v3 — column-aware, page-level type).
 
 import json
 import re
+import argparse
 from pathlib import Path
 
 import pdfplumber
@@ -16,8 +17,9 @@ try:
 except ImportError:
     _HTTP_AVAILABLE = False
 
-PDF_PATH = Path(__file__).parent / "CVPR_workshops_tutorials_2026_14.pdf"
-OUTPUT_PATH = Path(__file__).parent / "cvpr2026_workshops_tutorials.json"
+CVPR_DIR = Path(__file__).resolve().parents[1]
+PDF_PATH = CVPR_DIR / "source" / "CVPR_workshops_tutorials_2026_14.pdf"
+OUTPUT_PATH = CVPR_DIR / "data" / "workshops_tutorials.json"
 
 DATE_MAP = {
     "6/3/2026": "Wednesday, June 3, 2026",
@@ -505,6 +507,12 @@ def match_track(title, track_map):
 
 
 def main():
+    global PDF_PATH, OUTPUT_PATH
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--pdf", type=Path, default=PDF_PATH, help="Official CVPR programme PDF")
+    parser.add_argument("--output", type=Path, default=OUTPUT_PATH, help="Output JSON path")
+    args = parser.parse_args()
+    PDF_PATH, OUTPUT_PATH = args.pdf, args.output
     print(f"Reading: {PDF_PATH}")
     columns = get_columns(PDF_PATH)
     print(f"  Pages: {len(columns)}")

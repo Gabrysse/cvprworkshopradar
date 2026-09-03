@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CVPR 2026 — Workshops &amp; Tutorials</title>
+  <title>Workshop Radar</title>
   <link rel="icon" type="image/png" href="assets/images/logo.png">
   <link rel="apple-touch-icon" href="assets/images/logo.png">
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -15,19 +15,26 @@
     (window.vaq = window.vaq || []).push(arguments);
   };
   window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  if (!['localhost', '127.0.0.1'].includes(window.location.hostname)) {
+    ['/_vercel/insights/script.js', '/_vercel/speed-insights/script.js'].forEach(src => {
+      const script = document.createElement('script');
+      script.defer = true;
+      script.src = src;
+      document.head.appendChild(script);
+    });
+  }
 </script>
-<script defer src="/_vercel/insights/script.js"></script>
-<script defer src="/_vercel/speed-insights/script.js"></script>
 
-<body>
+<body class="conference-loading">
 
 <header>
   <div class="header-top">
     <div class="header-brand">
-      <h1>CVPR 2026 — Workshops &amp; Tutorials Radar</h1>
-      <p>Denver Convention Center · Denver, Colorado, USA &nbsp;·&nbsp; June 3–4, 2026</p>
+      <h1 id="brand-name">Workshop Radar</h1>
+      <p id="conference-subtitle">Loading current conference…</p>
     </div>
     <div class="header-meta">
+      <span class="meta-pill" id="pill-conference">Current conference</span>
       <span class="meta-pill" id="pill-workshops">— workshops</span>
       <span class="meta-pill" id="pill-tutorials">— tutorials</span>
       <a class="btn-report" href="https://github.com/Gabrysse/cvprworkshopradar/issues/new?template=event-correction.yml" target="_blank" rel="noopener noreferrer">🐛 Report Issue</a>
@@ -35,6 +42,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" data-tab="browse">🔍 Browse Events</button>
+    <button class="tab-btn" data-tab="live" hidden><span class="live-tab-dot" aria-hidden="true" hidden></span>Live</button>
     <button class="tab-btn" data-tab="schedule">
       🗓 My Schedule
       <span class="tab-badge" id="sched-badge">0</span>
@@ -64,8 +72,6 @@
           <label for="f-date">Date</label>
           <select id="f-date">
             <option value="">All dates</option>
-            <option value="6/3/2026">Wed, June 3</option>
-            <option value="6/4/2026">Thu, June 4</option>
           </select>
         </div>
         <div class="filter-group">
@@ -132,6 +138,14 @@
 
   </div>
 
+  <!-- ── Live Tab ────────────────────────────────────────── -->
+  <div id="tab-live" class="tab-panel" aria-live="polite">
+    <div class="live-loading">
+      <div class="spinner"></div>
+      <p>Checking the live programme…</p>
+    </div>
+  </div>
+
   <!-- ── My Schedule Tab ─────────────────────────────────── -->
   <div id="tab-schedule" class="tab-panel">
 
@@ -171,6 +185,14 @@
             <span class="btn-refresh-icon">↺ Fetch update</span>
             <span class="btn-spinner"></span>
           </button>
+        </div>
+
+        <div class="settings-row" id="archive-settings-row">
+          <div class="settings-row-info">
+            <div class="settings-row-label">Past conferences</div>
+            <div class="settings-row-desc">Browse compact records from earlier editions</div>
+          </div>
+          <a class="archive-link" href="archive.html">Archive ↗</a>
         </div>
 
         <div class="settings-row">
@@ -330,7 +352,7 @@
 <div id="tl-tooltip" class="tl-tooltip" style="display:none"></div>
 
 <footer class="site-footer">
-  <p>⚠️ This website may contain errors or inaccuracies. We are not affiliated with or endorsed by CVPR, IEEE, or CVF in any way. Use at your own discretion.</p>
+  <p>⚠️ This independent website may contain errors or inaccuracies. Verify important details with the official conference and event websites.</p>
   <p><a href="https://github.com/Gabrysse/cvprworkshopradar/" target="_blank" rel="noopener noreferrer">View source on GitHub</a></p>
 </footer>
 

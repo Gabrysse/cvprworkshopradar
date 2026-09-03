@@ -1,14 +1,14 @@
-# CVPR Workshop Radar
+# Workshop Radar
 
 <p align="center">
-  <img src="assets/images/logo.png" alt="CVPR Workshop Radar logo" width="160">
+  <img src="assets/images/logo.png" alt="Workshop Radar logo" width="160">
 </p>
 
-**CVPR Workshop Radar** is an independent, searchable companion for exploring **CVPR 2026 workshops and tutorials**.
+**Workshop Radar** is an independent, searchable companion for exploring conference workshops and tutorials. The live experience currently tracks **ECCV 2026**; earlier programmes remain available in the archive.
 
-CVPR has a massive workshop and tutorial program. Finding the right sessions should not feel like opening twenty tabs, cross-checking PDFs, and hoping you did not miss the one workshop that perfectly matches your research.
+Large workshop and tutorial programmes should not feel like opening twenty tabs, cross-checking PDFs, and hoping you did not miss the one session that perfectly matches your research.
 
-**CVPR Workshop Radar** brings the program into one fast, friendly interface so you can search, filter, compare, save, and plan your workshop days with much less friction.
+**Workshop Radar** brings the programme into one fast, friendly interface so you can search, filter, compare, save, and plan workshop days with much less friction.
 
 The goal is simple:
 
@@ -27,7 +27,7 @@ The goal is simple:
 
 ## 🚀 What It Does
 
-CVPR Workshop Radar helps you move from “what is happening?” to “what should I attend?” with:
+Workshop Radar helps you move from “what is happening?” to “what should I attend?” with:
 
 - 🔎 **Unified browsing**  
   Explore workshops and tutorials from one interface instead of bouncing between scattered pages.
@@ -66,9 +66,9 @@ This project is meant to make that landscape easier to navigate. It is not an of
 
 This project is built on automatically collected information. Workshop and tutorial details are scraped from public sources and processed with a Large Language Model (LLM), which means the website may contain errors, missing information, outdated details, formatting issues, or incorrect interpretations of schedules and program content.
 
-Please verify important information with the official CVPR website and the official workshop or tutorial pages before making plans.
+Please verify important information with the official conference website and the official workshop or tutorial pages before making plans.
 
-CVPR Workshop Radar is an independent project. It is **not affiliated with, endorsed by, or officially connected to CVPR, IEEE, CVF, or the organizers of CVPR 2026** in any way.
+Workshop Radar is an independent project. It is **not affiliated with, endorsed by, or officially connected to any conference organizer**.
 
 ## 🛠️ Reporting Issues and Corrections
 
@@ -89,7 +89,21 @@ Reports with official links are especially helpful, because the underlying infor
 
 Details about the data pipeline and the website architecture are documented in [docs/TECHNICAL.md](docs/TECHNICAL.md).
 
-The pipeline goes from the official CVPR PDF program → static metadata extraction → LLM-powered schedule scraping with Playwright and a local Ollama model → a static single-page application served on Vercel.
+The pipeline goes from official PDF or web listings → static metadata extraction → LLM-powered schedule scraping with Playwright and a local Ollama model → a static single-page application served on Vercel.
+
+## Adding or updating a conference
+
+Run the guided entry point:
+
+```bash
+python3 ingest_conference.py
+```
+
+Choose a conference, enter its official workshop/tutorial listing URLs and/or programme PDF, then review the generated JSON. For ECCV 2026, use the canonical `Conferences/2026/Workshops` and `Conferences/2026/Tutorials` listing pages rather than the virtual-event endpoints. The script optionally renders venue maps and asks before starting the longer Ollama schedule extraction. Generated data is not made live automatically: review it first, then add or update its record in `conferences.json`.
+
+`conferences.json` controls the active conference, visual theme, source URLs, data file, archive status, and optional map assets. A conference in `upcoming` status renders a “Stay tuned” page without exposing incomplete event data.
+
+Conference material is grouped under `conferences/<conference-id>/`: use `data/` for generated programme data, `source/` for official documents, `maps/` for venue assets, and `scripts/` for conference-specific tooling. Shared ingestion and Ollama tools remain at the repository root.
 
 ## 💛 Contributions
 

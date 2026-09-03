@@ -1,16 +1,22 @@
-I# Technical Details
+# Technical Details
 
 ## Data Pipeline
 
-The data displayed on CVPR Workshop Radar is produced by a multi-stage pipeline that goes from a PDF program to a structured JSON file with extracted schedules.
+The data displayed on Workshop Radar is produced by a multi-stage pipeline that goes from a PDF programme or official web listing to a structured JSON file with extracted schedules.
 
-### Stage 1 — Initial extraction (`extract_cvpr.py`)
+## Conference registry
 
-The starting point is the official CVPR 2026 program PDF. `extract_cvpr.py` uses `pdfplumber` to parse column-aware tables from the PDF and produces the initial `cvpr2026_workshops_tutorials.json` with core metadata: title, date, time slot, track, room, and official website URL. URLs are cross-referenced against the `cvpr.thecvf.com` workshops and tutorials listing to fill in missing links.
+`conferences.json` selects the active conference and lists archived ones. A record has an ID, display metadata, status, theme, official source links, and—once ready—a data file. Conference-specific artefacts live under `conferences/<conference-id>/`: `data/` for programme JSON and extraction diagnostics, `source/` for supplied PDFs, and `maps/` for floor plans, images, and coordinates. Map fields are optional. The site loads this registry first, so an `upcoming` conference can show a waiting state without incomplete event data.
+
+Browser state is namespaced by conference ID. Date filters, calendar days, and map assets are derived from the selected conference rather than fixed CVPR values.
+
+### Stage 1 — Initial extraction
+
+For CVPR-style PDFs, `conferences/cvpr2026/scripts/extract.py --pdf PROGRAM.pdf --output conference.json` uses `pdfplumber` to parse column-aware listings. For official web listings, `extract_web_listing.py` creates an initial event list from public event-site links. `ingest_conference.py` is the interactive entry point and chooses the appropriate path.
 
 ### Stage 2 — Schedule extraction (`ollama_extract.py`)
 
-For every event that has a website, `ollama_extract.py` attempts to extract the workshop or tutorial schedule and write it back to the JSON. The algorithm runs in two sequential passes:
+For every event that has a website, `ollama_extract.py --input conference.json` attempts to extract the workshop or tutorial schedule and write it back to that JSON. The algorithm runs in two sequential passes:
 
 **Text pass**
 
@@ -33,7 +39,7 @@ If the text pass fails to find a schedule (or `--vision` is passed), the script 
 
 **Quality assessment**
 
-After extraction the result is stored back to the JSON with three fields: `program_text` (the Markdown table, capped at 4 000 characters), `program_found` (boolean), and `program_quality` (a short label). Entries marked `manually_adjusted` are never overwritten by subsequent runs.
+After extraction the result is stored back to the JSON with `program_text` (the Markdown table, capped at 4 000 characters), `program_found` (boolean), and metadata from the event website. The metadata pass records the complete organizer list and an explicit abstract/description when available, but preserves already-curated CVPR summaries and organizers. Entries marked `manually_adjusted` are never overwritten by subsequent runs.
 
 **CLI options**
 
@@ -48,9 +54,14 @@ python3 ollama_extract.py --model qwen3.5:0.8b     # override text model
 python3 ollama_extract.py --vision-model qwen3-vl:8b  # override vision model
 python3 ollama_extract.py --max 5                  # limit to N entries (testing)
 python3 ollama_extract.py --url https://...        # single URL (ad-hoc testing)
+python3 ollama_extract.py --input conference.json  # update a selected conference
 ```
 
 Ollama must be running locally (`ollama serve`) and the chosen model must be pulled (`ollama pull qwen3.5:9b`).
+
+### Optional map processing
+
+`build_map_assets.py` renders supplied venue PDFs to `conferences/<id>/maps/images/` and attempts exact room-label matching. It reports unresolved rooms rather than creating misleading pins, and writes a map-config fragment alongside the generated coordinate JSON; review both before adding the fields to `conferences.json`.
 
 ---
 
@@ -60,13 +71,13 @@ The front-end is a **single-page application** with no build step or external fr
 
 ### Data loading
 
-On startup `app.js` fetches `cvpr2026_workshops_tutorials.json` (with an optional cache-bust timestamp) and `room_coords.json` in parallel. All filtering and rendering is done client-side in memory.
+On startup `app.js` fetches `conferences.json`, then the selected conference's event data and optional room coordinates. All filtering and rendering is done client-side in memory.
 
 ### Views
 
 | Tab | Description |
 |-----|-------------|
-| Browse Events | Card/list grid with live search, date, time slot, type, track, and program-availability filters. Cards link to a modal with full details including the extracted schedule rendered as an HTML table. |
+| Browse Events | Card/list grid with live search, date, time slot, type, track, and program-availability filters. Cards link to a modal with full details including the extracted schedule rendered as an HTML table. Upcoming conferences instead show a dedicated waiting state. |
 | My Schedule | Saved events stored in `localStorage`; viewable as a flat list or in a calendar-style day view. |
 | Settings | Theme toggle and cache-bust reload. |
 
@@ -74,7 +85,7 @@ A **Swipe mode** lets users triage events quickly with keyboard or swipe gesture
 
 ### Map support
 
-Room locations are defined in `room_coords.json` as pixel coordinates on floor-plan images (Ballroom, Meeting, and Exhibit hall maps stored under `assets/images/`). Clicking a room name in the event detail modal opens the corresponding map with a pin.
+Room locations are defined in each conference’s `maps/room_coords.json` as pixel coordinates on its floor-plan images. Clicking a room name in the event detail modal opens the corresponding map with a pin.
 
 ### Program rendering
 
@@ -82,7 +93,7 @@ Schedule text stored in `program_text` is rendered by `renderProgram()`: Markdow
 
 ### Offline support
 
-A service worker (`sw.js`) caches the shell assets and JSON for offline use.
+A service worker (`sw.js`) caches the shell assets, registry, and conference JSON for offline use.
 
 ### QR code
 

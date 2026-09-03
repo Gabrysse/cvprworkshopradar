@@ -1,0 +1,63 @@
+{
+  "run_at": "2026-05-27T09:52:23.473397+00:00",
+  "model": "qwen3.5:9b",
+  "pages_processed": 1,
+  "total_changes": 5,
+  "changes": [
+    {
+      "page": 19,
+      "title": "Efficient Deep Learning for Computer Vision",
+      "type": "Workshop",
+      "changes": {
+        "summary": {
+          "old": "The 9th Efficient Deep Learning for Computer Vision (ECV) Workshop will convene leading researchers and practitioners to advance scalable, resource-aware AI for vision applications. The program features innovations in foundation models, generative AI, 3D scene understanding, embodied agents, and neural rendering for mobile, wearable, and edge de- vices. Attendees will benefit from invited talks, onsite demos, and the IEEE Low-Power Computer Vision Challenge. ECV provides a premier platform for exchanging ideas and fostering collaboration to shape the future of efficient computer vision on edge devices. Third Joint Egocentric Vision (EgoVis) Workshop Organizers: Antonino Furnari, Chiara Plizzari, Dima Damen, Giovanni Maria Farinella, Jitendra Malik, Kristen Grauman, Marc Pollefeys, Masashi Hatano, Richard Newcombe, Siddhant Bansal, Tushar Nagarajan, Yoichi Sato, David J. Crandall",
+          "new": "The 9th Efficient Deep Learning for Computer Vision (ECV) Workshop will convene leading researchers and practitioners to advance scalable, resource-aware AI for vision applications. The program features innovations in foundation models, generative AI, 3D scene understanding, embodied agents, and neural rendering for mobile, wearable, and edge devices. Attendees will benefit from invited talks, onsite demos, and the IEEE Low-Power Computer Vision Challenge. ECV provides a premier platform for exchanging ideas and fostering collaboration to shape the future of efficient computer vision on edge devices."
+        }
+      }
+    },
+    {
+      "page": 19,
+      "title": "Third Joint Egocentric Vision (EgoVis) Workshop",
+      "type": "Workshop",
+      "changes": {
+        "summary": {
+          "old": "The Joint Egocentric Vision (EgoVis) Workshop brings together the community advancing first-person perception, covering key advances in embodied AI, video understanding, multi-modal learning, self-supervised learning, and AR/VR applications. Gathering over 100 researchers from ac- ademia and industry, EgoVis features keynotes, paper presentations, pan- els, and challenge results from major datasets including EPIC-KITCHENS, HD-EPIC, Ego4D, Ego-Exo4D, HoloAssist, and EgoCross, fostering collabo- ration to advance egocentric vision research and its impact on robotics, cognitive science, and everyday technologies. From Lab Demos to Daily Tasks: Embodied Intelligence in the Wild Organizers: Hongyang Li, Ping Luo, Hao Zhao, Andrei Bursuc, Animesh Garg, Lingjie Liu, Amy Zhang, Huijie Wang",
+          "new": "The Joint Egocentric Vision (EgoVis) Workshop brings together the community advancing first-person perception, covering key advances in embodied AI, video understanding, multi-modal learning, self-supervised learning, and AR/VR applications. Gathering over 100 researchers from academia and industry, EgoVis features keynotes, paper presentations, panels, and challenge results from major datasets including EPIC-KITCHENS, HD-EPIC, Ego4D, Ego-Exo4D, HoloAssist, and EgoCross, fostering collaboration to advance egocentric vision research and its impact on robotics, cognitive science, and everyday technologies."
+        }
+      }
+    },
+    {
+      "page": 19,
+      "title": "From Lab Demos to Daily Tasks: Embodied Intelligence in the Wild",
+      "type": "Workshop",
+      "changes": {
+        "summary": {
+          "old": "Embodied intelligence brings us closer to creating robots that can truly see, think, and act in the real world. Yet, today’s systems remain fragile, struggling to handle the complexity of the real world. This workshop looks ahead - toward generalizable embodied intelligence that thrives beyond the lab. By gathering pioneers from vision and robotics, the workshop seeks to identify key challenges, discuss interdisciplinary solu- tions, and chart promising directions for advancing embodied systems to everyday life.",
+          "new": "Embodied intelligence brings us closer to creating robots that can truly see, think, and act in the real world. Yet, today’s systems remain fragile, struggling to handle the complexity of the real world. This workshop looks ahead - toward generalizable embodied intelligence that thrives beyond the lab. By gathering pioneers from vision and robotics, the workshop seeks to identify key challenges, discuss interdisciplinary solutions, and chart promising directions for advancing embodied systems to everyday life."
+        }
+      }
+    },
+    {
+      "page": 19,
+      "title": "13th Workshop on Fine-grained Visual Categorization",
+      "type": "Workshop",
+      "changes": {
+        "summary": {
+          "old": "FGVC13 will address topics like self-supervision, limited data, and human-in-the-loop learning, all through the lens of fine-grained learn- ing. Extending beyond traditional computer vision, it highlights real-world applications in ecology, biology, medicine, and the humanities, encourag- ing participation from diverse research communities. Building on success- ful challenges like iNaturalist, FGVC13 will feature new competitions. This domain-agnostic workshop will feature leading computer vision research- ers and experts from ecology, remote sensing, and the humanities to pro- mote cross-disciplinary discussion of open problems across these fields. 12th Workshop on Medical Computer Vision Organizers: Alan Yuille, Archana Venkataraman, Can Zhao, Chenyu You, Curtis Langlotz, Dong Yang, Kang Wang, Pedro R. A. S. Bassi, Pengfei Guo, Wenxuan Li, Yang Yang, Yuankai Huo, Yucheng Tang, Yufan He, Yunhe Gao, Yuting He, Zongwei Zhou",
+          "new": "FGVC13 will address topics like self-supervision, limited data, and human-in-the-loop learning, all through the lens of fine-grained learning. Extending beyond traditional computer vision, it highlights real-world applications in ecology, biology, medicine, and the humanities, encouraging participation from diverse research communities. Building on successful challenges like iNaturalist, FGVC13 will feature new competitions. This domain-agnostic workshop will feature leading computer vision researchers and experts from ecology, remote sensing, and the humanities to promote cross-disciplinary discussion of open problems across these fields."
+        }
+      }
+    },
+    {
+      "page": 19,
+      "title": "12th Workshop on Medical Computer Vision",
+      "type": "Workshop",
+      "changes": {
+        "summary": {
+          "old": "We propose to host the 12th Workshop on Medical Computer Vision (MCV) at CVPR 2026, building on the strong legacy and momen- tum of previous years while further expanding its scope and leadership. This year’s MCV Workshop will be organized by a broader, multi-institu- tional team representing Johns Hopkins University, Stanford University, Stony Brook University, NVIDIA, and several other leading institutions. This diverse organizing committee brings together extensive expertise across computer vision, medical imaging, clinical AI, surgical robotics, and em- bodied AI for healthcare. The workshop will continue its mission of foster- ing collaboration among academia, healthcare, and industry – engaging students, clinicians, and researchers worldwide. We aim to create an in- teractive and inclusive environment featuring top-tier invited talks, panel discussions, and networking opportunities that drive forward the frontiers of medical computer vision research and translation. PROGRAM GUIDE WORKSHOPS & TUTORIALS | 19",
+          "new": "We propose to host the 12th Workshop on Medical Computer Vision (MCV) at CVPR 2026, building on the strong legacy and momentum of previous years while further expanding its scope and leadership. This year’s MCV Workshop will be organized by a broader, multi-institutional team representing Johns Hopkins University, Stanford University, Stony Brook University, NVIDIA, and several other leading institutions. This diverse organizing committee brings together extensive expertise across computer vision, medical imaging, clinical AI, surgical robotics, and embodied AI for healthcare. The workshop will continue its mission of fostering collaboration among academia, healthcare, and industry – engaging students, clinicians, and researchers worldwide. We aim to create an interactive and inclusive environment featuring top-tier invited talks, panel discussions, and networking opportunities that drive forward the frontiers of medical computer vision research and translation."
+        }
+      }
+    }
+  ]
+}
