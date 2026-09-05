@@ -30,7 +30,7 @@
       "program_found": true,
       "program_url": "https://sites.google.com/view/beyondeuclidean/home",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 - 09:05 | Opening | Opening Remarks | - |\n| 09:05 - 09:45 | On Hyperbolic Reinforcement Learning | Keynote | Sebastian Tschiatschek |\n| 09:45 - 10:15 | Short pitches only (no Q&A) | Oral | - |\n| 10:15 - 11:10 | Poster Session | Poster | - |\n| 11:10 - 11:50 | The ZOO of hyperbolic embedders | Keynote | Dorota Celińska-Kopczyńska |\n| 11:50 - 12:30 | Curvature as an Inductive Bias for Vision-Language Models | Keynote | Se Young Chun |",
-      "program_scraped_at": "2026-09-02T09:28:20.306566+00:00"
+      "program_scraped_at": "2026-09-05T10:04:48.610889+00:00"
     },
     {
       "type": "Workshop",
@@ -47,8 +47,8 @@
       "website": "https://opensun3d.github.io/",
       "program_found": true,
       "program_url": "https://opensun3d.github.io/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 - 09:10 | Welcome & Introduction | Opening Remarks | - |\n| 09:10 - 09:40 | Keynote 1 | Keynote | TBD |\n| 09:40 - 10:10 | Keynote 2 | Keynote | TBD |\n| 10:10 - 11:00 | Coffee Break & Poster Session (Malmo Massan Exhibit Hall) | Break | - |\n| 11:00 - 11:30 | Keynote 3 | Keynote | TBD |\n| 11:30 - 12:00 | Keynote 4 | Keynote | TBD |\n| 12:00 - 12:30 | Keynote 5 | Keynote | TBD |\n| 12:30 - 12:40 | Concluding Remarks | Closing Remarks | TBD |",
-      "program_scraped_at": "2026-09-02T09:28:27.730933+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 - 09:10 | Welcome & Introduction | Opening Remarks | - |\n| 09:10 - 09:40 | Keynote 1 | Keynote | Matthias Nießner |\n| 09:40 - 10:10 | Keynote 2 | Keynote | Dima Damen |\n| 10:10 - 11:00 | Coffee Break & Poster Session (Malmo Massan Exhibit Hall) | Break | - |\n| 11:00 - 11:30 | Keynote 3 | Keynote | Nicolas Heess |\n| 11:30 - 12:00 | Keynote 4 | Keynote | Peter Kontschieder |\n| 12:00 - 12:30 | Winners Talks | Invited Talk | - |\n| 12:30 - 12:40 | Concluding Remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:04:56.852504+00:00"
     },
     {
       "type": "Workshop",
@@ -65,8 +65,8 @@
       "website": "https://twin-world.github.io/",
       "program_found": true,
       "program_url": "https://twin-world.github.io/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 | Welcome & TwinWorld Vision | Opening Remarks | Olaf Wysocki on behalf of the TwinWorld Organizers |\n| 09:10 | Invited Talk | Invited Talk | Christian Rupprecht |\n| 09:25 | Invited Talk | Invited Talk | Andrea Tagliasacchi |\n| 09:40 | Invited Talk | Invited Talk | Benjamin Busam |\n| 09:55 | Invited Talk | Invited Talk | Angela Dai |\n| 10:10 | Coffee Break & Networking | Break | - |\n| 10:20 | Invited Talk | Invited Talk | Francis Engelmann |\n| 10:35 | Invited Talk | Invited Talk | Iro Armeni |\n| 10:50 | Invited Talk | Invited Talk | Maurice Fallon |\n| 11:05 | Invited Talk | Invited Talk | Brian Sheil |\n| 11:20 | TwinWorld Panel: From 3D Vision to Deployable Digital Twins | Panel | Rupprecht, Tagliasacchi, Engelmann, Dai, Busam, Armeni, Fallon, Sheil |\n| 11:50 | TwinWorld Paper Pitches | Oral Presentation | - |\n| 12:05 | TwinWorld Awards: Best Paper, Honourable Mention & Best Oral Presentation | Awards | - |\n| 12:15 | TwinWorld Challenge: Large-Scale 3D Semantic Gaussian Splatting Reconstruction | Challenge | - |\n| 12:25 | Closing Remarks | Closing Remarks | TwinWorld Organizers |",
-      "program_scraped_at": "2026-09-02T09:28:37.353203+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 | Welcome & TwinWorld Vision | Opening Remarks | Olaf Wysocki on behalf of the TwinWorld Organizers |\n| 09:10 | Invited Talk | Invited Talk | Christian Rupprecht |\n| 09:25 | Invited Talk | Invited Talk | Andrea Tagliasacchi |\n| 09:40 | Invited Talk | Invited Talk | Benjamin Busam |\n| 09:55 | Invited Talk | Invited Talk | Angela Dai |\n| 10:10 | Coffee Break & Networking | Break | - |\n| 10:20 | Invited Talk | Invited Talk | Francis Engelmann |\n| 10:35 | Invited Talk | Invited Talk | Iro Armeni |\n| 10:50 | Invited Talk | Invited Talk | Maurice Fallon |\n| 11:05 | Invited Talk | Invited Talk | Brian Sheil |\n| 11:20 | TwinWorld Panel: From 3D Vision to Deployable Digital Twins | Panel | Rupprecht, Tagliasacchi, Engelmann, Dai, Busam, Armeni, Fallon, Sheil |\n| 11:50 | TwinWorld Paper Pitches | Oral Presentation | - |\n| 12:05 | TwinWorld Awards: Best Paper, Honourable Mention & Best Oral Presentation | Awards | - |\n| 12:15 | TwinWorld Challenge: Large-Scale 3D Semantic Gaussian Splatting Reconstruction | Challenge Update | - |\n| 12:25 | Closing Remarks | Closing Remarks | TwinWorld Organizers |",
+      "program_scraped_at": "2026-09-05T10:05:06.622551+00:00"
     },
     {
       "type": "Workshop",
@@ -84,7 +84,7 @@
       "program_found": true,
       "program_url": "https://vilma-workshop.github.io/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:00 - 08:10 | Introduction to the Workshop | Opening Remarks | - |\n| 08:10 - 08:50 | Invited Talk 1 | Invited Talk | TBD |\n| 08:50 - 09:30 | Invited Talk 2 | Invited Talk | TBD |\n| 09:30 - 10:00 | Coffee Break (30 min) | Break | - |\n| 10:00 - 10:40 | Invited Talk 3 | Invited Talk | TBD |\n| 10:40 - 11:20 | Invited Talk 4 | Invited Talk | TBD |\n| 11:20 - 11:50 | Panel Discussion | Panel Discussion | TBD |\n| 11:50 - 12:00 | Closing Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:28:44.002766+00:00"
+      "program_scraped_at": "2026-09-05T10:05:13.550621+00:00"
     },
     {
       "type": "Workshop",
@@ -102,7 +102,7 @@
       "program_found": false,
       "program_url": "https://sites.google.com/view/neuslam/home",
       "program_text": null,
-      "program_scraped_at": "2026-09-02T09:28:55.877552+00:00"
+      "program_scraped_at": "2026-09-05T10:05:26.089155+00:00"
     },
     {
       "type": "Workshop",
@@ -120,7 +120,7 @@
       "program_found": false,
       "program_url": "https://sites.google.com/view/ppvlm2026/home",
       "program_text": null,
-      "program_scraped_at": "2026-09-02T09:29:04.033551+00:00"
+      "program_scraped_at": "2026-09-05T10:05:37.485697+00:00"
     },
     {
       "type": "Workshop",
@@ -138,7 +138,7 @@
       "program_found": true,
       "program_url": "https://cmp.felk.cvut.cz/sixd/workshop_2026/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 14:00 | Opening Remarks | Opening | Tomas Hodan (Mistral) |\n| 14:10 | TBD | Invited Talk | Ranjay Krishna (University of Washington, Microsoft AI) |\n| 14:40 | How Much Pose Does a Robot Need? Lessons from Mobile Manipulation | Invited Talk | Bernadette Bucher (University of Michigan) |\n| 15:10 | Coffee Break | Break | - |\n| 16:00 | Closing the Loop: Synthetic Worlds for Scalable Robot Learning | Invited Talk | Sergey Zakharov (Toyota Research Institute) |\n| 16:30 | AI for Industry Challenge | Invited Talk | Ian Chen, Trushant Adeshara (Intrinsic) |\n| 17:00 | BOP Challenge 2026 | Challenge Session | Tomas Hodan (Mistral), Martin Sundermeyer (Google) |\n| 17:45 | Poster Session | Poster | - |\n| 18:45 | End of Workshop | Closing | - |",
-      "program_scraped_at": "2026-09-02T09:29:11.318243+00:00"
+      "program_scraped_at": "2026-09-05T10:05:45.325763+00:00"
     },
     {
       "type": "Workshop",
@@ -156,7 +156,7 @@
       "program_found": true,
       "program_url": "https://3dgen-cad-workshop.github.io/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:30–13:40 | Opening Remarks | Opening Remarks | - |\n| 13:40–14:15 | Evolving 3D Generation to Intelligent CAD: From Neural Fields, Primitive Assembly, to Programs and Visual-Language Twins | Keynote Talk 1 | Hao (Richard) Zhang |\n| 14:15–14:50 | 4D Geometry: Learning the Space of Character Motions | Keynote Talk 2 | Niloy J. Mitra |\n| 14:50–15:25 | - | Keynote Talk 3 | Dinesh Manocha |\n| 15:25–15:40 | Coffee Break | Break | - |\n| 15:40–16:15 | - | Keynote Talk 4 | Xin Tong |\n| 16:15–16:45 | Roundtable Panel & Q&A | Roundtable Panel & Q&A | Invited Speakers |\n| 16:45–16:57 | Pointer-CAD v2: Plan-Then-Construct CAD Generation with Dimension-Aware Parametric Precision | Invited Paper Spotlight | Dacheng Qi |\n| 16:57–17:09 | Towards High-Fidelity CAD Generation via LLM-Driven Program Generation and Text-Based B-Rep Primitive Grounding | Invited Paper Spotlight | Jiahao Li |\n| 17:09–17:21 | Flatten The Complex: Joint B-Rep Generation via Compositional κ-Cell Particles | Invited Paper Spotlight | Yuanqi Li |\n| 17:21–17:33 | Sketch2Arti: Sketch-based Articulation Modeling of CAD Objects | Invited Paper Spotlight | Yi Yang |\n| 17:33–17:45 | Articraft: An Agentic System for Scalable Articulated 3D Asset Generation | Invited Paper Spotlight | Shangzhe Wu |\n| 17:45–17:55 | Challenge Presentations | Challenge Presentations | Challenge Finalists |\n| 17:55–18:00 | Closing Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:29:21.808155+00:00"
+      "program_scraped_at": "2026-09-05T10:05:56.075046+00:00"
     },
     {
       "type": "Workshop",
@@ -173,8 +173,8 @@
       "website": "https://geo-int.github.io/",
       "program_found": true,
       "program_url": "https://geo-int.github.io/",
-      "program_text": "**Sept. 08, 2026 | Full Day | Malmö, Sweden**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 – 09:15 | Opening Remarks and Workshop Overview | Opening Remarks | - |\n| 09:15 – 10:00 | Advances in 3D Reconstruction | Invited Talk | Qixing Huang (UT Austin) |\n| 10:00 – 10:40 | Morning Coffee Break | Break | - |\n| 10:40 – 11:25 | Geometry-aware 3D Vision and Neural Scene Representations | Invited Talk | Zorah Lähner (University of Bonn) |\n| 11:25 – 11:30 | Sponsor Presentation | Sponsor Session | Proxima Fusion |\n| 11:30 – 12:15 | Physics-aware and Simulation-informed Models | Invited Talk | Emanuele Rodolà (Sapienza University of Rome) |\n| 12:15 – 13:15 | Lunch Break | Break | - |\n| 13:15 – 14:00 | Geometric Structures for Scientific Discovery | Invited Talk | Kostas Daniilidis (UPenn) |\n| 14:00 – 14:45 | Symmetry and Invariance in Visual Perception | Invited Talk | Vladislav Golyanik (MPI) |\n| 14:45 – 15:00 | Flash Talks: Spotlight Presentations | Flash Talks | - |\n| 15:00 – 16:00 | Poster Session & Afternoon Coffee | Poster Session | - |\n| 16:00 – 16:45 | Structured Representations for 3D Scene Understanding | Invited Talk | Jeong Joon Park (UMich) |\n| 16:45 – 17:00 | Closing Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:29:32.441601+00:00"
+      "program_text": "**Sept. 08, 2026 | Full Day | Malmömässan E1**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 – 09:15 | Opening Remarks and Workshop Overview | Opening Remarks | - |\n| 09:15 – 10:00 | Advances in 3D Reconstruction | Invited Talk | Qixing Huang (UT Austin) |\n| 10:00 – 10:40 | Morning Coffee Break | Break | - |\n| 10:40 – 11:25 | Geometry-aware 3D Vision and Neural Scene Representations | Invited Talk | Zorah Lähner (University of Bonn) |\n| 11:25 – 11:30 | Sponsor Presentation | Sponsor Session | Proxima Fusion |\n| 11:30 – 12:15 | Physics-aware and Simulation-informed Models | Invited Talk | Emanuele Rodolà (Sapienza University of Rome) |\n| 12:15 – 13:15 | Lunch Break | Break | - |\n| 13:15 – 14:00 | Geometric Structures for Scientific Discovery | Invited Talk | Kostas Daniilidis (University of Pennsylvania) |\n| 14:00 – 14:45 | Symmetry and Invariance in Visual Perception | Invited Talk | Vladislav Golyanik (MPI for Informatics) |\n| 14:45 – 15:00 | Topological Data Analysis and Deep Learning | Flash Talks | - |\n| 15:00 – 16:00 | Poster Session & Afternoon Coffee | Poster Session | - |\n| 16:00 – 16:45 | Structured Representations for 3D Scene Understanding | Invited Talk | Jeong Joon Park (University of Michigan) |\n| 16:45 – 17:00 | Closing Remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:06:07.371094+00:00"
     },
     {
       "type": "Workshop",
@@ -191,8 +191,8 @@
       "website": "https://perception-test-challenge.github.io/",
       "program_found": true,
       "program_url": "https://perception-test-challenge.github.io/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 - 09:10 | Welcome and introduction | Opening Remarks | Joao Carreira / Andrew Zisserman |\n| 09:10 - 09:30 | Challenge overview | Invited Talk | Viorica Patraucean |\n| 09:30 - 10:00 | Keynote | Keynote | Laura Leal-Taixé |\n| 10:00 - 10:45 | Coffee break | Break | - |\n| 10:45 - 11:15 | Keynote | Keynote | Andrew Davison |\n| 11:15 - 12:00 | Challenge results | Invited Talk | - |\n| 12:00 - 12:30 | Keynote | Keynote | Jack L. Gallant |\n| 12:30 - 13:00 | Panel discussion | Panel Discussion | - |",
-      "program_scraped_at": "2026-09-02T09:29:42.578563+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 - 09:10 | Welcome and introduction | Opening Remarks | Joao Carreira / Andrew Zisserman |\n| 09:10 - 09:30 | Challenge overview | Invited Talk | Viorica Patraucean |\n| 09:30 - 10:00 | Keynote | Keynote | Laura Leal-Taixé |\n| 10:00 - 10:45 | Coffee break | Break | - |\n| 10:45 - 11:15 | Keynote | Keynote | Andrew Davison |\n| 11:15 - 11:45 | Challenge results | Invited Talk | - |\n| 11:45 - 12:15 | Keynote | Keynote | Jack L. Gallant |\n| 12:15 - 12:30 | Concluding remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:06:15.049635+00:00"
     },
     {
       "type": "Workshop",
@@ -210,7 +210,7 @@
       "program_found": true,
       "program_url": "https://phys-ai-workshop.github.io/eccv26/",
       "program_text": "**September 9, 2026 | Full-day | ECCV 2026 Venue (Malmö, Sweden)**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:50 – 09:00 | Opening remarks | Opening Remarks | Andrea Vedaldi |\n| 09:00 – 09:35 | Invited Talk 1 | Invited Talk | Andreas Geiger |\n| 09:35 – 10:10 | Invited Talk 2 | Invited Talk | Ming-Yu Liu |\n| 10:10 – 10:25 | ☕ Coffee break | Break | - |\n| 10:25 – 11:00 | Invited Talk 3 | Invited Talk | Vincent Sitzmann |\n| 11:00 – 11:35 | Invited Talk 4 | Invited Talk | Jiajun Wu |\n| 11:35 – 12:10 | Invited Talk 5 | Invited Talk | Kristen Grauman |\n| 12:10 – 14:00 | 🥗 Lunch break | Break | - |\n| 14:00 – 14:35 | Invited Talk 6 | Invited Talk | Mike Roberts |\n| 14:35 – 15:10 | Invited Talk 7 | Invited Talk | Matthias Nießner |\n| 15:10 – 15:45 | Invited Talk 8 | Invited Talk | David Novotny |\n| 15:45 – 16:20 | Invited Talk 9 | Invited Talk | Marc Pollefeys |\n| 16:20 – 16:55 | Invited Talk 10 | Invited Talk | Haiwen (Haven) Feng |\n| 16:55 – 17:30 | Competition highlights | Awards & Winning Solutions | - |\n| 17:30 – 17:40 | Closing remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:29:52.599079+00:00"
+      "program_scraped_at": "2026-09-05T10:06:25.743005+00:00"
     },
     {
       "type": "Workshop",
@@ -228,7 +228,7 @@
       "program_found": true,
       "program_url": "https://sfm-dl.fbk.eu/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:30 | Opening remarks | Opening Remarks | - |\n| 8:40 | Are we learning to rediscover geometry? | Keynote | Christian Rupprecht |\n| 8:40 | Revisiting the Pareto Frontier of Structure from Motion | Keynote | Pierre Moulon |\n| 9:10 | Non-Minimal Sampling and Consensus for Prohibitively Large Datasets | Oral Session | Seong Hun Lee, Patrick Vandewalle, Javier Civera |\n| 9:10 | RoMa-Ω: What Feed-Forward 3D Models Know About Image Matching | Oral Session | David Nordström, Xinyue Zhang, Thibaut Loiseau, Vincent Lepetit, Fredrik Kahl |\n| 9:10 | Remove360: Benchmarking Residuals After Object Removal in 3D Gaussian Splatting | Oral Session | Simona Kocour, Assia Benbihi, Torsten Sattler |\n| 9:10 | Planar Motion Estimation with Known Rotation Angle | Oral Session | Tianchen Yang, Qianliang Wu, Yaqing Ding, Jian Yang |\n| 9:10 | P3P Made Easy | Oral Session | Seong Hun Lee, Patrick Vandewalle, Javier Civera |\n| 9:10 | Multi-Square-Up Homotopy Continuation for Robust Relative Pose | Oral Session | Norio Kosaka, Genki Osada, Shuhei Nishimura, Shinichi Higashino, Shuji Yamaguchi |\n| 9:10 | Hierarchical Structure-from-Motion Scales FeedForward Reconstruction | Oral Session | Kathirvel Gounder, Harneet Singh Khanuja, Akshay Krishnan, Xinan Zhang, Travis Driver, Nila Karthikesan, Zongyue Liu, Shicong Ma, Frank Dellaert |\n| 9:10 | Benchmarking Efficient & Effective Camera Pose Estimation Strategies for Novel View Synthesis | Oral Session | Jhacson Meza, Martin R. Oswald, Torsten Sattler |\n| 9:50 | TBD | Keynote | TBD |\n| 10:20 | Coffee break | Break | - |\n| 11:00 | TBD | Keynote | TBD |\n| 11:30 | Poster session | Poster Session | - |",
-      "program_scraped_at": "2026-09-02T09:30:04.486893+00:00"
+      "program_scraped_at": "2026-09-05T10:06:39.812631+00:00"
     },
     {
       "type": "Workshop",
@@ -245,8 +245,8 @@
       "website": "https://eccv2026-3d-world-models.github.io/",
       "program_found": true,
       "program_url": "https://eccv2026-3d-world-models.github.io/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 - 09:10 | Opening Remarks | Opening Remarks | - |\n| 09:10 - 09:40 | Keynote Talk #1 | Keynote | - |\n| 09:40 - 10:10 | Keynote Talk #2 | Keynote | - |\n| 10:10 - 10:25 | Spotlight Talk #1 | Spotlight | - |\n| 10:25 - 10:40 | Spotlight Talk #2 | Spotlight | - |\n| 10:40 - 11:00 | Coffee Break | Break | - |\n| 11:00 - 11:30 | Keynote Talk #3 | Keynote | - |\n| 11:30 - 12:00 | Keynote Talk #4 | Keynote | - |\n| 12:00 - 13:00 | Lunch Break | Break | - |\n| 13:00 - 13:30 | Keynote Talk #5 | Keynote | - |\n| 13:30 - 14:00 | Keynote Talk #6 | Keynote | - |\n| 14:00 - 14:45 | Poster Session | Poster | - |\n| 14:45 - 15:00 | Spotlight Talk #3 | Spotlight | - |\n| 15:00 - 15:15 | Spotlight Talk #4 | Spotlight | - |\n| 15:15 - 15:45 | Keynote Talk #7 | Keynote | - |\n| 15:45 - 16:15 | Keynote Talk #8 | Keynote | - |\n| 16:15 - 17:00 | Panel Discussion | Panel | - |\n| 17:00 - 17:10 | Closing Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:30:14.425702+00:00"
+      "program_text": "**September 9, 2026 | Full Day | Malmo, Sweden**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 - 09:10 | Opening Remarks | Opening Remarks | - |\n| 09:10 - 09:40 | Keynote: Vincent Sitzmann | Keynote | Vincent Sitzmann |\n| 09:40 - 10:10 | Keynote: Jerome Revaud | Keynote | Jerome Revaud |\n| 10:10 - 10:25 | Spotlight: Yiqun Mei | Spotlight | Yiqun Mei |\n| 10:25 - 10:40 | Spotlight: Mike Roberts | Spotlight | Mike Roberts |\n| 10:40 - 11:00 | Coffee Break | Break | - |\n| 11:00 - 11:30 | Keynote: Mehdi S. M. Sajjadi | Keynote | Mehdi S. M. Sajjadi |\n| 11:30 - 12:00 | Keynote: Andrea Vedaldi | Keynote | Andrea Vedaldi |\n| 12:00 - 13:00 | Lunch Break | Break | - |\n| 13:00 - 13:30 | Keynote: Yogesh Balaji | Keynote | Yogesh Balaji |\n| 13:30 - 14:00 | Keynote: Daniel Cremers | Keynote | Daniel Cremers |\n| 14:00 - 15:00 | Poster Session | Poster | - |\n| 15:00 - 15:15 | Coffee Break | Break | - |\n| 15:15 - 15:45 | Keynote: Shubham Tulsiani | Keynote | Shubham Tulsiani |\n| 15:45 - 16:15 | Keynote: Jiatao Gu | Keynote | Jiatao Gu |\n| 16:15 - 16:25 | Closing Remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:06:50.745734+00:00"
     },
     {
       "type": "Workshop",
@@ -263,8 +263,8 @@
       "website": "https://sites.google.com/view/mustcv-2026/",
       "program_found": true,
       "program_url": "https://sites.google.com/view/mustcv-2026/program",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 14:00 - 14:10 | Opening | Opening | - |\n| 14:10 - 14:20 | Building Interactable 3D Spaces from Imperfect Observations | Paper Talk | Prof. Angela Dai |\n| 14:20 - 15:00 | Keynote | Keynote | - |\n| 15:00 - 16:00 | Coffee Break with Poster Session | Break/Poster | - |\n| 16:00 - 16:10 | Building a 3D Foundation for Spatial AI | Paper Talk | Prof. Andrea Vedaldi |\n| 16:10 - 16:50 | Keynote by Prof. Gerard Pons-Moll | Keynote | Prof. Gerard Pons-Moll |\n| 17:00 - 17:40 | Closing | Closing | - |",
-      "program_scraped_at": "2026-09-02T09:30:56.896020+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 14:00 - 14:10 | Opening | Opening Remarks | - |\n| 14:10 - 14:20 | Building Interactable 3D Spaces from Imperfect Observations | Keynote | Prof. Angela Dai |\n| 14:20 - 15:00 | Coffee Break with Poster Session | Break / Poster Session | - |\n| 15:00 - 16:00 | Paper Talk #2 | Oral Presentation | - |\n| 16:00 - 16:10 | Building a 3D Foundation for Spatial AI | Keynote | Prof. Andrea Vedaldi |\n| 16:10 - 16:50 | Paper Talk #3 | Oral Presentation | - |\n| 16:50 - 17:00 | INTERACT: Reconstructing, Generating and Grounding Humans in Dynamic Worlds | Keynote | Prof. Gerard Pons-Moll |\n| 17:00 - 17:40 | Paper Talk #4 | Oral Presentation | - |\n| 17:40 - 17:50 | Closing | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:07:08.016066+00:00"
     },
     {
       "type": "Workshop",
@@ -282,7 +282,7 @@
       "program_found": true,
       "program_url": "https://3d-in-the-wild.github.io/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:30 - 13:35 | Opening Remarks | Opening Remarks | - |\n| 13:35 - 14:05 | Invited Talk 1 | Invited Talk | Vincent Sitzmann (MIT) |\n| 14:05 - 14:35 | Invited Talk 2 | Invited Talk | Sagie Benaim (Hebrew University of Jerusalem) |\n| 14:35 - 14:50 | Spotlight Presentation | Spotlight Presentation | Yijun Yuan (Tsinghua University) |\n| 14:50 - 15:30 | Poster Session | Poster Session | - |\n| 15:30 - 16:00 | Invited Talk 3 | Invited Talk | Georgios Pavlakos (UT Austin) |\n| 16:00 - 16:30 | Invited Talk 4 | Invited Talk | Yu-Lun Liu (National Yang Ming Chiao Tung University) |\n| 16:30 - 17:00 | Invited Talk 5 | Invited Talk | Ruohan Gao (University of Maryland, College Park) |",
-      "program_scraped_at": "2026-09-02T09:31:05.506758+00:00"
+      "program_scraped_at": "2026-09-05T10:07:22.225233+00:00"
     },
     {
       "type": "Workshop",
@@ -299,8 +299,8 @@
       "website": "https://iplab.dmi.unict.it/acvr2026/",
       "program_found": true,
       "program_url": "https://iplab.dmi.unict.it/acvr2026/program.html",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 9:00 AM | Opening Remarks | Opening Remarks | - |\n| 9:05 AM | Human-Robot Interaction and Collaboration through Sim-to-Real Learning and Guided Generative Planning | Keynote | Katerina Fragkiadaki |\n| 9:35 AM | Oral Session 1 | Oral Session 1 | - |\n| 10:05 AM | SLU-2K: A Question-Based Benchmark for Semantic Evaluation of Sign Language Translation | Abstracts | Zeno Testa |\n| 10:05 AM | Do VLMs See What Blind Users Show Them? A Distribution-Shift and Evaluation-Protocol Audit on VizWiz | Abstracts | Sergei Kurashkin |\n| 10:05 AM | Forecasting 3D Hand Motion with Spatial and Frequency Anisotropic Residual Diffusion | Abstracts | Francesco Agnelli |\n| 10:05 AM | MOCHA: Multi-modal Objects-aware Cross-arcHitecture Alignment | Abstracts | Tymofii Matiichyk |\n| 10:05 AM | Occupancy detection as a mechanism for avoiding unsafe or misaligned interventions | Abstracts | Prodromos Boutis |\n| 10:05 AM | Controller-Free Mixed Reality Teleoperation with Integrated Depth Assistance, Proportional Motion Calibration, and Reinforcement Learning for Confined-Space Robot Manipulation | Abstracts | Vivek Chavan |\n| 10:05 AM | A Framework for Egocentric and Exocentric Procedural Understanding via Temporal Segmentation and Semantic Abstraction | Abstracts | - |\n| 10:35 AM | Poster Session and Coffee Break | Poster Session | - |\n| 11:30 AM | What do we need to model about the human to be truly assistive? | Keynote | Dima Damen |\n| 12:00 PM | Oral Session 2 | Oral Session 2 | - |\n| 12:30 PM | Doctoral Consortium | Doctoral Consortium | - |\n| 13:00 PM | Closing Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:31:19.788822+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:25 | Opening Remarks | Opening Remarks | - |\n| 08:30 | Human-Robot Interaction and Collaboration through Sim-to-Real Learning and Guided Generative Planning | Keynote | Katerina Fragkiadaki |\n| 09:00 | SLU-2K: A Question-Based Benchmark for Semantic Evaluation of Sign Language Translation | Oral Session 1 | Zeno Testa |\n| 09:00 | Do VLMs See What Blind Users Show Them? A Distribution-Shift and Evaluation-Protocol Audit on VizWiz | Oral Session 1 | Sergei Kurashkin |\n| 09:00 | Forecasting 3D Hand Motion with Spatial and Frequency Anisotropic Residual Diffusion | Oral Session 1 | Francesco Agnelli |\n| 09:00 | MOCHA: Multi-modal Objects-aware Cross-arcHitecture Alignment | Oral Session 1 | Tymofii Matiichyk |\n| 09:00 | Occupancy detection as a mechanism for avoiding unsafe or misaligned interventions | Oral Session 1 | Prodromos Boutis |\n| 09:00 | Controller-Free Mixed Reality Teleoperation with Integrated Depth Assistance, Proportional Motion Calibration, and Reinforcement Learning for Confined-Space Robot Manipulation | Oral Session 1 | Vivek Chavan |\n| 09:00 | A Framework for Egocentric and Exocentric Procedural Understanding via Temporal Segmentation and Semantic Abstraction | Oral Session 1 | - |\n| 09:30 | Abstracts | Oral Session 1 | Elena Camuffo |\n| 10:00 | Poster Session AND Coffee Break | Break | - |\n| 11:00 | Language-Conditioned Object Highlighting for Simulated Prosthetic Vision | Oral Session 2 | Julia Tomas-Barba |\n| 11:00 | MistyPilot: Enabling Social-Robot Control through Multi-Agent LLM Skill Orchestration | Oral Session 2 | Xiao Wang |\n| 11:00 | EmPath: Follower-Aware Local Path Planning for Robot-Assisted Navigation of Blind and Visually Impaired Users | Oral Session 2 | Georgina Nuthall |\n| 11:30 | What do we need to model about the human to be truly assistive? | Keynote | Dima Damen |\n| 12:00 | Synthetic Data and Generic Representations for Open World 6D Object Pose Estimation | Doctoral Consortium | Andreas Kriegler |\n| 12:00 | Photorealistic Sign Language Production with Non-Manual Features | Doctoral Consortium | Alexandre Symeonidis-Herzig |\n| 12:00 | RPGD: RANSAC-P3P Gradient Descent for Extrinsic Calibration in 3D Human Pose Estimation | Doctoral Consortium | Zhanyu Tuo |\n| 12:30 | Closing Remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:07:41.272648+00:00"
     },
     {
       "type": "Workshop",
@@ -318,7 +318,7 @@
       "program_found": true,
       "program_url": "https://interactive-intelligence-lab.github.io/eccv26-aiw-page/",
       "program_text": "**September 8, 2026 | 8:30 AM – 12:30 PM | ECCV 2026**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:30 - 08:45 | Opening remarks and Alaya Lab introduction | Opening Remarks | Haiyang Liu, Alaya Lab |\n| 08:45 - 09:15 | Keynote 1 | Keynote | Jinwei Gu |\n| 09:15 - 09:45 | Keynote 2 | Keynote | Yilun Du |\n| 09:45 - 10:05 | Oral presentations (3 papers) | Oral | TBD |\n| 10:05 - 10:50 | Break and Poster Session | Break / Poster | - |\n| 10:50 - 11:20 | Keynote 3 | Keynote | Lianhui Qin |\n| 11:20 - 11:50 | Keynote 4 | Keynote | Taku Komura |\n| 11:50 - 12:20 | Keynote 5 | Keynote | Shunsuke Saito |\n| 12:20 - 12:30 | Closing remarks | Closing Remarks | Haiyang Liu, Alaya Lab |",
-      "program_scraped_at": "2026-09-02T09:31:27.851242+00:00"
+      "program_scraped_at": "2026-09-05T10:07:50.386530+00:00"
     },
     {
       "type": "Workshop",
@@ -336,7 +336,7 @@
       "program_found": true,
       "program_url": "https://interactive-social-avatars.github.io/",
       "program_text": "**September 8, 2026 | Malmö, Sweden**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 – 09:05 | Introduction and Opening Remarks | Opening Remarks | - |\n| 09:05 – 10:05 | GENEA Challenge | Invited Talk | - |\n| 10:05 – 10:35 | Coffee Break / Poster Session | Break | - |\n| 10:35 – 11:10 | Keynote I + Q&A | Keynote | Prof. Andrew Zisserman |\n| 11:10 – 11:45 | Keynote II + Q&A | Keynote | Prof. Gül Varol |\n| 11:45 – 12:20 | Keynote III + Q&A | Keynote | Prof. Georgios Pavlakos |\n| 12:20 – 12:25 | Closing Remarks and Wrap-up | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:31:35.206219+00:00"
+      "program_scraped_at": "2026-09-05T10:07:58.479392+00:00"
     },
     {
       "type": "Workshop",
@@ -353,8 +353,8 @@
       "website": "https://xreason-workshop.github.io/",
       "program_found": true,
       "program_url": "https://xreason-workshop.github.io/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:50 – 09:00 | Opening remarks | Opening Remarks | - |\n| 09:00 – 09:40 | Keynote: Prof. Sha Yi | Keynote | Sha Yi |\n| 09:40 – 10:00 | Oral session 1 | Oral | - |\n| 10:00 – 11:00 | AM break | Break | - |\n| 11:00 – 11:40 | Keynote: Dr. Fu-En Yang | Keynote | Fu-En Yang |\n| 11:40 – 12:00 | Oral session 2 | Oral | - |\n| 12:00 – 13:45 | Lunch | Break | - |\n| 13:45 – 14:20 | Poster session | Poster | - |\n| 14:20 – 15:00 | Keynote: Prof. Serge Belongie | Keynote | Serge Belongie |\n| 15:00 – 15:40 | Keynote: Prof. Bharath Hariharan | Keynote | Bharath Hariharan |\n| 15:40 – 16:00 | PM break | Break | - |\n| 16:00 – 16:40 | Keynote: Prof. Vincent Sitzmann | Keynote | Vincent Sitzmann |\n| 16:40 – 17:20 | Keynote: Dr. Boyi Li | Keynote | Boyi Li |\n| 17:20 – 18:00 | Keynote: Dr. Jiajun Wu | Keynote | Jiajun Wu |\n| 18:00 – 18:10 | Closing remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:31:46.428385+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:50 – 09:00 | Opening remarks | Opening Remarks | - |\n| 09:00 – 09:40 | Keynote | Keynote | Prof. Sha Yi |\n| 09:40 – 10:00 | Oral session 1 | Oral | - |\n| 10:00 – 10:20 | AM break | Break | - |\n| 10:20 – 11:00 | Keynote | Keynote | Prof. Vincent Sitzmann |\n| 11:00 – 11:40 | Keynote | Keynote | Dr. Fu-En Yang |\n| 11:40 – 12:00 | Oral session 2 | Oral | - |\n| 12:00 – 13:45 | Lunch | Break | - |\n| 13:45 – 14:20 | Poster session | Poster | - |\n| 14:20 – 15:00 | Keynote | Keynote | Prof. Serge Belongie |\n| 15:00 – 15:40 | Keynote | Keynote | Prof. Bharath Hariharan |\n| 15:40 – 16:00 | PM break | Break | - |\n| 16:00 – 16:40 | Keynote | Keynote | Dr. Boyi Li |\n| 16:40 – 17:20 | Keynote | Keynote | Dr. Jiajun Wu |\n| 17:20 – 17:30 | Closing remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:08:09.609801+00:00"
     },
     {
       "type": "Workshop",
@@ -371,8 +371,8 @@
       "website": "https://mda-workshop.allen.ai/",
       "program_found": true,
       "program_url": "https://mda-workshop.allen.ai/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 – 09:10 | Opening Remarks | Opening Remarks | - |\n| 09:10 – 09:40 | Invited Talk | Invited Talk | Alexandre Drouin (ServiceNow Research) |\n| 09:45 – 10:25 | Invited Talk | Invited Talk | Qianhui Wu (Microsoft Research) |\n| 10:30 – 10:40 | Spotlight Talk | Spotlight Talk | TBD |\n| 10:40 – 11:00 | Coffee Break | Break | - |\n| 11:00 – 11:30 | Invited Talk | Invited Talk | Ranjay Krishna (UW · Microsoft SuperIntelligence) |\n| 11:35 – 12:05 | Invited Talk | Invited Talk | Viresh Ranjan (Amazon) |\n| 12:10 – 13:30 | Lunch | Break | - |\n| 13:30 – 14:30 | Lightning Talks | Lightning Talks | TBD |\n| 14:30 – 15:00 | Invited Talk | Invited Talk | João Henriques (Visual Geometry Group, University of Oxford) |\n| 15:05 – 15:35 | Invited Talk | Invited Talk | Graham Neubig (Carnegie Mellon University) |\n| 15:40 – 15:50 | Spotlight Talk | Spotlight Talk | TBD |\n| 15:50 – 16:10 | Coffee Break | Break | - |\n| 16:10 – 17:20 | Poster Session | Poster Session | TBD |",
-      "program_scraped_at": "2026-09-02T09:32:04.607385+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 – 09:10 | Opening Remarks | Opening Remarks | - |\n| 09:10 – 09:40 | Invited Talk | Invited Talk | Alexandre Drouin (ServiceNow Research) |\n| 09:45 – 10:25 | Invited Talk | Invited Talk | Qianhui Wu (Microsoft Research) |\n| 10:30 – 10:40 | Spotlight Talk | Spotlight Talk | TBD |\n| 10:40 – 11:00 | Coffee Break | Break | - |\n| 11:00 – 11:30 | Invited Talk | Invited Talk | Ranjay Krishna (UW · Microsoft SuperIntelligence) |\n| 11:35 – 12:05 | Invited Talk | Invited Talk | Viresh Ranjan (Amazon) |\n| 12:10 – 13:30 | Lunch | Break | - |\n| 13:30 – 14:30 | Lightning Talks | Lightning Talks | TBD |\n| 14:30 – 15:00 | Invited Talk | Invited Talk | João Henriques (Visual Geometry Group, University of Oxford) |\n| 15:05 – 15:35 | Invited Talk | Invited Talk | Graham Neubig (Carnegie Mellon University) |\n| 15:40 – 15:50 | Spotlight Talk | Spotlight Talk | TBD |\n| 15:50 – 16:10 | Coffee Break | Break | - |\n| 16:10 – 17:20 | Poster Session | Poster Session | - |",
+      "program_scraped_at": "2026-09-05T10:08:21.494494+00:00"
     },
     {
       "type": "Workshop",
@@ -389,8 +389,8 @@
       "website": "https://hands-workshop.org/",
       "program_found": true,
       "program_url": "https://hands-workshop.org/workshop2026.html",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:30 - 13:40 | Opening Remarks | Opening Remarks | - |\n| 13:40 - 14:10 | Invited Talk 1 | Invited Talk | Gang Cao |\n| 14:10 - 14:40 | Invited Talk 2 | Invited Talk | Haoshu Fang |\n| 14:40 - 15:10 | Invited Talk 3 | Invited Talk | Taein Kwon |\n| 15:10 - 16:10 | Coffee break time & Poster | Break/Poster | - |\n| 16:10 - 16:40 | Invited Talk 4 | Invited Talk | Zhengyang Shen |\n| 16:40 - 17:10 | Invited Talk 5 | Invited Talk | Kaifeng Zhang |\n| 17:10 - 17:50 | Oral session/Panel Discussion | Oral/Panel | - |\n| 17:50 - 18:00 | Closing Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:32:12.637089+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:30 - 13:40 | Opening Remarks | Opening Remarks | - |\n| 13:40 - 14:10 | Invited Talk 1 | Invited Talk | Mandy Ma |\n| 14:10 - 14:40 | Invited Talk 2 | Invited Talk | Haoshu Fang |\n| 14:40 - 15:10 | Invited Talk 3 | Invited Talk | Taein Kwon |\n| 15:10 - 16:10 | Coffee break time & Poster | Break/Poster | - |\n| 16:10 - 16:40 | Invited Talk 4 | Invited Talk | Zhengyang Shen |\n| 16:40 - 17:10 | Invited Talk 5 | Invited Talk | Kaifeng Zhang |\n| 17:10 - 17:50 | Oral session/Panel Discussion | Oral/Panel | - |\n| 17:50 - 18:00 | Closing Remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:08:29.998182+00:00"
     },
     {
       "type": "Workshop",
@@ -407,8 +407,8 @@
       "website": "https://eccv26woop.github.io/",
       "program_found": true,
       "program_url": "https://eccv26woop.github.io/",
-      "program_text": "**Tuesday, September 8 | Half-Day Workshop (pm) | Malmö Arena Terassen**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:30 – 13:40 | Opening Remarks & Best Paper Award Announcement | Opening Remarks | - |\n| 13:40 – 14:10 | Invited Talk 1 | Invited Talk | Ranjay Krishna |\n| 14:10 – 14:40 | Invited Talk 2 | Invited Talk | Vincent Sitzmann |\n| 14:40 – 15:10 | Invited Talk 3 | Invited Talk | Laura Leal-Taixé |\n| 15:10 – 16:10 | Poster Session & Coffee | Poster Session | - |\n| 16:10 – 16:40 | Invited Talk 4 | Invited Talk | Carl Doersch |\n| 16:40 – 17:10 | Invited Talk 5 | Invited Talk | Amir Bar |\n| 17:10 – 17:50 | Panel Discussion | Panel Discussion | - |\n| 17:50 – 18:00 | Ending Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:32:20.557792+00:00"
+      "program_text": "**Tuesday, September 8 | Half-Day Workshop (pm) | Malmö Arena Terrassen**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:30 – 13:40 | Opening Remarks & Best Paper Award Announcement | Opening Remarks | - |\n| 13:40 – 14:10 | Invited Talk 1 | Invited Talk | Ranjay Krishna |\n| 14:10 – 14:40 | Invited Talk 2 | Invited Talk | Vincent Sitzmann |\n| 14:40 – 15:10 | Invited Talk 3 | Invited Talk | Laura Leal-Taixé |\n| 15:10 – 16:10 | Poster Session & Coffee | Poster Session | - |\n| 16:10 – 16:40 | Invited Talk 4 | Invited Talk | Carl Doersch |\n| 16:40 – 17:10 | Invited Talk 5 | Invited Talk | Amir Bar |\n| 17:10 – 17:50 | Panel Discussion | Panel Discussion | - |\n| 17:50 – 18:00 | Ending Remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:08:39.233385+00:00"
     },
     {
       "type": "Workshop",
@@ -425,8 +425,8 @@
       "website": "https://ead-workshop.github.io/",
       "program_found": true,
       "program_url": "https://ead-workshop.github.io/",
-      "program_text": "**Sep 9th Morning | Location TBD**\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 – 09:10 | Welcome and Opening Remarks | Opening Remarks | - |\n| 09:10 – 09:40 | Invited Talk 1 | Invited Talk | - |\n| 09:40 – 10:10 | Invited Talk 2 | Invited Talk | - |\n| 10:10 – 11:10 | Poster Session & Coffee Break | Poster Session | - |\n| 11:10 – 11:30 | Industrial Talk | Invited Talk | - |\n| 11:30 – 12:00 | Invited Talks 3 | Invited Talk | - |\n| 12:00 – 12:30 | Invited Talks 4 | Invited Talk | - |\n| 12:30 – 12:50 | Challenge Results and Winner Presentations | Presentation | - |\n| 12:50 – 13:00 | Closing Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:32:28.121889+00:00"
+      "program_text": "**Sep 9th, 2026 | 9:00 AM – 1:00 PM | Malmo Arena Palissad South**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 – 09:10 | Welcome and Opening Remarks | Opening Remarks | - |\n| 09:10 – 09:40 | Embodied Vision-and-Language Navigation - A Universal View | Invited Talk | Qi Wu |\n| 09:40 – 10:10 | Invited Talk 2 | Invited Talk | Ranjay Krishna |\n| 10:10 – 11:10 | Poster Session & Coffee Break | Break | - |\n| 11:10 – 11:30 | Toward Human-like Dexterous Manipulation | Industrial Talk | Wongyun Yu (RLWRLD) |\n| 11:30 – 12:00 | Invited Talk 3 | Invited Talk | Cordelia Schmid |\n| 12:00 – 12:30 | Motion World Model | Invited Talk | Micheal S. Ryoo |\n| 12:30 – 12:50 | Challenge Results and Winner Presentations | Presentation | - |\n| 12:50 – 13:00 | Closing Remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:08:48.140182+00:00"
     },
     {
       "type": "Workshop",
@@ -441,10 +441,10 @@
       "summary": null,
       "track": null,
       "website": "https://eccv26wmeai.github.io/",
-      "program_found": false,
-      "program_url": "https://eccv26wmeai.github.io/#schedule",
-      "program_text": null,
-      "program_scraped_at": "2026-09-02T09:32:40.387580+00:00"
+      "program_found": true,
+      "program_url": "https://eccv26wmeai.github.io/",
+      "program_text": "**September 9, 2026 | 9:00 AM – 5:00 PM | Malmö Arena Hotel Terrassen, Malmö, Sweden**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:10 - 09:20 | Opening remarks | Opening Remarks | - |\n| 09:20 - 09:45 | Advances in World Models for Embodied AI | Invited Talk | Jusheng Fu (Zenseact) |\n| 09:45 - 10:00 | Oral Presentation #1 | Oral | - |\n| 10:00 - 10:25 | Efficient World Modeling Strategies | Oral | Elahe Arani (Wayve) |\n| 10:25 - 10:50 | Coffee break | Break | - |\n| 10:50 - 11:15 | Self-Supervised Learning for World Models | Oral | Adrien Bardes (AMI Labs) |\n| 11:15 - 11:30 | Oral Presentation #2 | Oral | - |\n| 11:30 - 11:55 | Scalable World Model Architectures | Oral | Yunzhu Li (Columbia) |\n| 11:55 - 14:30 | Lunch break & poster session | Break / Poster | - |\n| 14:30 - 14:55 | Sim-to-Real Transfer Techniques | Invited Talk | Dima Damen (Bristol, Deepmind) |\n| 14:55 - 15:20 | Generative Latent Models for Embodied AI | Oral | Xiaodan Liang (Sun Yat-Sen) |\n| 15:20 - 15:45 | Coffee break | Break | - |\n| 15:45 - 16:10 | Planning and Control with Learned World Models | Invited Talk | Shuhan Tan (UTexas, NVIDIA) |\n| 16:10 - 16:25 | Oral Presentation #3 | Oral | - |\n| 16:25 - 16:50 | Large-Scale World Model Training | Oral | Mingxing Tang (Waymo, GoogleBrain) |\n| 16:50 - 17:00 | Award and closing remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:09:01.049345+00:00"
     },
     {
       "type": "Workshop",
@@ -461,8 +461,8 @@
       "website": "https://www.hsi-workshop.com",
       "program_found": true,
       "program_url": "https://www.hsi-workshop.com/schedule",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|---------|\n| 09:00 – 09:10 | Welcome and opening remarks | Opening Remarks | - |\n| 09:10 – 09:30 | Invited Talk #1 | Invited Talk | Taku Komura |\n| 09:30 – 09:50 | Invited Talk #2 | Invited Talk | Zhengyi Luo |\n| 09:50 – 10:20 | Contributed Talks (2 × 15 min) | Contributed Talks | - |\n| 10:20 – 10:40 | HSI Challenge Results | Presentation | - |\n| 10:40 – 11:00 | Coffee Break | Break | - |\n| 11:00 – 11:20 | Invited Talk #3 | Invited Talk | Umar Iqbal |\n| 11:20 – 11:40 | Invited Talk #4 | Invited Talk | Gerard Pons-Moll |\n| 11:40 – 12:10 | Panel Discussion | Panel Discussion | - |\n| 12:10 – 12:55 | Poster Session and Discussion | Poster Session | - |\n| 12:55 – 13:00 | Closing Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:32:51.887155+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:50 – 09:00 | Welcome and opening remarks | Opening Remarks | - |\n| 09:00 – 09:40 | Invited Talk #1 | Invited Talk | Zhengyi Luo |\n| 09:40 – 10:20 | Invited Talk #2 | Invited Talk | Taku Komura |\n| 10:20 – 10:40 | Paper Talks | Paper Session | - |\n| 10:40 – 11:10 | Break + Poster | Break/Poster | - |\n| 11:10 – 11:50 | Invited Talk #3 | Invited Talk | Gerard Pons-Moll |\n| 11:50 – 12:30 | Invited Talk #4 | Invited Talk | Umar Iqbal |\n| 12:30 – 12:35 | Closing Remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:09:13.434113+00:00"
     },
     {
       "type": "Workshop",
@@ -479,8 +479,8 @@
       "website": "https://trustworthy-world-models.github.io/ECCV2026/",
       "program_found": true,
       "program_url": "https://trustworthy-world-models.github.io/ECCV2026/",
-      "program_text": "**September 9 (Morning), 2026 | Half-day hybrid event | Malmö, Sweden**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:30–08:40 | Introduction and Opening Remarks | Opening Remarks | Workshop Chairs |\n| 08:40–09:00 | TBD | Invited Talk | Jiajun Wu, Stanford University |\n| 09:00–09:20 | TBD | Invited Talk | Sergio Valcarcel Macua, Microsoft |\n| 09:20–10:50 | Oral Presentations (6 accepted papers) | Oral Presentation | - |\n| 10:50–11:10 | Coffee Break & Poster Viewing | Break | - |\n| 11:10–11:30 | Local World Models: Adapting Foundation Models for X | Invited Talk | Rudra Poudel, Toshiba Europe |\n| 11:30–11:50 | Open-World Embodied Intelligence: Learning from Perception to Action | Invited Talk | Abhinav Valada, University of Freiburg |\n| 11:50–12:35 | From Synthesis to Deployment: Bridging Academic and Industry Focuses on World Models | Panel Discussion | - |\n| 12:35–12:45 | Competition Winner Announcement | Award Ceremony | - |\n| 12:45–13:05 | TBD | Online Invited Talk | Sergey Levine, UC Berkeley |\n| 13:05–13:10 | Closing Remarks | Closing Remarks | ECCV Workshop Team |",
-      "program_scraped_at": "2026-09-02T09:33:02.184650+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:00–08:15 | Opening | Opening Remarks | Workshop host |\n| 08:15–08:40 | Online Keynote | Keynote | Sergey Levine (Online — TBC) |\n| 08:40–09:00 | Invited Talk | Invited Talk | Jiajun Wu |\n| 09:00–09:20 | Online Invited Talk | Invited Talk | Sergio Valcarcel Macua (Online) |\n| 09:20–09:35 | Oral Presentation | Oral Presentation | Xiaofan Li |\n| 09:35–09:50 | Oral Presentation | Oral Presentation | Juhwan Han |\n| 09:50–10:05 | Online Invited Talk | Invited Talk | Haibao Yu (Online) |\n| 10:05–10:15 | Oral Presentation | Oral Presentation | Ziang Cheng |\n| 10:15–10:30 | Invited Talk | Invited Talk | Li Chen / Hongyang Li |\n| 10:30–11:00 | Poster + Coffee Break | Break | - |\n| 11:00–11:10 | Award Announcement | Awards | Workshop organisers |\n| 11:10–11:30 | Invited Talk | Invited Talk | Rudra P. K. Poudel |\n| 11:30–11:50 | Online Invited Talk | Invited Talk | Abhinav Valada (Online) |\n| 11:50–12:00 | Oral Presentation | Oral Presentation | Ivan Malashin |\n| 12:00–12:15 | Invited Talk | Invited Talk | Anson Lei / Ingmar Posner |\n| 12:15–13:05 | Final Panel Discussion + Podcast | Panel Discussion | Dandan Zhang, Xiaofan Li, Anson Lei, Rudra P. K. Poudel; Jiajun Wu (TBC); Ding Zhao & Sergio Valcarcel Macua |",
+      "program_scraped_at": "2026-09-05T10:09:26.449448+00:00"
     },
     {
       "type": "Workshop",
@@ -498,7 +498,7 @@
       "program_found": true,
       "program_url": "https://emr-workshop.github.io/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:30-08:40 | Opening Remarks | Opening Remarks | - |\n| 08:40-09:20 | Invited Talk 1 | Invited Talk | Marc Pollefeys |\n| 09:20-10:00 | Invited Talk 2 | Invited Talk | Jiajun Wu |\n| 10:00-11:00 | Coffee Break & Poster Session I | Break | - |\n| 11:00-11:40 | Invited Talk 3 | Invited Talk | Katerina Fragkiadaki |\n| 11:40-12:00 | Sponsor Talk | Invited Talk | - |\n| 12:00-13:45 | Lunch | Break | - |\n| 13:45-14:25 | Invited Talk 4 | Invited Talk | Yuke Zhu |\n| 14:25-15:05 | Invited Talk 5 | Invited Talk | Andreas Geiger |\n| 15:00-16:00 | Coffee Break & Poster Session II | Break | - |\n| 16:00-16:40 | Invited Talk 6 | Invited Talk | Chuang Gan |\n| 16:40-17:20 | VLNVerse Challenge Presentation | Invited Talk | - |\n| 17:20-17:30 | Closing Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:33:11.547794+00:00"
+      "program_scraped_at": "2026-09-05T10:09:39.267034+00:00"
     },
     {
       "type": "Workshop",
@@ -516,7 +516,7 @@
       "program_found": true,
       "program_url": "https://hoi-dataset.ethz.ch/workshop.html",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:15 – 8:30 | Welcome & Introduction | Opening Remarks | - |\n| 8:30 – 9:15 | Keynote 1 | Keynote | TBD |\n| 9:15 – 10:00 | Keynote 2 | Keynote | TBD |\n| 10:00 – 10:30 | Oral Spotlights + Challenge Winners | Orals | - |\n| 10:30 – 11:00 | Poster Session & Coffee Break | Posters / Break | - |\n| 11:00 – 11:45 | Keynote 3 | Keynote | TBD |\n| 11:45 – 12:30 | Keynote 4 | Keynote | TBD |\n| 12:30 – 12:40 | Closing Remarks | Closing | - |",
-      "program_scraped_at": "2026-09-02T09:33:18.332788+00:00"
+      "program_scraped_at": "2026-09-05T10:09:47.174045+00:00"
     },
     {
       "type": "Workshop",
@@ -533,8 +533,8 @@
       "website": "https://diliash.github.io/fai_eccv_workshop_2026/",
       "program_found": true,
       "program_url": "https://diliash.github.io/fai_eccv_workshop_2026/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 14:00 — 14:15 | Coopting coding agents for physical intelligence | Invited Talk | Andrea Vedaldi |\n| 14:15 — 14:40 | TBD | Oral | Wei-Chiu Ma |\n| 14:40 — 15:05 | Bringing 3D Assets to Life: Generating Articulation, Physical Properties, and Motion | Invited Talk | Evangelos Kalogerakis |\n| 15:05 — 15:30 | TBD | Poster Session | - |\n| 15:30 — 16:00 | TBD | Oral | Angela Dai |\n| 16:05 — 16:30 | TBD | Oral | Ziwei Liu |\n| 16:30 — 16:55 | TBD | Oral | Mikaela Angelina Uy |\n| 16:55 — 17:20 | Closing panel | Panel Discussion | All invited speakers |",
-      "program_scraped_at": "2026-09-02T09:33:25.685364+00:00"
+      "program_text": "**September 9, 2026 | 14:00 – 17:35 | Malmö Arena Palissad East**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 14:00 — 14:15 | Welcome & introduction | Opening Remarks | Richard Zhang |\n| 14:15 — 14:40 | Coopting coding agents for physical intelligence | Invited Talk | Andrea Vedaldi (University of Oxford · Meta) |\n| 14:40 — 15:05 | Bringing 3D Assets to Life: Generating Articulation, Physical Properties, and Motion | Invited Talk | Evangelos Kalogerakis (Technical University of Crete) |\n| 15:05 — 15:30 | - | Poster Session | - |\n| 15:30 — 16:00 | TBD | Invited Talk | Angela Dai (Technical University of Munich) |\n| 16:05 — 16:30 | TBD | Invited Talk | Mikaela Angelina Uy (NVIDIA Research) |\n| 16:30 — 16:55 | Closing panel | Panel Discussion | All invited speakers |\n| 16:55 — 17:35 | - | Break / Networking | - |",
+      "program_scraped_at": "2026-09-05T10:09:56.644631+00:00"
     },
     {
       "type": "Workshop",
@@ -551,8 +551,8 @@
       "website": "https://emerging-ad.github.io/",
       "program_found": true,
       "program_url": "https://emerging-ad.github.io/",
-      "program_text": "**Tuesday 8 September 2026 | Full Day | Room Malmömässan E2**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 - 09:15 | Welcome and Introduction | Opening Remarks | Organizers |\n| 09:15 - 09:45 | What's the Point of Human Data? | Invited Talk | Eugene Vinitsky, New York University |\n| 09:45 - 10:15 | From Reliable World Simulation to Reinforcement Post-Training | Invited Talk | Li Chen, University of Hong Kong |\n| 10:15 - 11:00 | Coffee Break | Break | - |\n| 11:00 - 11:15 | Pictura: Perspective View Self-Play at Scale for Driving | Accepted Paper Highlight | Paper Authors |\n| 11:15 - 11:30 | PRIX: learning to plan from raw pixels for end-to-end autonomous driving | Accepted Paper Highlight | Paper Authors |\n| 11:30 - 12:00 | From Road Reality to Learned Worlds: World Models for Robust Autonomous Driving | Invited Talk | Vassia Simaiaki, Wayve |\n| 12:00 - 13:30 | Lunch | Break | - |\n| 13:30 - 14:00 | How End-to-End Driving Abandoned Behavior Learning, and How to Get It Back | Invited Talk | Bernhard Jaeger, KE:SAI |\n| 14:00 - 14:30 | TBD | TBD | Peter Karkus, NVIDIA |\n| 14:30 - 15:30 | Poster Session | Poster | Posters: TBA |\n| 15:30 - 16:00 | Coffee Break | Break | - |\n| 16:00 - 16:30 | TBD | TBD | Wayne Wu, University of California, Los Angeles |\n| 16:30 - 17:00 | TBD | TBD | Wei Zhan, Applied Intuition |\n| 17:00 - 17:30 | Emergent Multimodal World Knowledge in the Waymo World Model | Invited Talk | Max Jiang, Waymo |\n| 17:30 - 17:45 | Closing | Closing Remarks | Organizers |",
-      "program_scraped_at": "2026-09-02T09:33:38.195379+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 - 09:15 | Welcome and Introduction | Opening Remarks | Organizers |\n| 09:15 - 09:45 | What's the Point of Human Data? | Invited Talk | Eugene Vinitsky, New York University |\n| 09:45 - 10:15 | From Reliable World Simulation to Reinforcement Post-Training | Invited Talk | Li Chen, University of Hong Kong |\n| 10:15 - 11:00 | Coffee Break | Break | - |\n| 11:00 - 11:15 | Pictura: Perspective View Self-Play at Scale for Driving | Accepted Paper Highlight | Yuan Yin |\n| 11:15 - 11:30 | PRIX: Learning to Plan from Raw Pixels for End-to-End Autonomous Driving | Accepted Paper Highlight | Maciej Wozniak |\n| 11:30 - 12:00 | From Road Reality to Learned Worlds: World Models for Robust Autonomous Driving | Invited Talk | Vassia Simaiaki, Wayve |\n| 12:00 - 13:30 | Lunch | Break | - |\n| 13:30 - 14:00 | How End-to-End Driving Abandoned Behavior Learning, and How to Get It Back | Invited Talk | Bernhard Jaeger, KE:SAI |\n| 14:00 - 14:30 | The Alpamayo Open Platform for Autonomous Driving: Reasoning VLAs, Simulation, and Closed-Loop RL | Invited Talk | Peter Karkus, NVIDIA |\n| 14:30 - 15:30 | Poster Session | Poster | - |\n| 15:30 - 16:00 | Coffee Break | Break | - |\n| 16:00 - 16:30 | From Scaling up to Scaling out: Reality World Simulators for Physical AI | Invited Talk | Wayne Wu, University of California, Los Angeles |",
+      "program_scraped_at": "2026-09-05T10:10:09.182952+00:00"
     },
     {
       "type": "Workshop",
@@ -570,7 +570,7 @@
       "program_found": false,
       "program_url": "https://www.aicitychallenge.org/",
       "program_text": null,
-      "program_scraped_at": "2026-09-02T09:33:57.949808+00:00"
+      "program_scraped_at": "2026-09-05T10:10:33.266017+00:00"
     },
     {
       "type": "Workshop",
@@ -587,8 +587,8 @@
       "website": "https://sdad.cc/",
       "program_found": true,
       "program_url": "https://sdad.cc/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00–09:15 | Welcome Speech | Opening Remarks | - |\n| 09:15–09:45 | Keynote Talk 1 | Keynote | Chong Ruan |\n| 09:45–10:15 | Keynote Talk 2 | Keynote | Dan Levi |\n| 10:15–10:30 | Coffee break | Break | - |\n| 10:30–11:00 | Oral Session (2 × 15 min) | Oral | - |\n| 11:00–12:15 | Poster Session | Poster | - |\n| 12:15–14:00 | Lunch Break and Poster Session | Break/Poster | - |\n| 14:00–14:30 | Keynote Talk 3 | Keynote | Jun Gao |\n| 14:30–15:00 | Oral Session (2 × 15 min) | Oral | - |\n| 15:00–15:30 | Coffee break | Break | - |\n| 15:30–16:00 | Keynote Talk 4 | Keynote | Andreas Geiger |\n| 16:00–16:30 | Keynote Talk 5 | Keynote | Boyi Li |\n| 16:30–17:00 | Keynote Talk 6 | Keynote | Dragomir Anguelov |\n| 17:00–17:30 | Panel Discussion | Panel | Host: Qifeng Chen |\n| 17:30–17:45 | Award and Closing Remark | Awards/Closing | - |",
-      "program_scraped_at": "2026-09-02T09:34:07.265864+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00–09:15 | Welcome Speech | Opening Remarks | - |\n| 09:15–09:45 | Keynote Talk 1 | Keynote | Chong Ruan |\n| 09:45–10:15 | Keynote Talk 2 | Keynote | Dan Levi |\n| 10:15–10:30 | Coffee break | Break | - |\n| 10:30–11:00 | Seeing the Evidence, Not Just the Answer: Training-Free SalMask Evidence Routing for Traffic Accident Video Understanding | Oral Session | - |\n| 10:30–11:00 | RoCA: Robust Cross-Domain End-to-End Autonomous Driving | Oral Session | - |\n| 11:00–12:15 | Poster Session | Poster | - |\n| 12:15–14:00 | Lunch Break | Break | - |\n| 14:00–14:30 | Keynote Talk 3 | Keynote | Jun Gao |\n| 14:30–15:00 | Worst-Case Hidden-Vehicle Trajectory Search in Spatiotemporal Occlusion Regions | Oral Session | - |\n| 14:30–15:00 | RareOcc: Controllable 4D Occupancy and LiDAR Generation for Long-Tail Driving Scenes | Oral Session | - |\n| 15:00–15:30 | Coffee break | Break | - |\n| 15:30–16:00 | Keynote Talk 4 | Keynote | Andreas Geiger |\n| 16:00–16:30 | Keynote Talk 5 | Keynote | Boyi Li |\n| 16:30–17:00 | Keynote Talk 6 | Keynote | Dragomir Anguelov |\n| 17:00–17:30 | Panel Discussion | Panel Discussion | Host: Qifeng Chen |\n| 17:30–17:45 | Award and Closing Remark | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:10:44.034241+00:00"
     },
     {
       "type": "Workshop",
@@ -605,8 +605,8 @@
       "website": "https://drivex-workshop.github.io/eccv2026/",
       "program_found": true,
       "program_url": "https://drivex-workshop.github.io/eccv2026/",
-      "program_text": "**Wednesday, September 9, 2026 | Malmö, Sweden**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:00 – 08:20 | Opening Remarks – Welcome & Workshop Overview | Opening Remarks | - |\n| 08:20 – 08:40 | Keynote 1 | Keynote | Dr. Walter Zimmer (UCLA & TUM) |\n| 08:40 – 09:00 | Keynote 2 | Keynote | Prof. Jiaqi Ma (UCLA) |\n| 09:00 – 09:20 | Keynote 3 | Keynote | Prof. Angela Dai (TUM) |\n| 09:20 – 09:40 | Keynote 4 | Keynote | Prof. Cordelia Schmid (INRIA) |\n| 09:40 – 10:00 | Keynote 5 | Keynote | Prof. Andreas Geiger (Uni. Tübingen) |\n| 10:00 – 10:30 | Coffee Break & Poster Session I | Break | - |\n| 10:30 – 10:50 | Keynote 6 | Keynote | Prof. Davide Scaramuzza (UZH) |\n| 10:50 – 11:10 | Keynote 7 | Keynote | Prof. Manmohan Chandraker (UCSD & NEC Labs) |\n| 11:10 – 11:30 | Keynote 8 | Keynote | Prof. Daniel Cremers (TUM) |\n| 11:30 – 12:00 | Panel Discussion I: Academic Track | Panel | - |\n| 12:00 – 13:00 | Lunch Break & Networking | Break | - |\n| 13:00 – 13:20 | Keynotes 9 | Keynote | Prof. Marco Pavone (Stanford Uni. & NVIDIA) |\n| 13:20 – 13:40 | Keynotes 10 | Keynote | Dr. Boris Ivanovic (NVIDIA) |\n| 13:40 – 14:00 | Keynotes 11 | Keynote | Dr. José Álvarez (NVIDIA) |\n| 14:00 – 14:20 | Keynotes 12 | Keynote | Prof. Laura Leal-Taixé (NVIDIA) |\n| 14:20 – 14:40 | Keynotes 13 | Keynote | Dr. Tony (Xuewei) Qi (Motional) |\n| 14:40 – 15:00 | Keynotes 14 | Keynote | Dr. Mingxing Tan (Waymo) |\n| 15:00 – 16:00 | Coffee Break & Poster Session II | Break | - |\n| 16:00 – 16:20 | Keynotes 15 | Keynote | Dr. Federico Tombari (Google) |\n| 16:20 – 17:00 | Panel Discussion II: Industry Track | Panel | - |\n| 17:00 – 17:10 | Post-Training in End-to-End Autonomous Driving: Taxonomy, Methods, and Challenges | Oral | - |\n| 17:10 – 17:20 | How Far Can 5,500 Hours of Driving Take You? A Scaling Law Analysis of Video Diffusion Models | Oral | - |\n| 17:20 – 17:30 | A Hierarchical World Model for Driving | Oral | - |\n| 17:30 – 17:40 | Introducing The KITScenes Multimodal Dataset | Oral | - |\n| 17:40 – 17:50 | Emergent 3D Instance Segmentation from Self-Supervised Point Transformers | Oral | - |\n| 17:50 – 18:10 | Keynote Presentation 16 | Keynote | Ashok Elluswamy (Tesla) |\n| 18:10 – 18:20 | Awards Ceremony – Best Paper, Best Poster, Challenge Winners | Award | - |\n| 18:20 – 18:30 | Closing Remarks & Group Photo | Closing | - |\n| 19:00 – 21",
-      "program_scraped_at": "2026-09-02T09:34:28.558754+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:00 – 08:20 | Opening Remarks – Welcome & Workshop Overview | Opening Remarks | - |\n| 08:20 – 08:40 | Opening Keynote | Keynote | Dr. Walter Zimmer (UCLA & TUM) |\n| 08:40 – 09:00 | Keynote 2 | Keynote | Prof. Dr. Jiaqi Ma (UCLA) |\n| 09:00 – 09:20 | Keynote 3 | Keynote | Prof. Dr. Angela Dai (TUM) |\n| 09:20 – 09:40 | Keynote 4 | Keynote | Prof. Cordelia Schmid (INRIA) |\n| 09:40 – 10:00 | Keynote 5 | Keynote | Prof. Andreas Geiger (University of Tübingen) |\n| 10:00 – 10:30 | Coffee Break & Poster Session I | Break | - |\n| 10:30 – 10:50 | Keynote 6 | Keynote | Prof. Davide Scaramuzza (UZH) |\n| 10:50 – 11:10 | Keynote 7 | Keynote | Prof. Dr. Manmohan Chandraker (UCSD) |\n| 11:10 – 11:30 | Keynote 8 | Keynote | Prof. Dr. Daniel Cremers (TUM) |\n| 11:30 – 12:00 | Panel Discussion I: Academic Track | Panel | - |\n| 12:00 – 13:00 | Lunch Break & Networking | Break | - |\n| 13:00 – 13:20 | From Road Miles to Compute - Scaling Autonomous Driving with World Models | Keynote | Vassia Simaiaki (Wayve) |\n| 13:20 – 13:40 | Keynote 10 | Keynote | Dr. Boris Ivanovic (NVIDIA) |\n| 13:40 – 14:00 | Keynote 11 | Keynote | Dr. José M. Álvarez (NVIDIA) |\n| 14:00 – 14:20 | Keynote 12 | Keynote | Prof. Laura Leal-Taixé (NVIDIA) |\n| 14:20 – 14:40 | Keynote 13 | Keynote | Dr. Tony (Xuewei) Qi (Motional) |\n| 14:40 – 15:00 | Keynote 14 | Keynote | Dr. Katie Luo (Waymo) |\n| 15:00 – 16:00 | Coffee Break & Poster Session II | Break | - |\n| 16:00 – 16:20 | Keynote 15 | Keynote | PD Dr. habil. Federico Tombari (Google) |\n| 16:20 – 17:00 | Panel Discussion II: Industry Track | Panel | - |\n| 17:00 – 17:10 | Post-Training in End-to-End Autonomous Driving: Taxonomy, Methods, and Challenges | Oral | Ruining Yang (Northeastern University) |\n| 17:10 – 17:20 | How Far Can 5,500 Hours of Driving Take You? A Scaling Law Analysis of Video Diffusion Models | Oral | Victor Besnier (Valeo) |",
+      "program_scraped_at": "2026-09-05T10:11:31.433614+00:00"
     },
     {
       "type": "Workshop",
@@ -624,7 +624,7 @@
       "program_found": true,
       "program_url": "https://sites.google.com/view/hcvworkshop2026/program",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:00 - 13:10 | Opening Remarks | Opening Remarks | - |\n| 13:10 - 14:10 | Keynote Session | Keynote | - |\n| 13:10 - 13:40 | Prof. Vicky Kalogeiton | Keynote | Prof. Vicky Kalogeiton |\n| 13:40 - 14:10 | Prof. Gemma Roig | Keynote | Prof. Gemma Roig |\n| 14:10 - 14:50 | Oral Session | Oral | - |\n| 14:10 - 14:18 | Human-Inspired Social Engagement Analysis via Interpretable Mutual Visual Attention | Oral | Urwa Fatima, Mohammad Zohaib, Francesca Odone, Nicoletta Noceti |\n| 14:18 - 14:26 | Matched Outcomes, Divergent Gaze: How Foveated MLLMs Search Compared to Humans | Oral | Mohamed Amine Kerkouri, Marouane Tliba, Aladine Chetouani, Ulas Bagci, Alessandro Bruno |\n| 14:26 - 14:34 | Efficient Semantic Understanding from Digital Foveation | Oral | Caterina Caccavella, Vittorio Fra, Andreas Ziegler, Giulia D'Angelo, Yulia Sandamirskaya |\n| 14:34 - 14:42 | Learning Task-Specific Scene Gist Representations from Low-Level Image Statistics | Oral | Atif Khurshid, Heiko Neumann |\n| 14:42 - 14:50 | NeuroGuard: Neural Gradient Update Aware of Representation Damage | Oral | Taigo Sakai, Kazuhiro Hotta |\n| 15:00 - 16:00 | Poster Session and Coffee Break | Poster/Break | - |\n| 16:00 - 17:00 | Keynote Session | Keynote | - |\n| 16:00 - 16.30 | Prof. Thomas Serre | Keynote | Prof. Thomas Serre |\n| 16.30 - 17:00 | Prof. Pietro Perona | Keynote | Prof. Pietro Perona |\n| 17:00 - 17:10 | Closing Remarks and Workshop Paper Awards ⭐ | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:34:44.638661+00:00"
+      "program_scraped_at": "2026-09-05T10:11:49.461059+00:00"
     },
     {
       "type": "Workshop",
@@ -641,8 +641,8 @@
       "website": "https://sites.google.com/view/3d-humans-eccv2026",
       "program_found": true,
       "program_url": "https://sites.google.com/view/3d-humans-eccv2026",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:50 - 14:00 | Welcome and Opening Remarks | Opening Remarks | - |\n| 14:00 - 14:30 | 3D Digital Humans: The Bitter Lessons | Talk #1 | Shunsuke Saito |\n| 14:30 - 15:00 | Beyond Plausible: Physically Valid Human Object Interaction for Robot World Models | Talk #2 | Hanbyul Joo |\n| 15:00 - 15:30 | Modelling in an Ego-Sensed World | Talk #3 | Dima Damen |\n| 15:30 - 16:00 | Egocentric Multimodal Learning | Talk #4 | Siyu Tang |\n| 16:00 - 16:30 | Beyond Locomotion: Turning Human Data into Humanoid Interaction Skills | Talk #5 | Umar Iqbal |\n| 16:30 - 17:00 | Panel discussion | Panel Discussion | All Speakers |",
-      "program_scraped_at": "2026-09-02T09:34:52.569022+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:50 - 14:00 | Welcome and Opening Remarks | Opening Remarks | - |\n| 14:00 - 14:30 | 3D Digital Humans: The Bitter Lessons | Talk #1 | Shunsuke Saito |\n| 14:30 - 15:00 | Beyond Plausible: Physically Valid Human Object Interaction for Robot World Models | Talk #2 | Hanbyul Joo |\n| 15:00 - 15:30 | Modelling in an Ego-Sensed World | Talk #3 | Dima Damen |\n| 15:30 - 16:00 | Egocentric Multimodal Learning | Talk #4 | Siyu Tang |\n| 16:00 - 16:30 | Beyond Locomotion: Turning Human Data into Humanoid Interaction Skills | Talk #5 | Umar Iqbal |\n| 17:00 - 18:00 | Invited Posters @ MalmoMassan Exhibit Hall (boards #197-216) | Poster Session | - |",
+      "program_scraped_at": "2026-09-05T10:11:58.706209+00:00"
     },
     {
       "type": "Workshop",
@@ -675,7 +675,7 @@
       "program_found": true,
       "program_url": "https://affective-behavior-analysis-in-the-wild.github.io/11th/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:00–08:10 | Introduction to Workshop-Opening Remarks | Opening Remarks | - |\n| 08:10–10:20 | Oral Session | Oral Session | - |\n| 10:20–10:35 | Break | Break | - |\n| 10:35–12:15 | Poster Session | Poster Session | - |\n| 12:15–12:30 | Closing Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:35:03.806069+00:00"
+      "program_scraped_at": "2026-09-05T10:12:13.450145+00:00"
     },
     {
       "type": "Workshop",
@@ -693,7 +693,7 @@
       "program_found": false,
       "program_url": "https://lap.chalearn.eu/workshop/97",
       "program_text": null,
-      "program_scraped_at": "2026-09-02T09:35:19.069615+00:00"
+      "program_scraped_at": "2026-09-05T10:12:44.378792+00:00"
     },
     {
       "type": "Workshop",
@@ -710,8 +710,8 @@
       "website": "https://human-motion-world-model.github.io/",
       "program_found": true,
       "program_url": "https://human-motion-world-model.github.io/",
-      "program_text": "**September 9, 2026 | 8:00 AM – 12:30 PM | Morning Session**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:00–8:30 | Welcome & Opening Remarks | Opening Remarks | - |\n| 8:30–9:10 | End-to-end Models for Autonomous Driving | Keynote | Matthieu Cord |\n| 9:10–9:50 | Talk title TBA | Keynote | Gerard Pons-Moll |\n| 9:50–10:30 | Coffee Break & Poster Session | Break | - |\n| 10:30–11:10 | Talk title TBA | Keynote | Jakob Engel |\n| 11:10–11:50 | From Predicting Humans to Cooperating with Humans | Keynote | Misa Komuro |\n| 11:50–12:20 | Open Q&A with speakers | Panel Discussion | - |\n| 12:20–12:30 | Workshop Best Paper Award & Closing Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:35:26.678178+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:00–08:30 | Welcome & Opening Remarks | Opening Remarks | - |\n| 08:30–09:10 | End-to-end Models for Autonomous Driving | Keynote | Matthieu Cord |\n| 09:10–09:50 | INTERACT: Reconstructing, Generating and Grounding Humans in Dynamic Worlds | Keynote | Gerard Pons-Moll |\n| 09:50–10:30 | Coffee Break & Poster Session | Break / Poster | - |\n| 10:30–11:10 | Talk title TBA | Keynote | Jakob Engel |\n| 11:10–11:50 | From Predicting Humans to Cooperating with Humans | Keynote | Misa Komuro |\n| 11:50–12:20 | Open Q&A with speakers: Gerard Pons-Moll, Jakob Engel, and Misa Komuro | Panel Discussion | Gerard Pons-Moll, Jakob Engel, Misa Komuro |\n| 12:20–12:30 | Workshop Best Paper Award & Closing Remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:12:52.512080+00:00"
     },
     {
       "type": "Workshop",
@@ -728,8 +728,8 @@
       "website": "https://mocha.care-pd.ca/",
       "program_found": true,
       "program_url": "https://mocha.care-pd.ca/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 14:00-14:05 | Welcome & Introduction | Opening Remarks | - |\n| 14:05-14:35 | TBD | Talk | Gerard Pons-Moll (University of Tübingen) |\n| 14:35-15:05 | TBD | Talk | Siyu Tang (ETH Zürich) |\n| 15:05-15:35 | TBD | Talk | Javier Romero (Reality Labs Research, Meta) |\n| 15:35-15:45 | CARE-PD Dataset and Challenge Overview | Invited Talk | - |\n| 15:45-16:30 | Coffee Break and Poster Session | Break / Poster | - |\n| 16:30-17:00 | TBD | Talk | Fabien Baradel (NAVER LABS Europe) |\n| 17:00-17:30 | TBD | Talk | R. James Cotton (Northwestern University & Shirley Ryan AbilityLab) |\n| 17:30-17:45 | Challenge Winners and Best Paper Presentation | Awards | - |\n| 17:45-17:50 | Sponsor Talk & Awards Ceremony | Sponsor Talk | - |\n| 17:50-17:55 | Final Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:35:35.800902+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:30-13:35 | Welcome & Introduction | Opening Remarks | - |\n| 13:35-14:05 | TBD | Invited Talk | Gerard Pons-Moll (University of Tübingen) |\n| 14:05-14:35 | TBD | Invited Talk | Siyu Tang (ETH Zürich) |\n| 14:35-15:05 | TBD | Invited Talk | Javier Romero (Reality Labs Research, Meta) |\n| 15:05-15:10 | CARE-PD Dataset and Challenge Overview | Session Overview | - |\n| 15:10-16:15 | Coffee Break and Poster Session | Break & Poster | - |\n| 16:15-16:50 | TBD | Invited Talk | Fabien Baradel (NAVER LABS Europe) |\n| 16:50-17:25 | TBD | Invited Talk | R. James Cotton (Northwestern University & Shirley Ryan AbilityLab) |\n| 17:25-17:35 | Best Paper Presentation | Award Talk | - |\n| 17:35-17:45 | Sponsor Talk & Awards Ceremony | Closing Remarks | - |\n| 17:45-17:50 | Final Remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:13:01.944408+00:00"
     },
     {
       "type": "Workshop",
@@ -746,8 +746,8 @@
       "website": "https://rom42pla.github.io/biscuit_workshop/",
       "program_found": true,
       "program_url": "https://rom42pla.github.io/biscuit_workshop/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 | Welcome & Opening Remarks | Opening Remarks | - |\n| 09:15 | Invited Keynote Speech 1 | Keynote | Aldo Faisal |\n| 10:00 | Spotlight Presentations | Oral | - |\n| 10:30 | Coffee Break | Break | - |\n| 10:45 | Spotlight Presentations | Oral | - |\n| 11:30 | BISCUIT Bake-off — Best Paper Candidate Panel | Invited Talk | - |\n| 12:00 | Free Discussion | Interactive Session | - |\n| 12:15 | Lunch Break | Break | - |\n| 13:15 | Poster Presentations | Poster | - |\n| 14:15 | Invited Keynote Speech 2 | Keynote | Nassir Navab |\n| 15:00 | Coffee Break | Break | - |\n| 15:15 | Invited Keynote Speech 3 | Keynote | Toshihiko Yamasaki |\n| 16:00 | Coffee Break | Break | - |\n| 16:15 | Invited Keynote Speech 4 | Keynote | Aasa Feragen |\n| 17:00 | Interactive Panel Discussion w/ Keynotes | Panel Discussion | - |\n| 17:30 | Best Paper Award & Closing Remarks | Awards | - |",
-      "program_scraped_at": "2026-09-02T09:35:46.391339+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 | Welcome & Opening Remarks | Opening Remarks | - |\n| 09:15 | Invited Keynote Speech | Keynote | Nassir Navab |\n| 10:00 | Dataset Diversity Metrics and Impact on Classification Models | Spotlight Presentation | Théo Sourget |\n| 10:00 | Geometrically Constrained and Token-Based Probabilistic Spatial Transformers | Spotlight Presentation | Tom Siegl |\n| 10:30 | Rethinking Synthetic Brain MRI Evaluation with Decoupled Image and Anatomical Fidelity | Spotlight Presentation | Suhyun Ahn |\n| 10:30 | MedPAO-VL: Interpretable and Protocol-Compliant Agent for Structured Radiology Report Generation | Spotlight Presentation | Shrish Shrinath Vaidya |\n| 10:30 | Beyond Dice: An Artifact-Centered Protocol for Auditing Trustworthy Forearm Ultrasound Segmentation | Spotlight Presentation | Sergei Olegovich Kurashkin |\n| 11:30 | BISCUIT Bake-off — Best Paper Candidate Panel | Panel Discussion | Théo Sourget, Tom Siegl, Suhyun Ahn, Shrish Shrinath Vaidya |\n| 12:00 | Free Discussion | Discussion | - |\n| 12:15 | Poster Presentations | Poster Session | - |\n| 14:15 | Invited Keynote Speech | Keynote | Aldo Faisal |\n| 15:00 | Invited Keynote Speech | Keynote | Toshihiko Yamasaki |\n| 16:00 | Invited Keynote Speech | Keynote | Aasa Feragen |\n| 17:00 | Interactive Panel Discussion w/ Keynotes | Panel Discussion | - |\n| 17:30 | Best Paper Award & Closing Remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:13:14.497126+00:00"
     },
     {
       "type": "Workshop",
@@ -764,8 +764,8 @@
       "website": "https://medfmb.github.io/",
       "program_found": true,
       "program_url": "https://medfmb.github.io/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 2:00 PM | Welcome and workshop overview from the organizers | Opening Remarks | - |\n| 2:10 PM | Invited Talk 1 | Keynote | TBD |\n| 2:40 PM | Invited Talk 2 | Keynote | TBD |\n| 3:10 PM | Interactive poster session — up to 30 posters on display | Poster | - |\n| 4:10 PM | Best Paper Oral Spotlight | Oral | - |\n| 4:30 PM | Invited Talk 3 | Keynote | TBD |\n| 5:00 PM | Invited Talk 4 | Keynote | TBD |\n| 5:30 PM | Open discussion on the future of medical foundation models & benchmarks | Panel | - |",
-      "program_scraped_at": "2026-09-02T09:35:52.888410+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 2:00 PM | Opening Remarks and Workshop Overview | Opening Remarks | - |\n| 2:10 PM | Invited Talk 1 | Keynote | Michael Moor |\n| 2:40 PM | Invited Talk 2 | Keynote | Lalithkumar Seenivasan |\n| 3:10 PM | Interactive Poster Session with Coffee Break | Poster | - |\n| 4:10 PM | RadMatch: Auditable Radiology Report Evaluation via Finding-Level Matching | Oral | - |\n| 4:20 PM | Consistent View Alignment Improves Vision Foundation Models for 3D Medical Image Analysis | Oral | - |\n| 4:30 PM | MMBU: A Massive Multi-modal Biomedical Understanding Benchmark to Probe the Perception Capabilities of Vision-Language Models | Oral | - |\n| 4:40 PM | Stateful Visual Encoders for Vision-Language Models | Oral | - |\n| 4:50 PM | DistillPath: An Efficient 22M Distilled Pathology Encoder Approaching Large Foundation Model Performance | Oral | - |\n| 5:00 PM | Invited Talk 3 | Keynote | Weidi Xie |\n| 5:30 PM | Invited Talk 4 | Keynote | Xiaoxiao Li |",
+      "program_scraped_at": "2026-09-05T10:13:22.982296+00:00"
     },
     {
       "type": "Workshop",
@@ -783,7 +783,7 @@
       "program_found": true,
       "program_url": "https://vap.aau.dk/marinevision/program/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00–09:10 | Welcome | Opening Remarks | Organizing Committee |\n| 09:10–09:40 | The Aquatic Life Foundation Project: Quantifying Life at Scale in a Changing World | Keynote | Dagmar Kainmüller, MDC-Berlin |\n| 09:45–10:15 | Short-Dwell Aerial Wave Sensing over Coastal Waters: Feasibility, Observability, and Failure Modes | Oral Session 1 | - |\n| 09:45–10:15 | A Multi-Annotator Study of Segmentation Noise and Uncertainty in Turbid Underwater Images | Oral Session 1 | - |\n| 10:15–11:00 | Coffee Break | Break | - |\n| 11:00–11:30 | Targeting Human Verification for Robust Deployment of AI in Ecology | Keynote | Sara Beery, MIT |\n| 11:30–12:00 | WildFin: An In-the-Wild Video Dataset for Fish Behavioral Recognition | Oral Session 2 | - |\n| 11:30–12:00 | CoralscapesV2: Panoptic and Fine-Grained Visual Scene Understanding in Coral Reefs | Oral Session 2 | - |\n| 12:00–13:30 | Lunch Break | Break | - |\n| 13:30–14:00 | Uncertainty-Aware monocular Visual Odometry: Robust perception in noisy underwater environments | Keynote | Olaya Álvarez-Tuñón, EIVA A/S |\n| 14:00–14:30 | TBD | Keynote | Manu Prakash, Stanford |\n| 14:30–14:45 | Stretch Your Legs | Break | - |\n| 14:45–15:15 | Selective Cross-Modal Alignment for Fish Re-Identification via Partial Optimal Transport | Oral Session 3 | - |\n| 14:45–15:15 | Searching for Submarine O13: A Two-Step Classification and Similarity-Ranking Model for Submarine Identification in Sonar Imagery | Oral Session 3 | - |\n| 15:15–16:00 | Coffee Break | Break | - |\n| 16:00–16:30 | Pre-poster session | Lightning Talks | - |\n| 16:30–16:35 | Best poster announcement | Awards | - |\n| 16:35–16:40 | Best paper announcement | Awards | - |\n| 16:40–16:45 | Final remarks | Closing Remarks | - |\n| 16:45–18:00 | Poster Session | Poster Session | - |",
-      "program_scraped_at": "2026-09-02T09:36:11.095950+00:00"
+      "program_scraped_at": "2026-09-05T10:13:40.875489+00:00"
     },
     {
       "type": "Workshop",
@@ -800,8 +800,8 @@
       "website": "https://ai4m3d.github.io/",
       "program_found": true,
       "program_url": "https://ai4m3d.github.io/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:30 – 08:35 | Opening & Welcome Remarks | Opening | - |\n| 08:35 – 09:05 | Keynote Speaker | Keynote | Federico Bolelli |\n| 09:05 – 09:15 | Generating 3D baby faces from limited data | Oral Session 1 | M. Zappe, A. Alomar, M. G. Linguraru, G. Piella, F. Sukno |\n| 09:15 – 09:25 | Constraint-Aware Self-Supervised Pretraining for Label-Efficient Left Ventricle Segmentation in SPECT MPI | Oral Session 1 | J. Berjawi, C. Cérin, L. Riou |\n| 09:25 – 09:35 | Evidence-Based Text-Conditioned 3D CT Synthesis for Ovarian Cancer | Oral Session 1 | F. P. Panaccione, E. Lomurno, F. Fati, C. Pecchiari, M. N. Rosanu, L. De Vitis, L. Ribero, G. Petralia, G. Schivardi, G. D. Aletti, N. Colombo, M. F. Spadea, F. Multinu, M. Matteucci, E. De Momi |\n| 09:35 – 09:45 | Toward CT-Free 3D Cephalometric Landmark Estimation Using MediaPipe Face Landmarker | Oral Session 1 | K. Saita, T. Abe, M. Noda, C. Tachiki, Y. Nishii, H. Saito |\n| 09:45 – 09:55 | Structural-Functional Integration for Enhanced Detection of Subtle Epileptogenic Lesions: A Region-Localized, Clinically-Informed Multimodal EEG-MRI Framework | Oral Session 1 | S. S. Subramanian |\n| 09:55 – 09:58 | MedPCFM: Improving Medical Point Cloud Completion by Integrating Point Transformers and Flow Matching | Spotlight Presentations | K. Kwarciak, M. Wodzinski |\n| 09:58 – 10:01 | Jolia: Concept-Level Vision-Language Alignment for 3D CT Contrastive Learning | Spotlight Presentations | J. Khlaut, C. Corbière, B. Callard, A. Prat, L. Butsanets, A. Saporta, T. Danielou, L. Machado, K. Le Floch, T. Boeken, P. Manceron, C. Dancette |\n| 10:01 – 10:04 | Curia-2: Scaling Self-Supervised Learning for Radiology Foundation Models | Spotlight Presentations | A. Saporta, B. Callard, C. Dancette, J. Khlaut, C. Corbière, L. Butsanets, A. Prat, P. Manceron |\n| 10:04 – 10:07 | Curia-MAE: Multi-Modal Multi-Anatomy MAE Pre-Training for 3D Medical Image Segmentation | Spotlight Presentations | T. Danielou, A. Saporta, L. Alberge, C. Dancette |\n| 10:07 – 10:10 | YOLO-PVC: 2D-to-3D Consolidation of Slice-wise Detections for Volumetric Liver Tumor Localization in MRI | Spotlight Presentations | T. Waqas, M. Lahlouh, K. Taibouni, M. Waqas, S. Ahmed, S. Mulé, Y. Leroul Chenoune |\n| 10:10 – 10:13 | How Close Is Gaussian Splatting to the Clinic? | Spotlight Presentations | K. De |\n| 10:13 – 10:16 | Surface-to-Skeleton 3D Cephalometry: Estimating Hidden Skeletal Landmarks from CT-Derived External Soft-Tissue Surfaces | Spotlight Presentations | T. Abe, T. Kanaya, K. Saita, M. Noda, C. Tachiki, Y. Nishii, H. Saito |\n| 10:16 – 10:19 | Do 3D Medical Foundation Models See Through MRI Artifacts? A Controlled Study of Representation Robustness | Spotlight Presentations | J. A",
-      "program_scraped_at": "2026-09-02T09:36:30.608685+00:00"
+      "program_text": "**September 9, 2026 | 8:30 AM – 12:30 PM | Quality View Hotel - Stroget 2, Malmö, Sweden**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:30 – 08:35 | Opening & Welcome Remarks | Opening | - |\n| 08:35 – 09:05 | Keynote Speaker | Keynote | Federico Bolelli |\n| 09:05 – 09:15 | Generating 3D baby faces from limited data | Oral Session 1 | M. Zappe, A. Alomar, M. G. Linguraru, G. Piella, F. Sukno |\n| 09:15 – 09:25 | Constraint-Aware Self-Supervised Pretraining for Label-Efficient Left Ventricle Segmentation in SPECT MPI | Oral Session 1 | J. Berjawi, C. Cérin, L. Riou |\n| 09:25 – 09:35 | Evidence-Based Text-Conditioned 3D CT Synthesis for Ovarian Cancer | Oral Session 1 | F. P. Panaccione, E. Lomurno, F. Fati, C. Pecchiari, M. N. Rosanu, L. De Vitis, L. Ribero, G. Petralia, G. Schivardi, G. D. Aletti, N. Colombo, M. F. Spadea, F. Multinu, M. Matteucci, E. De Momi |\n| 09:35 – 09:45 | Toward CT-Free 3D Cephalometric Landmark Estimation Using MediaPipe Face Landmarker | Oral Session 1 | K. Saita, T. Abe, M. Noda, C. Tachiki, Y. Nishii, H. Saito |\n| 09:45 – 09:55 | Structural-Functional Integration for Enhanced Detection of Subtle Epileptogenic Lesions: A Region-Localized, Clinically-Informed Multimodal EEG-MRI Framework | Oral Session 1 | S. S. Subramanian |\n| 09:55 – 10:30 | Spotlight Presentations | Spotlight | - |\n| 09:55 – 09:58 | MedPCFM: Improving Medical Point Cloud Completion by Integrating Point Transformers and Flow Matching | Spotlight | K. Kwarciak, M. Wodzinski |\n| 09:58 – 10:01 | Jolia: Concept-Level Vision-Language Alignment for 3D CT Contrastive Learning | Spotlight | J. Khlaut, C. Corbière, B. Callard, A. Prat, L. Butsanets, A. Saporta, T. Danielou, L. Machado, K. Le Floch, T. Boeken, P. Manceron, C. Dancette |\n| 10:01 – 10:04 | Curia-2: Scaling Self-Supervised Learning for Radiology Foundation Models | Spotlight | A. Saporta, B. Callard, C. Dancette, J. Khlaut, C. Corbière, L. Butsanets, A. Prat, P. Manceron |\n| 10:04 – 10:07 | Curia-MAE: Multi-Modal Multi-Anatomy MAE Pre-Training for 3D Medical Image Segmentation | Spotlight | T. Danielou, A. Saporta, L. Alberge, C. Dancette |\n| 10:07 – 10:10 | YOLO-PVC: 2D-to-3D Consolidation of Slice-wise Detections for Volumetric Liver Tumor Localization in MRI | Spotlight | T. Waqas, M. Lahlouh, K. Taibouni, M. Waqas, S. Ahmed, S. Mulé, Y. Leroul Chenoune |\n| 10:10 – 10:13 | How Close Is Gaussian Splatting to the Clinic? | Spotlight | K. De |\n| 10:13 – 10:16 | Surface-to-Skeleton 3D Cephalometry: Estimating Hidden Skeletal Landmarks from CT-Derived External Soft-Tissue Surfaces | Spotlight | T. Abe, T. Kanaya, K. Saita, M. Noda, C. Tachiki, Y. Nishii,",
+      "program_scraped_at": "2026-09-05T10:14:01.879721+00:00"
     },
     {
       "type": "Workshop",
@@ -816,10 +816,10 @@
       "summary": null,
       "track": null,
       "website": "https://dca-in-mi.github.io/",
-      "program_found": false,
+      "program_found": true,
       "program_url": "https://dca-in-mi.github.io/#home",
-      "program_text": null,
-      "program_scraped_at": "2026-09-02T09:36:40.219413+00:00"
+      "program_text": "**September 9, 2026 | ECCV Venue Malmö, Sweden**\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00-09:10 | Welcome and workshop overview from the organizers. | Opening Remarks | - |\n| 09:10-09:40 | Keynote 1 | Keynote | José M. Martínez Montiel, University of Zaragoza |\n| 09:40-10:10 | Keynote 2 | Keynote | Marcel Knopp, German Cancer Research Center (DKFZ), Heidelberg |\n| 10:10-10:30 | Coffee break | Break | - |\n| 10:30-11:00 | Establishing a Multimodal Imaging Dataset for Digital Dye Generation and Organelle Mapping in Human Oocytes | Paper | Daria Iliev, University College London |\n| 11:00-11:15 | Real-World Multi-Modal and Longitudinal Lung Cancer Dataset | Paper | Rita Cordeiro Mendes, Institute of Systems and Robotics, Lisbon |\n| 11:15-11:30 | Representation-driven Endoscopic Visual Embedding Alignment for Latent Generation | Paper | Francisco Caetano, Eindhoven University of Technology |\n| 12:00-13:00 | Lunch | Break | - |\n| 13:00-13:30 | Driving AI Innovation in Healthcare through Open Data and Foundation Models | Keynote | Daguang Xu, Nvidia MONAI |\n| 13:30-13:45 | TACIT: Task-Aware Counterfactual Image Translation for Medical Domain Generalization | Paper | Yiming Ma, King's College London |\n| 13:45-14:00 | Building Foreign Object Segmentation datasets for Chest X-Rays with Synthetic-trained proposals | Paper | Constantin Seibold, Heidelberg University |\n| 14:00-14:15 | Cross-Spectral Dense Correspondence for Multimodal Spectral Medical Imaging | Paper | Eric L. Wisotzky, Fraunhofer Institute for Telecommunications |\n| 14:15-14:45 | Keynote 5 | Keynote | Chinedu Nwoye, Intuitive |\n| 14:45-15:00 | Coffee break | Break | - |\n| 15:00-15:30 | Keynote 6 | Keynote | Fiona Kolbinger, Purdue University |\n| 15:50-16:00 | Best Paper & Best Presentation Awards, Closing remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:14:16.388016+00:00"
     },
     {
       "type": "Workshop",
@@ -852,7 +852,7 @@
       "program_found": true,
       "program_url": "https://medvidu.github.io/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:30 – 13:45 | Opening Remarks | Opening Remarks | - |\n| 13:45 – 14:25 | Invited Talk | Invited Talk | Yueming Jin |\n| 14:25 – 14:40 | OphEdit: Training-Free Text-Guided Editing of Ophthalmic Surgical Video | Oral Presentation | Ritul Jangir, Arkya Jyoti Bagchi, Mangalton Okram, Saurabh Seetaram Korgaonkar, Aiman Farooq, Deepak Mishra |\n| 14:40 – 14:55 | Beyond Instrument Motion: Recognizing Tissue Tension Toward Surgical Skill Assessment | Oral Presentation | Marko Haralovic, Zhiqi Miao, Alexander Machiel Bont, Jiapan Guo, Frans van Workum, Estefania Talavera |\n| 14:55 – 15:35 | Coffee Break / Poster Session | Break | - |\n| 15:35 – 16:15 | Invited Talk | Invited Talk | Lalithkumar Seenivasan |\n| 16:15 – 16:30 | MedVidU Challenge: Introduction | Keynote | - |\n| 16:30 – 16:40 | Task-Conditioned Model Selection for Heterogeneous Medical Video Understanding | Oral Presentation | Mengkang Lu, Yuntian Dong, Yong Xia |\n| 16:40 – 16:50 | SPIRAL: Structured Supervision Harvesting and Self-Refining Inference for Heterogeneous Medical Video Understanding | Oral Presentation | Podakanti Satyajith Chary, Nagarajan Ganapathy |\n| 16:50 – 17:00 | Challenge Awards & Closing Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:36:51.064096+00:00"
+      "program_scraped_at": "2026-09-05T10:14:27.803647+00:00"
     },
     {
       "type": "Workshop",
@@ -870,7 +870,7 @@
       "program_found": true,
       "program_url": "https://ilr-workshop.github.io/ECCVW2026/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:30 AM – 12:30 PM | Instance-Level Recognition and Generation Workshop at ECCV'26 | Opening Remarks | - |\n| TBD | Open-World Object Reasoning | Keynote | Benjamin Busam |\n| TBD | Instance-Level Image-Based Shape Retrieval via Pre-Aligned Multi-Modal Encoders and Hard Contrastive Learning | Oral | Paul Julius Kühn, Cedric Spengler, Saptarshi Neil Sinha, Michael Weinmann, Arjan Kuijper |\n| TBD | Cross-Temporal Building-Instance Retrieval: A Benchmark for Disaster Response | Oral | Michaela Areti Zervou, Grigorios Tsagkatakis, Panagiotis Tsakalides |\n| TBD | Benchmarking Personalization Methods for Text-to-Image Generation: Dataset, Metrics, and a Comprehensive Evaluation Framework | Oral | Kutay Özbay, Yalın Baştanlar |\n| TBD | Neither Name nor Schema: Pairwise Instance Labels for Hairstyle | Poster | Jordan Lim |\n| TBD | Visual-Prompt Guided Wildlife Instance-Level Recognition | Poster | Mufhumudzi, Jiahao Huo, Terence L. van Zyl, Fredrik Gustafsson |\n| TBD | Foveate: A Training-Free, In-Context, Recursive Method for Instance Segmentation | Poster | Robert Andreas Leist, Thiago S. Gouvêa, Daniel Sonntag |",
-      "program_scraped_at": "2026-09-02T09:37:00.480039+00:00"
+      "program_scraped_at": "2026-09-05T10:14:37.682085+00:00"
     },
     {
       "type": "Workshop",
@@ -887,8 +887,8 @@
       "website": "https://retailvisionworkshop.github.io/",
       "program_found": true,
       "program_url": "https://retailvisionworkshop.github.io/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 14:00 | Opening remarks | Opening Remarks | Ehud Barnea |\n| 14:15 | Keynote | Keynote | Gerard Pons-Moll |\n| 14:55 | Talk | Oral | Gilad Erlich |\n| 15:25 | Coffee break & poster session | Break/Poster | - |\n| 16:00 | Keynote | Keynote | Ira Kemelmacher-Shlizerman |\n| 16:40 | Keynote | Keynote | Riccardo Marin |\n| 17:20 | Short break | Break | - |\n| 17:30 | MM-RQRec: Multimodal Residual Quantization for Personalized Recommendation | Oral | Tingwang Chen, Enhao Zhong, Meng Cai, Yihao Zhao |\n| 17:40 | PolyLayout: Hierarchical VLM-Guided Layout Generation Beyond Rectangular Rooms | Oral | Yutong Jiang, Zahra Atashgahi, Carlos Soto Garcia Delgado, Ruben Brokkelkamp, Davide Zanutto, Efşan Sökmen, Shahin Shahkarami |\n| 17:50 | Parameter-Efficient Vision-Language Adaptation for Multi-Task Shopper Understanding | Oral | Vincenzo Carletti, Antonio Greco, Alessia Saggese, Camilla Spingola, Bruno Vento |\n| 18:00 | Video Representation and Temporal Modeling for Shoplifting Detection in Retail Environments | Oral | Simone Ricci, Niccolò Biondi, Alberto Del Bimbo |",
-      "program_scraped_at": "2026-09-02T09:37:11.161772+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 14:00 | Opening remarks | Opening Remarks | Ehud Barnea |\n| 14:15 | Gerard Pons-Moll | Keynote | Gerard Pons-Moll |\n| 14:55 | Gilad Erlich | Invited Talk | Gilad Erlich |\n| 15:25 | Coffee break & poster session | Break | - |\n| 16:00 | Ira Kemelmacher-Shlizerman | Keynote | Ira Kemelmacher-Shlizerman |\n| 16:40 | Riccardo Marin | Keynote | Riccardo Marin |\n| 17:20 | Short break | Break | - |\n| 17:30 | MM-RQRec: Multimodal Residual Quantization for Personalized Recommendation | Oral Presentation | Tingwang Chen, Enhao Zhong, Meng Cai, Yihao Zhao |\n| 17:40 | PolyLayout: Hierarchical VLM-Guided Layout Generation Beyond Rectangular Rooms | Oral Presentation | Yutong Jiang, Zahra Atashgahi, Carlos Soto Garcia Delgado, Ruben Brokkelkamp, Davide Zanutto, Efşan Sökmen, Shahin Shahkarami |\n| 17:50 | Parameter-Efficient Vision-Language Adaptation for Multi-Task Shopper Understanding | Oral Presentation | Vincenzo Carletti, Antonio Greco, Alessia Saggese, Camilla Spingola, Bruno Vento |\n| 18:00 | Video Representation and Temporal Modeling for Shoplifting Detection in Retail Environments | Oral Presentation | Simone Ricci, Niccolò Biondi, Alberto Del Bimbo |",
+      "program_scraped_at": "2026-09-05T10:14:49.192244+00:00"
     },
     {
       "type": "Workshop",
@@ -906,7 +906,7 @@
       "program_found": true,
       "program_url": "https://slomo-workshop.github.io/eccv2026/",
       "program_text": "**September 8, 2026 | Afternoon | Malmö, Sweden**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 14:00 – 14:10 | Opening Remarks | Opening | - |\n| 14:10 – 14:40 | Invited Talk 1 | Invited Talk | Prof. Anna Rohrbach |\n| 14:40 – 15:20 | QA Challenge Result Announcements & Winners' Presentations | Competition | - |\n| 15:20 – 15:40 | Coffee Break | Break | - |\n| 15:40 – 16:10 | Invited Talk 2 | Invited Talk | Dr. Fabian Caba Heilbron |\n| 16:10 – 16:40 | AD Challenge Result Announcements & Winners' Presentations | Competition | - |\n| 16:40 – 17:10 | Invited Talk 3 | Invited Talk | Dr. Piotr Mirowski |\n| 17:10 – 17:40 | Discussion & Closing Remarks | Closing | - |",
-      "program_scraped_at": "2026-09-02T09:37:19.027513+00:00"
+      "program_scraped_at": "2026-09-05T10:14:57.328426+00:00"
     },
     {
       "type": "Workshop",
@@ -923,8 +923,8 @@
       "website": "https://sites.google.com/utwente.nl/video4real/home",
       "program_found": true,
       "program_url": "https://sites.google.com/utwente.nl/video4real/home",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|---------|\n| 09:00 - 09:10 | Introduction | Opening Remarks | - |\n| 09:10 - 09:40 | Real-World Video Representation Learning | Invited Talk | Hazel Doughty |\n| 09:40 - 10:10 | Advances in Efficient Video Language Modeling | Invited Talk | Viorica Patraucean |\n| 10:10 - 10:30 | Coffee Break | Break | - |\n| 10:30 - 11:00 | Oral Session | Oral Session | - |\n| 11:00 - 11:30 | Compact, Low-Complexity Neural Video Representations | Invited Talk | Gül Varol |\n| 11:30 - 12:00 | Panel Discussion | Panel Discussion | Hazel Doughty, Yoichi Sato, Gül Varol, Ye Xia |\n| 12:00 - 12:05 | Closing Remarks | Closing Remarks | - |\n| 12:05 - 12:30 | Break | Break | - |\n| 12:30 - 13:30 | Poster Session | Poster Session | - |",
-      "program_scraped_at": "2026-09-02T09:37:28.362767+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 - 09:10 | Introduction | Opening Remarks | - |\n| 09:10 - 09:40 | Real-World Video Representation Learning | Invited Talk | Hazel Doughty |\n| 09:40 - 10:10 | Real-World Video Representation Learning | Invited Talk | Viorica Patraucean |\n| 10:10 - 10:30 | Coffee Break (Malmo Massan Exhibit Hall) | Break | - |\n| 10:30 - 11:00 | Oral Session | Oral Session | - |\n| 11:00 - 11:30 | Real-World Video Representation Learning | Invited Talk | Gül Varol |\n| 11:30 - 12:00 | Panel Discussion | Panel Discussion | Hazel Doughty, Yoichi Sato, Gül Varol, Ye Xia |\n| 12:00 - 12:05 | Closing Remarks | Closing Remarks | - |\n| 12:05 - 12:30 | Break | Break | - |\n| 12:30 - 13:30 | Poster Session | Poster Session | - |",
+      "program_scraped_at": "2026-09-05T10:15:07.997644+00:00"
     },
     {
       "type": "Workshop",
@@ -939,10 +939,10 @@
       "summary": null,
       "track": null,
       "website": "https://lsvos.github.io",
-      "program_found": false,
+      "program_found": true,
       "program_url": "https://lsvos.github.io/",
-      "program_text": null,
-      "program_scraped_at": "2026-09-02T09:37:37.208621+00:00"
+      "program_text": "**September 9, 2026 | 13:30 – 17:30 | Palissad South, Malmö Arena**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:30 - 13:40 | Opening Remarks | Opening Remarks | - |\n| 13:40 - 14:15 | Invited Talk | Invited Speaker | Amir Bar (Imperial College London) |\n| 14:15 - 14:50 | Invited Talk | Invited Speaker | Jiajun Wu (Stanford University) |\n| 14:50 - 15:25 | Semantic Generative Tuning for Unified Multimodal Models | Invited Speaker | Yanwei Li (Shanghai Jiao Tong University) |\n| 15:25 - 15:50 | MOSEv2 Challenge Sharing | Challenge Sharing | JeongRae Kim (Chung-Ang University) |\n| 15:50 - 16:00 | Closing Remarks | Closing Remarks | - |\n| 16:00 - 17:30 | Poster Session | Poster Session | Amir Bar, Jiajun Wu, Yanwei Li |",
+      "program_scraped_at": "2026-09-05T10:15:16.797472+00:00"
     },
     {
       "type": "Workshop",
@@ -959,8 +959,8 @@
       "website": "https://www.votchallenge.net/vots2026/",
       "program_found": true,
       "program_url": "https://www.votchallenge.net/vots2026/program.html",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:45 - 15:30 | Session 1 | Session | Chair: Matej Kristan |\n| 13:45 | Hello from the organizers | Talk | - |\n| 13:50 | Keynote 1 | Keynote | Fatma Guney |\n| 14:20 | VOTS2026 results & insights | Talk | Matej Kristan |\n| 14:40 | VOTSp2026 results & insights | Talk | Adam Harley |\n| 15:00 | Keynote 2 | Keynote | Amir Bar |\n| 15:30 - 16:00 | Coffee Break | Break | - |\n| 16:00 - 17:55 | Session 2 | Session | Chair: Jiri Matas |\n| 16:00 | Keynote 3 | Keynote | Mehdi S. M. Sajjadi |\n| 16:30 | VOTSt2026 + VOTSr2026 results & insights | Talk | Pavel Tokmakov |\n| 16:50 | VOTSt2026 winners: MUSMEM – Associating Visual Objects Through Transformers | Talk | Elham Soltani Kazemi, Gani Rahmon, Imad Eddine Toubal, Juan Mogollon, Kannappan Palaniappan |\n| 17:05 | VOTSr2026 winners: ReflexTrack – Feedback-Driven Referring Video Segmentation | Talk | Yuanjia Li, Tianyang Xu, Zhangyong Tang, He Wang, Xue-Feng Zhu, Xiao-Jun Wu, Josef Kittler |\n| 17:20 | Keynote 4 | Keynote | Kristen Grauman |\n| 17:50 | Concluding remarks | Talk | - |",
-      "program_scraped_at": "2026-09-02T09:37:50.400280+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:45 - 15:30 | Session 1 | Session | Chair: Matej Kristan |\n| 13:45 | Hello from the organizers | Talk | - |\n| 13:50 | Keynote 1: Fatma Guney | Keynote | Fatma Güney |\n| 14:20 | VOTS2026 results & insights | Talk | Matej Kristan |\n| 14:40 | VOTSp2026 results & insights | Talk | Adam Harley |\n| 15:00 | Keynote 2: Amir Bar | Keynote | Amir Bar |\n| 15:30 - 16:00 | Coffee Break | Break | - |\n| 16:00 - 18:00 | Session 2 | Session | Chair: Jiri Matas |\n| 16:00 | Keynote 3: Mehdi S. M. Sajjadi | Keynote | Mehdi S. M. Sajjadi |\n| 16:30 | VOTSt2026 + VOTSr2026 results & insights | Talk | Pavel Tokmakov |\n| 16:55 | VOTSt2026 winners: MUSMEM – Associating Visual Objects Through Transformers | Talk | Elham Soltani Kazemi, Gani Rahmon, Imad Eddine Toubal, Juan Mogollon, Kannappan Palaniappan |\n| 17:10 | VOTSr2026 winners: ReflexTrack – Feedback-Driven Referring Video Segmentation | Talk | Yuanjia Li, Tianyang Xu, Zhangyong Tang, He Wang, Xue-Feng Zhu, Xiao-Jun Wu, Josef Kittler |\n| 17:25 | Keynote 4: Kristen Grauman | Keynote | Kristen Grauman |\n| 17:55 | Concluding remarks | Talk | - |",
+      "program_scraped_at": "2026-09-05T10:15:33.439325+00:00"
     },
     {
       "type": "Workshop",
@@ -978,7 +978,7 @@
       "program_found": true,
       "program_url": "https://gen4avc.github.io/eccv2026/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 9:00 - 9:05 | Welcome and introduction to the workshop | Opening Remarks | - |\n| 9:05 - 9:45 | Generating B-Roll Sequences from User Video Collections | Invited Talk | Cusuh Ham (Adobe Research) |\n| 9:45 - 10:00 | Coffee Break & Poster Setup | Break | - |\n| 10:00 - 11:00 | Poster presentations | Poster Session | - |\n| 11:00 - 11:40 | Control from Within: Activating the Controls LTX Already Knows | Invited Talk | Ofir Bibi (Lightricks) |\n| 11:40 - 12:20 | From Audio-Visual Objects to Audio-Visual Spaces | Invited Talk | Ruohan Gao (University of Maryland) |",
-      "program_scraped_at": "2026-09-02T09:37:57.792217+00:00"
+      "program_scraped_at": "2026-09-05T10:15:41.019307+00:00"
     },
     {
       "type": "Workshop",
@@ -996,7 +996,7 @@
       "program_found": true,
       "program_url": "https://human-ai-co-creation.github.io/workshop/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00–09:05 | Introduction | Opening Remarks | - |\n| 09:05–09:40 | Beyond Prompting: Creative Control in Visual Generation | Talk | Chen Change Loy |\n| 09:40–10:15 | Reimagining Design Intelligence: The Layer Is Where Co-Creation Begins | Talk | Yuhui Yuan |\n| 10:15–10:30 | Best Workshop Papers Award & Presentation | Awards | - |\n| 10:30–11:15 | Poster Session & Coffee Break | Break | - |\n| 11:15–11:50 | A Question of Control | Talk | Fabio Pellacini |\n| 11:50–12:25 | Generating B-Roll Sequences from User Video Collections | Talk | Cusuh Ham |\n| 12:25–12:30 | Closing | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:38:05.712340+00:00"
+      "program_scraped_at": "2026-09-05T10:15:49.653782+00:00"
     },
     {
       "type": "Workshop",
@@ -1013,8 +1013,8 @@
       "website": "https://mllm-mucg.github.io/ECCV2026/",
       "program_found": true,
       "program_url": "https://mllm-mucg.github.io/ECCV2026/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:50 – 09:00 | Introduction and Opening Remarks | Opening Remarks | Organizers |\n| 09:00 – 09:40 | Show-o Series: One Single Transformer to Unify Multimodal Understanding and Generation | Keynote Talk 1 | Mike Z. Shou |\n| 09:40 – 10:20 | Unified Representation for Unified Models | Keynote Talk 2 | Yuren Cong |\n| 10:20 – 10:50 | Coffee Break | Break | - |\n| 10:50 – 11:30 | Granite Multimodal Models: from Pixels to Prosody | Keynote Talk 3 | Rogerio Schmidt Feris |\n| 11:30 – 12:00 | FrescoDiffusion: 4K Image-to-Video with Prior-Regularized Tiled Diffusion; Training-free Uncertainty Guidance for Complex Visual Tasks with MLLMs | Oral Presentations Session 1 | - |\n| 12:00 – 13:40 | Lunch Break | Break | - |\n| 13:40 – 14:20 | A Camera-Centric Framework for Unified Multimodal Understanding and Generation | Keynote Talk 4 | Chen Change Loy |\n| 14:20 – 14:50 | Representation Forcing for Bottleneck-Free Unified Multimodal Models; Improving Sample Diversity in Autoregressive Text-to-Image Generati | Oral Presentations Session 2 | - |",
-      "program_scraped_at": "2026-09-02T09:38:14.999568+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:50 – 09:00 | Introduction and Opening Remarks | Opening Remarks | Organizers |\n| 09:00 – 09:40 | Show-o Series: One Single Transformer to Unify Multimodal Understanding and Generation | Keynote Talk 1 | Mike Z. Shou |\n| 09:40 – 10:20 | Unified Representation for Unified Models | Keynote Talk 2 | Yuren Cong |\n| 10:20 – 10:50 | Coffee Break | Break | - |\n| 10:50 – 11:30 | Granite Multimodal Models: from Pixels to Prosody | Keynote Talk 3 | Rogerio Schmidt Feris |\n| 11:30 – 12:00 | FrescoDiffusion: 4K Image-to-Video with Prior-Regularized Tiled Diffusion; Training-free Uncertainty Guidance for Complex Visual Tasks with MLLMs | Oral Presentations Session 1 | - |\n| 12:00 – 13:40 | Lunch Break | Break | - |\n| 13:40 – 14:20 | A Camera-Centric Framework for Unified Multimodal Understanding and Generation | Keynote Talk 4 | Chen Change Loy |\n| 14:20 – 14:50 | Representation Forcing for Bottleneck-Free Unified … | Oral Presentations Session 2 | - |",
+      "program_scraped_at": "2026-09-05T10:15:58.937275+00:00"
     },
     {
       "type": "Workshop",
@@ -1032,7 +1032,7 @@
       "program_found": true,
       "program_url": "https://s3dsgr.github.io/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:40 AM - 8:45 AM | Welcome | Opening Remarks | - |\n| 8:45 AM - 9:00 AM | ClickSeg3D: Few-Click Interactive Segmentation via Semantic Embeddings | Spotlight Talks - Part I | Xueyang Kang; Zijian Yu; Kourosh Khoshelham; Liangliang Nan |\n| 8:45 AM - 9:00 AM | UCE: Universal Camera Embeddings for Scalable 3D Scene Understanding | Spotlight Talks - Part I | Boris Chidlovskii; Victor Domsa; Gabriela Csurka; Levente Tamas |\n| 8:45 AM - 9:00 AM | Reducing the Gap Between Spatial and Space-Filling Curve Neighbors in 3D Point Cloud Segmentation | Spotlight Talks - Part I | Konan Sasaki; Junya Komori; Kazuhiro Hotta |\n| 9:00 AM - 9:30 AM | ROODI: Reconstructing Occluded Objects with Denoising Inpainters | Spotlight Talks - Part II | Yeonjin Chang; Erqun Dong; Seunghyeon Seo; Nojun Kwak; Kwang Moo Yi |\n| 9:00 AM - 9:30 AM | Towards Real-Time and Adaptable LiDAR Scene Completion | Spotlight Talks - Part II | Azhar Hussian; Martin Vossiek; Vasileios Belagiannis |\n| 9:00 AM - 9:30 AM | Sparse Light Field Sampling Improves Casual 3D and 4D Reconstruction | Spotlight Talks - Part II | Shamus Li; Ruiming Cao; Laura Waller; Kristina Monakhova; Sara Fridovich-Keil |\n| 9:30 AM - 10:00 AM | Coffee Break and Poster Session | Break | - |\n| 10:00 AM - 10:45 AM | Angela Dai | Invited Talk | Angela Dai |\n| 10:45 AM - 11:00 AM | Richard Zhang | Invited Talk | Richard Zhang |\n| 11:00 AM - 11:30 AM | Andreas Geiger | Invited Talk | Andreas Geiger |\n| 11:30 AM - 12:00 PM | Andrew Davison | Invited Talk | Andrew Davison |\n| 12:00 PM - 12:30 PM | Concluding Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:38:27.340561+00:00"
+      "program_scraped_at": "2026-09-05T10:16:12.694444+00:00"
     },
     {
       "type": "Workshop",
@@ -1050,7 +1050,7 @@
       "program_found": false,
       "program_url": "https://lovif-eccv2026-workshop.github.io/",
       "program_text": null,
-      "program_scraped_at": "2026-09-02T09:38:41.231968+00:00"
+      "program_scraped_at": "2026-09-05T10:16:29.756339+00:00"
     },
     {
       "type": "Workshop",
@@ -1067,8 +1067,8 @@
       "website": "https://avgen123.github.io/eccv26.html",
       "program_found": true,
       "program_url": "https://avgen123.github.io/eccv26.html",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 – 09:10 | Welcome & Opening Remarks | Opening Remarks | - |\n| 09:10 – 10:00 | AURA: AUdio-dRiven Streaming Avatar | Oral Paper Session 1 | Nathaniel Cohen |\n| 09:10 – 10:00 | FlowLong: Training-free Long Audio-Video Generation via Manifold-constrained Tweedie Matching | Oral Paper Session 1 | TBA |\n| 09:10 – 10:00 | OmniForcing: Unleashing Real-time Joint Audio-Visual Generation | Oral Paper Session 1 | Yaofeng Su |\n| 09:10 – 10:00 | TAVID: Text-Driven Audio-Visual Interactive Dialogue Generation | Oral Paper Session 1 | Junseok Ahn |\n| 09:10 – 10:00 | Lookahead Anchoring: Preserving Character Identity in Audio-Driven Human Animation | Oral Paper Session 1 | Junyoung Seo |\n| 10:00 – 10:40 | Keynote Speaker 1 — Prof. Dima Damen | Keynote | Dima Damen |\n| 10:40 – 11:00 | Morning Coffee Break | Break | - |\n| 11:00 – 11:30 | Industry Talk 1 — Dr. Nikita Drobyshev (Cantina) | Industry Talk | Nikita Drobyshev |\n| 11:30 – 12:10 | Keynote Speaker 2 — Prof. Ruohan Gao | Keynote | Ruohan Gao |\n| 12:10 – 13:00 | Lunch Break | Break | - |\n| 13:00 – 14:00 | Poster Session | Poster | - |\n| 14:00 – 14:40 | Keynote Speaker 3 — Prof. Joon Son Chung | Keynote | Joon Son Chung |\n| 14:40 – 15:10 | Industry Talk 2 — Prof. Ioannis Patras (Queen Mary University of London, Tavus) | Industry Talk | Ioannis Patras |\n| 15:10 – 15:50 | Keynote Speaker 4 — Prof. Kristen Grauman | Keynote | Kristen Grauman |\n| 15:50 – 16:20 | Industry Talk 3 — Google DeepMind | Industry Talk | - |\n| 16:20 – 17:00 | Adding Voice Cloning to Text-to-Audio-Video Models with a Single Zero-Initialised Layer | Oral Paper Session 2 | Viacheslav Vasilev |\n| 16:20 – 17:00 | C3ASD: Multi-Level Consistency-Driven Representation Learning for Robust Active Speaker Detection | Oral Paper Session 2 | Jisoo Park |\n| 16:20 – 17:00 | Bring Music The Horizon: Music-Driven 360° Video Generation | Oral Paper Session 2 | Kai Hsu Tsai, Yong Wei Fu, Hung I Yang |\n| 16:20 – 17:00 | Music-Driven Dance Video Generation via PCA-Whitened Latent Diffusion with Rotary Position Embedding | Oral Paper Session 2 | Nokap Tony Park |\n| 17:00 – 17:30 | Keynote Speaker 5 — Prof. Tae-Hyun Oh | Organizer Talk | Tae-Hyun Oh |\n| 17:30 – 17:35 | Closing Remarks & Wrap-Up | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:38:57.599655+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 – 09:10 | Welcome & Opening Remarks | Opening Remarks | - |\n| 09:10 – 10:00 | AURA: AUdio-dRiven Streaming Avatar | Oral Paper Session 1 | Nathaniel Cohen |\n| 09:10 – 10:00 | FlowLong: Training-free Long Audio-Video Generation via Manifold-constrained Tweedie Matching | Oral Paper Session 1 | TBA |\n| 09:10 – 10:00 | OmniForcing: Unleashing Real-time Joint Audio-Visual Generation | Oral Paper Session 1 | Yaofeng Su |\n| 09:10 – 10:00 | TAVID: Text-Driven Audio-Visual Interactive Dialogue Generation | Oral Paper Session 1 | Junseok Ahn |\n| 09:10 – 10:00 | Lookahead Anchoring: Preserving Character Identity in Audio-Driven Human Animation | Oral Paper Session 1 | Junyoung Seo |\n| 10:00 – 10:40 | Keynote Speaker 1 — Prof. Dima Damen | Keynote | Dima Damen |\n| 10:40 – 11:00 | Morning Coffee | Break | - |\n| 11:00 – 11:30 | Industry Talk 1 — Dr. Nikita Drobyshev (Cantina) | Industry Talk | Nikita Drobyshev |\n| 11:30 – 12:10 | Keynote Speaker 2 — Prof. Ruohan Gao | Keynote | Ruohan Gao |\n| 12:10 – 13:00 | Lunch Break | Break | - |\n| 12:10 – 14:00 | Poster Session | Poster Session | - |\n| 14:00 – 14:40 | Keynote Speaker 3 — Prof. Joon Son Chung | Keynote | Joon Son Chung |\n| 14:40 – 15:10 | Industry Talk 2 — Prof. Ioannis Patras (Queen Mary University of London, Tavus) | Industry Talk | Ioannis Patras |\n| 15:10 – 15:50 | Keynote Speaker 4 — Prof. Kristen Grauman | Keynote | Kristen Grauman |\n| 15:50 – 16:20 | Industry Talk 3 — Google DeepMind | Industry Talk | - |\n| 16:20 – 17:00 | Adding Voice Cloning to Text-to-Audio-Video Models with a Single Zero-Initialised Layer | Oral Paper Session 2 | Viacheslav Vasilev |\n| 16:20 – 17:00 | C3ASD: Multi-Level Consistency-Driven Representation Learning for Robust Active Speaker Detection | Oral Paper Session 2 | Jisoo Park |\n| 16:20 – 17:00 | Bring Music The Horizon: Music-Driven 360° Video Generation | Oral Paper Session 2 | Kai Hsu Tsai, Yong Wei Fu, Hung I Yang |\n| 16:20 – 17:00 | Music-Driven Dance Video Generation via PCA-Whitened Latent Diffusion with Rotary Position Embedding | Oral Paper Session 2 | Nokap Tony Park |\n| 17:00 – 17:30 | Keynote Speaker 5 — Prof. Tae-Hyun Oh | Organizer Talk | Tae-Hyun Oh |\n| 17:30 – 17:35 | Closing Remarks & Wrap-Up | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:16:48.456682+00:00"
     },
     {
       "type": "Workshop",
@@ -1085,8 +1085,8 @@
       "website": "https://beamv2-eccv-workshop.github.io/",
       "program_found": true,
       "program_url": "https://beamv2-eccv-workshop.github.io/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 14:00 – 14:05 | Opening Remarks | Opening | - |\n| 14:05 – 14:35 | Invited Talk 1 | Invited Talk | Dacheng Tao |\n| 14:35 – 15:05 | Contributed Papers (Oral Session 1) | Oral | - |\n| 15:05 – 15:40 | Poster Session & Coffee | Break | - |\n| 15:40 – 16:10 | Invited Talk 2 | Invited Talk | Giorgos Tolias |\n| 16:10 – 16:40 | Contributed Papers (Oral Session 2) | Oral | - |\n| 16:40 – 17:10 | Invited Talk 3 | Invited Talk | Xiangyu Yue |\n| 17:10 – 17:20 | HippoCamp Paper | Invited Paper | HippoCamp |\n| 17:20 – 17:40 | Invited Talk 4 | Invited Talk | Swaroop Mishra |\n| 17:40 – 18:00 | Closing Remarks | Closing | - |",
-      "program_scraped_at": "2026-09-02T09:39:07.533772+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 14:00 – 14:05 | Opening Remarks | Opening | - |\n| 14:05 – 14:35 | From accuracy to evidence alignment | Invited Talk | Dacheng Tao |\n| 14:35 – 15:05 | Order Effects: Do Multimodal LLMs Ground Their Answers in Option Content or in Position? | Oral Session | Sergei Olegovich Kurashkin, Vadim Tynchenko, Aleksei Borodulin, Vladimir Nelyub, Vladislav Kukartsev |\n| 14:35 – 15:05 | Chartography: Benchmarking Grounded Multimodal Reasoning over Professional Charts | Oral Session | Sushant Mehta |\n| 14:35 – 15:05 | Warping Earth Observations for Better Ice Labelling in the Marginal Ice Zone | Oral Session | Tom Kelly, Martin Samuel James Rogers |\n| 15:05 – 15:40 | Poster Session & Coffee | Break | - |\n| 15:40 – 16:10 | Grounded on Nothing: The Video-Blind Floor of Grounded VideoQA Metrics | Invited Talk | Krishna Harish |\n| 15:40 – 16:10 | Beyond the Verdict: Evidence-Aligned Evaluation of Visual Prompt-Injection Guardrails | Oral Session | Suyoung Lee, Myungsub Choi |\n| 15:40 – 16:10 | TAKE 85: Testing Audiovisual filmmaKer's intEnt across 85 Hours of Film | Oral Session | Kaishuu Shinozaki-Conefrey, Olivier Pascaud, Robin Courant, Xi Wang, Dimitris Samaras, Vicky Kalogeiton |\n| 16:10 – 16:40 | Beyond the Verdict: Evidence-Aligned Evaluation of Visual Prompt-Injection Guardrails | Invited Talk | Giorgos Tolias |\n| 16:40 – 17:10 | HippoCamp | Invited Paper from the Main Conference | - |\n| 17:10 – 17:20 | Beyond the Verdict: Evidence-Aligned Evaluation of Visual Prompt-Injection Guardrails | Invited Talk | Xiangyu Yue |\n| 17:20 – 17:40 | Advances in Reasoning with Large Language Models | Invited Talk | Swaroop Mishra |\n| 17:40 – 18:00 | Closing Remarks | Closing | - |",
+      "program_scraped_at": "2026-09-05T10:17:03.410706+00:00"
     },
     {
       "type": "Workshop",
@@ -1103,8 +1103,8 @@
       "website": "https://eccv2026-found-workshop.limitlab.xyz/",
       "program_found": true,
       "program_url": "https://eccv2026-found-workshop.limitlab.xyz/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:30 – 08:45 | Opening Remarks | Opening Remarks | Yoshihiro Fukuhara |\n| 08:45 – 09:15 | Invited Talk 1 | Invited Talk | Iro Armeni |\n| 09:15 – 09:45 | Invited Talk 2 | Invited Talk | Amir Bar |\n| 09:45 – 10:00 | Short Break | Break | - |\n| 10:00 – 10:30 | Invited Talk 3 | Invited Talk | Anastasia Varava |\n| 10:30 – 11:00 | Invited Talk 4 | Invited Talk | Marc Pollefeys |\n| 11:00 – 11:15 | Closing Remarks | Closing Remarks | - |\n| 11:30 – 12:30 | Poster Session | Poster | - |",
-      "program_scraped_at": "2026-09-02T09:39:15.678487+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:30 – 08:45 | Opening Remarks | Opening Remarks | Yoshihiro Fukuhara |\n| 08:45 – 09:15 | Invited Talk 1 | Invited Talk | Iro Armeni |\n| 09:15 – 09:45 | Invited Talk 2 | Invited Talk | Amir Bar |\n| 09:45 – 10:00 | Short Break | Break | - |\n| 10:00 – 10:30 | Invited Talk 3 | Invited Talk | Anastasia Varava |\n| 10:30 – 11:00 | Invited Talk 4 | Invited Talk | Marc Pollefeys |\n| 11:00 – 11:15 | Closing Remarks | Closing Remarks | Risa Shinoda |\n| 11:30 – 12:30 | Poster Session | Poster Session | - |",
+      "program_scraped_at": "2026-09-05T10:17:11.643923+00:00"
     },
     {
       "type": "Workshop",
@@ -1137,7 +1137,7 @@
       "program_found": true,
       "program_url": "https://uniworld-ai.github.io/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:45-09:00 | Welcome | Opening remarks | - |\n| 09:00-09:40 | Invited Speaker 1 | Invited Talk | TBC |\n| 09:40-10:20 | Invited Speaker 2 | Invited Talk | TBC |\n| 10:20-10:40 | Coffee Break + Posters | Break | - |\n| 10:40-11:20 | Invited Speaker 3 | Invited Talk | TBC |\n| 11:20-12:00 | Invited Speaker 4 | Invited Talk | TBC |\n| 12:00-13:00 | Lunch + Posters | Break | - |\n| 13:00-13:40 | Invited Speaker 5 | Invited Talk | TBC |\n| 13:40-14:20 | Invited Speaker 6 | Invited Talk | TBC |\n| 14:20-14:40 | Coffee Break + Posters | Break | - |\n| 14:40-15:20 | Invited Speaker 7 | Invited Talk | TBC |\n| 15:20-16:00 | Invited Speaker 8 | Invited Talk | TBC |\n| 16:00-16:50 | Contributed Oral Papers | Oral | - |\n| 16:50-17:10 | Awards + Closing + Social | Closing | - |",
-      "program_scraped_at": "2026-09-02T09:39:24.974458+00:00"
+      "program_scraped_at": "2026-09-05T10:17:21.984887+00:00"
     },
     {
       "type": "Workshop",
@@ -1154,8 +1154,8 @@
       "website": "https://eccv2026-limit-workshop.limitlab.xyz/",
       "program_found": true,
       "program_url": "https://eccv2026-limit-workshop.limitlab.xyz/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:30 - 08:40 | Opening Remarks | Opening Remarks | Ryousuke Yamada |\n| 08:40 - 09:10 | Invited Talk 1 | Invited Talk | Anna Kukleva |\n| 09:10 - 09:40 | Invited Talk 2 | Invited Talk | Ranjay Krishna |\n| 09:40 - 09:50 | Short Break | Break | - |\n| 09:50 - 10:00 | Oral Presentation 1 | Oral | Representation-Preserving Federated Self-Supervised Learning with Foundation Models |\n| 10:00 - 10:10 | Oral Presentation 2 | Oral | ADSF: Approximating Diffusion Process through Tracking the Score Function |\n| 10:10 - 10:20 | Oral Presentation 3 | Oral | Efficient Generative Adversarial Networks Using Linear Additive-Attention Transformers |\n| 10:20 - 10:30 | Oral Presentation 4 | Oral | RIPE++: Reinforced Keypoint Learning from Positive Pairs Only |\n| 10:30 - 11:00 | Invited Talk 3 | Invited Talk | Björn Ommer |\n| 11:00 - 11:10 | Short Break | Break | - |\n| 11:10 - 11:40 | Invited Talk 4 | Invited Talk | Yunzhu Li (Remote) |\n| 11:40 - 11:50 | Closing Remarks | Closing Remarks | Daichi Otsuka |\n| 12:00 - 13:00 | Poster Session | Poster | - |",
-      "program_scraped_at": "2026-09-02T09:39:36.695623+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:30 - 08:40 | Opening Remarks | Opening Remarks | Ryousuke Yamada |\n| 08:40 - 09:10 | Invited Talk 1 | Invited Talk | Anna Kukleva |\n| 09:10 - 09:40 | Invited Talk 2 | Invited Talk | Ranjay Krishna |\n| 09:40 - 09:50 | Short Break | Break | - |\n| 09:50 - 10:00 | Representation-Preserving Federated Self-Supervised Learning with Foundation Models | Oral Presentation | Ozgu Goksu, Daniela Ivanova, Nicolas Pugeault |\n| 10:00 - 10:10 | ADSF: Approximating Diffusion Process through Tracking the Score Function | Oral Presentation | Preeti Mukherjee, Shayok Bagchi, Jagannath Prabhakaran, Siddhant Prakash, Chaoyue Liu |\n| 10:10 - 10:20 | Efficient Generative Adversarial Networks Using Linear Additive-Attention Transformers | Oral Presentation | Emilio Alejandro Morales-Juárez, Gibran Fuentes-Pineda |\n| 10:20 - 10:30 | RIPE++: Reinforced Keypoint Learning from Positive Pairs Only | Oral Presentation | Johannes Künzel, Peter Eisert, Anna Hilsmann |\n| 10:30 - 11:00 | Invited Talk 3 | Invited Talk | Björn Ommer |\n| 11:00 - 11:10 | Short Break | Break | - |\n| 11:10 - 11:40 | Invited Talk 4 | Invited Talk | Yunzhu Li (Remote) |\n| 11:40 - 11:50 | Closing Remarks | Closing Remarks | Daichi Otsuka |\n| 12:00 - 13:00 | Poster Session | Poster Session | - |",
+      "program_scraped_at": "2026-09-05T10:17:33.662854+00:00"
     },
     {
       "type": "Workshop",
@@ -1173,7 +1173,7 @@
       "program_found": true,
       "program_url": "https://efficientvg.github.io/workshops/eccv2026.html",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:00 – 13:10 | Opening remarks | Opening | - |\n| 13:10 – 13:50 | Organizer Talk | Organizer Talk | Huan Wang |\n| 13:50 – 14:30 | Invited Talk | Invited Talk | Gal Chechik |\n| 14:30 – 15:00 | Unified image, video, and audio generation | Industrial Demo | Griffin Floto |\n| 15:00 – 15:20 | Coffee break | Break | - |\n| 15:20 – 15:50 | Realtime Controllable Video Generation | Industrial Demo | Davide Locatelli |\n| 15:50 – 16:20 | Real-time conversational video character | Industrial Demo | Taras Khakhulin |\n| 16:20 – 16:50 | Multiplayer world model | Industrial Demo | Adrien Ramanana Rahary, Václav Volhejn |\n| 16:50 – 17:00 | Closing remarks | Closing | - |",
-      "program_scraped_at": "2026-09-02T09:39:46.796934+00:00"
+      "program_scraped_at": "2026-09-05T10:17:41.454500+00:00"
     },
     {
       "type": "Workshop",
@@ -1191,7 +1191,7 @@
       "program_found": true,
       "program_url": "https://curateddata.github.io/iccv2025/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:30 – 9:15 AM | - | Invited Talk | Zhuang Liu |\n| 10:00 – 10:45 AM | - | Invited Talk | Sara Beery |\n| 2:15 – 3:00 PM | - | Invited Talk | Andrew Owens |\n| 3:45 – 4:30 PM | - | Invited Talk | Phillip Isola |\n| 4:30 – 5:15 PM | - | Invited Talk | Wei-Chiu Ma |",
-      "program_scraped_at": "2026-09-02T09:39:57.128542+00:00"
+      "program_scraped_at": "2026-09-05T10:17:52.397443+00:00"
     },
     {
       "type": "Workshop",
@@ -1208,8 +1208,8 @@
       "website": "https://excv-workshop.github.io/",
       "program_found": true,
       "program_url": "https://excv-workshop.github.io/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:45–9:00 | Opening Remarks | Opening Remarks | - |\n| 9:00–9:30 | Understanding and Building Interpretable Representations in Deep Learning | Invited Talk | Konstantinos Derpanis |\n| 9:30–10:00 | - | Invited Talk | Lily Weng |\n| 10:00-10:30 | - | Invited Talk | Hilde Kuehne |\n| 10:30-10:45 | Coffee Break | Break | - |\n| 10:45-11:15 | - | Invited Talk | Sandra Wachter, Chris Russell |\n| 11:15–11:45 | Oral Presentations | Oral Presentations | - |\n| 11:45–12:15 | Elevator Pitches | Elevator Pitches | - |\n| 12:15–13:15 | Lunch Social | Break | - |\n| 13:15–14:45 | Poster Session | Poster Session | - |\n| 14:45–15:15 | - | Invited Talk | Fazl Barez |\n| 15:15-15:30 | Coffee Break | Break | - |\n| 15:30–16:00 | - | Invited Talk | Ranjay Krishna |\n| 16:00–17:00 | Panel Discussion | Panel Discussion | - |\n| 17:00–17:30 | - | Invited Talk | Anna Rohrbach |\n| 17:30–17:40 | Closing Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:40:07.109040+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:45–9:00 | Opening Remarks | Opening Remarks | - |\n| 9:00–9:30 | Understanding and Building Interpretable Representations in Deep Learning | Invited Talk | Konstantinos Derpanis |\n| 9:30–10:00 | - | Invited Talk | Lily Weng |\n| 10:00-10:30 | - | Invited Talk | Hilde Kuehne |\n| 10:30-10:45 | Coffee Break | Break | - |\n| 10:45-11:15 | - | Invited Talk | Sandra Wachter, Chris Russell |\n| 11:15–11:45 | Oral Presentations | Oral Presentations | - |\n| 11:45–12:15 | Elevator Pitches | Elevator Pitches | - |\n| 12:15–13:15 | Lunch Social | Break | - |\n| 13:15–14:45 | Poster Session | Poster Session | - |\n| 14:45–15:15 | - | Invited Talk | Fazl Barez |\n| 15:15-15:30 | Coffee Break | Break | - |\n| 15:30–16:00 | - | Invited Talk | Ranjay Krishna |\n| 16:00–17:00 | From Explanation to Evidence: Verifying Image-to-Text and Text-to-Image Generation | Panel Discussion | Anna Rohrbach |\n| 17:00–17:30 | Closing Remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:18:03.491472+00:00"
     },
     {
       "type": "Workshop",
@@ -1226,8 +1226,8 @@
       "website": "https://3rd-failed-workshop-eccv-2026.github.io/",
       "program_found": true,
       "program_url": "https://3rd-failed-workshop-eccv-2026.github.io/3-venue_and_schedule.html",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:30 AM | Welcome and opening remarks | Opening Remarks | - |\n| 8:40 AM | Keynote 1 | Keynote | Elisa Ricci |\n| 9:20 AM | Keynote 2 | Keynote | Steffen Schneider |\n| 10:00 AM | Coffee break | Break | - |\n| 10:30 AM | Poster session | Posters | - |\n| 11:45 AM | Keynote 3 | Keynote | Andrew King |\n| 12:25 PM | Closing remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:40:16.517827+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|---------|\n| 8:30 AM | Welcome and opening remarks | Opening Remarks | - |\n| 8:40 AM | Keynote 1 | Keynote | Elisa Ricci |\n| 9:20 AM | Keynote 2 | Keynote | Steffen Schneider |\n| 10:00 AM | Coffee break | Break | - |\n| 10:30 AM | Poster session | Posters | - |\n| 11:45 AM | Keynote 3 | Keynote | Andrew King |\n| 12:25 PM | Closing remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:18:13.052649+00:00"
     },
     {
       "type": "Workshop",
@@ -1244,8 +1244,8 @@
       "website": "https://sites.google.com/view/eccv-2026-visper/",
       "program_found": true,
       "program_url": "https://sites.google.com/view/eccv-2026-visper/schedule",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:45 – 09:00 | Opening | Opening | - |\n| 09:00 – 09:10 | TBD | Oral 1 | TBD |\n| 09:10 – 09:20 | TBD | Oral 2 | TBD |\n| 09:20 – 09:50 | TBD | Keynote | Yaman Kumar |\n| 09:50 – 10:20 | TBD | Keynote | Anna Rohrbach |\n| 10:20 – 10:50 | Coffee Break | Break | - |\n| 10:50 – 11:00 | TBD | Oral 3 | Manuel Cherep |\n| 11:00 – 11:30 | TBD | Keynote | Serge Belongie |\n| 11:30 – 12:00 | TBD | Keynote | Xinying Hao |\n| 12:00 – 12:30 | TBD | Keynote | Paul Liang |\n| 12:30 – 13:45 | Lunch | Break | - |",
-      "program_scraped_at": "2026-09-02T09:40:31.668165+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:45 – 09:00 | Opening | Opening | - |\n| 09:00 – 09:10 | Can MLLMs Reason About Visual Persuasion? Evaluating the Efficacy and Faithfulness of Reasoning | Oral | Naeun Lee |\n| 09:10 – 09:20 | ESC: Emotional Self-Correction for Reliable Vision-Language Models | Oral | Minh-Nhat Nguyen |\n| 09:20 – 09:50 | Title TBA | Keynote | Yaman Kumar Singla |\n| 09:50 – 10:20 | Media In and Out of Context: From Detection to Control | Keynote | Anna Rohrbach |\n| 10:20 – 10:50 | Coffee Break | Break | - |\n| 10:50 – 11:00 | Visual Persuasion: What Influences Decisions of Vision-Language Models? | Oral | Manuel Cherep |\n| 11:00 – 11:30 | Narratives in the Modern Social Media Ecosystem | Keynote | Serge Belongie |\n| 11:30 – 12:00 | Title TBA | Keynote | Xinying Hao |\n| 12:00 – 12:30 | Title TBA | Keynote | Paul Liang |\n| 12:30 – 13:45 | Lunch / Poster Session | Lunch / Poster | - |",
+      "program_scraped_at": "2026-09-05T10:18:32.512318+00:00"
     },
     {
       "type": "Workshop",
@@ -1262,8 +1262,8 @@
       "website": "https://lifegenip.cc/",
       "program_found": true,
       "program_url": "https://lifegenip.cc/",
-      "program_text": "**September 8, 2026 | 8:30 AM – 12:30 PM CEST | Malmömässan D1 / Online Live**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:30 – 08:40 | Introduction and opening remarks | Opening Remarks | - |\n| 08:40 – 09:05 | Deepfake Detection in the Era of Generative AI | Invited Talk | Luisa Verdoliva |\n| 09:05 – 09:30 | Trustworthy ML Systems for Deep Agentic Reasoning and Evaluating Open Agents | Invited Talk | Bo Han |\n| 09:30 – 09:45 | CASteer: Cross-Attention Steering for Controllable Concept Erasure | Oral Presentation | Tatiana Gaintseva et al. |\n| 09:45 – 10:00 | Protecting Facial Biometrics from Malicious Generative Editing via Latent Optimization | Oral Presentation | Fahad Shamshad et al. |\n| 10:00 – 11:00 | Coffee Break + Poster Session | Break / Poster | - |\n| 11:00 – 11:25 | Auditing the Unseen: Dataset Ownership Verification from Principles to Visual Generative Models | Invited Talk | Yiming Li |\n| 11:25 – 11:50 | From Provenance to Permission: Rights and Licensing in the Generative AI Era | Invited Talk | John Collomosse |\n| 11:50 – 12:15 | Parameter Shaking Across the Generative AI Life Cycle | Invited Talk | Zhangyang (Atlas) Wang |\n| 12:15 – 12:30 | Best Paper Award Ceremony | Awards | - |",
-      "program_scraped_at": "2026-09-02T09:40:41.556934+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:30 – 08:40 | Introduction and opening remarks | Opening Remarks | - |\n| 08:40 – 09:05 | Deepfake Detection in the Era of Generative AI | Invited Talk | Luisa Verdoliva |\n| 09:05 – 09:30 | Trustworthy ML Systems for Deep Agentic Reasoning and Evaluating Open Agents | Invited Talk | Bo Han |\n| 09:30 – 09:45 | CASteer: Cross-Attention Steering for Controllable Concept Erasure | Oral Presentation | Tatiana Gaintseva et al. |\n| 09:45 – 10:00 | Protecting Facial Biometrics from Malicious Generative Editing via Latent Optimization | Oral Presentation | Fahad Shamshad et al. |\n| 10:00 – 11:00 | Coffee Break + Poster Session | Break | - |\n| 11:00 – 11:25 | Auditing the Unseen: Dataset Ownership Verification from Principles to Visual Generative Models | Invited Talk | Yiming Li |\n| 11:25 – 11:50 | From Provenance to Permission: Rights and Licensing in the Generative AI Era | Invited Talk | John Collomosse |\n| 11:50 – 12:15 | Parameter Shaking Across the Generative AI Life Cycle | Invited Talk | Zhangyang (Atlas) Wang |\n| 12:15 – 12:30 | Best Paper Award Ceremony | Awards | - |",
+      "program_scraped_at": "2026-09-05T10:18:46.396684+00:00"
     },
     {
       "type": "Workshop",
@@ -1278,10 +1278,10 @@
       "summary": null,
       "track": null,
       "website": "https://uncertainty-cv.github.io/2026/",
-      "program_found": false,
-      "program_url": "https://uncertainty-cv.github.io/2026/",
-      "program_text": null,
-      "program_scraped_at": "2026-09-02T09:40:48.138352+00:00"
+      "program_found": true,
+      "program_url": "https://uncertainty-cv.github.io/2026/program/",
+      "program_text": "**September 8th, 2026 | Full Day | Quality View Hotel - Helsingborg**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 - 09:30 | Welcome | Opening Remarks | - |\n| 09:30 - 10:00 | TBA | Invited Talk | Jes Frellsen |\n| 10:00 - 10:30 | Diagnosing Multimodal LLMs: Contradictions, Modality Bias, and What Benchmarks Miss | Invited Talk | Teodora Gagaleska |\n| 10:30 - 11:00 | Coffee Break | Break | - |\n| 11:00 - 11:30 | Towards Anthropomimetic Uncertainty: Desiderata for Uncertainty Communication in Large Language Models | Invited Talk | Christian Hardmeier |\n| 11:30 - 11:45 | Contributed Oral Presentations (Accepted Full Papers) | Oral | - |\n| 11:45 - 12:15 | Contributed Spotlights (Accepted Extended Abstracts) | Spotlight | - |\n| 12:30 - 13:15 | Lunch | Break | - |\n| 13:15 - 14:30 | Poster Session | Poster | - |\n| 14:30 - 15:00 | TBA | Invited Talk | Yarin Gal |\n| 15:00 - 15:30 | Coffee Break | Break | - |\n| 15:30 - 16:00 | Invisible bias: effects on evaluation | Invited Talk | Noa Garcia |\n| 16:00 - 16:30 | Analyzing Internal Representations of Multimodal LLMs | Invited Talk | Matthieu Cord |\n| 16:30 - 17:00 | TBA | Invited Talk | Lorenzo Baraldi |",
+      "program_scraped_at": "2026-09-05T10:19:01.102062+00:00"
     },
     {
       "type": "Workshop",
@@ -1298,8 +1298,8 @@
       "website": "https://warwick.ac.uk/fac/sci/dcs/research/siplab/ai4mfdd2026",
       "program_found": true,
       "program_url": "https://warwick.ac.uk/fac/sci/dcs/research/siplab/AI4MFDD2026/program/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:50 – 9:00 | Welcome | Opening Remarks | - |\n| 9:00 – 10:00 | Keynote Speaker | Keynote | Prof. Sebastiano Battiato |\n| 10:00 – 10:15 | Break | Break | - |\n| 10:15 – 11:00 | Training-Free Reconstruction-Based AI-Generated Image Detectors Are Inherently Vulnerable to Adversarial Examples | Session 1 (Oral) | Roman Demchenko, Jonas Ricker, and Asja Fischer |\n| 10:15 – 11:00 | Fast, Secure, and High-Capacity Image Watermarking with Autoencoded Text Vectors | Session 1 (Oral) | Gautier Evennou, Vivien Chappelier, and Ewa Kijak |\n| 10:15 – 11:00 | Non-Intrusive and Scalable Watermarking for Latent Diffusion Models via a Shared LoRA Adapter | Session 1 (Oral) | Qiushi Li, Dongdong Lin, Shunquan Tan, Roberto Caldelli, and Stefano Berretti |\n| 11:00 – 11:15 | Break | Break | - |\n| 11:15 – 12:00 | LSViT: Locality-Sensitive Vision Transformer Adaptation for Generalizable Deepfake Detection | Session 2 (Oral) | Jinpeng Zheng, Wenbin Huo, Xindi Zhang, Yan Liang, Yanan Guo, and Jiani Hu |\n| 11:15 – 12:00 | Unifying Semantic Priors and High-Frequency Traces: Enhancing V-JEPA with Mixture-of-Experts for Robust Synthetic Image Forensics | Session 2 (Oral) | Simone Teglia, and Irene Amerini |\n| 11:15 – 12:00 | Dissecting Agentic Forensics: The Role of Triage, Prompting, and Evidence Arbitration in Open-World Fake Image Detection | Session 2 (Oral) | Xianlong Li, Pietro Bongini, Niccolò Pancino, Marco Blanchini, Benedetta Tondi, and Mauro Barni |\n| 12:00 – 13:30 | Lunch Break | Break | - |\n| 13:30 – 14:30 | Keynote Speaker | Keynote | Prof. Roberto Caldelli |\n| 14:30 – 14:45 | Break | Break | - |\n| 14:45 – 15:45 | DINO-FIL: Multi-Layer Transformer Fusion for Generative Inpainting Forgery Localization | Session 3 (IAPR-TC6 Best Paper Award) | Simon Freitter, David Fischinger, Silvia Poletti, Marcel Hasenbalg, and Martin Boyer |\n| 14:45 – 15:45 | DF-CBM: Region-Aware Concept Bottleneck Models for Deepfake Detection | Session 3 (IAPR-TC6 Best Paper Award) | Georgios Tsoumplekas, Vazgken Vanian, Alexandros Doumanoglou, Panos K. Papadopoulos, Yannis Spyridis, Dimitrios Zarpalas, and Vasileios Argyriou |\n| 14:45 – 15:45 | Understanding Why Foundation Models Work for Diffusion-Generated Image Detection | Session 3 (IAPR-TC6 Best Paper Award) | Davide Cozzolino, Giovanni Poggi, and Luisa Verdoliva |\n| 14:45 – 15:45 | Latent Optimization Dynamics for Latent Diffusion Model Attribution | Session 3 (IAPR-TC6 Best Paper Award) | Martin Dahlgren, and Abu Naser Masud |\n| 15:45 – 16:00 | Break | Break | - |\n| 16:00 – 16:15 | IAPR-TC6 Best Paper Award Announcement | Special Session | - |\n| 16:15 – 18:30 | LAION-Mobile: Evaluating Deepfake Detectors On One Million Smartphone Photos | Session 4 (Posters) | Achim von Stryk and Janis Keuper |\n| 16:15 – 18:30 | Media Intelligence Platform: Multimodal Detection of Synthetic and Manipulated Content | Session 4 (",
-      "program_scraped_at": "2026-09-02T09:41:09.208710+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:50 – 9:00 | Welcome | Opening Remarks | - |\n| 9:00 – 10:00 | Keynote by Prof. Sebastiano Battiato | Keynote | Prof. Sebastiano Battiato |\n| 10:00 – 10:15 | Break | Break | - |\n| 10:15 – 11:00 | Training-Free Reconstruction-Based AI-Generated Image Detectors Are Inherently Vulnerable to Adversarial Examples | Oral | Roman Demchenko, Jonas Ricker, and Asja Fischer |\n| 10:15 – 11:00 | Fast, Secure, and High-Capacity Image Watermarking with Autoencoded Text Vectors | Oral | Gautier Evennou, Vivien Chappelier, and Ewa Kijak |\n| 10:15 – 11:00 | Non-Intrusive and Scalable Watermarking for Latent Diffusion Models via a Shared LoRA Adapter | Oral | Qiushi Li, Dongdong Lin, Shunquan Tan, Roberto Caldelli, and Stefano Berretti |\n| 11:00 – 11:15 | Break | Break | - |\n| 11:15 – 12:00 | LSViT: Locality-Sensitive Vision Transformer Adaptation for Generalizable Deepfake Detection | Oral | Jinpeng Zheng, Wenbin Huo, Xindi Zhang, Yan Liang, Yanan Guo, and Jiani Hu |\n| 11:15 – 12:00 | Unifying Semantic Priors and High-Frequency Traces: Enhancing V-JEPA with Mixture-of-Experts for Robust Synthetic Image Forensics | Oral | Simone Teglia, and Irene Amerini |\n| 11:15 – 12:00 | Dissecting Agentic Forensics: The Role of Triage, Prompting, and Evidence Arbitration in Open-World Fake Image Detection | Oral | Xianlong Li, Pietro Bongini, Niccolò Pancino, Marco Blanchini, Benedetta Tondi, and Mauro Barni |\n| 12:00 – 13:30 | Lunch Break | Break | - |\n| 13:30 – 14:30 | Keynote by Prof. Roberto Caldelli | Keynote | Prof. Roberto Caldelli |\n| 14:30 – 14:45 | Break | Break | - |\n| 14:45 – 15:45 | DINO-FIL: Multi-Layer Transformer Fusion for Generative Inpainting Forgery Localization | Oral (IAPR-TC6 Best Paper Award) | Simon Freitter, David Fischinger, Silvia Poletti, Marcel Hasenbalg, and Martin Boyer |\n| 14:45 – 15:45 | DF-CBM: Region-Aware Concept Bottleneck Models for Deepfake Detection | Oral (IAPR-TC6 Best Paper Award) | Georgios Tsoumplekas, Vazgken Vanian, Alexandros Doumanoglou, Panos K. Papadopoulos, Yannis Spyridis, Dimitrios Zarpalas, and Vasileios Argyriou |\n| 14:45 – 15:45 | Understanding Why Foundation Models Work for Diffusion-Generated Image Detection | Oral (IAPR-TC6 Best Paper Award) | Davide Cozzolino, Giovanni Poggi, and Luisa Verdoliva |\n| 14:45 – 15:45 | Latent Optimization Dynamics for Latent Diffusion Model Attribution | Oral (IAPR-TC6 Best Paper Award) | Martin Dahlgren, and Abu Naser Masud |\n| 15:45 – 16:00 | Break | Break | - |\n| 16:00 – 16:15 | IAPR-TC6 Best Paper Award Announcement | Special Session | - |\n| 16:15 – 18:30 | LAION-Mobile: Evaluating Deepfake Detectors On One Million Smartphone Photos | Poster | Achim von Stryk and Janis Keuper |\n| 16:15 – 18:30 | Media Intelligence Platform: Multimodal Detection of Synthetic and Manipulated Content | Poster | David Fischinger, Marcel Hasenbalg, Silvia Poletti, Davide Antonutti, Mina Schütz, Lam Pham, Justin Ilyes, Péter Rjabcsenkó,",
+      "program_scraped_at": "2026-09-05T10:19:24.456494+00:00"
     },
     {
       "type": "Workshop",
@@ -1317,7 +1317,7 @@
       "program_found": true,
       "program_url": "https://privacy-preserving-computer-vision.github.io/eccv26.html",
       "program_text": "**9th Sept, 2026 | 8:50 AM – 1:00 PM | Quality View Hotel - Stroget C**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:50 AM | Opening | Opening Remarks | Vivek Sharma |\n| 9:00 AM | Privacy Accessibility Through Foundation Model Representations | Invited Talk | M. Saquib Sarfraz |\n| 9:30 AM | TBD | Invited Talk | Daniel Pap, J.D. |\n| 10:00 AM | TBD | Invited Talk | Kiran Bylappa Raja |\n| 10:30 AM | Privacy-preserving Visual Localization | Invited Talk | Torsten Sattler |\n| 11:00 AM | TBD | Invited Talk | Joan LaRovere, MD. |\n| 11:30 AM | Closing | Closing Remarks | Vivek Sharma |\n| 11:45 AM – 1:00 PM | - | Poster Session | - |",
-      "program_scraped_at": "2026-09-02T09:41:20.118243+00:00"
+      "program_scraped_at": "2026-09-05T10:19:32.032964+00:00"
     },
     {
       "type": "Workshop",
@@ -1334,8 +1334,8 @@
       "website": "https://sites.google.com/view/u-and-me-workshop/",
       "program_found": true,
       "program_url": "https://sites.google.com/view/u-and-me-workshop/eccv-2026/iccv-2025/schedule",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 1:00 PM – 6:00 PM | U&ME Workshop 2026 | Opening Remarks | - |\n| 1:30 PM | When Unlearning Fails: Probing the Robustness of Machine Unlearning | Invited Talk | Sijia Liu |\n| 2:45 PM | Do They See What We See? Mapping What Vision-Language Models Really Learn | Invited Talk | Hilde Kuehne |\n| 4:00 PM | Clean Data, Clean Models: High-Quality, Compliant Text-to-Image Generation at Commercial Scale with Built-In Attribution | Invited Talk | Yair Adato |\n| 5:15 PM | Genμ: The Generative Machine Unlearning Challenge | Oral Presentation | Kartik Thakral et al. |\n| 5:30 PM | Bias-Aware Machine Unlearning: Towards Fairer Vision Models via Controllable Forgetting | Oral Presentation | Sai Siddhartha Chary Aylapuram et al. |\n| 5:45 PM | Segmentation by Merging Models Specialized to Each Class | Oral Presentation | Kazuya Shibata et al. |\n| 6:00 PM | Guardians of Generation: Dynamic Inference-Time Copyright Shielding with Adaptive Guidance for AI Image Generation | Oral Presentation | Soham Roy et al. |\n| 6:15 PM | QAQ: Quality Adaptive Quantization for LLM KV Cache | Oral Presentation | Wen Cheng et al. |\n| 6:30 PM | Systematic Assessment of Text-to-Image Concept Removal Using Sparse Autoencoders | Extended Abstract | Maty Bohacek et al. |\n| 6:45 PM | Anchored to Remember, Designed to Forget: FAMR++ for Post-Hoc Style and Class Removal | Extended Abstract | Jaskaran Singh et al. |\n| 7:00 PM | Forget with Care: A Domain-Agnostic Framework for Concept Erasure without Side-effects | Extended Abstract | Aakash Kumar Singh et al. |\n| 7:15 PM | IPPRO: Importance-based Pruning with PRojective Offset for Magnitude-indifferent Structural Pruning | Extended Abstract | Jaeheun Jung et al. |\n| 7:30 PM | OPC: One-Point-Contraction Unlearning Toward Deep Feature Forgetting | Extended Abstract | Jaeheun Jung et al. |",
-      "program_scraped_at": "2026-09-02T09:41:39.248301+00:00"
+      "program_text": "**Oct 19, 2025 | 1 pm – 6 pm | Honolulu Convention Center, Hawaii, USA**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| - | When Unlearning Fails: Probing the Robustness of Machine Unlearning | Invited Talk | Sijia Liu |\n| - | Do They See What We See? Mapping What Vision-Language Models Really Learn | Invited Talk | Hilde Kuehne |\n| - | Clean Data, Clean Models: High-Quality, Compliant Text-to-Image Generation at Commercial Scale with Built-In Attribution | Invited Talk | Yair Adato |\n| - | Genμ: The Generative Machine Unlearning Challenge | Accepted Paper | Kartik Thakral et al. |\n| - | Bias-Aware Machine Unlearning: Towards Fairer Vision Models via Controllable Forgetting | Accepted Paper | Sai Siddhartha Chary Aylapuram et al. |\n| - | Segmentation by Merging Models Specialized to Each Class | Accepted Paper | Kazuya Shibata et al. |\n| - | Guardians of Generation: Dynamic Inference-Time Copyright Shielding with Adaptive Guidance for AI Image Generation | Accepted Paper | Soham Roy et al. |\n| - | QAQ: Quality Adaptive Quantization for LLM KV Cache | Accepted Paper | Wen Cheng et al. |\n| - | Systematic Assessment of Text-to-Image Concept Removal Using Sparse Autoencoders | Extended Abstract | Maty Bohacek et al. |\n| - | Anchored to Remember, Designed to Forget: FAMR++ for Post-Hoc Style and Class Removal | Extended Abstract | Jaskaran Singh et al. |\n| - | Forget with Care: A Domain-Agnostic Framework for Concept Erasure without Side-effects | Extended Abstract | Aakash Kumar Singh et al. |\n| - | IPPRO: Importance-based Pruning with PRojective Offset for Magnitude-indifferent Structural Pruning | Extended Abstract | Jaeheun Jung et al. |\n| - | OPC: One-Point-Contraction Unlearning Toward Deep Feature Forgetting | Extended Abstract | Jaeheun Jung et al. |",
+      "program_scraped_at": "2026-09-05T10:19:49.269977+00:00"
     },
     {
       "type": "Workshop",
@@ -1352,8 +1352,8 @@
       "website": "https://fd301.github.io/PFATCV26ECCV/",
       "program_found": true,
       "program_url": "https://fd301.github.io/PFATCV26ECCV/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 12:00 – 13:10 | Lunch | Break | - |\n| 13:10 - 13:15 | Welcome | Opening Remarks | - |\n| 13:15 – 13:55 | Can we anonymize Personal Identifiable Information (PII)? | Keynote | Dr. Vivek Sharma |\n| 13:55 – 14:35 | Reliable counterfactual explanations for reliable AI | Keynote | Prof. Ira Assent |\n| 14:35 – 14:47 | A Privacy Study of Sparse Collaborative Inference | Paper Session 1 | Maximilian Andreas Hoefler, Karsten Mueller, and Wojciech Samek |\n| 14:47 – 14:59 | Strategic Unlearnable Example Portfolios for Accountable Image Privacy | Paper Session 1 | Yizhou Chen and Meng Zhang |\n| 15:00 – 16:00 | Coffee Break / Poster Session | Break | - |\n| 16:00 – 16:40 | From Provenance to Permission: Rights and Licensing in the Generative AI Era | Keynote | Prof. John Collomosse |\n| 16:40 – 16:47 | HuC-VideoMAE: Human-Centric Video Masked Autoencoding from synthetic data | Paper Session 2 | Ricardo Pizarro, Roberto Valle, José M. Buenaposada, Luis M. Bergasa, and Luis Baumela |\n| 16:47 – 16:59 | Attributes Should Come from Images, Not Class Names: Distribution-Conditioned Attribute Selection for Vision-Language Models | Paper Session 2 | Gautam Rajendrakumar Gare, Jia Shi, Zhiqiu Lin, Deepak Pathak, John Galeotti, and Deva Ramanan |\n| 16:59 – 17:11 | Beyond Classification: Task-Dependent Learnability under Privacy-Motivated Image Transformations | Paper Session 2 | Leon Ranke, Wolfgang Hübner, Ronny Hug, Michael Arens, and Jürgen Beyerer |\n| 17:15 – 17:55 | TBD | Keynote | Prof. Rene Vidal |\n| 17:55 – 18:00 | Paper Prize | Award Ceremony | - |",
-      "program_scraped_at": "2026-09-02T09:41:51.088829+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 12:00 – 13:10 | Lunch | Break | - |\n| 13:10 – 13:15 | Welcome | Opening Remarks | - |\n| 13:15 – 13:55 | Can we anonymize Personal Identifiable Information (PII)? | Keynote | Dr. Vivek Sharma |\n| 13:55 – 14:35 | Reliable counterfactual explanations for reliable AI | Keynote | Prof. Ira Assent |\n| 14:35 – 14:47 | A Privacy Study of Sparse Collaborative Inference | Paper Session 1 | Maximilian Andreas Hoefler, Karsten Mueller, and Wojciech Samek |\n| 14:47 – 14:59 | Strategic Unlearnable Example Portfolios for Accountable Image Privacy | Paper Session 1 | Yizhou Chen and Meng Zhang |\n| 15:00 – 16:00 | Coffee Break / Poster Session | Break | - |\n| 16:00 – 16:40 | From Provenance to Permission: Rights and Licensing in the Generative AI Era | Keynote | Prof. John Collomosse |\n| 16:40 – 17:15 | HuC-VideoMAE: Human-Centric Video Masked Autoencoding from synthetic data | Paper Session 2 | Ricardo Pizarro, Roberto Valle, José M. Buenaposada, Luis M. Bergasa, and Luis Baumela |\n| 16:40 – 17:15 | Attributes Should Come from Images, Not Class Names: Distribution-Conditioned Attribute Selection for Vision-Language Models | Paper Session 2 | Gautam Rajendrakumar Gare, Jia Shi, Zhiqiu Lin, Deepak Pathak, John Galeotti, and Deva Ramanan |",
+      "program_scraped_at": "2026-09-05T10:19:59.631052+00:00"
     },
     {
       "type": "Workshop",
@@ -1368,10 +1368,10 @@
       "summary": null,
       "track": null,
       "website": "https://foundgen-bio.github.io/eccv2026/",
-      "program_found": false,
-      "program_url": "https://foundgen-bio.github.io/eccv2026/",
-      "program_text": null,
-      "program_scraped_at": "2026-09-02T09:42:00.129790+00:00"
+      "program_found": true,
+      "program_url": "https://foundgen-bio.github.io/eccv2026/program/",
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 14:00 – 14:10 | Welcome, workshop aims, agenda | Opening Remarks | - |\n| 14:10 – 14:40 | Foundation Models across Time: Benchmarking Detection of Evolving Face Morphing Attacks | Paper Presentations | Lorenzo Pellegrini, Serafino Pandolfini, Nicolò Di Domenico, Guido Borghi, Annalisa Franco, Matteo Ferrara, Davide Maltoni |\n| 14:10 – 14:40 | DiffInf: Influence-Guided Diffusion for Supervision Alignment in Facial Attribute Learning | Paper Presentations | Basudha Pal, Zhaoyang Wang, Rama Chellappa |\n| 14:40 – 15:25 | Building Foundation Models for Human Faces: From Discriminative to Generative Approaches | Keynote | Jiankang Deng |\n| 15:25 – 15:45 | - | Coffee Break | - |\n| 15:45 – 16:15 | PicturePerfect: Diffusion-based Same-identity Facial Replacement | Paper Presentations | Manik Dhingra, Yashesh Savani, Mahesh Reddy, Antoine Mercier, Jiahe Liu, Guillaume Berger |\n| 15:45 – 16:15 | Unmasking Face Embeddings: Reading, Rendering and Naming with Foundation Models | Paper Presentations | Fizza Rubab, Yiying Tong, Arun Ross |\n| 16:15 – 17:00 | Representation, Reasoning, and Explainability towards Biometrics Foundation Models | Keynote | Wen-Sheng Chu |",
+      "program_scraped_at": "2026-09-05T10:20:12.716432+00:00"
     },
     {
       "type": "Workshop",
@@ -1386,10 +1386,10 @@
       "summary": null,
       "track": null,
       "website": "https://sites.google.com/view/wicv-eccv-2026/",
-      "program_found": false,
-      "program_url": "https://sites.google.com/view/wicv-eccv-2026/program/invited-speakers_1",
-      "program_text": null,
-      "program_scraped_at": "2026-09-02T09:42:33.535766+00:00"
+      "program_found": true,
+      "program_url": "https://sites.google.com/view/wicv-eccv-2026/program",
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 9:00–9:10 | Welcome & Introduction | Opening Remarks | - |\n| 9:10–9:40 | Keynote: Anna Kukleva | Keynote | Anna Kukleva |\n| 9:40–10:10 | Keynote: Gül Varol | Keynote | Gül Varol |\n| 10:10–10:30 | Coffee Break | Break | - |\n| 10:30–10:40 | Structure-preserving low-rank adaptation for weather synthesis | Oral Presentation | - |\n| 10:40–10:50 | HATS: Hierarchical Adaptive Topology-aware Scene Encoding with Focal-conditioned Lane Scoring for Trajectory Forecasting | Oral Presentation | - |\n| 10:50–11:00 | MFMR: Benchmarking Evidence-Grounded Multimodal Reading over Heterogeneous File Bundles | Oral Presentation | - |\n| 11:00–11:10 | Can Stable Diffusion Models Convey Implicit Emotion? Evaluating Narrative-to-Face Affective Coherence | Oral Presentation | - |\n| 11:10–11:40 | Keynote: Laura Leal-Taixé | Keynote | Laura Leal-Taixé |\n| 11:40–12:10 | Panel Discussion | Panel Discussion | - |\n| 12:10–12:55 | Poster Session | Poster Session | - |\n| 12:55–13:00 | Closing Remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:20:26.408721+00:00"
     },
     {
       "type": "Workshop",
@@ -1406,8 +1406,8 @@
       "website": "https://cv4good.thegoodailab.org/",
       "program_found": true,
       "program_url": "https://cv4good.thegoodailab.org/",
-      "program_text": "**September 8, 2026 | 14:00 – 18:00 CEST | Room TBA**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 14:00 | Introduction & welcome | Opening Remarks | Pier Luigi Dovesi · The Good AI Lab |\n| - | Needs from the field | Invited Talk | Yann Rebois · MSF |\n| - | Earth observation for humanitarian action | Invited Talk | Lorenz Wendt · GEOHUM |\n| - | Conflict monitoring from orbit | Invited Talk | Jamon Van Den Hoek & Corey Scher · Conflict Ecology Lab |\n| 15:00 | Coffee break | Break | - |\n| - | Targeting human verification for robust AI in ecology | Invited Talk | Sara Beery · MIT |\n| - | Open foundation models for earth observation | Invited Talk | Joseph Redmon · OlmoEarth, Ai2 |\n| 17:00 | Dual-use, governance, and the research agenda | Closing Panel | All invited speakers (Moderated by Federico Tombari) |\n| - | Closing remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:42:40.975899+00:00"
+      "program_text": "**September 8, 2026 | 14:00–18:00 CEST | Room D2 (Malmömässan)**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 14:00 | Introduction & welcome | Opening Remarks | Pier Luigi Dovesi · The Good AI Lab |\n| - | Needs from the field | Invited Talk | Yann Rebois · MSF |\n| - | Earth observation for humanitarian action | Invited Talk | Lorenz Wendt · GEOHUM |\n| - | Conflict monitoring from orbit | Invited Talk | Jamon Van Den Hoek & Corey Scher · Conflict Ecology Lab |\n| 15:00 | Coffee break | Break | - |\n| - | Targeting human verification for robust AI in ecology | Invited Talk | Sara Beery · MIT |\n| - | Open foundation models for earth observation | Invited Talk | Joseph Redmon · OlmoEarth, Ai2 |\n| - | Dual-use, governance, and the research agenda | Closing Panel | All invited speakers (Moderated by Federico Tombari) |\n| 18:00 | Closing remarks | Closing Remarks | The Good AI Lab |",
+      "program_scraped_at": "2026-09-05T10:20:34.452241+00:00"
     },
     {
       "type": "Workshop",
@@ -1424,8 +1424,8 @@
       "website": "https://terrabytes-workshop.github.io/",
       "program_found": true,
       "program_url": "https://terrabytes-workshop.github.io/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 – 09:10 | Opening remarks | Opening Remarks | - |\n| 09:10 – 09:50 | Talk title to be announced | Keynote 1 | Dr Noelia Jiménez Martínez · Earth Genome |\n| 09:50 – 10:30 | Datasets & Benchmarks | Full Paper Spotlights | - |\n| 10:30 – 11:00 | Coffee break | Break | - |\n| 11:00 – 11:40 | From Data Deluge to Digital Twins: Operating Europe’s Earth Observation Data Infrastructure | Keynote 2 | Lothar Wolf · EUMETSAT |\n| 11:40 – 12:00 | Generative and Self-Supervised Learning | Full Paper Spotlights | - |\n| 12:00 – 13:00 | Lunch | Break | - |\n| 13:00 – 13:30 | Image Registration & Restoration | Full Paper Spotlights | - |\n| 13:30 – 14:10 | Contextualizing the pixels: more qualitative approaches to remote sensing | Keynote 3 | Dr Lina Eklund · Lund University |\n| 14:10 – 14:40 | Classification, Segmentation and Retrieval | Full Paper Spotlights | - |\n| 14:40 – 16:00 | All accepted papers | Poster Session | - |\n| 16:00 – 17:00 | Towards Global Models | Panel Session | Dr Kelsey Doerksen · Arizona State University and the African Climate & Development Initiative; Georgia Channing · Hugging Face and the University of Oxford; Prof Maria Antonia Brovelli · AI4Good, Politecnico di Milano |\n| 17:00 – 17:10 | Closing remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:42:51.140693+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 – 09:10 | Opening remarks | Opening Remarks | - |\n| 09:10 – 09:50 | AI4EO: What Works, What’s Hype, and What Nobody’s Built Yet | Keynote | Dr Noelia Jiménez Martínez (Earth Genome) |\n| 09:50 – 10:30 | Datasets & Benchmarks | Full Paper Spotlights | - |\n| 10:30 – 11:00 | Coffee break | Break | - |\n| 11:00 – 11:40 | From Data Deluge to Digital Twins: Operating Europe’s Earth Observation Data Infrastructure | Keynote | Lothar Wolf (EUMETSAT) |\n| 11:40 – 12:00 | Generative and Self-Supervised Learning | Full Paper Spotlights | - |\n| 12:00 – 13:00 | Lunch | Break | - |\n| 13:00 – 13:30 | Image Registration & Restoration | Full Paper Spotlights | - |\n| 13:30 – 14:10 | Contextualizing the pixels: more qualitative approaches to remote sensing | Keynote | Dr Lina Eklund (Lund University) |\n| 14:10 – 14:40 | Classification, Segmentation and Retrieval | Full Paper Spotlights | - |\n| 14:40 – 16:00 | All accepted papers | Poster Session | - |\n| 16:00 – 17:00 | Towards Global Models | Panel Session | Dr Kelsey Doerksen (Arizona State University and the African Climate & Development Initiative), Georgia Channing (Hugging Face and the University of Oxford), Prof Maria Antonia Brovelli (AI4Good, Politecnico di Milano) |\n| 17:00 – 17:10 | Closing remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:20:45.353009+00:00"
     },
     {
       "type": "Workshop",
@@ -1442,8 +1442,8 @@
       "website": "https://cv4e-workshop.github.io",
       "program_found": true,
       "program_url": "https://cv4e-workshop.github.io/program.html",
-      "program_text": "**September 8-9, 2026 | Malmö, Sweden**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 9:00 AM - 9:10 AM | Introduction | Opening Remarks | - |\n| 9:15 AM - 9:55 AM | Invited Talk | Invited Talk | Oisin Mac Aodha |\n| 10:00 AM - 10:40 AM | Invited Talk | Invited Talk | Lukáš Picek |\n| 10:40 AM - 10:55 AM | Coffee Break | Break | - |\n| 10:55 AM - 11:55 AM | Spotlight Sessions | Session | - |\n| 12:00 PM - 1:30 PM | Lunch & Posters | Poster Session | - |\n| 1:30 PM - 2:10 PM | Invited Talk | Invited Talk | Hjalmar S. Kühl |\n| 2:15 PM - 2:30 PM | Challenge | Challenge Session | - |\n| 2:30 PM - 3:30 PM | Panel Discussion: Global Connectivity | Panel | - |\n| 3:30 PM - 3:45 PM | Coffee Break | Break | - |\n| 3:45 PM - 4:25 PM | Invited Talk | Invited Talk | Silvia Zuffi |\n| 5:05 PM | Closing Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:43:02.404200+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 9:00 AM – 9:10 AM | Introduction | Opening Remarks | - |\n| 9:15 AM – 9:55 AM | Oisin Mac Aodha | Invited Talk | Oisin Mac Aodha |\n| 10:00 AM – 10:40 AM | Lukáš Picek | Invited Talk | Lukáš Picek |\n| 10:40 AM – 10:55 AM | Coffee Break | Break | - |\n| 10:55 AM – 11:55 AM | Spotlight Talks | Session | - |\n| 12:00 PM – 1:30 PM | Lunch & Posters | Poster Session | - |\n| 1:30 PM – 2:10 PM | Hjalmar S. Kühl | Invited Talk | Hjalmar S. Kühl |\n| 2:15 PM – 2:30 PM | Challenge | Challenge Session | - |\n| 2:30 PM – 3:30 PM | Panel Discussion: Global Connectivity | Panel | Dmitry Schigel, Fabiola Iannarilli, Helene Muller-Landau, Laura Chrobak, Sydne Record |\n| 3:30 PM – 3:45 PM | Coffee Break | Break | - |\n| 3:45 PM – 4:25 PM | Silvia Zuffi | Invited Talk | Silvia Zuffi |\n| 4:25 PM – 5:05 PM | Nico Lang | Invited Talk | Nico Lang |\n| 5:05 PM | Closing Remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:20:58.423724+00:00"
     },
     {
       "type": "Workshop",
@@ -1461,7 +1461,7 @@
       "program_found": true,
       "program_url": "https://sites.google.com/g.harvard.edu/aicc2eccv26/schedule",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 10 mins | Opening Remarks | Keynote | Organizers |\n| 45 mins | TBD | Keynote | Marina Hirota (TBD) |\n| 30 mins | Coffee break | Break | - |\n| 30 mins | TBD | Keynote | Nora Gourmelon |\n| 60 mins | TBD | Oral Talks | - |\n| 60 mins | Lunch Break | Break | - |\n| 30 mins | Session on Conservation | Keynote | Abdulahakim Abdi |\n| 60 mins | TBD | Oral Talks | - |\n| 30 mins | TBD | Keynote | Devis Tuia |\n| 30 mins | Coffee break | Break | - |\n| 30 mins | TBD | Keynote | Bruno Nuño |\n| 60 mins | PD on CV for Climate & Conservation | Invited Talk | - |\n| 60 mins | Poster session | Poster | - |",
-      "program_scraped_at": "2026-09-02T09:43:26.784467+00:00"
+      "program_scraped_at": "2026-09-05T10:21:49.328622+00:00"
     },
     {
       "type": "Workshop",
@@ -1478,8 +1478,8 @@
       "website": "https://cvppa2026.github.io",
       "program_found": true,
       "program_url": "https://cvppa2026.github.io/programme",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:00 – 13:10 | Welcome | Opening Remarks | - |\n| 13:10 – 13:45 | - | Keynote 1 | Susie Robinson |\n| 13:45 – 14:35 | - | Spotlight Paper Session (2min) | - |\n| 14:35 – 15:55 | - | Poster Session | - |\n| 15:55 – 16:35 | Plant Phenotyping as a Frontier for Computer Vision | Keynote 2 | Fumio Okura |\n| 16:35 – 16:55 | - | Challenge Session | - |\n| 16:55 – 17:00 | Closing Remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:43:38.024536+00:00"
+      "program_text": "**Wednesday, 9 September 2026 | 13:00 – 17:00 | Malmömässan E2**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|---------|\n| 13:00 – 13:10 | Welcome | Opening Remarks | - |\n| 13:10 – 13:45 | Building the Ecosystem: Research Infrastructures and Computer Vision for Plant Phenotyping | Keynote | Susie Robinson |\n| 13:45 – 14:35 | Spotlight Paper Session (2min) | Spotlight Paper Session | - |\n| 14:35 – 15:55 | Poster Session | Poster Session | - |\n| 15:00 – 16:00 | Official Afternoon Break | Break | - |\n| 15:55 – 16:35 | Plant Phenotyping as a Frontier for Computer Vision | Keynote | Fumio Okura |\n| 16:35 – 16:55 | Challenge Session | Challenge Session | - |\n| 16:55 – 17:00 | Closing Remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:22:03.175426+00:00"
     },
     {
       "type": "Workshop",
@@ -1496,8 +1496,8 @@
       "website": "https://gaia.insait.ai/",
       "program_found": true,
       "program_url": "https://gaia.insait.ai/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:15 – 13:25 | Welcome & Introduction | Opening Remarks | - |\n| 13:25 – 14:00 | Keynote 1 | Keynote | Dr. George Leifman |\n| 14:00 – 14:35 | Keynote 2 | Keynote | Prof. Fahad Khan |\n| 14:35 – 14:42 | LG-Align: Language-Guided Global Retrieval to Local Region Voting | Oral | - |\n| 14:42 – 14:49 | AlignJEPA: Predictive Vision-Language Alignment for Remote Sensing Foundation Models | Oral | - |\n| 14:49 – 14:56 | Just Zoom In: Cross-View Geo-Localization via Autoregressive Zooming | Oral | - |\n| 14:56 – 16:00 | Poster Session & Coffee Break | Poster Session | - |\n| 16:00 – 16:35 | Keynote 3 | Keynote | Dr. Felix Seidel |\n| 16:35 – 17:10 | Keynote 4 | Keynote | Prof. Devis Tuia |\n| 17:10 – 17:45 | Keynote 5 | Keynote | Prof. Sara Beery |\n| 17:45 – 18:00 | Discussion, Awards, Closing remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:43:47.133631+00:00"
+      "program_text": "**9 September 2026 | Afternoon | Room: Malmömässan E1**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:15 – 13:25 | Welcome & Introduction | Opening Remarks | - |\n| 13:25 – 14:00 | Geospatial Reasoning and Remote Sensing Models for Google Earth AI | Keynote | Dr. George Leifman |\n| 14:00 – 14:35 | Towards Unified Geospatial Foundation Models | Keynote | Prof. Fahad Khan |\n| 14:35 – 14:42 | LG-Align: Language-Guided Global Retrieval to Local Region Voting | Oral Presentation | - |\n| 14:42 – 14:49 | AlignJEPA: Predictive Vision-Language Alignment for Remote Sensing Foundation Models | Oral Presentation | - |\n| 14:49 – 14:56 | Just Zoom In: Cross-View Geo-Localization via Autoregressive Zooming | Oral Presentation | - |\n| 14:56 – 16:00 | Poster Session & Coffee Break | Poster Session | - |\n| 16:00 – 16:35 | Earth Intelligence: From Observations to Decisions | Keynote | Dr. Felix Seidel |\n| 16:35 – 17:10 | Multimodal Earth foundation models spanning sensors and domains | Keynote | Prof. Devis Tuia |\n| 17:10 – 17:45 | Fine-Grained Habitat Representation with GeoFMs | Keynote | Prof. Sara Beery |\n| 17:45 – 18:00 | Discussion, Awards, Closing remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:22:13.620767+00:00"
     },
     {
       "type": "Workshop",
@@ -1514,8 +1514,8 @@
       "website": "https://odewm.github.io/",
       "program_found": true,
       "program_url": "https://odewm.github.io/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:15–13:30 | Opening remarks | Opening Remarks | - |\n| 13:30–14:00 | Invited Talk 1 | Invited Talk | Stephen Brewster |\n| 14:00–14:30 | Invited Talk 2 | Invited Talk | Andrea Cavallaro |\n| 14:30–15:00 | Invited Talk 3 | Invited Talk | Angela Dai |\n| 15:00–16:00 | ☕ Coffee break and poster session for accepted and invited contributions at MalmöMässan Exhibit Hall | Break / Poster Session | - |\n| 16:00–16:30 | UNOBench Challenge presentation | Invited Talk | - |\n| 16:30–17:15 | Panel discussion | Panel Discussion | - |\n| 17:15–17:30 | Closing remarks | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:43:54.778272+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:15–13:30 | Opening remarks | Opening Remarks | Püren Güler |\n| 13:30–14:00 | Invited Talk by Angela Dai | Invited Talk | Angela Dai |\n| 14:00–14:30 | Invited Talk by Stephen Brewster | Invited Talk | Stephen Brewster |\n| 14:30–15:00 | Invited Talk by Andrea Cavallaro | Invited Talk | Andrea Cavallaro |\n| 15:00–16:00 | Coffee break and poster session for accepted and invited contributions at MalmöMässan Exhibit Hall | Break / Poster | - |\n| 16:00–16:30 | UNOBench Challenge presentation | Invited Talk | Francesco Giuliari |\n| 16:30–17:15 | Panel discussion | Panel Discussion | - |\n| 17:15–17:30 | Closing remarks | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:22:21.710966+00:00"
     },
     {
       "type": "Workshop",
@@ -1532,8 +1532,8 @@
       "website": "https://eventbasemultimodalvision.github.io/",
       "program_found": true,
       "program_url": "https://eventbasemultimodalvision.github.io/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:00 - 08:15 | Opening and Welcome | Opening Remarks | - |\n| 08:15 - 08:45 | Invited Talk I | Invited Talks Session I | Prof. Kostas Daniilidis |\n| 08:45 - 09:15 | Invited Talk II | Invited Talks Session I | Prof. Guillermo Gallego |\n| 09:15 - 09:45 | Invited Talk III | Invited Talks Session I | Prof. Priyadarshini Panda |\n| 09:45 - 10:00 | Coffee Break | Break | - |\n| 10:00 - 11:00 | Challenge Track Winner Presentations | Challenge Session | - |\n| 11:00 - 11:30 | Invited Talk IV | Invited Talks Session II | Prof. Laurent Kneip |\n| 11:30 - 12:00 | Invited Talk V | Invited Talks Session II | Dr. Daniel Gehrig |\n| 12:00 - 12:30 | Invited Talk VI | Invited Talks Session II | Prof. Federico Becattini |\n| 12:30 - 13:30 | Lunch Break | Break | - |\n| 13:30 - 14:00 | Invited Talk VII | Invited Talks Session III | Prof. Shintaro Shiba |\n| 14:00 - 14:30 | Invited Talk VIII | Invited Talks Session III | Prof. Liyuan Pan |\n| 14:30 - 15:00 | Invited Talk IX | Invited Talks Session III | Prof. Bo Mu |\n| 15:00 - 15:15 | Coffee Break | Break | - |\n| 15:15 - 15:35 | Invited Talk X | Invited Talks Session IV | Dr. Min Liu |\n| 15:35 - 15:55 | Invited Talk XI | Invited Talks Session IV | Jian Deng |\n| 15:55 - 16:15 | Invited Talk XII | Invited Talks Session IV | Rongfei Nong |\n| 16:15 - 16:45 | Poster Viewing and Discussion | Poster and Discussion | - |\n| 16:45 - 17:00 | Awards and Closing | Awards and Closing | - |",
-      "program_scraped_at": "2026-09-02T09:44:07.352180+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:00 - 08:15 | Opening and Welcome | Opening Remarks | - |\n| 08:15 - 08:45 | Invited Talk I | Invited Talks Session I | Prof. Kostas Daniilidis |\n| 08:45 - 09:15 | Invited Talk II | Invited Talks Session I | Prof. Guillermo Gallego |\n| 09:15 - 09:45 | Invited Talk III | Invited Talks Session I | Prof. Bo Mu |\n| 09:45 - 10:00 | Coffee Break | Break | - |\n| 10:00 - 11:00 | Challenge Track Winner Presentations | Challenge Session | Six Challenge Track winners |\n| 11:00 - 11:30 | Invited Talk IV | Invited Talks Session II | Prof. Laurent Kneip |\n| 11:30 - 12:00 | Invited Talk V | Invited Talks Session II | Prof. Daniel Gehrig |\n| 12:00 - 12:30 | Invited Talk VI | Invited Talks Session II | Prof. Federico Becattini |\n| 12:30 - 13:30 | Lunch Break | Break | - |\n| 13:30 - 14:00 | Invited Talk VII | Invited Talks Session III | Prof. Shintaro Shiba |\n| 14:00 - 14:30 | Invited Talk VIII | Invited Talks Session III | Prof. Liyuan Pan |\n| 14:30 - 15:00 | Invited Talk IX | Invited Talks Session III | Prof. Priyadarshini Panda (Online) |\n| 15:00 - 15:15 | Coffee Break | Break | - |\n| 15:15 - 15:35 | Invited Talk X | Invited Talks Session IV | Dr. Min Liu |\n| 15:35 - 15:55 | Invited Talk XI | Invited Talks Session IV | Yan Chen |\n| 15:55 - 16:15 | Invited Talk XII | Invited Talks Session IV | Rongfei Nong |\n| 16:15 - 16:45 | Poster Viewing and Discussion | Poster and Discussion | - |\n| 16:45 - 17:00 | Awards and Closing | Awards and Closing | - |",
+      "program_scraped_at": "2026-09-05T10:22:34.459837+00:00"
     },
     {
       "type": "Workshop",
@@ -1550,8 +1550,8 @@
       "website": "https://sites.google.com/view/nevi2026",
       "program_found": true,
       "program_url": "https://sites.google.com/view/nevi2026/program",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:30 - 8:35 | Introduction | Opening Remarks | - |\n| 8:35 - 9:05 | Senior Keynote | Keynote | Jörg Conradt (KTH Stockholm, Sweden) |\n| 9:05 - 9:25 | LADS: Locally Adaptive Decay Surfaces for High-Speed Face and Landmark Detection with Event Cameras | Spotlight Session | Paul Kielty, Timothy Hanley, Peter Corcoran |\n| 9:05 - 9:25 | NOVA: Neuromorphic Optical Flow for Event-Based Visual Odometry | Spotlight Session | Grafika Jati, Filippo Samorì, Sebastiano Mengozzi, Francesco Barchi, Andrea Acquaviva |\n| 9:05 - 9:25 | Accelerating Monocular Event-Based Visual Odometry for Drone Localization | Spotlight Session | Stanimira Dimitrova, Sree Showrya Kotala, Gaurvi Goyal |\n| 9:05 - 9:25 | eBIRD: Event-based Intensity Image Reconstruction Using Controllable | Spotlight Session | Ignacio Bugueno-Cordova, Fabian Ignacio Valderrama-Penaloza, Rodrigo Verschae |\n| 9:05 - 9:25 | BeeSNN: Spiking Neural Networks for Event-Camera Insect Classification with Wing-Beat Frequency Analysis | Spotlight Session | Waseem Shariff, Bilal Khan, Muhammad Ammar Ul Hassan, Hafsa Iqbal, Paul Kielty, Meg Brennan, Joseph Lemley |\n| 9:05 - 9:25 | Event-based Action Recognition by Pre-Training on Multi-Frame Representations | Spotlight Session | Emma Norrby, Tomas Wilkinson, Per Nyblom, David Gustafsson |\n| 9:05 - 9:25 | EaI: Event Stream Compression using Coordinate Image Projection and Coherence Sorting | Spotlight Session | Anustup Choudhury, Guan-Ming Su |\n| 9:05 - 9:25 | Efficient Multi-Timescale Event Representations for Feed-Forward Object Detection | Spotlight Session | Fredrik Lundell, Per-Erik Forssen, Mårten Wadenbäck, Astrid Lundmark |\n| 9:25 - 9:55 | Rising Star Keynote | Keynote | Chiara De Luca (University of Zurich and ETH Zurich) |\n| 9:55 - 10:10 | Industrial Keynote | Keynote | Arslan Ali (Synsense) |\n| 10:10 - 10:30 | Closing and Award | Closing Remarks | - |\n| 10:30 - 11:00 | Coffee Break | Break | - |\n| 11:00 - 12:30 | Poster Session | Poster | - |\n| 11:00 - 12:30 | Seeing Pain in Events: Pain-Level Estimation from Neuromorphic Videos | Poster | Federico Becattini, Gabriele Magrini, Pietro Pala |\n| 11:00 - 12:30 | Residual Kalman Dynamics for Event-Based UAV Forecasting | Poster | Per Nyblom, David Gustafsson, Hannes Ovrén |\n| 11:00 - 12:30 | An APS Pathway to Retinomorphic Cameras | Poster | Kapish Singh, Shay Snyder, Zihan Yin, Maryam Parsa, Akhilesh Jaiswal |\n| 11:00 - 12:30 | Static in Frames, Dynamic in Events: Rethinking Features in Event Cameras as Motion Cues | Poster | Hesam Araghi, Jan van Gemert, Nergis Tomen |\n| 11:00 - 12:30 | BEE: Blob Frequency Estimation Of Fast Moving High-Frequency Objects Using Event-Based Data | Poster | Aleina Ismail, Bas Körver, Guangzhi Tang, Gaurvi Goyal |\n| 11:00 - 12:30 | Bridging the Sim-to-Real Gap in Event-Based Human Perception under Dynamic and Occluded Scenarios | Poster | Muhammad Hamza Zafar, Syed Kumayl Raza Moosavi, Majad Mansoor, Sebastian Vettestad Lian, Nikolai Sæterhaug, Nadia Saad Noori, Filippo Sanfilippo |\n| 11:00 - 12:30 | Bringing BNNs to Fast Event Processing | Poster | Paul Longour, Julien Moreau,",
-      "program_scraped_at": "2026-09-02T09:44:29.611523+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:30 - 8:35 | Introduction | Opening Remarks | - |\n| 8:35 - 9:05 | Senior Keynote | Keynote | Jörg Conradt (KTH Stockholm, Sweden) |\n| 9:05 - 9:25 | LADS: Locally Adaptive Decay Surfaces for High-Speed Face and Landmark Detection with Event Cameras | Spotlight Session | Paul Kielty, Timothy Hanley, Peter Corcoran |\n| 9:05 - 9:25 | NOVA: Neuromorphic Optical Flow for Event-Based Visual Odometry | Spotlight Session | Grafika Jati, Filippo Samorì, Sebastiano Mengozzi, Francesco Barchi, Andrea Acquaviva |\n| 9:05 - 9:25 | Accelerating Monocular Event-Based Visual Odometry for Drone Localization | Spotlight Session | Stanimira Dimitrova, Sree Showrya Kotala, Gaurvi Goyal |\n| 9:05 - 9:25 | eBIRD: Event-based Intensity Image Reconstruction Using Controllable | Spotlight Session | Ignacio Bugueno-Cordova, Fabian Ignacio Valderrama-Penaloza, Rodrigo Verschae |\n| 9:05 - 9:25 | BeeSNN: Spiking Neural Networks for Event-Camera Insect Classification with Wing-Beat Frequency Analysis | Spotlight Session | Waseem Shariff, Bilal Khan, Muhammad Ammar Ul Hassan, Hafsa Iqbal, Paul Kielty, Meg Brennan, Joseph Lemley |\n| 9:05 - 9:25 | Event-based Action Recognition by Pre-Training on Multi-Frame Representations | Spotlight Session | Emma Norrby, Tomas Wilkinson, Per Nyblom, David Gustafsson |\n| 9:05 - 9:25 | EaI: Event Stream Compression using Coordinate Image Projection and Coherence Sorting | Spotlight Session | Anustup Choudhury, Guan-Ming Su |\n| 9:05 - 9:25 | Efficient Multi-Timescale Event Representations for Feed-Forward Object Detection | Spotlight Session | Fredrik Lundell, Per-Erik Forssen, Mårten Wadenbäck, Astrid Lundmark |\n| 9:25 - 9:55 | Rising Star Keynote | Keynote | Chiara De Luca (University of Zurich and ETH Zurich) |\n| 9:55 - 10:10 | Industrial Keynote | Keynote | Arslan Ali (Synsense) |\n| 10:10 - 10:30 | Closing and Award | Closing Remarks | - |\n| 10:30 - 11:00 | Coffee Break | Break | - |\n| 11:00 - 12:30 | Poster Session: Regular papers | Poster | Federico Becattini, Gabriele Magrini, Pietro Pala; Per Nyblom, David Gustafsson, Hannes Ovrén; Kapish Singh, Shay Snyder, Zihan Yin, Maryam Parsa, Akhilesh Jaiswal; Hesam Araghi, Jan van Gemert, Nergis Tomen; Aleina Ismail, Bas Körver, Guangzhi Tang, Gaurvi Goyal; Muhammad Hamza Zafar, Syed Kumayl Raza Moosavi, Majad Mansoor, Sebastian Vettestad Lian, Nikolai Sæterhaug, Nadia Saad Noori, Filippo Sanfilippo; Paul Longour, Julien Moreau, Franck Davoine; Muhammad Ammar Ul Hassan, Hafsa Iqbal, Bilal Khan, Waseem Shariff, Paul Kielty, Meg Brennan, Joseph Lemley; Yentel Schoovaerts, Zijie Ning, Patrick Vandewalle; Ignacio Bugueno-Cordova, Javier Ruiz-del-Solar, Rodrigo Verschae; Ross Perry, Frank Conway, Gaetano Di Caterina, Kara Combs; Majad Mansoor, Muhammad Hamza Zafar, Syed Kumayl Raza Moosavi, Nadia Saad Noori, Filippo Sanfilippo; Felix Rydell, David Gustafsson; Ignacio Bugueno-Cordova, Malte Kuhlmann, Nicolás Navarro-Guerrero, Rodrigo Verschae, Miguel Campusano; Syed Kumayl Raza Moosavi, Muhammad Hamza Zafar, Nadia Saad Noori, Majad Mansoor, Filippo Sanfilippo; Sebastian Vettestad Lian, Nikolai Sæterhaug, Bardha Shalci, Mariha Bati, Muhammad Hamza Zafar, Syed Kum",
+      "program_scraped_at": "2026-09-05T10:22:59.016961+00:00"
     },
     {
       "type": "Workshop",
@@ -1568,8 +1568,8 @@
       "website": "https://wearable-ai-workshop.github.io/",
       "program_found": true,
       "program_url": "https://wearable-ai-workshop.github.io/#program",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 – 09:15 | Workshop overview and introduction | Opening Remarks | - |\n| 09:15 – 09:55 | Invited Talk 1 | Keynote | TBA |\n| 09:55 – 10:35 | Invited Talk 2 | Keynote | TBA |\n| 10:35 – 11:00 | Coffee Break | Break | - |\n| 11:00 – 11:40 | Invited Talk 3 | Keynote | TBA |\n| 11:40 – 12:20 | Invited Talk 4 | Keynote | TBA |\n| 12:20 – 13:30 | Lunch Break | Break | - |\n| 13:30 – 13:50 | Oral Presentation 1 | Oral | - |\n| 13:50 – 14:10 | Oral Presentation 2 | Oral | - |\n| 14:10 – 14:30 | Grand Challenge Talk 1 | Grand Challenge Talk | - |\n| 14:30 – 14:50 | Grand Challenge Talk 2 | Grand Challenge Talk | - |\n| 14:50 – 15:20 | Coffee Break | Break | - |\n| 15:20 – 16:20 | Accepted papers and challenge submissions | Poster Session | - |\n| 16:20 – 17:20 | Live Q&A with all speakers and organizers | Panel Discussion | - |\n| 17:20 – 17:30 | Prize announcements | Closing Remarks & Awards | - |",
-      "program_scraped_at": "2026-09-02T09:44:43.933477+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 1:30 – 1:40 PM | Workshop overview and introduction | Opening Remarks | - |\n| 1:40 – 2:10 PM | Invited Talk | Invited Talk | Prof. Dima Damen |\n| 2:10 – 2:40 PM | Invited Talk | Invited Talk | Dr. Raffay Hamid |\n| 2:40 – 3:30 PM | Poster Session (Exhibit Hall) | Poster Session | - |\n| 3:30 – 3:50 PM | Coffee Break | Break | - |\n| 3:50 – 4:20 PM | Oral Session 1 | Oral Session | - |\n| 3:50 – 4:05 PM | ViMoWear: Visual Motion-Guided sEMG-IMU Representation Learning for Subject-Independent Thumb Gesture Recognition | Oral Presentation | Zhong et al. |\n| 4:05 – 4:20 PM | Keep It Simple: Multi-Key Episodic Memory Retrieval for Ultra-Long Video Understanding | Oral Presentation | Choi et al. |\n| 4:20 – 5:00 PM | Invited Talk | Invited Talk | Prof. Kristen Grauman |\n| 5:00 – 6:00 PM | Oral Session 2 | Oral Session | - |\n| TBD | Grand Challenge Talks | Grand Challenge Talks | TBD |\n| TBD | Closing Remarks & Awards | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:23:15.198151+00:00"
     },
     {
       "type": "Workshop",
@@ -1587,7 +1587,7 @@
       "program_found": true,
       "program_url": "https://computer-vision-for-natural-heritage.github.io/program/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:30 | Opening | Opening | - |\n| 8:40 | Navigating the complexity of butterfly wing patterns with computer vision | Keynote | Moritz Lürig |\n| 9:00 | AI for Nature: Exploring our Natural Heritage | Keynote | Elizabeth G. Campolongo |\n| 9:20 | A Pipeline for Chamber-Resolved Analysis of Pore Traits in Foraminiferal µCT Volumes | Oral | - |\n| 9:35 | Self-Supervised Vision Embeddings Reveal Phenotype–Taxonomy Structure in Digitized Butterfly Collections | Oral | - |\n| 9:50 | Coffee break | Break | - |\n| 10:20 | Multimodal AI for Ecological Monitoring: Images, DNA, and Geolocation | Keynote | Joakim Bruslund Haurum |\n| 10:40 | Using micro-CT to explore the visual ecology of insects | Keynote | Emily Baird |\n| 11:00 | Segmentation of Individual Foraminifera in X-ray Microtomography Volumes | Lightning talks | - |\n| 11:00 | Exploring Vision Foundation Models for Analysis of Anatomical Micro-CT Volumes through Sample Reorientation | Lightning talks | - |\n| 11:00 | Learning Similarity-Invariant Shape Manifolds for Wing Damage Estimation | Lightning talks | - |\n| 11:15 | Forams2026 and MuseumSCAT Challenge Results | Talk | - |\n| 11:30 | Poster session | Poster | - |\n| 12:25 | Closing remarks | Closing | - |",
-      "program_scraped_at": "2026-09-02T09:44:56.158077+00:00"
+      "program_scraped_at": "2026-09-05T10:23:27.368209+00:00"
     },
     {
       "type": "Workshop",
@@ -1604,8 +1604,8 @@
       "website": "https://visarts.eu/",
       "program_found": true,
       "program_url": "https://visarts.eu/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:45 – 18:00 | Workshop on VISion for ART (VISART VIII) | Opening Remarks | - |\n| TBD | AI, Ethics, and the Future of Humanity in an Automated World | Keynote | Prof. Anna Foka |",
-      "program_scraped_at": "2026-09-02T09:45:01.970863+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:45 - 13:50 | Welcome | Opening Remarks | Stuart James (Durham University) |\n| 13:50 - 14:25 | Imagining Forward Remembering Back: Artificial Intelligence, Human Pasts and the Futures | Keynote | Prof. Anna Foka (Uppsala University) |\n| 14:25 - 15:15 | Lot Machine: Multimodal Lot Extraction from Auction Catalogs | Oral Session 1 (Technical) | Mathias Zinnen, Alisha Mund, Sabine Lang, Lukas Hüttner, Thomas Gorges, Vincent Christlein (Friedrich-Alexander Universität Erlangen-Nürnberg) |\n| 14:25 - 15:15 | OCR-Based Field Extraction for Archaeological Pottery Metadata: The CENTURIA Dataset | Oral Session 1 (Technical) | Gissu Valentina Naghavi, Dominik Hagmann, Martin Kampel, Irene Ballester |\n| 14:25 - 15:15 | Disagreement-Preserving Evaluation for Art Attribution | Oral Session 1 (Uses) | Rob Sneiderman |\n| 14:25 - 15:15 | Broken Images, Original Machines: Glitch in Diffusion Models | Oral Session 1 (Technical) | Ruchika Gupta, Aarav Gupta |\n| 15:15 - 16:15 | Coffee and Poster Session | Break / Poster Session | - |\n| 16:15 - TBD | Uncertainty-Aware Art-Historical Dating with Vision–Language Models | Poster (Technical) | Stefanie Schneider, Peter Bell |\n| 16:15 - TBD | Automated Goldsmith's Mark Retrieval in Silverware | Poster (Technical) | Atmik Tiwari, Vincent Christlein, Mark Fichtner, Freya Gohlke, Birgit Schübel, Theresa Witting, Heike Zech, Mathias Zinnen |\n| 16:15 - TBD | Benchmarking Vision-Language and Multimodal Language Models For Cultural Heritage: An Analysis of Christian Iconography Classification | Poster (Technical) | Gianmarco Spinaci, Lisandra S. Costiner, Lukas Klic, Giovanni Colavizza |\n| 16:15 - TBD | Style or Signature? Artist-Disjoint Evaluation of Style Classification in Frozen Vision Embeddings | Poster (Technical) | Rory Ashton |\n| 16:15 - TBD | SynGallery: A Synthetic Gallery of Real Paintings for Instance-Level Artwork Recognition | Poster (Technical) | Patryk Bartkowiak, Jakub Markil, Bartosz Kotrys, Dominik Michels, Soren Pirk, Wojtek Palubicki |\n| 16:15 - TBD | TinTin DCU Benchmark: Page-level Comic Narrative Understanding | Poster (Technical) | Mathijs van Sprang, Nanne Van Noord |\n| 16:15 - TBD | Learning visual representations for compositional analysis of artworks and photographs | Poster (Technical) | Fatemeh Behrad, Tinne Tuytelaars, Johan Wagemans |\n| 16:15 - TBD | Full-Page Chinese Calligraphy Character Detection: A Dataset and Benchmark with Integrity-Preserving Tiling and SDAC-Det | Poster (Technical) | Tiancheng LIU, Nanne Van Noord, Chen Liang, Kang Zhang |\n| 16:15 - TBD | HistReNeRF: Historic Image Relocalisation within Contemporary Neural Radiance Field Reconstructions | Poster (Technical) | Benjamin T Hughes, Stuart James |",
+      "program_scraped_at": "2026-09-05T10:23:44.073676+00:00"
     },
     {
       "type": "Workshop",
@@ -1622,8 +1622,8 @@
       "website": "https://ai4va-eccv.github.io/",
       "program_found": true,
       "program_url": "https://ai4va-eccv.github.io/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:00 — 13:05 | Welcome | Opening Remarks | Deblina Bhattacharjee |\n| 13:05 — 13:40 | latent diffusion models and generative image research | Keynote I | Björn Ommer |\n| 13:40 — 14:15 | generative models for 3D content | Keynote II | Niloy J. Mitra |\n| 14:15 — 14:50 | vision-language models and multimodal reasoning | Keynote III | Ranjay Krishna |\n| 14:50 — 15:00 | Transition to the Exhibit Hall | Break | - |\n| 15:00 — 16:00 | All accepted papers, archival and non-archival | Poster Session & Coffee | - |\n| 16:00 — 16:35 | To Be Announced | Keynote IV | TBD |\n| 16:35 — 17:15 | Four selected papers | Oral Spotlights I–IV | - |\n| 17:15 — 17:20 | Closing Remarks & Certificates | Closing Remarks | Deblina Bhattacharjee |",
-      "program_scraped_at": "2026-09-02T09:45:10.330840+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:00 — 13:05 | Opening Remarks | Opening Remarks | Deblina Bhattacharjee |\n| 13:05 — 13:40 | Keynote I — latent diffusion models and generative image research | Keynote | Björn Ommer |\n| 13:40 — 14:15 | Keynote II — generative models for 3D content | Keynote | Niloy J. Mitra |\n| 14:15 — 14:50 | Keynote III — vision-language models and multimodal reasoning | Keynote | Ranjay Krishna |\n| 14:50 — 15:00 | Transition to the Exhibit Hall | Break | - |\n| 15:00 — 16:00 | Poster Session & Coffee | Poster | - |\n| 16:00 — 16:35 | Keynote IV | Keynote | To Be Announced |\n| 16:35 — 17:15 | Oral Spotlights I–IV | Oral | - |\n| 17:15 — 17:20 | Closing Remarks & Certificates | Closing Remarks | Deblina Bhattacharjee |",
+      "program_scraped_at": "2026-09-05T10:23:53.348691+00:00"
     },
     {
       "type": "Workshop",
@@ -1641,7 +1641,7 @@
       "program_found": true,
       "program_url": "https://empiricaltheory.github.io/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:15 | Opening and motivation | Opening Remarks | - |\n| 13:30 | Keynote 1 | Keynote | Dr. Wieland Brendel |\n| 14:15 | Orals | Oral Session | - |\n| 15:00 | Posters and coffee break | Poster & Break | - |\n| 16:00 | Keynote | Keynote | Prof. Margret Keuper |\n| 16:45 | Keynote | Keynote | Prof. Steven Scholte |",
-      "program_scraped_at": "2026-09-02T09:45:16.888136+00:00"
+      "program_scraped_at": "2026-09-05T10:23:59.811741+00:00"
     },
     {
       "type": "Workshop",
@@ -1659,7 +1659,7 @@
       "program_found": true,
       "program_url": "https://sites.google.com/view/melex-2026/",
       "program_text": "**September 9, 2026 | Morning Session | Malmö, Sweden**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 – 09:10 | Welcome & Introduction | Opening Remarks | - |\n| 09:10 – 09:45 | Advances in Computer Vision Exploration and Exploitation | Invited Keynote | Prof. Josef Kittler |\n| 09:45 – 09:50 | Speaker Transition / Buffer | Break | - |\n| 09:50 – 10:25 | Explorative Models for Scene Understanding | Invited Keynote | Prof. Jean Ponce |\n| 10:25 – 10:30 | Session Wrap & Announcements | Break | - |\n| 10:30 – 11:00 | ☕ Coffee & Networking Break | Break | - |\n| 11:00 – 11:35 | Fine-tuning High-Performing Approaches for SOTA Gains | Invited Keynote | Prof. Olga Russakovsky |\n| 11:35 – 11:40 | Session Transition / Oral Setup | Break | - |\n| 11:40 – 11:55 | Dense Per-Step Rewards for Reinforcement-Learned Reading Order in Scene Text Recognition | Paper Presentation | Adnan Ben Mansour, Ayoub Karine, David Naccache |\n| 11:55 – 12:10 | DualFormer: An Efficient MetaFormer with Parallel Token Mixers and Polynomial Kernel Mixing | Paper Presentation | Yuto Yokoi, Kazuhiro Hotta |\n| 12:10 – 12:25 | Discriminative and Consistent Representation Distillation | Paper Presentation | Nikos Giakoumoglou, Tania Stathaki |\n| 12:25 – 12:30 | Closing Remarks & Wrap-Up | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:45:27.591045+00:00"
+      "program_scraped_at": "2026-09-05T10:24:11.176499+00:00"
     },
     {
       "type": "Workshop",
@@ -1677,7 +1677,7 @@
       "program_found": true,
       "program_url": "https://qcvml.github.io/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 13:30 | Opening Remarks and Organizer's Talk | Opening Remarks | - |\n| 13:45 | Quantum-enhanced Computer Vision: Going Beyond Classical Algorithms | Tutorial | Dr Natacha Kuete Meli |\n| 14:45 | Optimization on Ion-Trap Hardware | Invited Talk | Dr Marcel Seelbach Benkner |\n| 15:30 | Coffee Break | Break | - |\n| 15:45 | ECCV Quantum Highlights | Session | - |\n| 16:00 | Exploring quantum generative models in different flavours | Invited Talk | Dr Michele Grossi |\n| 16:30 | TBD | Invited Talk | Prof Michael Kastoryano |\n| 17:00 | Towards more Pervasive Quantum Computing: from Quantum Error Mitigation to Graph Latent Spaces | Invited Talk | Prof Guilherme N. DeSouza |",
-      "program_scraped_at": "2026-09-02T09:45:34.858330+00:00"
+      "program_scraped_at": "2026-09-05T10:24:19.061218+00:00"
     }
   ],
   "tutorials": [
@@ -1696,8 +1696,8 @@
       "website": "https://www.projectaria.com/project_aria_tutorial_eccv_2026/",
       "program_found": true,
       "program_url": "https://www.projectaria.com/project_aria_tutorial_eccv_2026/",
-      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 9:00 – 9:30 | Keynote | Keynote | Richard Newcombe, Meta |\n| 9:30 – 10:00 | Project Aria Update | - | James Fort, Meta |\n| 10:00 – 10:18 | Title forthcoming | - | Marc Pollefeys, ETH Zurich |\n| 10:18 – 10:36 | Title forthcoming | - | Jacob Chalk, University of Bristol |\n| 10:36 – 10:54 | Lifting of Open-World 2D Bounding Boxes | - | Daniel DeTone, Meta |\n| 10:54 – 11:09 | Coffee break | Break | - |\n| 11:09 – 11:27 | Eye Tracking on Gen 2 | - | Michael Goesele, Meta |\n| 11:27 – 11:45 | Human Motion Tracking in Metric 3D World | - | Nan Yang, Meta & Jiaxi, SIPLAB, ETH Zurich |\n| 11:45 – 12:03 | Egocentric Surgical Data Science | - | Benjamin Killeen, TU Munich |\n| 12:03 – 12:21 | From Hands to 3D: Egocentric Perception with Aria | - | Alain Pagani, DFKI |",
-      "program_scraped_at": "2026-09-02T09:45:44.950839+00:00"
+      "program_text": "**Tuesday, 8 September 2026 · 9:00 AM – 12:30 PM · Malmö Arena — Palissad West**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 9:00 – 9:30 | Project Aria Keynote | Keynote | Richard Newcombe, Meta |\n| 9:30 – 10:00 | Project Aria Update | Invited Talk | James Fort, Meta |\n| 10:00 – 10:15 | Title forthcoming | Invited Talk | Marc Pollefeys, ETH Zurich |\n| 10:15 – 10:30 | Title forthcoming | Invited Talk | Jacob Chalk, University of Bristol |\n| 10:30 – 10:45 | Lifting of Open-World 2D Bounding Boxes | Oral Presentation | Daniel DeTone, Meta |\n| 10:45 – 11:00 | Coffee break | Break | - |\n| 11:00 – 11:15 | Eye Tracking on Gen 2 | Oral Presentation | Michael Goesele, Meta |\n| 11:15 – 11:30 | Egocentric Surgical Data Science | Oral Presentation | Benjamin Killeen, TU Munich |\n| 11:30 – 11:45 | From Hands to 3D: Egocentric Perception with Aria | Oral Presentation | Alain Pagani, DFKI |\n| 11:45 – 12:00 | Title forthcoming | Invited Talk | Eadom Dessalene, University of Maryland |\n| 12:00 – 12:15 | Human Motion Tracking in Metric 3D World | Oral Presentation | Nan Yang, Meta & Jiaxi, SIPLAB, ETH Zurich |",
+      "program_scraped_at": "2026-09-05T10:24:31.059198+00:00"
     },
     {
       "type": "Tutorial",
@@ -1715,7 +1715,7 @@
       "program_found": true,
       "program_url": "https://einfer-mllm.github.io/Tutorial-ECCV-26/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 - 09:10 | Opening Remarks | Opening Remarks | Huan Wang |\n| 09:10 - 10:00 | Exact Computing: System-Level Designs | Invited Talk | Chenyang Zhao |\n| 10:00 - 10:50 | Approximate Computing: Token Efficiency | Invited Talk | Bo Li |\n| 10:50 - 11:00 | Coffee Break and Discussions | Break | - |\n| 11:00 - 11:50 | Approximate Computing: Model Compression | Invited Talk | Sathya Narayanan Ravi |\n| 11:50 - 12:00 | QA and Closing Remarks | Closing Remarks | Huan Wang |",
-      "program_scraped_at": "2026-09-02T09:45:55.928723+00:00"
+      "program_scraped_at": "2026-09-05T10:24:37.800340+00:00"
     },
     {
       "type": "Tutorial",
@@ -1733,7 +1733,7 @@
       "program_found": true,
       "program_url": "https://pdm-tut.github.io/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 1:00 PM – 4:30 PM | Post-Training Diffusion Models: Enhancing Capabilities, Control, and Alignment | Tutorial | Sayak Paul, Linoy Tsaban, Ravi Addanki, Hila Chefer |\n| 1:00 PM – 1:45 PM | Pre-training vs. post-training — motivation and overview | Part 1 | - |\n| 1:45 PM – 2:30 PM | Alignment — definitions, safety, fairness, RLHF | Part 2 | - |\n| 2:30 PM – 2:45 PM | Coffee & networking | Break | - |\n| 2:45 PM – 3:30 PM | Enhancement — inference-time and training-based techniques | Part 3 | - |\n| 3:30 PM – 4:15 PM | Control — structural control and in-context learning | Part 4 | - |\n| 4:15 PM – 4:30 PM | Open discussion on the boundaries of post-training | Q&A | - |",
-      "program_scraped_at": "2026-09-02T09:46:03.355722+00:00"
+      "program_scraped_at": "2026-09-05T10:24:45.841405+00:00"
     },
     {
       "type": "Tutorial",
@@ -1751,7 +1751,7 @@
       "program_found": true,
       "program_url": "https://wangywust.github.io/eccv-tutorial-world-model/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| TBD | From Imagined Futures to Structured Representations: World Models for Robots | Invited Talk | Xiatian Zhu |\n| TBD | Reasoning Beyond Perception: Toward Reliable Multimodal World Models | Invited Talk | Yirui Wu |\n| TBD | Disentangling Appearance, Geometry, and Motion for Video Modeling and Generation | Invited Talk | Junsong Yuan |\n| TBD | From Perception to Action: Unifying Modalities and Tasks for Building Digital Worlds (Generative UI, Editable Visual Structures, and Design-grounded Coding) | Invited Talk | Dandan Zheng |",
-      "program_scraped_at": "2026-09-02T09:46:09.400397+00:00"
+      "program_scraped_at": "2026-09-05T10:24:52.688555+00:00"
     },
     {
       "type": "Tutorial",
@@ -1769,7 +1769,7 @@
       "program_found": true,
       "program_url": "https://video-models-tutorial.github.io/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 09:00 – 09:15 | Introduction | Part 1 | Viacheslav Vasilev |\n| 09:15 – 09:30 | Data Engineering for Video Models | Part 2 | Viacheslav Vasilev |\n| 09:30 – 10:00 | Architecture & Design Choices | Part 3 | Viacheslav Vasilev |\n| 10:00 – 10:25 | Training Strategies | Part 4 | Viacheslav Vasilev |\n| 10:25 – 10:55 | Coffee Break / Q&A | Break | — |\n| 10:55 – 11:15 | Optimizations | Part 5 | Maria Kovaleva |\n| 11:15 – 11:45 | Inference Optimization Demo | Part 5.1 | Maria Kovaleva |\n| 11:45 – 12:00 | Evaluation & Benchmarking | Part 6 | Maria Kovaleva |\n| 12:00 – 12:15 | Licensing, Ethics & Future Directions | Part 7 | Maria Kovaleva |\n| 12:15 – 12:30 | Final Q&A | Part 8 | — |",
-      "program_scraped_at": "2026-09-02T09:46:17.466359+00:00"
+      "program_scraped_at": "2026-09-05T10:25:01.696260+00:00"
     },
     {
       "type": "Tutorial",
@@ -1787,7 +1787,7 @@
       "program_found": true,
       "program_url": "https://amiad-research.github.io/trustworthy-mllm-tutorial/",
       "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:30 - 9:00 | The Truth Problem: Hallucinations in LLMs and LVLMs | Talk | Angela Yao |\n| 9:00 - 10:00 | Uncertainty Quantification beyond Token Probabilities | Talk | Gianni Franchi, David Brellmann |\n| 10:00 - 10:25 | ☕ Coffee break ☕ | Break | - |\n| 10:25 - 11:25 | Adversarial Threats, Jailbreaks, and Robust Defenses | Talk | Mael Jenny, Andrei Bursuc |\n| 11:25 - 12:20 | Interactive Safety Audit and Hands-on Case Study | Practical Session | All organizers |\n| 12:20 - 12:30 | Open Problems, Closing Remarks, and Q&A | Talk | All organizers |",
-      "program_scraped_at": "2026-09-02T09:46:24.798591+00:00"
+      "program_scraped_at": "2026-09-05T10:25:09.054664+00:00"
     },
     {
       "type": "Tutorial",
@@ -1804,8 +1804,8 @@
       "website": "https://x-sense-tutorial.github.io/x-sense-tutorial/",
       "program_found": true,
       "program_url": "https://x-sense-tutorial.github.io/x-sense-tutorial/",
-      "program_text": "**September 9, 2026 | 8:55 AM – 7:00 PM | Malmö, Sweden**\n\n| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 8:55–9:00 | Opening | Opening Remarks | Yi-Ting Chen |\n| 9:00–10:00 | Need & Problem | Keynote | Yi-Ting Chen |\n| 10:00–10:30 | Dataset #1 | Invited Talk | Walter Zimmer |\n| 10:30–11:00 | Morning Break | Break | - |\n| 11:00–12:00 | Dataset #2 | Invited Talk | Yu-Hsiang Chen |\n| 12:00–13:30 | Lunch Break | Break | - |\n| 13:30–15:30 | Algorithms | Keynote | Prof. Jiaqi Ma, Jinsu Yoo, Hsu-kuang Chiu |\n| 14:50–15:30 | Introduction to algorithms used at UCLA Mobility Lab; SpanVLA; QuantV2X; Q&A | Special Session | Prof. Jiaqi Ma |\n| 15:30–16:00 | Afternoon Break | Break | - |\n| 16:00–16:50 | Verification | Invited Talk | Jiawei Yong, Yi-Ting Chen |\n| 16:50–17:00 | Closing & Q&A | Closing Remarks | - |",
-      "program_scraped_at": "2026-09-02T09:46:33.884737+00:00"
+      "program_text": "| Time | Title | Session | Speaker |\n|------|-------|---------|----------|\n| 08:55 – 09:00 | Opening | Opening Remarks | Yi-Ting Chen |\n| 09:00 – 10:00 | Motivation & Fundamental Challenges | Keynote | Yi-Ting Chen |\n| 10:00 – 10:30 | Infrastructure & V2X Datasets | Invited Talk | Walter Zimmer |\n| 10:30 – 11:00 | Morning Break | Break | - |\n| 11:00 – 12:00 | Aerial & Multi-View Datasets | Invited Talk | Yu-Hsiang Chen |\n| 12:00 – 13:30 | Lunch Break | Break | - |\n| 13:30 – 15:30 | Cooperative Algorithms & Foundation Models | Panel Discussion | Prof. Jiaqi Ma, Jinsu Yoo, Hsu-kuang Chiu |\n| 14:50 – 15:30 | UCLA Mobility Lab Session | Special Session | Prof. Jiaqi Ma |\n| 15:30 – 16:00 | Afternoon Break | Break | - |\n| 16:00 – 16:50 | Safety Validation & Deployment | Invited Talk | Jiawei Yong, Yi-Ting Chen, Minkyoung Cho |\n| 16:50 – 17:00 | Closing & Q&A | Closing Remarks | - |",
+      "program_scraped_at": "2026-09-05T10:25:18.180893+00:00"
     },
     {
       "type": "Tutorial",
@@ -1823,7 +1823,7 @@
       "program_found": false,
       "program_url": "https://vfm-eval.github.io/",
       "program_text": null,
-      "program_scraped_at": "2026-09-02T09:46:42.817537+00:00"
+      "program_scraped_at": "2026-09-05T10:25:27.097622+00:00"
     },
     {
       "type": "Tutorial",
