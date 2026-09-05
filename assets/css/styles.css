@@ -153,6 +153,7 @@ header.compact .header-top {
   bottom: -1px;
   font-family: inherit;
 }
+.tab-btn[hidden] { display: none !important; }
 .tab-btn:hover { color: rgba(255,255,255,.90); }
 .tab-btn.active { color: #fff; border-bottom-color: #fff; }
 .tab-badge {

@@ -1006,8 +1006,18 @@ window.WorkshopRadarDebug = {
     return 'Live tab returned to conference-local real time.';
   },
   openLive: openLiveTab,
+  liveStatus() {
+    const now = conferenceNow();
+    return {
+      conferenceTime: now,
+      previewActive: Boolean(livePreviewTime),
+      conferenceDay: isConferenceDay(now.date),
+      savedItemLiveNow: hasLiveSavedProgramme(now),
+      tabVisible: !document.querySelector('.tab-btn[data-tab="live"]')?.hidden,
+    };
+  },
   help() {
-    console.info("WorkshopRadarDebug.previewLive('2026-09-08', '09:15')\nWorkshopRadarDebug.useRealTime()\nWorkshopRadarDebug.openLive()");
+    console.info("WorkshopRadarDebug.previewLive('2026-09-08', '09:15')\nWorkshopRadarDebug.useRealTime()\nWorkshopRadarDebug.openLive()\nWorkshopRadarDebug.liveStatus()");
   },
 };
 
