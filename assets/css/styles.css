@@ -80,7 +80,7 @@ body[data-conference-theme="eccv"] {
 @media (prefers-reduced-motion: reduce) { .upcoming-signal span { animation: none; } }
 @media (max-width: 620px) { .archive-header-inner, .archive-main { width: min(100% - 28px, 1120px); }.archive-main { padding-top: 42px; }.archive-label { display: none; }.archive-conference-head { flex-direction: column; }.archive-counts { justify-content: start; }.upcoming-panel { margin: 28px auto; } }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; color-scheme: light; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; color-scheme: light; overflow-anchor: none; }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -100,6 +100,7 @@ header {
   top: 0;
   z-index: 100;
   box-shadow: 0 2px 10px rgba(0,0,0,.30);
+  overflow-anchor: none;
 }
 .header-top {
   display: flex;
@@ -180,6 +181,22 @@ header.compact .header-top {
 @keyframes live-pulse {
   70% { box-shadow: 0 0 0 6px rgba(255,77,77,0); }
   100% { box-shadow: 0 0 0 0 rgba(255,77,77,0); }
+}
+
+/* The header needs a two-row layout before phone width; otherwise its metadata gets clipped. */
+@media (max-width: 1100px) {
+  .header-top {
+    align-items: flex-start;
+    flex-direction: column;
+    max-height: 260px;
+  }
+  .header-meta { width: 100%; }
+}
+@media (max-width: 700px) {
+  .header-top { padding: 12px 16px 10px; }
+  .tab-nav { padding: 0 8px; overflow-x: auto; scrollbar-width: none; }
+  .tab-nav::-webkit-scrollbar { display: none; }
+  .tab-btn { flex-shrink: 0; padding: 9px 13px; }
 }
 
 /* ── Main Layout ────────────────────────────────────── */
@@ -1649,8 +1666,6 @@ html.dark-mode .tl-filter-btn--none         { --tl-block-bg:#1a1d2e; --tl-block-
   .live-upcoming-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
-  .tab-nav { padding: 0 8px; overflow-x: auto; }
-  .tab-btn { flex-shrink: 0; padding: 9px 13px; }
   .live-lane { padding: 13px; }
   .live-card { grid-template-columns: minmax(0, 1fr); }
   .live-save-btn { min-height: 34px; border-top: 1px solid var(--border); border-left: 0; }

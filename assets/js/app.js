@@ -1972,11 +1972,26 @@ document.getElementById('import-confirm-modal').addEventListener('click', e => {
 });
 
 // ─── Boot ─────────────────────────────────────────────────────────────────
-// Compact header on scroll
+// Compact with hysteresis: shrink after a meaningful downward scroll and only
+// expand again near the top. Scroll anchoring is disabled in CSS so a height
+// change cannot mutate scrollY and flip this state back and forth.
 const _siteHeader = document.querySelector('header');
+let _headerIsCompact = false;
+let _headerScrollFrame = null;
+function updateHeaderCompactState() {
+  _headerScrollFrame = null;
+  const scrollY = window.scrollY;
+  const shouldCompact = _headerIsCompact ? scrollY > 32 : scrollY > 120;
+  if (shouldCompact === _headerIsCompact) return;
+  _headerIsCompact = shouldCompact;
+  _siteHeader.classList.toggle('compact', _headerIsCompact);
+}
 window.addEventListener('scroll', () => {
-  _siteHeader.classList.toggle('compact', window.scrollY > 40);
+  if (_headerScrollFrame === null) {
+    _headerScrollFrame = requestAnimationFrame(updateHeaderCompactState);
+  }
 }, { passive: true });
+updateHeaderCompactState();
 
 // Auto-update the current-time red line every minute
 setInterval(() => {
