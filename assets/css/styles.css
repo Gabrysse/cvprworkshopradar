@@ -220,6 +220,7 @@ main { max-width: 1440px; width: 100%; margin: 0 auto; padding: 24px 22px 60px; 
   align-items: flex-end;
 }
 .filter-group { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 130px; }
+.filter-group[hidden] { display: none !important; }
 .filter-group.search { flex: 2; min-width: 200px; }
 .filter-group label {
   font-size: .70rem;

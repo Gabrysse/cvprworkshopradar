@@ -274,12 +274,20 @@ try { roomCoords = await coordsRes.json(); } catch { /* ignore */ }
     });
   }
   const sel = document.getElementById('f-track');
+  const trackGroup = sel.closest('.filter-group');
+  sel.innerHTML = '<option value="">All tracks</option>';
   tracks.forEach(t => {
 const o = document.createElement('option');
 o.value = t;
 o.textContent = t.replace(/^Track on\s*/i, '');
 sel.appendChild(o);
   });
+  // Some conferences do not publish tracks. Keep this filter available for
+  // those that do, but do not spend interface space on an empty control.
+  const hasTracks = tracks.length > 0;
+  trackGroup.hidden = !hasTracks;
+  sel.disabled = !hasTracks;
+  if (!hasTracks) sel.value = '';
 
   renderBrowse();
   updateLiveAvailability();
