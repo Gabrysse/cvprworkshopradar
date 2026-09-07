@@ -4,7 +4,7 @@ function renderProgram(src) {
   const fmt = s => e(s)
     .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
     .replace(/\d{1,2}:\d{2}(?:\s*[AP]M)?(?:\s*[-\u2013\u2014]\s*\d{1,2}:\d{2}(?:\s*[AP]M)?)?/gi,
-      m => `<span class="time-nowrap">${m.trim().replace(/\s*([-\u2013\u2014])\s*/g, '\u00a0$1\u00a0')}</span>`);
+      m => `<span class="time-nowrap">${m.trim().replace(/\s*([-\u2013\u2014])\s*/g, '\u00a0$1<wbr>\u00a0')}</span>`);
   // No table syntax → render as pre-formatted plain text
   if (!/^\s*\|/m.test(src)) {
 return '<pre style="white-space:pre-wrap;word-break:break-word;font-family:inherit;font-size:inherit;margin:0">' + e(src) + '</pre>';
@@ -47,7 +47,7 @@ function renderProgramFiltered(src, hiddenTypes) {
   const fmt = s => e(s)
     .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
     .replace(/\d{1,2}:\d{2}(?:\s*[AP]M)?(?:\s*[-\u2013\u2014]\s*\d{1,2}:\d{2}(?:\s*[AP]M)?)?/gi,
-      m => `<span class="time-nowrap">${m.trim().replace(/\s*([-\u2013\u2014])\s*/g, '\u00a0$1\u00a0')}</span>`);
+      m => `<span class="time-nowrap">${m.trim().replace(/\s*([-\u2013\u2014])\s*/g, '\u00a0$1<wbr>\u00a0')}</span>`);
   const lines = src.split('\n');
   let out = '', i = 0;
   while (i < lines.length) {

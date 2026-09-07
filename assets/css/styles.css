@@ -1182,9 +1182,32 @@ html.dark-mode .modal-program-text tr:nth-child(even) td { background: #1e2133; 
   /* Program compact button */
   .program-compact-btn { display: inline-flex !important; }
 
-  /* Keep programme tables within the modal: titles must wrap, not scroll away. */
+  /* Wide programme tables scroll deliberately; the time column stays readable. */
   .modal-program-wrap { overflow-x: auto; }
-  .modal-program-text table { width: 100%; min-width: 0; }
+  .modal-program-text table {
+    width: 680px;
+    min-width: 100%;
+    table-layout: fixed;
+  }
+  .modal-program-text th:first-child,
+  .modal-program-text td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    width: 108px;
+    min-width: 108px;
+  }
+  .modal-program-text th:first-child { background: var(--bg); z-index: 2; }
+  .modal-program-text td:first-child { background: var(--bg-card); }
+  .modal-program-text tr:nth-child(even) td:first-child { background: var(--border-light); }
+  html.dark-mode .modal-program-text th:first-child { background: #1a1d2e; }
+  html.dark-mode .modal-program-text td:first-child { background: #1a1d2e; }
+  html.dark-mode .modal-program-text tr:nth-child(even) td:first-child { background: #1e2133; }
+  .modal-program-text .time-nowrap {
+    display: inline-block;
+    white-space: normal;
+    line-height: 1.25;
+  }
   .modal-program-text th:not(:first-child),
   .modal-program-text td:not(:first-child) {
     white-space: normal;
