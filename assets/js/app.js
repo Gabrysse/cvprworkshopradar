@@ -1538,6 +1538,14 @@ function openModal(id) {
   if (!ev) return;
   _modalEventId = id;
 
+  // Dense schedules stay readable on phone-sized screens. Users can still
+  // switch back to the normal table with the control in the program header.
+  const programWrap = document.getElementById('modal-program-wrap');
+  const compactProgramBtn = document.getElementById('program-compact-btn');
+  const useCompactProgram = window.matchMedia('(max-width: 480px)').matches;
+  programWrap.classList.toggle('compact', useCompactProgram);
+  compactProgramBtn.textContent = useCompactProgram ? '⊞ Normal' : '⊟ Compact';
+
   const modal     = document.getElementById('event-modal');
   const container = document.getElementById('modal-container');
   modal.classList.remove('closing');

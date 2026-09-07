@@ -339,6 +339,10 @@ main { max-width: 1440px; width: 100%; margin: 0 auto; padding: 24px 22px 60px; 
   font-weight: 700;
   color: var(--text);
   line-height: 1.35;
+  /* A flex item can otherwise retain its intrinsic one-line width on mobile. */
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 .card-meta {
   display: flex;
@@ -1038,7 +1042,16 @@ html.dark-mode .modal-program-text tr:nth-child(even) td { background: #1e2133; 
   z-index: 10;
   background: transparent;
 }
-.swipe-card-title { font-size: 1.02rem; font-weight: 700; line-height: 1.35; color: var(--text); flex-shrink: 0; }
+.swipe-card-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text);
+  flex-shrink: 0;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
 .swipe-card-body  { flex: 1; overflow: hidden; font-size: .83rem; color: var(--text-muted); line-height: 1.55; }
 .swipe-card-foot  { font-size: .76rem; color: var(--text-light); border-top: 1px solid var(--border-light); padding-top: 8px; flex-shrink: 0; }
 .swipe-actions { display: flex; align-items: center; justify-content: center; gap: 18px; }
@@ -1146,9 +1159,14 @@ html.dark-mode .modal-program-text tr:nth-child(even) td { background: #1e2133; 
   /* Program compact button */
   .program-compact-btn { display: inline-flex !important; }
 
-  /* Make program table natural-width so it can scroll without cell overflow */
+  /* Keep programme tables within the modal: titles must wrap, not scroll away. */
   .modal-program-wrap { overflow-x: auto; }
-  .modal-program-text table { width: max-content; min-width: 100%; }
+  .modal-program-text table { width: 100%; min-width: 0; }
+  .modal-program-text th:not(:first-child),
+  .modal-program-text td:not(:first-child) {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
 }
 
 /* ── Dark Mode ───────────────────────────────────────── */
@@ -1633,7 +1651,16 @@ html.dark-mode .tl-filter-btn--none         { --tl-block-bg:#1a1d2e; --tl-block-
   white-space: nowrap;
 }
 .live-time { flex-shrink: 0; color: var(--text-muted); font-size: .72rem; font-variant-numeric: tabular-nums; }
-.live-title { display: block; color: var(--text); font-size: .87rem; font-weight: 750; line-height: 1.35; }
+.live-title {
+  display: block;
+  min-width: 0;
+  color: var(--text);
+  font-size: .87rem;
+  font-weight: 750;
+  line-height: 1.35;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
 .live-speaker, .live-event, .live-meta { display: block; overflow: hidden; color: var(--text-muted); font-size: .73rem; line-height: 1.35; text-overflow: ellipsis; white-space: nowrap; }
 .live-speaker { margin-top: 3px; }
 .live-event { margin-top: 5px; color: var(--text); font-weight: 650; }
