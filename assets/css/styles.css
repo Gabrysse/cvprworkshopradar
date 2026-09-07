@@ -1208,6 +1208,7 @@ html.dark-mode .modal-program-text tr:nth-child(even) td { background: #1e2133; 
     white-space: normal;
     line-height: 1.25;
   }
+  .modal-program-text .time-mobile-break { display: block; }
   .modal-program-text th:not(:first-child),
   .modal-program-text td:not(:first-child) {
     white-space: normal;
@@ -1440,6 +1441,7 @@ body.hide-about #modal-summary-wrap { display: none !important; }
 
 /* ── Time no-wrap (in program tables) ───────────────── */
 .time-nowrap { white-space: nowrap; }
+.time-mobile-break { display: none; }
 
 /* ── Share / Import Panel ────────────────────────────── */
 .settings-row-share { border-bottom: none; }
