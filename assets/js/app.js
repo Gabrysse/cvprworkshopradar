@@ -288,7 +288,7 @@ sel.appendChild(o);
 
 // ─── Filters ──────────────────────────────────────────────────────────────────
 function getFiltered() {
-  const search = document.getElementById('f-search').value.trim().toLowerCase();
+  const search = foldSearchText(document.getElementById('f-search').value);
   const fDate    = document.getElementById('f-date').value;
   const fTime    = document.getElementById('f-time').value;
   const fType    = document.getElementById('f-type').value;
@@ -303,7 +303,7 @@ if (fTrack   && e.track  !== fTrack) return false;
 if (fProgram === 'yes' && !e.program_found) return false;
 if (fProgram === 'no'  &&  e.program_found) return false;
 if (search) {
-  const hay = `${e.title} ${e.organizers||''} ${e.summary||''} ${e.program_text||''}`.toLowerCase();
+  const hay = foldSearchText(`${e.title} ${e.organizers||''} ${e.summary||''} ${e.program_text||''}`);
   if (!hay.includes(search)) return false;
 }
 return true;
@@ -313,6 +313,10 @@ return true;
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 const esc  = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const crop = (s, n) => s && s.length > n ? s.slice(0, n).trimEnd() + '…' : (s||'');
+const foldSearchText = value => String(value || '')
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .toLowerCase();
 
 function slotBadge(s) {
   if (s === 'AM')       return '<span class="badge badge-am">🌅 Morning</span>';

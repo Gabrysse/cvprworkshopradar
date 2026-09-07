@@ -1,5 +1,6 @@
 (() => {
   const esc = value => String(value || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const foldSearchText = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
 
   function applyStoredTheme(registry) {
@@ -42,8 +43,8 @@
     const input = shell.querySelector('input');
     const results = shell.querySelector('.archive-results');
     const render = () => {
-      const query = input.value.trim().toLowerCase();
-      const found = events.filter(event => `${event.title} ${event.organizers || ''} ${event.summary || ''}`.toLowerCase().includes(query));
+      const query = foldSearchText(input.value);
+      const found = events.filter(event => foldSearchText(`${event.title} ${event.organizers || ''} ${event.summary || ''}`).includes(query));
       results.innerHTML = found.length ? found.map(eventCard).join('') : '<p class="archive-empty">No archived events match that search.</p>';
     };
     input.addEventListener('input', render);
