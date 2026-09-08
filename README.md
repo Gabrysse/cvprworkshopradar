@@ -4,6 +4,10 @@
   <img src="assets/images/logo.png" alt="Workshop Radar logo" width="160">
 </p>
 
+<h2 align="center">
+  <a href="https://workshopradar.vercel.app">🌐 Visit Workshop Radar</a>
+</h2>
+
 **Workshop Radar** is an independent, searchable companion for exploring conference workshops and tutorials. The live experience currently tracks **ECCV 2026**; earlier programmes remain available in the archive.
 
 Large workshop and tutorial programmes should not feel like opening twenty tabs, cross-checking PDFs, and hoping you did not miss the one session that perfectly matches your research.
