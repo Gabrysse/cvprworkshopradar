@@ -82,6 +82,10 @@ Break, Opening Remarks). Use "-" if not categorised.
 bold line **before** the table (e.g. **June 3, 2026 | 8:00 AM – 1:00 PM | Room 103**).
 - If there is NO schedule at all (only call for papers, organizer bios, \
 submission deadlines, challenge rules, topic lists, etc.), output exactly: NO_SCHEDULE
+- The page content may be cut off (…[truncated]). Extract only the entries \
+that are actually visible — never invent placeholder rows such as \
+"(Content truncated)". If only part of the schedule is visible, output that \
+part.
 - Do NOT add any introductory or closing prose. Output only the table (and \
 optional header line) or NO_SCHEDULE.
 
@@ -614,6 +618,36 @@ def _metadata_updates(page_text: str, model: str, ev: dict) -> dict:
     return updates
 
 
+# Standalone-line headings that mark the start of a schedule section.
+_SCHEDULE_HEADING_RE = re.compile(
+    r"^(Schedule|Programme?|Agenda|Timetable)\b[^\n]{0,40}$", re.M | re.I
+)
+# Time-of-day pattern used to confirm a heading is followed by real schedule
+# content rather than e.g. a "schedule will be announced" sentence.
+_TIME_OF_DAY_RE = re.compile(r"\b\d{1,2}:\d{2}\b")
+
+
+def _window_for_llm(text: str, max_chars: int = MAX_CONTEXT_CHARS) -> str:
+    """Trim *text* to *max_chars* for the LLM prompt.
+
+    Pages often bury the actual schedule behind long preambles (nav, call for
+    papers, speaker bios).  A blind prefix cut then ends mid-schedule and the
+    model hallucinates placeholder rows.  When the text is over budget, anchor
+    the window on the first standalone schedule heading that is followed by
+    time-of-day patterns; otherwise fall back to a plain prefix cut.
+    """
+    if len(text) <= max_chars:
+        return text
+    for m in _SCHEDULE_HEADING_RE.finditer(text):
+        if _TIME_OF_DAY_RE.search(text[m.end() : m.end() + 3000]):
+            start = max(0, m.start() - 200)
+            window = text[start : start + max_chars]
+            if start + max_chars < len(text):
+                window += "\n…[truncated]"
+            return window
+    return text[:max_chars] + "\n…[truncated]"
+
+
 def _extract(
     ev: dict,
     text_model: str,
@@ -631,8 +665,7 @@ def _extract(
 
     def _text_pass(target_url: str) -> tuple[str, str, list[str], str]:
         final_url, text, subpages = _get_page_text(target_url)
-        if len(text) > MAX_CONTEXT_CHARS:
-            text = text[:MAX_CONTEXT_CHARS] + "\n…[truncated]"
+        text = _window_for_llm(text)
         response = _call_ollama(text_model, _TEXT_PROMPT.format(text=text))
         return final_url, response, subpages, text
 
