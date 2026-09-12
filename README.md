@@ -8,7 +8,7 @@
   <a href="https://workshopradar.vercel.app">🌐 Visit Workshop Radar</a>
 </h2>
 
-**Workshop Radar** is an independent, searchable companion for exploring conference workshops and tutorials. The live experience currently tracks **ECCV 2026**; earlier programmes remain available in the archive.
+**Workshop Radar** is an independent, searchable companion for exploring conference workshops and tutorials. The live experience is preparing for **NeurIPS 2026**; the **ECCV 2026** and **CVPR 2026** programmes remain available in the archive.
 
 Large workshop and tutorial programmes should not feel like opening twenty tabs, cross-checking PDFs, and hoping you did not miss the one session that perfectly matches your research.
 

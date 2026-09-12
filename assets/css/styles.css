@@ -31,15 +31,36 @@ body[data-conference-theme="eccv"] {
   --bg: #f7f4f0;
   --border: #e4d6ca;
 }
+body[data-conference-theme="eccv"] .upcoming-panel {
+  border-color: #ead8cb;
+  background: linear-gradient(135deg, #fffdfa 0%, #f8eee8 100%);
+  box-shadow: 0 20px 55px rgba(111, 50, 28, .11);
+}
+
+/* Conference identity: NeurIPS wears a calm Sydney-harbour blue. */
+body[data-conference-theme="neurips"] {
+  --primary: #123a5c;
+  --primary-light: #2d6a96;
+  --primary-dark: #0b2540;
+  --accent: #2d6a96;
+  --accent-light: #8fb8d4;
+  --bg: #eff4f8;
+  --border: #d3e0e9;
+}
+body[data-conference-theme="neurips"] .upcoming-panel {
+  border-color: #cdddec;
+  background: linear-gradient(135deg, #fbfdfe 0%, #e7f0f7 100%);
+  box-shadow: 0 20px 55px rgba(11, 37, 64, .10);
+}
 
 .upcoming-panel {
   max-width: 760px;
   margin: clamp(44px, 12vh, 132px) auto;
   padding: clamp(30px, 7vw, 72px);
-  border: 1px solid #ead8cb;
+  border: 1px solid var(--border);
   border-radius: 18px;
-  background: linear-gradient(135deg, #fffdfa 0%, #f8eee8 100%);
-  box-shadow: 0 20px 55px rgba(111, 50, 28, .11);
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg) 100%);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, .08);
   text-align: center;
 }
 .upcoming-kicker, .archive-eyebrow {
@@ -55,9 +76,8 @@ body[data-conference-theme="eccv"] {
 .upcoming-signal span { display: block; width: 7px; border-radius: 8px; background: var(--primary-light); animation: radar-signal 1.8s ease-in-out infinite; }
 .upcoming-signal span:nth-child(1) { height: 12px; animation-delay: -.35s; }.upcoming-signal span:nth-child(2) { height: 28px; animation-delay: -.15s; }.upcoming-signal span:nth-child(3) { height: 18px; }
 @keyframes radar-signal { 50% { transform: translateY(-4px); opacity: .55; } }
-.upcoming-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; margin-top: 28px; }
-.upcoming-links a, .archive-link, .archive-event a { color: var(--primary); font-weight: 700; font-size: .85rem; text-decoration: none; }
-.upcoming-links a:hover, .archive-link:hover, .archive-event a:hover { text-decoration: underline; }
+.archive-link, .archive-event a { color: var(--primary); font-weight: 700; font-size: .85rem; text-decoration: none; }
+.archive-link:hover, .archive-event a:hover { text-decoration: underline; }
 
 /* Past-programme view: dense enough to be useful, intentionally quieter than the live radar. */
 .archive-page { background: #f7f6f3; }
@@ -1259,6 +1279,35 @@ html.dark-mode body[data-conference-theme="eccv"] > header {
 html.dark-mode body[data-conference-theme="eccv"] .tab-btn.active .tab-badge {
   background: #8c4828;
   color: #fff5ef;
+}
+
+/* NeurIPS keeps its harbour blue at night, resting on deep slate. */
+html.dark-mode body[data-conference-theme="neurips"] {
+  --primary:       #8fb8d4;
+  --primary-light: #5f97c0;
+  --primary-dark:  #b3d1e5;
+  --accent:        #74a8cd;
+  --accent-light:  #9dc4de;
+  --bg:            #0b1116;
+  --bg-card:       #141d25;
+  --text:          #e9f1f6;
+  --text-muted:    #a3b4c0;
+  --text-light:    #6d808d;
+  --border:        #2a3945;
+  --border-light:  #1c2833;
+}
+html.dark-mode body[data-conference-theme="neurips"] .upcoming-panel {
+  border-color: #2f4353;
+  background: linear-gradient(135deg, #17242e 0%, #0d151c 100%);
+  box-shadow: 0 20px 55px rgba(0,0,0,.45);
+}
+html.dark-mode body[data-conference-theme="neurips"] > header {
+  background: linear-gradient(135deg, #0d1f30 0%, #24507a 100%);
+  box-shadow: 0 2px 12px rgba(0,0,0,.48);
+}
+html.dark-mode body[data-conference-theme="neurips"] .tab-btn.active .tab-badge {
+  background: #2d6a96;
+  color: #eaf3f9;
 }
 
 /* The archive has no controls of its own, so it follows the theme selected on the main radar. */

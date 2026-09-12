@@ -3,7 +3,7 @@
 // so stale caches are evicted and all clients receive the updated files.
 // For JSON-only updates you push to the repo, no bump is needed — the
 // network-first strategy below handles those automatically.
-const CACHE_NAME = 'workshopradar-v3';
+const CACHE_NAME = 'workshopradar-v4';
 
 // Every file the app needs to run fully offline
 const PRECACHE_URLS = [
@@ -21,7 +21,7 @@ const PRECACHE_URLS = [
   // './conferences/cvpr2026/maps/images/map_ballroom.png',
   // './conferences/cvpr2026/maps/images/map_meeting.png',
   // './conferences/cvpr2026/maps/images/map_exhibit.png',
-  './conferences/eccv2026/data/workshops_tutorials.json',
+  // './conferences/eccv2026/data/workshops_tutorials.json',
 ];
 
 // ── Install: pre-cache everything ─────────────────────────────────────────────

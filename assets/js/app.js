@@ -213,11 +213,7 @@ function showUpcoming(conf) {
       <div class="upcoming-signal" aria-hidden="true"><span></span><span></span><span></span></div>
       <p class="upcoming-kicker">${esc(conf.short_name || conf.name)} · ${esc(conf.dates_label || 'Coming soon')}</p>
       <h2 id="upcoming-title">Stay tuned.</h2>
-      <p>Workshop and tutorial details will appear here once they are ready to explore. We’re preparing a single, practical view of the programme.</p>
-      <div class="upcoming-links">
-        ${conf.workshop_sources?.workshops ? `<a href="${esc(conf.workshop_sources.workshops)}" target="_blank" rel="noopener">Official workshops ↗</a>` : ''}
-        ${conf.workshop_sources?.tutorials ? `<a href="${esc(conf.workshop_sources.tutorials)}" target="_blank" rel="noopener">Official tutorials ↗</a>` : ''}
-      </div>
+      <p>${esc(conf.message || 'Workshop and tutorial details will appear here once they are ready to explore. We’re preparing a single, practical view of the programme.')}</p>
     </section>`;
 }
 

@@ -1,11 +1,22 @@
 {
-  "active_conference": "eccv2026",
+  "active_conference": "neurips2026",
   "conferences": [
+    {
+      "id": "neurips2026",
+      "name": "NeurIPS 2026",
+      "short_name": "NeurIPS 2026",
+      "status": "upcoming",
+      "theme": "neurips",
+      "venue": "Sydney, Australia",
+      "dates_label": "December 6–12, 2026",
+      "timezone": "Australia/Sydney",
+      "message": "Thank you to the 1,000+ visitors who stopped by the radar during ECCV 2026. The full programme is now preserved in the archive. We'll see you again at NeurIPS in Sydney this December! 🧡"
+    },
     {
       "id": "eccv2026",
       "name": "ECCV 2026",
       "short_name": "ECCV 2026",
-      "status": "live",
+      "status": "archived",
       "theme": "eccv",
       "venue": "Malmö, Sweden",
       "dates_label": "September 8–9, 2026",
